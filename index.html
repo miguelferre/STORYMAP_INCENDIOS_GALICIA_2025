@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Incendios en Galicia — StoryMap</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <style>
+    :root{
+      --ink:#ffffff;
+      --panel:#041138;
+      --glass-bg: rgba(25,25,25,0.55);
+      --glass-brd: rgba(255,255,255,0.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:#0b0b0b}
+
+    /* Mapa fijo detrás */
+    #map{position:fixed;inset:0;width:100vw;height:100vh}
+
+   /* Topbar estilo “cabecera editorial” */
+#topbar{
+  position:fixed; 
+  top:0; left:0; right:0; 
+  height:56px;
+  background:#041138d4; 
+  backdrop-filter: blur(4px);
+  display:flex; 
+  align-items:center; 
+  z-index:10;
+  padding:0 16px; 
+  border-bottom:1px solid #041138;
+}
+
+/* Unificamos fuente y peso */
+#brand, #titleRight{
+  font-weight:700; 
+  letter-spacing:.2px;
+  font-family: inherit;
+}
+
+/* Mandamos la descripción a la derecha */
+#titleRight{
+  margin-left:auto;
+}
+
+/* El spacer ya no es necesario, pero si lo dejas, lo ocultamos */
+#spacer{ display:none; }
+
+/* HERO a lo Al Jazeera */
+#hero{
+  position:relative; z-index:9;
+  min-height:100vh; width:100%;
+  display:flex; flex-direction:column;
+  justify-content:flex-start;   /* subimos el contenido */
+  align-items:center;
+  padding-top:18vh;             /* controlamos la altura inicial */
+  background-image: url('./assets/Imagen_quemado.webp');
+  background-size:cover; 
+  background-position:center;
+  box-shadow: inset 0 -200px 200px rgba(0,0,0,.35);
+}
+
+.hero-inner{
+  width:min(1100px,92vw);
+  margin-top:500;  
+}
+
+.hero-headline{
+  font-size: clamp(32px, 6.4vw, 70px);
+  line-height:1.05; 
+  font-weight:900; 
+  text-align:center;
+  text-shadow: 0 6px 30px rgba(0,0,0,.45);
+  margin:0;  
+}
+
+.hero-kicker{
+  width:min(780px, 92vw);
+  margin:40px auto 0 auto;  
+  background: var(--panel);
+  color:#fff; 
+  border-radius:10px;
+  font-size: 20px;
+  padding:18px 22px; 
+  line-height:1.45;
+  box-shadow: 0 8px 26px rgba(0,0,0,.35);
+  text-align:center;
+}
+
+
+
+    /* Indicador de scroll */
+    .scroll-hint{
+      position:absolute; left:50%; transform:translateX(-50%);
+      bottom:28px; font-size:13px; opacity:.9;
+      background:rgba(0,0,0,.5); padding:6px 10px; border-radius:16px;
+      border:1px solid rgba(255,255,255,.08)
+    }
+    /* Créditos de foto y fuentes */
+    .photo-credit, .map-source {
+        font-size: 9px;
+        color: rgba(255, 255, 255, 0.445);
+        font-style: italic;
+        pointer-events: none; /* no molesta a los clics */
+        bottom: 10px;
+    }
+    .photo-credit {
+        position: absolute;
+        right: 14px;
+        z-index: 11;
+    }
+    .map-source {
+        position: absolute;
+        left: 100px;
+        z-index: 3;  /* Por debajo del hero pero por encima del mapa */
+    }
+    .map-source.fixed {
+        position: fixed;
+    }
+
+
+
+    /* Contenedor de la historia (capítulos) */
+    #story{position:relative; z-index:5}
+    #features{padding-top:30vh; padding-bottom:10vh}
+
+    /* Tarjetas de capítulo (panel derecha) */
+    .step{padding-bottom:45vh; opacity:.35}
+    .step.active{opacity:.98}
+    
+    /* Contenedor base del capítulo sin fondo específico */
+    .step > div.lefty, .step > div.righty, .step > div.centered, .step > div.fully {
+      border-radius:12px; padding:18px 20px;
+      line-height:1.45; font-size:14px; color:#f0f0f0;
+    }
+    
+    /* Solo los párrafos y encabezados obtienen el fondo opaco */
+    .step h3, .step p {
+      background: var(--glass-bg);
+      border:1px solid var(--glass-brd);
+      backdrop-filter: blur(4px);
+      border-radius:8px; 
+      padding:12px 16px;
+      margin: 8px 0;
+    }
+    h3{margin:0 0 8px 0; font-size:18px}
+
+
+    .lefty {
+      width: 33vw;
+      margin-left: 5vw;
+    }
+    
+    .righty {
+      width: 57vw;
+      margin-left: 38vw;
+    }
+
+    .fully {
+      width: 90vw;
+      margin-left: 5vw;
+    }
+
+    /* Nueva clase específica para el capítulo de tendencias */
+    .chapter-wide {
+      width: 84vw !important;
+      margin-left: 4vw !important;  /* mismo margen que .lefty */
+      position: relative !important;
+    }
+
+    @media (max-width: 1200px){  /* Ajustado el breakpoint para pantallas más grandes */
+      .lefty, .righty { 
+        width: 90vw; 
+        margin: 0 auto; 
+      }
+      #topbar{
+        height:auto; 
+        padding:10px 12px; 
+        gap:8px; 
+        align-items:flex-start
+      }
+      #spacer{display:none}
+      #titleCenter{text-align:left}
+      .hero-headline{margin-top:12vh}
+    }
+    /* Selector de categorías */
+    .category-selector {
+        position: fixed;
+        top: 56px; /* Debajo del topbar */
+        left: 0;
+        right: 0;
+        z-index: 8;
+        display: none; /* Inicialmente oculto */
+        justify-content: center;
+        padding: 12px 20px;
+        background: rgba(15, 23, 51, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .category-tabs {
+        display: flex;
+        gap: 8px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        padding: 4px;
+    }
+
+    .category-tab {
+        padding: 10px 20px;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.7);
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .category-tab:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .category-tab[aria-pressed="true"] {
+        background: rgba(73, 123, 179, 0.9);
+        color: white;
+        box-shadow: 0 2px 8px rgba(73, 123, 179, 0.3);
+    }
+
+    .category-tab:focus {
+        outline: 2px solid rgba(73, 123, 179, 0.8);
+        outline-offset: 2px;
+    }
+
+
+
+    /* Overlay de imágenes de clima */
+    .climate-images-overlay {
+        position: fixed;
+        top: 120px;
+        right: 20px;
+        width: 850px;
+        max-height: calc(100vh - 140px);
+        z-index: 7;
+        background: rgba(15, 23, 51, 0.92);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px;
+        overflow-y: auto;
+        transition: all 0.4s ease;
+    }
+
+    .climate-images-overlay.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(20px);
+    }
+
+    .climate-images-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .climate-images-container img {
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .climate-img-small {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .climate-img-large {
+        width: 100%;
+        max-width: 760px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .category-selector {
+            padding: 8px 12px;
+        }
+        
+        .category-tab {
+            padding: 8px 16px;
+            font-size: 13px;
+        }
+        
+        .category-text-overlay {
+            left: 12px;
+            right: 12px;
+            width: auto;
+            top: 100px;
+        }
+        
+        .climate-images-overlay {
+            left: 12px;
+            right: 12px;
+            width: auto;
+            top: 100px;
+        }
+        
+        .climate-img-large {
+            max-width: 100%;
+        }
+        
+        .climate-img-small {
+            max-width: 70%;
+        }
+        
+        .climate-images-container {
+            gap: 12px;
+        }
+        
+        .climate-images-container img {
+            max-width: 80%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .category-tabs {
+            gap: 4px;
+            padding: 2px;
+        }
+        
+        .category-tab {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+    }
+
+    /* Utility class */
+    .hidden {
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+  </style>
+</head>
+<script>
+window.addEventListener('load', () => {
+  // 🔹 Tamaño del incendio de Larouco–Seadur (2025): 31.700 ha ≈ 317 km²
+  const FIRE_KM2 = 317;
+
+  // Utilidades
+  const fmt = n => (Math.round(n * 100) / 100).toLocaleString('es-ES');
+
+  // ——— UI refs (el comparador está en el description del capítulo o en el HTML) ———
+  function els() {
+    return {
+      select: document.getElementById('city'),
+      out: document.getElementById('result'),
+      fireCircle: document.getElementById('fire-circle'),
+      cityCircle: document.getElementById('city-circle'),
+      circleLabel: document.getElementById('circle-label'),
+    };
+  }
+
+  // ——— Dibuja/actualiza círculos concéntricos ———
+  function updateCircles(cityName, cityKm2) {
+    const largeCircle = document.getElementById('large-circle');
+    const smallCircle = document.getElementById('small-circle');
+    const circleLabel = document.getElementById('circle-label');
+    if (!largeCircle || !smallCircle || !circleLabel) return;
+
+    const svgSize = 300;
+    const maxR = (svgSize / 2) - 10;
+    const SCALE = 6;
+
+    const fireR = Math.sqrt(FIRE_KM2) * SCALE;
+    const cityR = Math.sqrt(cityKm2) * SCALE;
+    const factor = Math.min(1, maxR / Math.max(fireR, cityR));
+
+    // Determinar cuál es más grande
+    if (FIRE_KM2 >= cityKm2) {
+      // El fuego es más grande -> va atrás
+      largeCircle.setAttribute('fill', '#F44E11');
+      largeCircle.setAttribute('stroke', '#F44E11');
+      smallCircle.setAttribute('fill', 'rgb(0,120,255)');
+      smallCircle.setAttribute('stroke', 'rgba(0,120,255,0.5)');
+      largeCircle.setAttribute('r', fireR * factor);
+      smallCircle.setAttribute('r', cityR * factor);
+    } else {
+      // La ciudad es más grande -> va atrás
+      largeCircle.setAttribute('fill', 'rgb(0,120,255)');
+      largeCircle.setAttribute('stroke', 'rgb(0,120,255)');
+      smallCircle.setAttribute('fill', '#F44E11');
+      smallCircle.setAttribute('stroke', '#F44E11');
+      largeCircle.setAttribute('r', cityR * factor);
+      smallCircle.setAttribute('r', fireR * factor);
+    }
+    circleLabel.innerHTML = `<span style="color: #F44E11">Incendio (${fmt(FIRE_KM2)} km²)</span> vs <span style="color: rgb(0,120,255)">${cityName} (${fmt(cityKm2)} km²)</span>`;
+  }
+
+  // ——— Texto comparativo ———
+  function updateText(city) {
+    const { out } = els();
+    if (!out) return;
+
+    if (FIRE_KM2 >= city.km2) {
+      const times = FIRE_KM2 / city.km2;
+      out.textContent = `El área quemada equivale a ${fmt(times)} veces el área municipal de ${city.name} (${fmt(FIRE_KM2)} km² vs ${fmt(city.km2)} km²).`;
+    } else {
+      const percent = (FIRE_KM2 / city.km2) * 100;
+      out.textContent = `El área quemada equivale al ${fmt(percent)}% del área municipal de ${city.name} (${fmt(FIRE_KM2)} km² vs ${fmt(city.km2)} km²).`;
+    }
+  }
+
+  // ——— Cargar CSV y montar la UI ———
+  fetch('./assets/cities.csv?v=6')   // sube el número si actualizas el CSV para evitar caché
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status} al cargar assets/cities.csv`);
+      return r.text();
+    })
+    .then(txt => {
+      // Parse CSV muy tolerante (ignora líneas vacías)
+      const rows = txt.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+      if (!rows.length) throw new Error('CSV vacío');
+
+      const headers = rows.shift().split(',').map(h => h.trim());
+      const nameIdx = headers.indexOf('name');
+      const kmIdx   = headers.indexOf('km2');
+      if (nameIdx < 0 || kmIdx < 0) throw new Error('CSV debe tener columnas "name" y "km2"');
+
+      const cities = rows.map(line => {
+        const cols = line.split(',');
+        return { name: (cols[nameIdx] || '').trim(), km2: parseFloat((cols[kmIdx] || '').trim()) };
+      }).filter(c => c.name && Number.isFinite(c.km2));
+
+      const { select } = els();
+      if (!select) {
+        console.warn('No se encontró <select id="city">. ¿Insertaste el comparador en el description del capítulo o en el HTML?');
+        return;
+      }
+
+      // Rellenar <select> plano (sin grupos)
+      cities.forEach(c => {
+        const o = document.createElement('option');
+        o.value = c.name;
+        o.textContent = c.name;
+        select.appendChild(o);
+      });
+
+      // Ocultar el contenedor de círculos inicialmente
+      document.getElementById('circle-compare').style.display = 'none';
+
+      // Evento cambio
+      select.addEventListener('change', () => {
+        const city = cities.find(x => x.name === select.value);
+        const { out, fireCircle, cityCircle, circleLabel } = els();
+        const circleContainer = document.getElementById('circle-compare');
+        
+        if (!city) {
+          // Si no hay ciudad seleccionada, limpiar la visualización
+          if (out) out.textContent = '';
+          if (circleContainer) circleContainer.style.display = 'none';
+          return;
+        }
+        
+        // Mostrar el contenedor de círculos
+        if (circleContainer) circleContainer.style.display = 'block';
+        updateText(city);
+        updateCircles(city.name, city.km2);
+      });
+
+      // Añadir opción vacía al inicio
+      const emptyOption = document.createElement('option');
+      emptyOption.value = '';
+      emptyOption.textContent = 'Selecciona una ciudad';
+      select.insertBefore(emptyOption, select.firstChild);
+      select.value = '';
+    })
+    .catch(err => {
+      console.error(err);
+      const { out } = els();
+      if (out) out.textContent = 'No se pudo cargar la lista de ciudades.';
+    });
+});
+</script>
+<style>
+  /* Estilo de la etiqueta (solo texto) */
+  .map-label{
+    color:rgba(255,255,255,0.85); font-weight:700; font-size:14px; 
+    text-shadow:0 0 6px rgba(0,0,0,.7);
+    background:rgba(0,0,0,.35); padding:2px 6px; border-radius:4px;
+    white-space:nowrap; user-select:none;
+  }
+</style>
+
+<script>
+  // 1) Crear la etiqueta como marcador HTML, pero NO añadirla aún
+  let laroucoMarker = null;
+  function createLaroucoLabel() {
+    const el = document.createElement('div');
+    el.className = 'map-label';
+    el.innerHTML = '<span style="opacity: 0.65">Larouco–Seadur<br><span style="font-size: 0.9em">(2025)</span></span>';
+    el.style.textAlign = 'center';
+    laroucoMarker = new mapboxgl.Marker({ element: el, anchor: 'center' });
+  }
+
+  // 2) Funciones globales para mostrar/ocultar (las llamaremos desde el capítulo)
+  window.showLarouco = function(delayMs = 0){
+    if (!window.map || !map.isStyleLoaded()) return;
+    
+    // Primero asegurar que esté oculto antes de mostrarlo
+    window.hideLarouco();
+    
+    if (!laroucoMarker) createLaroucoLabel();
+    const coords = [-7.08, 42.65];        // [lng, lat] aprox. Larouco–Seadur
+    
+    const doAdd = () => {
+      try {
+        if (laroucoMarker && map.isStyleLoaded()) {
+          laroucoMarker.setLngLat(coords).addTo(map);
+        }
+      } catch(error) {
+        console.warn('Error mostrando marcador Larouco:', error);
+      }
+    };
+    
+    delayMs ? setTimeout(doAdd, delayMs) : doAdd();
+  };
+  
+  window.hideLarouco = function(){
+    if (laroucoMarker) { 
+      try { 
+        laroucoMarker.remove(); 
+      } catch(e) {
+        console.warn('Error ocultando marcador Larouco:', e);
+      }
+    }
+  };
+
+  // Funciones para controlar capas ocultas por defecto
+  window.hideDefaultLayers = function() {
+    if (config.hiddenLayers && window.map) {
+      config.hiddenLayers.forEach(layerId => {
+        try {
+          if (map.getLayer(layerId)) {
+            map.setLayoutProperty(layerId, 'visibility', 'none');
+          }
+        } catch (error) {
+          console.warn(`Error ocultando capa por defecto ${layerId}:`, error);
+        }
+      });
+    }
+    
+    // También asegurar que las capas de fuego estén ocultas cuando se llama esta función
+    const fireLayerIds = ['FIRES_GLOW_POINT_1', 'FIRES_GLOW_POINT_2', 'FIRES_GLOW_POINT_3', 'FIRES_PERIMETER'];
+    fireLayerIds.forEach(layerId => {
+      try {
+        if (map.getLayer(layerId)) {
+          const props = getLayerPaintType(layerId);
+          props.forEach(prop => {
+            map.setPaintProperty(layerId, prop, 0, { duration: 0 });
+          });
+        }
+      } catch (error) {
+        console.warn(`Error ocultando capa de fuego ${layerId}:`, error);
+      }
+    });
+    
+    // Ocultar también el marcador de Larouco
+    window.hideLarouco();
+  };
+
+  // Funciones para mostrar capas específicas cuando las necesites
+  window.showRelieve = function() {
+    if (window.map && map.getLayer('RELIEVE')) {
+      map.setLayoutProperty('RELIEVE', 'visibility', 'visible');
+    }
+  };
+
+  window.showUsourense = function() {
+    if (window.map && map.getLayer('USOURENSE')) {
+      map.setLayoutProperty('USOURENSE', 'visibility', 'visible');
+    }
+  };
+
+  window.showXeourense = function() {
+    if (window.map && map.getLayer('XEOURENSE')) {
+      map.setLayoutProperty('XEOURENSE', 'visibility', 'visible');
+    }
+  };
+
+  // 3) Sistema robusto para manejar transiciones entre capítulos
+  let currentChapterId = null;
+  let activeTimers = new Set();
+  
+  // Función para limpiar todos los timers activos
+  function clearAllTimers() {
+    activeTimers.forEach(timerId => clearTimeout(timerId));
+    activeTimers.clear();
+  }
+  
+  // Función para limpiar completamente el estado del capítulo anterior
+  function forceCleanupChapter(chapterId) {
+    const chapter = config.chapters.find(ch => ch.id === chapterId);
+    if (!chapter) return;
+    
+    // Ejecutar inmediatamente todos los onChapterExit sin delays
+    (chapter.onChapterExit || []).forEach(entry => {
+      if (entry.layer) {
+        // Forzar la opacidad a 0 inmediatamente
+        const props = getLayerPaintType(entry.layer);
+        props.forEach(prop => {
+          map.setPaintProperty(entry.layer, prop, 0, { duration: 0 });
+        });
+      }
+      if (typeof entry.callback === 'function') entry.callback();
+      if (typeof entry.callbackName === 'string' && typeof window[entry.callbackName] === 'function') {
+        window[entry.callbackName]();
+      }
+    });
+    
+    // Limpiar específicamente las capas de fuego y Larouco
+    if (chapterId === 'incendios-2025') {
+      const fireLayerIds = ['FIRES_GLOW_POINT_1', 'FIRES_GLOW_POINT_2', 'FIRES_GLOW_POINT_3', 'FIRES_PERIMETER'];
+      fireLayerIds.forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          const props = getLayerPaintType(layerId);
+          props.forEach(prop => {
+            map.setPaintProperty(layerId, prop, 0, { duration: 0 });
+          });
+        }
+      });
+      window.hideLarouco();
+    }
+  }
+
+  window.enableChapterCallbacks = function(scroller, config, setLayerOpacity){
+    scroller
+      .setup({ step: '.step', offset: 0.6, progress: true })
+      .onStepEnter(function(response){
+        const newChapterId = response.element.id;
+        const chapter = config.chapters.find(ch => ch.id === newChapterId);
+        
+        // Limpiar timers anteriores
+        clearAllTimers();
+        
+        // Si cambiamos de capítulo, forzar limpieza del anterior
+        if (currentChapterId && currentChapterId !== newChapterId) {
+          forceCleanupChapter(currentChapterId);
+        }
+        
+        currentChapterId = newChapterId;
+        response.element.classList.add('active');
+        map[chapter.mapAnimation || 'flyTo'](chapter.location);
+
+        (chapter.onChapterEnter || []).forEach(entry => {
+          if (entry.layer) setLayerOpacity(entry);
+          if (typeof entry.callback === 'function') entry.callback();
+          if (typeof entry.callbackName === 'string' && typeof window[entry.callbackName] === 'function') {
+            if (entry.delay && entry.delay > 0) {
+              const timerId = setTimeout(() => {
+                window[entry.callbackName](entry.delay || 0);
+                activeTimers.delete(timerId);
+              }, entry.delay);
+              activeTimers.add(timerId);
+            } else {
+              window[entry.callbackName](entry.delay || 0);
+            }
+          }
+        });
+      })
+      .onStepExit(function(response){
+        const exitingChapterId = response.element.id;
+        const chapter = config.chapters.find(ch => ch.id === exitingChapterId);
+        response.element.classList.remove('active');
+
+        // Ejecutar callbacks de salida con manejo robusto
+        (chapter.onChapterExit || []).forEach(entry => {
+          if (entry.layer) setLayerOpacity(entry);
+          if (typeof entry.callback === 'function') entry.callback();
+          if (typeof entry.callbackName === 'string' && typeof window[entry.callbackName] === 'function') {
+            if (entry.delay && entry.delay > 0) {
+              const timerId = setTimeout(() => {
+                window[entry.callbackName](entry.delay || 0);
+                activeTimers.delete(timerId);
+              }, entry.delay);
+              activeTimers.add(timerId);
+            } else {
+              window[entry.callbackName](entry.delay || 0);
+            }
+          }
+        });
+      });
+  };
+</script>
+
+
+<body>
+
+  <!-- MAPA DETRÁS -->
+  <div id="map"></div>
+  <div class="map-source fixed">Fuente: forest-fire.emergency.copernicus.eu/</div>
+
+<!-- HEADER -->
+<header id="topbar" role="banner" aria-label="Cabecera">
+  <div id="brand">Miguel Ferreiro García</div>
+  <div id="titleRight">¿Por qué arden nuestros montes?</div>
+</header>
+
+<!-- SELECTOR DE CATEGORÍAS -->
+<div id="category-selector" class="category-selector">
+    <div class="category-tabs" role="tablist" aria-label="Seleccionar categoría de información">
+        <button class="category-tab" role="tab" data-category="geologia" aria-pressed="false" tabindex="0">
+            Geología
+        </button>
+        <button class="category-tab" role="tab" data-category="vegetacion" aria-pressed="false" tabindex="-1">
+            Vegetación
+        </button>
+        <button class="category-tab" role="tab" data-category="clima" aria-pressed="false" tabindex="-1">
+            Clima
+        </button>
+        <button class="category-tab" role="tab" data-category="geografia" aria-pressed="false" tabindex="-1">
+            Geografía
+        </button>
+    </div>
+</div>
+
+<!-- Overlay para imágenes de clima -->
+<div id="climate-images-overlay" class="climate-images-overlay hidden">
+    <div class="climate-images-container">
+        <img id="larouco-clima-img" src="assets/Larouco_Clima.png" alt="Clima en Larouco" class="climate-img-large" />
+        <img id="fases-clima-img" src="assets/Fases_Clima.png" alt="Fases del clima" class="climate-img-small" />
+    </div>
+</div>
+
+  <!-- HERO DE APERTURA -->
+  <section id="hero" aria-label="Portada">
+    <div class="hero-inner">
+      <h1 class="hero-headline">
+        ¿Por qué arden nuestros montes?
+      </h1>
+      <div class="hero-kicker">
+        Un verano extremo, mucha vegetación acumulada y un paisaje que ya no se comporta como antes.
+        Con ayuda de los datos intentaremos entender por qué los incendios siguen golpeando con tanta fuerza al noroeste peninsular.
+      </div>
+    </div>
+    <div class="scroll-hint">Desliza para explorar ↓</div>
+    <div class="photo-credit">FOTO: Pedro Armestre</div>
+</section>
+
+
+  <!-- STORYMAP -->
+  <div id="story"></div>
+
+  <script src="./config.js"></script>
+  <script>
+    // ==== Construcción DOM del storytelling (plantilla Mapbox) ====
+    var layerTypes = {
+      'fill': ['fill-opacity'],
+      'line': ['line-opacity'],
+      'circle': ['circle-opacity','circle-stroke-opacity'],
+      'symbol': ['icon-opacity','text-opacity'],
+      'raster': ['raster-opacity'],
+      'fill-extrusion': ['fill-extrusion-opacity'],
+      'heatmap': ['heatmap-opacity']
+    };
+    var alignments = { left:'lefty', center:'centered', right:'righty', full:'fully' };
+    var story = document.getElementById('story');
+    var features = document.createElement('div'); features.id='features';
+
+    // Un solo capítulo por ahora (el que ya tienes en config)
+    config.chapters.forEach((record, idx) => {
+      var container = document.createElement('div');
+      var chapter = document.createElement('div');
+
+      if (record.title){ var h3 = document.createElement('h3'); h3.textContent = record.title; chapter.appendChild(h3); }
+      if (record.description){ var p = document.createElement('p'); p.innerHTML = record.description; chapter.appendChild(p); }
+
+      container.id = record.id; container.classList.add('step'); if(idx===0) container.classList.add('active');
+      chapter.classList.add(alignments[record.alignment] || 'righty');
+      container.appendChild(chapter); features.appendChild(container);
+    });
+    story.appendChild(features);
+
+    // ==== Mapa ====
+    mapboxgl.accessToken = config.accessToken;
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: config.style,
+      center: config.chapters[0].location.center,
+      zoom: config.chapters[0].location.zoom,
+      bearing: config.chapters[0].location.bearing,
+      pitch: config.chapters[0].location.pitch,
+      interactive: true
+    });
+
+    // ==== Scrollama ====
+    var scroller = scrollama();
+
+    function getLayerPaintType(layer){ return layerTypes[ map.getLayer(layer).type ]; }
+    function setLayerOpacity(entry){
+      var props = getLayerPaintType(entry.layer);
+      props.forEach(function(prop){
+        var opts = {};
+        if(entry.duration){
+          var tprop = prop + '-transition';
+          opts = {duration: entry.duration};
+          map.setPaintProperty(entry.layer, tprop, opts);
+        }
+        map.setPaintProperty(entry.layer, prop, entry.opacity, opts);
+      });
+    }
+
+    map.on('load', function(){
+      // Ocultar capas por defecto al cargar el mapa
+      window.hideDefaultLayers();
+      
+      // Asegurar limpieza completa inicial
+      CategoryController.hideAll();
+      
+      // Arrancamos el scroll cuando el mapa esté listo, usando la función que maneja callbacks
+      window.enableChapterCallbacks(scroller, config, setLayerOpacity);
+    });
+
+    // ==== CONTROLADOR DE CATEGORÍAS ====
+    
+    // Utilidades para manejo de visibilidad
+    const CategoryController = {
+        
+        // Pre-carga de imágenes
+        preloadImages() {
+            const images = ['assets/Fases_Clima.png', 'assets/Larouco_Clima.png'];
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        },
+
+        // Oculta todas las capas y overlays con verificación robusta
+        hideAll() {
+            const layersToHide = ['XEOURENSE', 'USOURENSE', 'RELIEVE'];
+            
+            layersToHide.forEach(layerId => {
+                try {
+                    if (map && map.isStyleLoaded && map.isStyleLoaded() && map.getLayer && map.getLayer(layerId)) {
+                        // Verificar si la capa está visible antes de cambiarla
+                        const visibility = map.getLayoutProperty(layerId, 'visibility');
+                        if (visibility !== 'none') {
+                            map.setLayoutProperty(layerId, 'visibility', 'none');
+                        }
+                    }
+                } catch (error) {
+                    console.warn(`Error ocultando capa ${layerId}:`, error);
+                }
+            });
+
+            // También asegurar que las capas de fuego estén ocultas
+            const fireLayerIds = ['FIRES_GLOW_POINT_1', 'FIRES_GLOW_POINT_2', 'FIRES_GLOW_POINT_3', 'FIRES_PERIMETER'];
+            fireLayerIds.forEach(layerId => {
+                try {
+                    if (map && map.isStyleLoaded && map.isStyleLoaded() && map.getLayer && map.getLayer(layerId)) {
+                        const props = getLayerPaintType(layerId);
+                        props.forEach(prop => {
+                            map.setPaintProperty(layerId, prop, 0, { duration: 0 });
+                        });
+                    }
+                } catch (error) {
+                    console.warn(`Error ocultando capa de fuego ${layerId}:`, error);
+                }
+            });
+
+            // Ocultar overlays
+            const climateOverlay = document.getElementById('climate-images-overlay');
+            if (climateOverlay) {
+                climateOverlay.classList.add('hidden');
+            }
+            
+            // Ocultar marcador de Larouco
+            window.hideLarouco();
+        },
+
+        // Muestra las imágenes de clima
+        showImagesForClima() {
+            const climateOverlay = document.getElementById('climate-images-overlay');
+            if (climateOverlay) {
+                climateOverlay.classList.remove('hidden');
+            }
+        },
+
+        // Versión segura para mostrar capas
+        showLayerSafe(layerId, retries = 3) {
+            try {
+                if (map && map.getLayer && map.getLayer(layerId)) {
+                    map.setLayoutProperty(layerId, 'visibility', 'visible');
+                } else if (retries > 0) {
+                    // Reintentar si la capa no está disponible
+                    setTimeout(() => {
+                        this.showLayerSafe(layerId, retries - 1);
+                    }, 100);
+                }
+            } catch (error) {
+                console.warn(`Error mostrando capa ${layerId}:`, error);
+                if (retries > 0) {
+                    setTimeout(() => {
+                        this.showLayerSafe(layerId, retries - 1);
+                    }, 200);
+                }
+            }
+        },
+
+        // Verifica si el mapa está listo con múltiples checks
+        isMapReady() {
+            return map && 
+                   map.isStyleLoaded && 
+                   map.isStyleLoaded() && 
+                   map.loaded && 
+                   map.loaded();
+        }
+    };
+
+    // Estado actual del selector
+    let currentCategory = null;
+
+    // Contenido de cada categoría (placeholders)
+    const categoryContent = {
+        geologia: {
+    title: 'Geología',
+    text: '<h2>Geología</h2>En esta capa podemos ver la <strong>litología</strong> del sureste de Galicia. La mayor parte del territorio está compuesta por <strong>rocas metamórficas</strong> y <strong>graníticas</strong>, que dan lugar a <strong>suelos ácidos</strong>.<br>Estos suelos favorecen comunidades de plantas más <strong>inflamables</strong>, debido a la composición de sus tejidos.<br><br><strong>Leyenda:</strong><br><span style="color: #e7298a;">■</span> DEPÓSITOS DETRÍTICOS CUATERNARIOS<br><span style="color: #1b9e77;">■</span> DEPÓSITOS DETRÍTICOS TERCIARIOS<br><span style="color: #e6ab02;">■</span> DEPÓSITOS PLIOCUATERNARIOS<br><span style="color: #8cf0b7;">■</span> ROCAS CARBONATADAS<br><span style="color: #51e723;">■</span> ROCAS FILONIANAS<br><span style="color: #d95f02;">■</span> ROCAS GRANÍTICAS<br><span style="color: #7570b3;">■</span> ROCAS METAMÓRFICAS<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fuente: SERGAS</div>'
+},
+
+        vegetacion: {
+    title: 'Vegetación',
+    text: '<h2>Vegetación</h2>Esta capa muestra los <strong>usos del suelo</strong> en el sureste de Galicia. Destaca el claro predominio del <strong>matorral</strong>, muy por encima de otros usos como el <strong>mosaico agroforestal</strong>, las <strong>zonas de cultivo</strong> o los pequeños <strong>bosques</strong> y <strong>plantaciones forestales</strong>. Esta distribución es clave para entender la cantidad y la continuidad del <strong>combustible vegetal</strong>, factores decisivos en la propagación de los incendios.<br><br><strong>Leyenda:</strong><br><span style="color: #a6cee3;">■</span> MOSAICO AGROFORESTAL<br><span style="color: #1f78b4;">■</span> TURBERA<br><span style="color: #b2df8a;">■</span> PLANTACIÓN FORESTAL<br><span style="color: #33a02c;">■</span> BOSQUE<br><span style="color: #fb9a99;">■</span> AGROSISTEMA EXTENSIVO<br><span style="color: #e31a1c;">■</span> SUPERFICIE DE CULTIVO<br><span style="color: #fdbf6f;">■</span> MATORRAL Y ROCAS<br><span style="color: #ff7f00;">■</span> EXTRACTIVO<br><span style="color: #cab2d6;">■</span> VIÑEDO<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fuente: SERGAS</div>'
+},
+
+        clima: {
+    title: 'Clima',
+    text: '<h2>Clima</h2>Este gráfico muestra las <strong>precipitaciones</strong>, la <strong>temperatura</strong> y el <strong>NDVI</strong> (un índice que mide la actividad de la vegetación) registrados en la estación de <strong>Larouco</strong>, en la zona del incendio.<br><br>Se observan dos fases bien definidas:<br><br>🌧 <strong>Estación lluviosa</strong>: abundantes lluvias y temperaturas moderadas reducen el riesgo de incendio mientras favorecen una alta productividad vegetal y la acumulación de biomasa.<br><br>☀️ <strong>Estación seca</strong>: con el aumento prolongado de las temperaturas se aprecia una caída del <strong>NDVI</strong> —la vegetación se seca—, la reserva de combustible es elevada y el riesgo de incendio se dispara.<br><br>Este patrón encaja con <strong>climas mediterráneo lluvioso</strong>, <strong>tropical estacional</strong> o ciertos <strong>climas continentales</strong>, donde el fuego es parte de la dinámica natural del ecosistema.'
+},
+
+        geografia: {
+    title: 'Geografía',
+    text: '<h2>Geografía</h2>En el mapa se aprecia un <strong>relieve montañoso y muy recortado</strong>, con valles profundos y laderas escarpadas que caracterizan buena parte del interior de Galicia.<br><br>La <strong>geografía</strong> influye de forma decisiva en el comportamiento del fuego:<br><br><strong>Relieve abrupto</strong>: las pendientes dificultan el acceso de los equipos de extinción y facilitan que las llamas asciendan con rapidez.<br><br><strong>Vientos irregulares y fuertes</strong>: en zonas montañosas las corrientes de aire cambian de dirección con facilidad, lo que puede desviar bruscamente el avance del incendio.'
+}
+
+    };
+
+    // Función para actualizar la explicación de la capa
+    function updateLayerExplanation(categoryKey) {
+        const descriptionElement = document.getElementById('layer-description');
+        
+        if (descriptionElement) {
+            if (categoryContent && categoryContent[categoryKey]) {
+                descriptionElement.innerHTML = categoryContent[categoryKey].text;
+            } else {
+                descriptionElement.innerHTML = 'Selecciona una categoría para conocer cómo influye en la propagación del fuego.';
+            }
+        }
+    }
+
+    // Controlador principal de categorías
+    function setCategory(category) {
+        // Prevenir múltiples ejecuciones simultáneas
+        if (setCategory.isProcessing) {
+            return;
+        }
+        setCategory.isProcessing = true;
+        
+        try {
+            // Si el mapa no está listo, esperar
+            if (!CategoryController.isMapReady()) {
+                map.once('idle', () => {
+                    setCategory.isProcessing = false;
+                    setCategory(category);
+                });
+                return;
+            }
+
+            // Siempre ocultar todo primero
+            CategoryController.hideAll();
+            
+            // Actualizar inmediatamente estado visual de botones y explicación
+            updateCategoryButtons(category);
+            updateLayerExplanation(category);
+            
+            // Pequeña pausa para asegurar que las capas se oculten antes de mostrar nuevas
+            setTimeout(() => {
+                // Mostrar contenido según categoría con verificación adicional
+                switch(category) {
+                    case 'geologia':
+                        CategoryController.showLayerSafe('XEOURENSE');
+                        break;
+                        
+                    case 'vegetacion':
+                        CategoryController.showLayerSafe('USOURENSE');
+                        break;
+                        
+                    case 'clima':
+                        CategoryController.showImagesForClima();
+                        break;
+                        
+                    case 'geografia':
+                        CategoryController.showLayerSafe('RELIEVE');
+                        break;
+                }
+                
+                currentCategory = category;
+                setCategory.isProcessing = false;
+            }, 50);
+            
+        } catch (error) {
+            console.error('Error en setCategory:', error);
+            setCategory.isProcessing = false;
+        }
+    }
+
+    // Actualiza el estado visual de los botones
+    function updateCategoryButtons(activeCategory) {
+        const buttons = document.querySelectorAll('.category-tab');
+        
+        buttons.forEach((button, index) => {
+            const category = button.getAttribute('data-category');
+            const isActive = category === activeCategory;
+            
+            button.setAttribute('aria-pressed', isActive.toString());
+            button.setAttribute('tabindex', isActive ? '0' : '-1');
+        });
+    }
+
+    // Navegación con teclado entre categorías
+    function navigateCategories(direction) {
+        const buttons = Array.from(document.querySelectorAll('.category-tab'));
+        const currentIndex = buttons.findIndex(btn => btn.getAttribute('aria-pressed') === 'true');
+        const nextIndex = Math.max(0, Math.min(buttons.length - 1, currentIndex + direction));
+        
+        if (nextIndex !== currentIndex) {
+            buttons[nextIndex].focus();
+            const category = buttons[nextIndex].getAttribute('data-category');
+            setCategory(category);
+        }
+    }
+
+    // Inicializar eventos del selector
+    function initCategorySelector() {
+        CategoryController.preloadImages();
+        
+        const buttons = document.querySelectorAll('.category-tab');
+        
+        buttons.forEach(button => {
+            // Click events simplificados - sin debounce problemático
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Solo procesar si no está ya procesando
+                if (!setCategory.isProcessing) {
+                    const category = button.getAttribute('data-category');
+                    setCategory(category);
+                }
+            });
+            
+            // Prevenir doble click
+            button.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+            
+            // Keyboard events
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const category = button.getAttribute('data-category');
+                    setCategory(category);
+                }
+                
+                // Arrow navigation
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    navigateCategories(e.key === 'ArrowRight' ? 1 : -1);
+                }
+            });
+        });
+
+        // El contenedor de clima ya no necesita click fuera para cerrarse
+        // Se cierra automáticamente al cambiar de categoría
+    }
+
+    // Callbacks para integración con capítulos
+    window.showCategorySelector = function() {
+        const selector = document.getElementById('category-selector');
+        if (selector) {
+            selector.style.display = 'flex';
+        }
+    };
+
+    window.hideCategorySelector = function() {
+        // Forzar limpieza completa
+        CategoryController.hideAll();
+        updateCategoryButtons(null);
+        updateLayerExplanation(null);
+        currentCategory = null;
+        
+        // Detener cualquier procesamiento del selector de categorías
+        if (setCategory.isProcessing) {
+            setCategory.isProcessing = false;
+        }
+        
+        const selector = document.getElementById('category-selector');
+        if (selector) {
+            selector.style.display = 'none';
+        }
+        
+        // Asegurar que todas las capas problemáticas estén ocultas
+        ['XEOURENSE', 'USOURENSE', 'RELIEVE', 'FIRES_GLOW_POINT_1', 'FIRES_GLOW_POINT_2', 'FIRES_GLOW_POINT_3', 'FIRES_PERIMETER'].forEach(layerId => {
+            try {
+                if (map && map.isStyleLoaded && map.isStyleLoaded() && map.getLayer && map.getLayer(layerId)) {
+                    if (layerId.startsWith('FIRES_')) {
+                        const props = getLayerPaintType(layerId);
+                        props.forEach(prop => {
+                            map.setPaintProperty(layerId, prop, 0, { duration: 0 });
+                        });
+                    } else {
+                        map.setLayoutProperty(layerId, 'visibility', 'none');
+                    }
+                }
+            } catch (error) {
+                console.warn(`Error en limpieza forzada de capa ${layerId}:`, error);
+            }
+        });
+        
+        // Ocultar marcador
+        window.hideLarouco();
+    };
+
+    // Auto-inicializar cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', initCategorySelector);
+  </script>
+</body>
+</html>
