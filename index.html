@@ -346,6 +346,203 @@
         opacity: 0 !important;
         visibility: hidden !important;
     }
+
+    /* Hero final fuera de Scrollama */
+    #hero-final{
+      position:relative; z-index:9;
+      min-height:100vh; width:100%;
+      display:flex; flex-direction:column;
+      justify-content:flex-start;
+      align-items:center;
+      padding-top:18vh;
+      background-image: url('./assets/Esperanza.webp');
+      background-size:cover; 
+      background-position:center;
+      box-shadow: inset 0 -200px 200px rgba(0,0,0,.35);
+    }
+
+    /* Slider vertical para comparación de imágenes Cimadevila */
+    .vertical-slider-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .vertical-slider-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 4 / 3; /* Ajustar según tus imágenes */
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+        cursor: ns-resize;
+    }
+
+    .vertical-slider-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .vertical-slider-img-bottom {
+        z-index: 1;
+    }
+
+    .vertical-slider-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 2;
+        clip-path: inset(0 0 50% 0);
+        will-change: clip-path;
+        transform: translateZ(0); /* Aceleración GPU */
+    }
+
+    .vertical-slider-overlay.dragging {
+        transition: none; /* Sin transición durante el drag */
+    }
+
+    .vertical-slider-img-top {
+        z-index: 3;
+    }
+
+    .vertical-slider-handle {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        margin: 0;
+        z-index: 10;
+        cursor: ns-resize;
+        transform: translateY(-50%) translateZ(0); /* Aceleración GPU */
+        pointer-events: none;
+        will-change: top;
+    }
+
+    .vertical-slider-handle-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.95);
+        border: 3px solid #F44E11;
+        cursor: grab;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transition: all 0.2s ease;
+        pointer-events: all;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .vertical-slider-handle-icon::before {
+        content: '☰';
+        font-size: 16px;
+        color: #F44E11;
+        line-height: 1;
+    }
+
+    .vertical-slider-handle-icon:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .vertical-slider-handle-icon:active {
+        cursor: grabbing;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+
+    .vertical-slider-labels {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 5;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+        padding: 16px 0;
+    }
+
+    .vertical-slider-label-top,
+    .vertical-slider-label-bottom {
+        background: none;
+        color: white;
+        padding: 0;
+        border-radius: 0;
+        font-size: 48px;
+        font-weight: 700;
+        white-space: nowrap;
+        backdrop-filter: none;
+        text-align: center;
+        align-self: center;
+        text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6),
+                     0 2px 6px rgba(255, 255, 255, 0.4);
+    }
+
+    .vertical-slider-label-top {
+        order: 1;
+    }
+
+    .vertical-slider-label-bottom {
+        order: 2;
+    }
+
+    /* Línea indicadora en el slider */
+    .vertical-slider-handle::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: rgba(244, 78, 17, 0.6);
+        z-index: -1;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+        .vertical-slider-handle-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .vertical-slider-handle-icon::before {
+            font-size: 14px;
+        }
+
+        .vertical-slider-labels {
+            padding: 12px 0;
+        }
+
+        .vertical-slider-label-top,
+        .vertical-slider-label-bottom {
+            font-size: 36px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .vertical-slider-label-top,
+        .vertical-slider-label-bottom {
+            font-size: 28px;
+        }
+    }
   </style>
 </head>
 <script>
@@ -542,6 +739,40 @@ window.addEventListener('load', () => {
     }
   };
 
+  // Ajustar padding inferior del contenedor de capítulos al entrar/salir del hero final
+  window.tightenFinalHero = function(){
+    try{
+      const features = document.getElementById('features');
+      if (features) features.style.paddingBottom = '0';
+    } catch(e) {}
+  };
+  window.resetStoryPadding = function(){
+    try{
+      const features = document.getElementById('features');
+      if (features) features.style.paddingBottom = '10vh';
+    } catch(e) {}
+  };
+
+  // Ocultar/mostrar atribuciones y controles del mapa para el hero final
+  let prevBottomLeftDisplay = null;
+  let prevBottomRightDisplay = null;
+  window.hideMapAttribution = function(){
+    try{
+      const bl = document.querySelector('.mapboxgl-ctrl-bottom-left');
+      const br = document.querySelector('.mapboxgl-ctrl-bottom-right');
+      if (bl){ prevBottomLeftDisplay = bl.style.display; bl.style.display = 'none'; }
+      if (br){ prevBottomRightDisplay = br.style.display; br.style.display = 'none'; }
+    } catch(e) {}
+  };
+  window.showMapAttribution = function(){
+    try{
+      const bl = document.querySelector('.mapboxgl-ctrl-bottom-left');
+      const br = document.querySelector('.mapboxgl-ctrl-bottom-right');
+      if (bl){ bl.style.display = prevBottomLeftDisplay || ''; }
+      if (br){ br.style.display = prevBottomRightDisplay || ''; }
+    } catch(e) {}
+  };
+
   // Funciones para controlar capas ocultas por defecto
   window.hideDefaultLayers = function() {
     if (config.hiddenLayers && window.map) {
@@ -696,6 +927,168 @@ window.addEventListener('load', () => {
           }
         });
       });
+  };
+
+  // Función para inicializar el slider vertical de Cimadevila
+  window.initCimadevilaSlider = function() {
+    const sliderHandle = document.getElementById('cimadevila-slider');
+    const overlay = document.querySelector('.vertical-slider-overlay');
+    const wrapper = document.querySelector('.vertical-slider-wrapper');
+    
+    if (!sliderHandle || !overlay || !wrapper) {
+      // Si el capítulo aún no está en el DOM, esperar un poco
+      setTimeout(() => window.initCimadevilaSlider(), 100);
+      return;
+    }
+
+    let isDragging = false;
+    let currentPercent = 50; // Inicializar en el medio
+    let rafId = null;
+    let cachedRect = null;
+    let needsRectUpdate = true;
+
+    // Función optimizada para actualizar el slider usando requestAnimationFrame
+    function updateSlider(percent, immediate = false) {
+      // Limitar entre 0 y 100
+      const newPercent = Math.max(0, Math.min(100, percent));
+      
+      // Solo actualizar si el valor cambió
+      if (Math.abs(newPercent - currentPercent) < 0.01 && !immediate) return;
+      
+      currentPercent = newPercent;
+      
+      // Función de renderizado optimizada
+      function render() {
+        const clipValue = `${currentPercent}%`;
+        // clip-path: 
+        // - percent=0 (arriba): inset(0% 0 0 0) → muestra todo el overlay (1957) ✓
+        // - percent=100 (abajo): inset(100% 0 0 0) → oculta overlay, muestra fondo (2021) ✓
+        // Cuando arrastras hacia abajo (percent aumenta), el clip-path aumenta, ocultando más overlay y mostrando más fondo (2021) ✓
+        overlay.style.clipPath = `inset(${currentPercent}% 0 0 0)`;
+        sliderHandle.style.top = clipValue;
+        
+        if (wrapper) {
+          wrapper.style.setProperty('--slider-line-top', clipValue);
+        }
+      }
+      
+      // Usar requestAnimationFrame para suavizar las actualizaciones
+      if (immediate) {
+        render();
+      } else {
+        if (rafId !== null) {
+          cancelAnimationFrame(rafId);
+        }
+        rafId = requestAnimationFrame(render);
+      }
+    }
+
+    // Inicializar en el medio (50%)
+    updateSlider(50, true);
+
+    // Caché de las dimensiones del wrapper para evitar getBoundingClientRect() repetido
+    function getWrapperRect() {
+      if (needsRectUpdate || !cachedRect) {
+        cachedRect = wrapper.getBoundingClientRect();
+        needsRectUpdate = false;
+      }
+      return cachedRect;
+    }
+
+    function getPercentFromEvent(e) {
+      const rect = getWrapperRect();
+      let clientY;
+      if (e.touches && e.touches.length > 0) {
+        clientY = e.touches[0].clientY;
+      } else {
+        clientY = e.clientY;
+      }
+      const percent = ((clientY - rect.top) / rect.height) * 100;
+      return Math.max(0, Math.min(100, percent));
+    }
+
+    // Event listeners para el handle y el wrapper completo
+    const handleIcon = sliderHandle.querySelector('.vertical-slider-handle-icon');
+    
+    function startDrag(e) {
+      isDragging = true;
+      needsRectUpdate = true; // Forzar actualización del rect al iniciar
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Prevenir selección de texto mientras se arrastra
+      document.body.style.userSelect = 'none';
+      document.body.style.cursor = 'ns-resize';
+      
+      // Desactivar transiciones durante el drag
+      overlay.classList.add('dragging');
+      
+      // Actualizar inmediatamente al inicio
+      const percent = getPercentFromEvent(e);
+      updateSlider(percent, true);
+    }
+
+    function drag(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      
+      const percent = getPercentFromEvent(e);
+      updateSlider(percent);
+    }
+
+    function endDrag(e) {
+      isDragging = false;
+      needsRectUpdate = true;
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Restaurar selección de texto
+      document.body.style.userSelect = '';
+      document.body.style.cursor = '';
+      
+      // Asegurar renderizado final
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+      updateSlider(currentPercent, true);
+      
+      // Reactivar transiciones después del drag
+      overlay.classList.remove('dragging');
+    }
+
+    // Actualizar rect cuando la ventana cambia de tamaño o se hace scroll
+    function invalidateRect() {
+      needsRectUpdate = true;
+    }
+    
+    window.addEventListener('resize', invalidateRect);
+    window.addEventListener('scroll', invalidateRect, true);
+
+    // Eventos del mouse
+    handleIcon.addEventListener('mousedown', startDrag);
+    wrapper.addEventListener('mousedown', function(e) {
+      if (e.target !== handleIcon && !handleIcon.contains(e.target)) {
+        startDrag(e);
+        // startDrag ya actualiza el slider inmediatamente, no hace falta aquí
+      }
+    });
+    
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', endDrag);
+
+    // Eventos táctiles (touch)
+    handleIcon.addEventListener('touchstart', startDrag, { passive: false });
+    wrapper.addEventListener('touchstart', function(e) {
+      if (e.target !== handleIcon && !handleIcon.contains(e.target)) {
+        startDrag(e);
+        // startDrag ya actualiza el slider inmediatamente, no hace falta aquí
+      }
+    }, { passive: false });
+    
+    document.addEventListener('touchmove', drag, { passive: false });
+    document.addEventListener('touchend', endDrag);
+    document.addEventListener('touchcancel', endDrag);
   };
 </script>
 
@@ -1140,5 +1533,22 @@ window.addEventListener('load', () => {
     // Auto-inicializar cuando el DOM esté listo
     document.addEventListener('DOMContentLoaded', initCategorySelector);
   </script>
+  <!-- HERO FINAL (fuera de Scrollama) -->
+  <section id="hero-final" aria-label="Cierre">
+    <div class="hero-inner">
+      <h1 class="hero-headline">
+        Debemos aprender a convivir con el fuego, pero podemos hacer más…
+      </h1>
+      <div class="hero-kicker" style="text-align:left">
+        Pero me temo que no hay tal varita mágica. Hay que aceptar que el fuego seguirá formando parte de la realidad, cada vez más con el cambio climático.<br><br>
+        La prioridad: reducir su impacto y adaptarnos, más que buscar culpables fáciles.<br><br>
+        La respuesta es compleja, y requiere visión a largo plazo: más gestión del paisaje, más pastoreo adaptativo, prevención activa en la interfaz urbano-forestal, educación para la convivencia con el fuego… y mucho más.<br><br>
+        El fuego es un fenómeno natural: frecuentemente negativo y trágico para personas, bienes y modos de vida, pero a menudo positivo para el rejuvenecimiento y la dinámica de los ecosistemas.<br><br>
+        Entenderlo es clave para aprender a convivir con él.
+      </div>
+    </div>
+    <div class="photo-credit">FOTO: Pedro Armestre</div>
+  </section>
 </body>
 </html>
+
