@@ -4,9 +4,29 @@
   <meta charset="utf-8" />
   <title>Incendios en Galicia — StoryMap</title>
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
   <script src="https://unpkg.com/scrollama"></script>
+  <script>
+    /* Fijar --vh en móvil para evitar “zoom” del hero al hacer scroll.
+       No actualizamos en scroll; solo en carga y cambio de orientación. */
+    (function(){
+      function setVH(){
+        var vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', vh + 'px');
+      }
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        setVH();
+        window.addEventListener('orientationchange', function(){
+          // Ajustar tras cambiar orientación
+          setTimeout(setVH, 200);
+        }, { passive: true });
+      }
+    })();
+  </script>
   <style>
     :root{
       --ink:#ffffff;
@@ -20,18 +40,20 @@
     /* Mapa fijo detrás */
     #map{position:fixed;inset:0;width:100vw;height:100vh}
 
-   /* Topbar estilo “cabecera editorial” */
+/* Topbar estilo “cabecera editorial” */
 #topbar{
   position:fixed; 
   top:0; left:0; right:0; 
   height:56px;
-  background:#041138d4; 
+  background: rgba(4, 17, 56, 0.95);
   backdrop-filter: blur(4px);
   display:flex; 
   align-items:center; 
   z-index:10;
   padding:0 16px; 
   border-bottom:1px solid #041138;
+  transition: transform .28s ease, background-color .2s ease, height .2s ease, padding .2s ease;
+  will-change: transform;
 }
 
 /* Unificamos fuente y peso */
@@ -56,11 +78,61 @@
   display:flex; flex-direction:column;
   justify-content:flex-start;   /* subimos el contenido */
   align-items:center;
-  padding-top:18vh;             /* controlamos la altura inicial */
+  padding-top:25vh;             /* tercio superior - regla de los tercios */
   background-image: url('./assets/Imagen_quemado.webp');
   background-size:cover; 
-  background-position:center;
+  background-position:center center; /* Focal point centrado - zona más contrastada */
+  background-attachment: fixed; /* Efecto parallax en desktop */
   box-shadow: inset 0 -200px 200px rgba(0,0,0,.35);
+}
+
+/* Overlay dinámico con degradado para mejorar contraste del título */
+#hero::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Degradado lineal vertical más intenso arriba, suave abajo */
+  background: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.65) 0%, 
+    rgba(0,0,0,0.55) 15%, 
+    rgba(0,0,0,0.45) 30%, 
+    rgba(0,0,0,0.3) 50%, 
+    rgba(0,0,0,0.15) 70%, 
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none; /* permite interacción con elementos debajo */
+}
+
+/* Degradado radial dinámico en la zona central para destacar el título */
+#hero::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Overlay radial más intenso en el centro donde está el título */
+  background: radial-gradient(
+    ellipse 90% 60% at center 35%, 
+    rgba(0,0,0,0.3) 0%, 
+    rgba(0,0,0,0.2) 40%, 
+    rgba(0,0,0,0.1) 60%, 
+    transparent 80%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Asegurar que el contenido esté por encima del overlay */
+#hero .hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Asegurar que los elementos absolutos también estén por encima del overlay */
+#hero .scroll-hint,
+#hero .photo-credit {
+  position: absolute;
+  z-index: 2;
 }
 
 .hero-inner{
@@ -68,36 +140,236 @@
   margin-top:500;  
 }
 
+/* Animación fade-in cinematográfica */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de la flecha - movimiento suave arriba/abajo */
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+/* Vaivén del bloque de scroll-hint (mantiene translateX(-50%)) */
+@keyframes bounceHint {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(3px); }
+}
+
 .hero-headline{
-  font-size: clamp(32px, 6.4vw, 70px);
-  line-height:1.05; 
-  font-weight:900; 
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
   text-align:center;
   text-shadow: 0 6px 30px rgba(0,0,0,.45);
-  margin:0;  
+  margin:0;
+  letter-spacing: -0.02em; /* ligero ajuste para mejor legibilidad */
+  /* Fade-in cinematográfico al cargar */
+  animation: fadeInUp 0.8s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  /* Título más arriba en móvil */
+  #hero {
+    /* Altura fija basada solo en --vh para evitar cambios en Brave/iOS */
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
+    padding-top: calc(var(--vh, 1vh) * 8);
+    padding-bottom: 0;
+    justify-content: flex-start;
+    align-items: stretch; /* Para que los hijos puedan ocupar todo el ancho */
+    /* Versión recortada vertical - centrada en zona más contrastada */
+    background-position: center 40%; /* Focal point ajustado para móvil */
+    background-size: cover;
+    background-attachment: scroll !important; /* Sin parallax en móvil para mejor rendimiento */
+  }
+  
+  /* Topbar más compacto y auto-ocultable en móvil */
+  #topbar{
+    height: 44px;
+    padding: 0.4rem 1rem;
+    background: rgba(4, 17, 56, 0.95);
+  }
+  .topbar-hide{
+    transform: translateY(-100%);
+  }
+  
+  /* Overlay dinámico ajustado para móvil - más intenso en la zona del título */
+  #hero::before {
+    background: linear-gradient(
+      to bottom, 
+      rgba(0,0,0,0.7) 0%, 
+      rgba(0,0,0,0.6) 20%, 
+      rgba(0,0,0,0.5) 35%, 
+      rgba(0,0,0,0.3) 55%, 
+      rgba(0,0,0,0.15) 75%, 
+      transparent 100%
+    );
+  }
+  
+  /* Overlay radial más concentrado en móvil */
+  #hero::after {
+    background: radial-gradient(
+      ellipse 85% 50% at center 30%, 
+      rgba(0,0,0,0.35) 0%, 
+      rgba(0,0,0,0.25) 35%, 
+      rgba(0,0,0,0.15) 55%, 
+      transparent 75%
+    );
+  }
+  
+  /* Distribución ajustada para contenedor más abajo y más alto */
+  .hero-inner {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Para que el contenedor pueda ser ancho completo */
+    width: 100%;
+    padding: 0; /* Sin padding lateral para que el contenedor sea ancho completo */
+    min-height: auto;
+    justify-content: flex-start;
+  }
+  
+  .hero-headline {
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.2;
+    margin: calc(var(--vh, 1vh) * 24) 0 3rem 0 !important; /* solo título */
+    width: 100%;
+  }
+  
+  /* Texto más abajo, más alto, ancho completo - móvil */
+  .hero-kicker {
+    position: absolute;
+    top: calc(var(--vh, 1vh) * 55); /* Posicionado más abajo */
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important; /* Sin margen */
+    width: 100vw !important; /* Ancho completo de la pantalla */
+    max-width: 100vw !important; /* Sin limitación de ancho */
+    min-width: 100vw !important; /* Forzar ancho mínimo */
+    max-height: none; /* Sin limitación de altura, que quepa todo */
+    height: auto; /* Altura automática para que quepa todo */
+    border-radius: 0; /* Sin bordes redondeados */
+    padding: 1rem 0.5rem !important; /* Padding lateral mínimo */
+    font-size: clamp(1.35rem, 4.5vw, 1.75rem); /* Letra aún más grande */
+    line-height: 1.5; /* Interlineado ajustado */
+    overflow-y: visible; /* Sin scroll, que se vea todo */
+    z-index: 3; /* Por encima del overlay */
+    box-sizing: border-box; /* Incluir padding en el ancho */
+  }
+  
+  /* Párrafo único centrado en móvil */
+  .hero-kicker {
+    text-align: center; /* Centrado también en móvil */
+  }
+  
+  .hero-kicker p {
+    margin: 0; /* Sin margen */
+  }
+  
+  /* Salto de línea después del punto en móvil */
+  .hero-kicker .mobile-break::before {
+    content: '\A'; /* Salto de línea */
+    white-space: pre; /* Preservar espacios y saltos */
+  }
+  
+  /* Sin margen extra: la grid ya crea la pausa visual */
+  .hero-inner .hero-headline { margin-bottom: 0; }
+  
+  /* Asegurar que la fuente sea visible - sin container, más en la esquina */
+  .photo-credit {
+    font-size: 10px;
+    bottom: 8px;
+    right: 8px;
+    z-index: 12;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    backdrop-filter: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+  }
+  
+  .scroll-hint {
+    bottom: 50px;
+    font-size: 12px;
+  }
 }
 
 .hero-kicker{
-  width:min(780px, 92vw);
+  width:min(900px, 95vw); /* Más ancho para ser alargado */
+  max-width: 60ch; /* Más estrecho - estilo Saving the Nile */
   margin:40px auto 0 auto;  
-  background: var(--panel);
+  background: rgba(4, 17, 56, 0.95); /* Más oscuro para compensar transparencia */
   color:#fff; 
-  border-radius:10px;
-  font-size: 20px;
-  padding:18px 22px; 
-  line-height:1.45;
+  border-radius: 0; /* Sin bordes redondeados */
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  padding: 0.8rem 0.9rem; /* Padding lateral mínimo para que el texto ocupe máximo espacio */
+  line-height: 1.4; /* Letra más pegada - menos interlineado */
   box-shadow: 0 8px 26px rgba(0,0,0,.35);
-  text-align:center;
+  text-align:center; /* Centrado */
+  /* Fade-in cinematográfico al cargar - con delay para secuencia */
+  animation: fadeInUp 0.8s ease-out 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Párrafo único centrado */
+.hero-kicker p {
+  margin: 0; /* Sin margen ya que es un solo párrafo */
+}
+
+/* Espaciado entre título y primer párrafo - pausa visual */
+.hero-inner .hero-headline {
+  margin-bottom: 2.5rem; /* Pausa visual después del título */
 }
 
 
 
+    /* Animación fade-in específica para scroll-hint con opacidad 70% */
+    @keyframes fadeInUpHint {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+      }
+      to {
+        opacity: 0.7;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+    
     /* Indicador de scroll */
     .scroll-hint{
       position:absolute; left:50%; transform:translateX(-50%);
-      bottom:28px; font-size:13px; opacity:.9;
+      bottom:28px; font-size:13px;
       background:rgba(0,0,0,.5); padding:6px 10px; border-radius:16px;
-      border:1px solid rgba(255,255,255,.08)
+      border:1px solid rgba(255,255,255,.08);
+      /* Fade-in y vaivén suave del bloque completo */
+      animation: fadeInUpHint 0.8s ease-out 0.4s forwards, bounceHint 1.5s ease-in-out 1.2s infinite;
+      opacity: 0;
+    }
+    
+    /* Animación de la flecha - movimiento suave arriba/abajo */
+    .scroll-hint::after {
+      content: ' ↓';
+      display: inline-block;
     }
     /* Créditos de foto y fuentes */
     .photo-credit, .map-source {
@@ -111,6 +383,8 @@
         position: absolute;
         right: 14px;
         z-index: 11;
+        color: rgba(255, 255, 255, 0.7);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
     }
     .map-source {
         position: absolute;
@@ -561,7 +835,183 @@ window.addEventListener('load', () => {
       fireCircle: document.getElementById('fire-circle'),
       cityCircle: document.getElementById('city-circle'),
       circleLabel: document.getElementById('circle-label'),
+      mosaicContainer: document.getElementById('mosaic-compare'),
+      circleContainer: document.getElementById('circle-compare'),
+      mosaicWrap: document.querySelector('#mosaic-compare .mosaic-wrap'),
+      mosaicGrid: document.getElementById('mosaic-grid'),
+      mosaicRing: document.getElementById('mosaic-ring'),
+      mosaicLabel: document.getElementById('mosaic-label'),
     };
+  }
+
+  // ——— Parámetros del mosaico ———
+  const MOSAIC_N = 12;           // tamaño de la cuadrícula NxN (menos celdas → iconos más grandes)
+  const MOSAIC_GAP = 1;          // px de separación entre iconos (ligeramente menor)
+  const CITY_COLOR = '#2E7DF5';  // azul para la ciudad
+  const FIRE_ICON = './assets/icons_city/fire-1-svgrepo-com.svg';
+  const BUILDING_ICONS = [
+    './assets/icons_city/building-svgrepo-com.svg',
+    './assets/icons_city/apartment-svgrepo-com.svg',
+    './assets/icons_city/city-buildings-svgrepo-com.svg',
+    './assets/icons_city/company-svgrepo-com.svg',
+    './assets/icons_city/embassy-svgrepo-com.svg',
+    './assets/icons_city/residential-svgrepo-com.svg',
+    './assets/icons_city/skyscrapers-svgrepo-com.svg',
+    './assets/icons_city/city-svgrepo-com.svg',
+    './assets/icons_city/house-svgrepo-com.svg',
+    './assets/icons_city/parliament-svgrepo-com.svg'
+  ];
+
+  function randomChoice(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+  // Aplica un icono SVG como máscara al tile
+  function setTileMask(div, url) {
+    div.style.webkitMaskImage = `url('${url}')`;
+    div.style.maskImage = `url('${url}')`;
+    div.style.webkitMaskRepeat = 'no-repeat';
+    div.style.maskRepeat = 'no-repeat';
+    div.style.webkitMaskPosition = 'center';
+    div.style.maskPosition = 'center';
+    div.style.webkitMaskSize = 'contain';
+    div.style.maskSize = 'contain';
+  }
+
+  // Construye el mosaico si aún no existe
+  function buildMosaic(n = MOSAIC_N) {
+    const { mosaicGrid, mosaicWrap } = els();
+    if (!mosaicGrid || !mosaicWrap) return;
+    if (mosaicGrid.childElementCount > 0) return; // ya creado
+
+    mosaicGrid.style.setProperty('--n', n.toString());
+    mosaicGrid.style.setProperty('--gap', `${MOSAIC_GAP}px`);
+
+    const frag = document.createDocumentFragment();
+    for (let y = 0; y < n; y++) {
+      for (let x = 0; x < n; x++) {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        tile.dataset.x = String(x);
+        tile.dataset.y = String(y);
+        tile.style.backgroundColor = CITY_COLOR;
+        setTileMask(tile, randomChoice(BUILDING_ICONS));
+        frag.appendChild(tile);
+      }
+    }
+    mosaicGrid.appendChild(frag);
+  }
+
+  // Crea/actualiza el anillo de llamas que rodea la ciudad cuando el fuego > 100%
+  function renderRing(times) {
+    const { mosaicRing, mosaicWrap } = els();
+    if (!mosaicRing || !mosaicWrap) return;
+    mosaicRing.innerHTML = '';
+
+    if (!(times > 1)) return; // sin anillo si no excede
+
+    const k = clamp(Math.round(8 + 8 * Math.log2(times)), 12, 24);
+    const rect = mosaicWrap.getBoundingClientRect();
+    const r = Math.min(rect.width, rect.height) * 0.55; // radio hacia fuera
+
+    for (let i = 0; i < k; i++) {
+      const flame = document.createElement('div');
+      flame.className = 'flame';
+      const angle = (i / k) * 360;
+      flame.style.transform = `rotate(${angle}deg) translate(${r}px) rotate(${-angle}deg)`;
+      mosaicRing.appendChild(flame);
+    }
+  }
+
+  // Anillos concéntricos “rodeando la ciudad”:
+  // 1) Columna derecha (arriba→abajo), 2) fila inferior (derecha→izquierda),
+  // 3) columna izquierda (abajo→arriba), 4) fila superior (izquierda→derecha),
+  // y así hacia dentro. Devuelve array de anillos (cada anillo es array de [x,y]).
+  function ringOrders(n){
+    const rings = [];
+    let top = 0, bottom = n - 1, left = 0, right = n - 1;
+    while (left <= right && top <= bottom) {
+      const ring = [];
+      for (let y = top; y <= bottom; y++) ring.push([right, y]);          // derecha
+      for (let x = right - 1; x >= left; x--) ring.push([x, bottom]);     // abajo
+      for (let y = bottom - 1; y >= top; y--) ring.push([left, y]);       // izquierda
+      for (let x = left + 1; x <= right - 1; x++) ring.push([x, top]);    // arriba
+      rings.push(ring);
+      left++; right--; top++; bottom--;
+    }
+    return rings;
+  }
+
+  // Actualiza el mosaico con patrón de quemado de izquierda a derecha
+  function updateMosaic(city) {
+    const { mosaicLabel, mosaicContainer, circleContainer, mosaicRing } = els();
+    buildMosaic();
+
+    const n = MOSAIC_N;
+    const tiles = Array.from(document.querySelectorAll('#mosaic-grid .tile'));
+    // Reset: ciudad azul con edificios, sin fuego ni quemado
+    tiles.forEach(t => {
+      t.classList.remove('burned', 'flame');
+      t.style.backgroundColor = CITY_COLOR;
+      setTileMask(t, randomChoice(BUILDING_ICONS));
+      t.style.transform = ''; // asegurar que no haya rotación previa
+    });
+
+    const ratio = FIRE_KM2 / city.km2;
+    const total = n * n;
+    const burnCount = Math.min(total, Math.round(total * Math.min(1, ratio)));
+
+    // Llenado por columnas (izq→dcha) con borde ligeramente irregular
+    const fullCols = Math.floor(burnCount / n);
+    const remainder = burnCount % n;
+
+    // Quemar columnas completas
+    tiles.forEach(tile => {
+      const x = parseInt(tile.dataset.x, 10);
+      const y = parseInt(tile.dataset.y, 10);
+      if (x < fullCols) {
+        tile.classList.add('burned');
+      } else if (x === fullCols && remainder > 0) {
+        // Jitter vertical de ±1 fila en la frontera
+        const jitter = Math.round((Math.random() * 2) - 1); // -1,0,1
+        const threshold = clamp(remainder + jitter, 0, n);
+        if (y < threshold) tile.classList.add('burned');
+      }
+    });
+
+    // Limpiar anillo externo (ya no se usa este modo)
+    if (mosaicRing) mosaicRing.innerHTML = '';
+
+    // Si el incendio es mayor, añadir iconos de fuego rodeando la ciudad (por anillos)
+    if (ratio > 1) {
+      // Toda la ciudad está quemada
+      tiles.forEach(t => t.classList.add('burned'));
+
+      // Cantidad de celdas “extra” que representan el exceso sobre la ciudad
+      let remaining = Math.max(0, Math.round(total * (ratio - 1)));
+      if (remaining > 0) {
+        const rings = ringOrders(n);
+        const MAX_RINGS = 2; // limitar para que no se convierta “todo en fuego” en casos extremos
+        for (let r = 0; r < rings.length && remaining > 0 && r < MAX_RINGS; r++) {
+          const ring = rings[r];
+          for (let i = 0; i < ring.length && remaining > 0; i++) {
+            const [x, y] = ring[i];
+            const tile = tiles.find(t => parseInt(t.dataset.x,10) === x && parseInt(t.dataset.y,10) === y);
+            if (!tile) continue;
+            tile.classList.add('flame');
+            setTileMask(tile, FIRE_ICON);
+            remaining--;
+          }
+        }
+      }
+    }
+
+    if (mosaicLabel) {
+      mosaicLabel.innerHTML = `<span style="color: #F44E11">Incendio (${fmt(FIRE_KM2)} km²)</span> vs <span style="color: ${CITY_COLOR}">${city.name} (${fmt(city.km2)} km²)</span>${ratio>1 ? ` — <span style="opacity:.9">×${fmt(ratio)}</span>` : ''}`;
+    }
+
+    // Mostrar mosaico, ocultar círculos (fallback sigue disponible)
+    if (mosaicContainer) mosaicContainer.style.display = 'block';
+    if (circleContainer) circleContainer.style.display = 'none';
   }
 
   // ——— Dibuja/actualiza círculos concéntricos ———
@@ -651,24 +1101,30 @@ window.addEventListener('load', () => {
 
       // Ocultar el contenedor de círculos inicialmente
       document.getElementById('circle-compare').style.display = 'none';
+      // Ocultar también el mosaico inicialmente
+      const mc = document.getElementById('mosaic-compare');
+      if (mc) mc.style.display = 'none';
 
       // Evento cambio
       select.addEventListener('change', () => {
         const city = cities.find(x => x.name === select.value);
-        const { out, fireCircle, cityCircle, circleLabel } = els();
+        const { out } = els();
         const circleContainer = document.getElementById('circle-compare');
+        const mosaicContainer = document.getElementById('mosaic-compare');
         
         if (!city) {
           // Si no hay ciudad seleccionada, limpiar la visualización
           if (out) out.textContent = '';
           if (circleContainer) circleContainer.style.display = 'none';
+          if (mosaicContainer) mosaicContainer.style.display = 'none';
           return;
         }
         
-        // Mostrar el contenedor de círculos
-        if (circleContainer) circleContainer.style.display = 'block';
+        // Mostrar el contenedor del mosaico (y ocultar círculos)
+        if (mosaicContainer) mosaicContainer.style.display = 'block';
+        if (circleContainer) circleContainer.style.display = 'none';
         updateText(city);
-        updateCircles(city.name, city.km2);
+        updateMosaic(city);
       });
 
       // Añadir opción vacía al inicio
@@ -692,6 +1148,65 @@ window.addEventListener('load', () => {
     text-shadow:0 0 6px rgba(0,0,0,.7);
     background:rgba(0,0,0,.35); padding:2px 6px; border-radius:4px;
     white-space:nowrap; user-select:none;
+  }
+
+  /* ====== Mosaico comparador (ciudad vs incendio) ====== */
+  #mosaic-compare .mosaic-wrap{
+    position: relative;
+    display: inline-block;
+    width: 320px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+  #mosaic-compare .mosaic-grid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--n, 14), 1fr);
+    grid-template-rows: repeat(var(--n, 14), 1fr);
+    gap: var(--gap, 2px);
+  }
+  #mosaic-compare .tile{
+    background-color: #2E7DF5; /* color ciudad */
+    transition: background-color .25s ease, filter .25s ease, transform .2s ease;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+  }
+  #mosaic-compare .tile.burned{
+    background: linear-gradient(to top, #000 0%, #FF3B00 50%, #FF6A00 100%);
+    filter: drop-shadow(0 0 4px rgba(255,59,0,0.35));
+  }
+  #mosaic-compare .tile.flame{
+    background: linear-gradient(to top, #000 0%, #FF3B00 50%, #FF6A00 100%);
+    filter: drop-shadow(0 0 5px rgba(255,59,0,0.55));
+  }
+  #mosaic-compare .mosaic-ring{
+    position: absolute;
+    inset: -8%;
+    pointer-events: none;
+  }
+  #mosaic-compare .mosaic-ring .flame{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    background: linear-gradient(145deg, #FF6A00, #FF3B00);
+    -webkit-mask-image: url('./assets/icons_city/fire-1-svgrepo-com.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+    mask-image: url('./assets/icons_city/fire-1-svgrepo-com.svg');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    filter: drop-shadow(0 0 4px rgba(255,59,0,0.45));
+    opacity: .95;
   }
 </style>
 
@@ -1138,11 +1653,10 @@ window.addEventListener('load', () => {
         ¿Por qué arden nuestros montes?
       </h1>
       <div class="hero-kicker">
-        Un verano extremo, mucha vegetación acumulada y un paisaje que ya no se comporta como antes.
-        Con ayuda de los datos intentaremos entender por qué los incendios siguen golpeando con tanta fuerza al noroeste peninsular.
+        <p>Un verano extremo, mucha vegetación acumulada y un paisaje que ya no se comporta como antes.<span class="mobile-break"></span> Con ayuda de los datos intentaremos entender por qué los incendios siguen golpeando con tanta fuerza al noroeste peninsular.</p>
       </div>
     </div>
-    <div class="scroll-hint">Desliza para explorar ↓</div>
+    <div class="scroll-hint">Desliza para explorar</div>
     <div class="photo-credit">FOTO: Pedro Armestre</div>
 </section>
 
@@ -1549,6 +2063,33 @@ window.addEventListener('load', () => {
     </div>
     <div class="photo-credit">FOTO: Pedro Armestre</div>
   </section>
+  <script>
+    (function () {
+      var topbar = document.getElementById('topbar');
+      if (!topbar) return;
+      var lastY = window.scrollY || 0;
+      var hidden = false;
+      var minDelta = 6;
+      window.addEventListener('scroll', function () {
+        var y = window.scrollY || 0;
+        var delta = y - lastY;
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          if (delta > minDelta && y > 10 && !hidden) {
+            topbar.classList.add('topbar-hide');
+            hidden = true;
+          } else if (delta < -minDelta || y <= 10) {
+            topbar.classList.remove('topbar-hide');
+            hidden = false;
+          }
+        } else {
+          // Visible siempre en desktop
+          topbar.classList.remove('topbar-hide');
+          hidden = false;
+        }
+        lastY = y;
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
 

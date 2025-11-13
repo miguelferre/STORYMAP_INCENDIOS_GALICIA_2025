@@ -86,6 +86,15 @@ var config = {
                 <p id="circle-label" style="margin-top:8px; font-size:13px; opacity:.9"></p>
                 <small style="opacity:.7">La escala de los radios es proporcional a √(área), para que las áreas sean comparables visualmente.</small>
                 </div>
+
+                <!-- Mosaico de iconos (nueva visualización) -->
+                <div id="mosaic-compare" style="text-align:center; margin-top:12px; display:none;">
+                  <div class="mosaic-wrap" role="img" aria-label="Comparación visual de ciudad (azul) frente a incendio (quemado)">
+                    <div id="mosaic-grid" class="mosaic-grid" aria-hidden="true"></div>
+                    <div id="mosaic-ring" class="mosaic-ring" aria-hidden="true"></div>
+                  </div>
+                  <p id="mosaic-label" style="margin-top:8px; font-size:13px; opacity:.9"></p>
+                </div>
             </div>
 `,
 
