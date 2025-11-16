@@ -405,6 +405,13 @@
     .step{padding-bottom:45vh; opacity:.35}
     .step.active{opacity:.98}
     
+    /* En móvil: más espacio para ver el mapa y ocultar tarjetas hasta activarse */
+    @media (max-width: 768px){
+      #features{ padding-top:68vh; padding-bottom:10vh }
+      .step{ opacity:0 }
+      .step.active{ opacity:.98 }
+    }
+    
     /* Contenedor base del capítulo sin fondo específico */
     .step > div.lefty, .step > div.righty, .step > div.centered, .step > div.fully {
       border-radius:12px; padding:18px 20px;
@@ -1386,8 +1393,10 @@ window.addEventListener('load', () => {
   }
 
   window.enableChapterCallbacks = function(scroller, config, setLayerOpacity){
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const offsetVal = isMobile ? 0.82 : 0.6; // en móvil activamos más tarde
     scroller
-      .setup({ step: '.step', offset: 0.6, progress: true })
+      .setup({ step: '.step', offset: offsetVal, progress: true })
       .onStepEnter(function(response){
         const newChapterId = response.element.id;
         const chapter = config.chapters.find(ch => ch.id === newChapterId);
@@ -1696,6 +1705,17 @@ window.addEventListener('load', () => {
 
     // ==== Mapa ====
     mapboxgl.accessToken = config.accessToken;
+    // En móvil, alejamos un poco el mapa en el primer capítulo para abarcar más
+    (function(){
+      try{
+        var isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobile && config && config.chapters && config.chapters[0] && config.chapters[0].location) {
+          config.chapters[0].location.zoom = 6.2; // vista más amplia en móvil
+          // Desplazar el centro hacia el interior para que se vea menos mar
+          config.chapters[0].location.center = [-7.60, 43.45];
+        }
+      }catch(e){}
+    })();
     var map = new mapboxgl.Map({
       container: 'map',
       style: config.style,
@@ -1722,6 +1742,36 @@ window.addEventListener('load', () => {
         map.setPaintProperty(entry.layer, prop, entry.opacity, opts);
       });
     }
+    
+    // Activación temprana de los incendios en móvil: cuando la sección del mapa se empieza a ver
+    function setupEarlyFiresRevealForMobile(){
+      try{
+        var isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (!isMobile) return;
+        var storyEl = document.getElementById('story');
+        if (!storyEl) return;
+        var revealed = false;
+        var observer = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if (!revealed && entry.isIntersecting){
+              revealed = true;
+              try{
+                // Oculta capas por defecto y activa las de incendios del primer capítulo
+                window.hideDefaultLayers();
+                var first = (config && config.chapters && config.chapters[0]) ? config.chapters[0] : null;
+                if (first && first.onChapterEnter){
+                  first.onChapterEnter.forEach(function(ent){
+                    if (ent.layer){ setLayerOpacity(ent); }
+                  });
+                }
+              }catch(e){}
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.01 });
+        observer.observe(storyEl);
+      }catch(e){}
+    }
 
     map.on('load', function(){
       // Ocultar capas por defecto al cargar el mapa
@@ -1732,6 +1782,9 @@ window.addEventListener('load', () => {
       
       // Arrancamos el scroll cuando el mapa esté listo, usando la función que maneja callbacks
       window.enableChapterCallbacks(scroller, config, setLayerOpacity);
+      
+      // Móvil: revelar incendios al empezar a verse la sección del mapa
+      setupEarlyFiresRevealForMobile();
     });
 
     // ==== CONTROLADOR DE CATEGORÍAS ====
