@@ -452,6 +452,21 @@
       position: relative !important;
     }
 
+    /* Ajustes específicos para el capítulo “Un verano para reaccionar” en móvil */
+    @media (max-width: 768px){
+      #incendios-2025 {
+        /* Fondo de tarjetas más opaco solo en este capítulo */
+        --glass-bg: rgba(25,25,25,0.9);
+        --glass-brd: rgba(255,255,255,0.18);
+      }
+      #incendios-2025 .lefty{
+        /* Un poco más ancho que el valor móvil por defecto (90vw) */
+        width: 96vw;
+        margin: 0 auto;
+        font-size: 16px; /* cuerpo más grande en móvil */
+      }
+    }
+
     @media (max-width: 1200px){  /* Ajustado el breakpoint para pantallas más grandes */
       .lefty, .righty { 
         width: 90vw; 
@@ -466,6 +481,59 @@
       #spacer{display:none}
       #titleCenter{text-align:left}
       .hero-headline{margin-top:12vh}
+    }
+    /* Capítulo 2: intercalar explicaciones en móvil */
+    .mobile-expl{display:none;}
+    .only-mobile{display:none;}
+    .only-desktop{display:block;}
+    /* Capítulo 2 (solo escritorio): compactar párrafos */
+    #tendencia-aumento p{
+      margin: 1px 0;
+      line-height: 1.32;
+      padding: 4px 10px;
+    }
+    /* Capítulo 2 (solo escritorio): igualar altura del bloque de texto al primer gráfico */
+    #tendencia-aumento .desktop-expl{
+      height: 600px;
+      display: block;
+    }
+    @media (max-width: 768px){
+      .chapter2-flex{display:block !important;}
+      .desktop-expl{display:none !important;}
+      .mobile-expl{display:block;}
+      .chapter2-flex iframe{width:100%;}
+      .only-desktop{display:none !important;}
+      .only-mobile{display:block !important;}
+    }
+    /* Capítulo 2: reducir altura de iframes en móvil (-15%) */
+    @media (max-width: 768px){
+      #tendencia-aumento iframe{
+        height: 510px !important;
+      }
+    }
+    /* Reducir espacio entre párrafos en móvil */
+    @media (max-width: 768px){
+      .step p{
+        margin: 4px 0 !important;
+        line-height: 1.45 !important;
+      }
+    }
+    /* Capítulo 2 (solo móvil): aún más compacto */
+    @media (max-width: 768px){
+      #tendencia-aumento p{
+        margin: 1px 0 !important;
+        line-height: 1.3 !important;
+      }
+    }
+    /* Ancho global de contenedores en móvil */
+    @media (max-width: 768px){
+      .step > div.lefty,
+      .step > div.righty,
+      .step > div.centered,
+      .step > div.fully {
+        width: 96vw;
+        margin: 0 auto;
+      }
     }
     /* Selector de categorías */
     .category-selector {
@@ -1072,6 +1140,11 @@ window.addEventListener('load', () => {
   }
 
   // ——— Cargar CSV y montar la UI ———
+  // Si no existe el selector de ciudad, no cargar el CSV ni montar nada
+  const __selectExists = !!els().select;
+  if (!__selectExists) {
+    return;
+  }
   fetch('./assets/cities.csv?v=6')   // sube el número si actualizas el CSV para evitar caché
     .then(r => {
       if (!r.ok) throw new Error(`HTTP ${r.status} al cargar assets/cities.csv`);
@@ -1713,6 +1786,11 @@ window.addEventListener('load', () => {
           config.chapters[0].location.zoom = 6.2; // vista más amplia en móvil
           // Desplazar el centro hacia el interior para que se vea menos mar
           config.chapters[0].location.center = [-7.60, 43.45];
+          // Igualar el zoom y centro del capítulo 2 al del primero en móvil para evitar saltos
+          if (config.chapters[1] && config.chapters[1].location) {
+            config.chapters[1].location.zoom = config.chapters[0].location.zoom;
+            config.chapters[1].location.center = config.chapters[0].location.center;
+          }
         }
       }catch(e){}
     })();

@@ -57,45 +57,16 @@ var config = {
             Nunca antes se había registrado una <strong>superficie tan extensa arrasada</strong> por las llamas.<br>
             El incendio de <strong>Larouco–Seadur</strong>, con más de <strong>31.700 hectáreas</strong> (317 km²), ha sido el <strong>mayor jamás visto</strong> en nuestra comunidad.<br><br>
 
-            Para poder entender su magnitud primero conviene explicar la diferencia entre un <strong>incendio forestal</strong> y un <strong>gran incendio forestal (GIF)</strong>: el primero puede afectar a pocas hectáreas, el segundo es aquel que supera las <strong>500 hectáreas</strong>. Larouco multiplicó por más de <strong>60</strong> ese umbral.<br><br>
+            Para poder entender su magnitud primero conviene explicar la diferencia entre un <strong>incendio forestal</strong> y un <strong>gran incendio forestal (GIF)</strong>: el primero puede afectar a pocas hectáreas, el segundo es aquel que supera las <strong>500 hectáreas</strong>. El indendio deLarouco multiplicó por más de <strong>60</strong> ese umbral.<br><br>
 
             Pero los números pueden confundirnos y abstraernos del problema: ¿cómo dimensionamos algo tan enorme? Una forma es comparar el incendio con un entorno que conozcámos, como<strong> nuestras ciudades</strong>.<br>
-            <br>Por eso, aquí te invitamos a <strong>elegir tu ciudad</strong> y ver cuántas veces cabría dentro de este fuego histórico.
+            <br>Para dimensionar su magnitud, el siguiente gráfico compara el área quemada con la superficie municipal de varias ciudades conocidas.
 
-            <div id="compare" style="margin-top:12px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.08);padding:12px 14px;border-radius:10px;">
-                <label for="city" style="display:block;font-size:14px;margin-bottom:6px;">
-                Compara el mayor incendio con tu ciudad
-                </label>
-
-                <!-- Lista (sin escribir) -->
-                <select id="city" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:#0f1733;color:#fff;">
-                <option value="">-- Selecciona una ciudad --</option>
-                </select>
-
-                <!-- Resultado de texto -->
-                <p id="result" style="font-size:14px;margin:10px 0 0 0;opacity:.9"></p>
-
-                <!-- Diagrama de círculos concéntricos -->
-                <div id="circle-compare" style="text-align:center; margin-top:12px;">
-                <svg id="compare-svg" width="300" height="300" viewBox="0 0 300 300" style="max-width:100%;">
-                    <!-- Círculos grandes al fondo -->
-                    <circle id="large-circle" cx="150" cy="150" r="0" fill="rgba(73, 123, 179, 1)" fill-opacity="1" stroke="rgba(15, 59, 109, 1)" stroke-opacity="0.9" stroke-width="2"/>
-                    <!-- Círculos pequeños encima -->
-                    <circle id="small-circle" cx="150" cy="150" r="0" fill="#F44E11" fill-opacity="1" stroke="rgba(255, 179, 0, 1)" stroke-opacity="1" stroke-width="2"/>
-                </svg>
-                <p id="circle-label" style="margin-top:8px; font-size:13px; opacity:.9"></p>
-                <small style="opacity:.7">La escala de los radios es proporcional a √(área), para que las áreas sean comparables visualmente.</small>
-                </div>
-
-                <!-- Mosaico de iconos (nueva visualización) -->
-                <div id="mosaic-compare" style="text-align:center; margin-top:12px; display:none;">
-                  <div class="mosaic-wrap" role="img" aria-label="Comparación visual de ciudad (azul) frente a incendio (quemado)">
-                    <div id="mosaic-grid" class="mosaic-grid" aria-hidden="true"></div>
-                    <div id="mosaic-ring" class="mosaic-ring" aria-hidden="true"></div>
-                  </div>
-                  <p id="mosaic-label" style="margin-top:8px; font-size:13px; opacity:.9"></p>
-                </div>
-            </div>
+            <iframe src="https://flo.uri.sh/visualisation/26265364/embed"
+                    frameborder="0"
+                    scrolling="no"
+                    style="width: 100%; height: 560px; margin-top: 12px;">
+            </iframe>
 `,
 
             
@@ -134,39 +105,72 @@ var config = {
             title: '',
             description: `
             <h2>Una tendencia en <strong>aumento</strong></h2>
-                <div style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
+                <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <iframe src="https://flo.uri.sh/visualisation/25013636/embed" 
                                 frameborder="0" 
                                 scrolling="no" 
                                 style="width: 100%; height: 600px; margin-bottom: 30px;">
                         </iframe>
+                        <!-- Explicación 1 (visible en móvil) -->
+                        <div class="mobile-expl">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+  El gráfico muestra cómo han evolucionado los <strong>incendios forestales</strong> en Galicia desde 2016.<br><br>
+  Es interactivo: permite explorar cada año y observar cómo cambian las cifras de incendios y de <strong>superficie quemada</strong>.<br><br>
+  A lo largo del periodo se repite un patrón claro: años de <strong>relativa calma</strong> seguidos de otros mucho más <strong>severos</strong>.<br><br>
+  <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> marcan picos importantes, pero <strong>2025</strong> supera todos los registros.<br><br>
+  Aunque el número de incendios fluctúa, las <strong>hectáreas afectadas</strong> tienden a aumentar con cada repunte.<br><br>
+  En conjunto, la serie refleja una <strong>tendencia ascendente</strong> y un agravamiento progresivo de los <strong>grandes incendios</strong>.
+                          </p>
+                        </div>
                         
-                        <iframe src="https://flo.uri.sh/visualisation/25015393/embed" 
-                                frameborder="0" 
-                                scrolling="no" 
-                                style="width: 100%; height: 600px;">
-                        </iframe>
+                        <!-- Versión escritorio del mapa (Flourish original) -->
+                        <div class="only-desktop">
+                          <iframe src="https://flo.uri.sh/visualisation/25015393/embed" 
+                                  frameborder="0" 
+                                  scrolling="no" 
+                                  style="width: 100%; height: 600px;">
+                          </iframe>
+                        </div>
+                        <!-- Versión móvil del mapa (Flourish móvil con zoom más alejado) -->
+                        <div class="only-mobile">
+                          <iframe src="https://flo.uri.sh/visualisation/26398232/embed"
+                                  frameborder="0"
+                                  scrolling="no"
+                                  style="width: 100%; height: 600px;">
+                          </iframe>
+                        </div>
+                        <!-- Explicación 2 (visible en móvil) -->
+                        <div class="mobile-expl">
+                          <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+  El mapa permite visualizar de forma interactiva la distribución de los <strong>incendios forestales</strong> en Galicia entre 2016 y 2025.<br><br>
+  Los círculos representan la magnitud de los incendios y su localización, mientras la línea inferior muestra la evolución anual.<br><br>
+  La mayor concentración se mantiene en el sur de la comunidad, especialmente en la provincia de <strong>Ourense</strong>, que actúa como epicentro recurrente.<br><br>
+  En los años <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> los focos se multiplican, y en <strong>2025</strong> la extensión quemada alcanza valores excepcionales.<br><br>
+  Los datos evidencian un patrón de recurrencia: los incendios tienden a repetirse en las mismas zonas, con una intensidad cada vez mayor.<br><br>
+  Más que episodios aislados, reflejan un proceso sostenido que amplifica su impacto con el paso del tiempo.
+                          </p>
+                        </div>
                     </div>
                     
-                    <div style="flex: 1; background: none; border: none; backdrop-filter: none;">
+                    <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
                         <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-  • El gráfico muestra la evolución de los <strong>incendios forestales</strong> en Galicia entre 2016 y 2025.<br><br>
-  • Algunos años registran <strong>pocos incendios</strong> y superficies reducidas, como 2018, 2019 o 2024.<br><br>
-  • En <strong>2017</strong> y <strong>2022</strong> aumentan tanto el número de incendios como las hectáreas quemadas.<br><br>
-  • Los <strong>grandes incendios</strong> marcan la diferencia: unos pocos disparan la superficie devastada.<br><br>
-  • En <strong>2025</strong> se alcanza el peor registro: más de <strong>200 incendios</strong> y más de <strong>150.000 hectáreas</strong> arrasadas.<br><br>
-  • La conclusión: la severidad de cada <strong>temporada</strong> depende sobre todo de esos incendios de gran magnitud.
-</p>
+  El gráfico muestra cómo han evolucionado los <strong>incendios forestales</strong> en Galicia desde 2016.<br><br>
+  Es interactivo: permite explorar cada año y observar cómo cambian las cifras de incendios y de <strong>superficie quemada</strong>.<br><br>
+  A lo largo del periodo se repite un patrón claro: años de <strong>relativa calma</strong> seguidos de otros mucho más <strong>severos</strong>.<br><br>
+  <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> marcan picos importantes, pero <strong>2025</strong> supera todos los registros.<br><br>
+  Aunque el número de incendios fluctúa, las <strong>hectáreas afectadas</strong> tienden a aumentar con cada repunte.<br><br>
+  En conjunto, la serie refleja una <strong>tendencia ascendente</strong> y un agravamiento progresivo de los <strong>grandes incendios</strong>.
+                        </p>
 <br><br>
                         
                         <p style="margin: 0; font-size: 16px; line-height: 1.6;">
-                            • El mapa muestra la distribución de los <strong>incendios forestales</strong> en Galicia entre 2016 y 2025.<br><br>
-  • La mayor concentración se observa en el sur de la comunidad, especialmente en la provincia de <strong>Ourense</strong>.<br><br>
-  • Los círculos más grandes representan los <strong>incendios más numerosos o de mayor magnitud</strong>.<br><br>
-  • La línea inferior refleja la evolución anual: picos destacados en <strong>2017</strong>, <strong>2020</strong>, <strong>2022</strong> y sobre todo <strong>2025</strong>.<br><br>
-  • En total, se registran <strong>223 incendios</strong> en el período analizado.<br><br>
-  • El mapa ayuda a visualizar cómo algunos territorios concentran de forma recurrente los <strong>focos de fuego</strong>.
+  El mapa permite visualizar de forma interactiva la distribución de los <strong>incendios forestales</strong> en Galicia entre 2016 y 2025.<br><br>
+  Los círculos representan la magnitud de los incendios y su localización, mientras la línea inferior muestra la evolución anual.<br><br>
+  La mayor concentración se mantiene en el sur de la comunidad, especialmente en la provincia de <strong>Ourense</strong>, que actúa como epicentro recurrente.<br><br>
+  En los años <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> los focos se multiplican, y en <strong>2025</strong> la extensión quemada alcanza valores excepcionales.<br><br>
+  Los datos evidencian un patrón de recurrencia: los incendios tienden a repetirse en las mismas zonas, con una intensidad cada vez mayor.<br><br>
+  Más que episodios aislados, reflejan un proceso sostenido que amplifica su impacto con el paso del tiempo.
                         </p>
                     </div>
                 </div>
