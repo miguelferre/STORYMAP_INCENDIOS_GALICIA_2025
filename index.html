@@ -34,6 +34,7 @@
       --glass-bg: rgba(25,25,25,0.55);
       --glass-brd: rgba(255,255,255,0.08);
     }
+
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:#0b0b0b}
 
@@ -405,10 +406,10 @@
     .step{padding-bottom:45vh; opacity:.35}
     .step.active{opacity:.98}
     
-    /* En móvil: más espacio para ver el mapa y ocultar tarjetas hasta activarse */
+    /* En móvil: mismo comportamiento que escritorio para evitar saltos */
     @media (max-width: 768px){
-      #features{ padding-top:68vh; padding-bottom:10vh }
-      .step{ opacity:0 }
+      #features{ padding-top:30vh; padding-bottom:10vh }
+      .step{ opacity:.35 }
       .step.active{ opacity:.98 }
     }
     
@@ -419,13 +420,17 @@
     }
     
     /* Solo los párrafos y encabezados obtienen el fondo opaco */
-    .step h3, .step p {
+    .step h3, .step p,
+    .layer-explanation {
       background: var(--glass-bg);
       border:1px solid var(--glass-brd);
       backdrop-filter: blur(4px);
       border-radius:8px; 
       padding:12px 16px;
       margin: 8px 0;
+    }
+    .layer-explanation{
+      display:block;
     }
     h3{margin:0 0 8px 0; font-size:18px}
 
@@ -443,6 +448,12 @@
     .fully {
       width: 90vw;
       margin-left: 5vw;
+    }
+
+    #galicia-noroeste.step::after{
+      content:'';
+      display:block;
+      height:0;
     }
 
     /* Nueva clase específica para el capítulo de tendencias */
@@ -536,6 +547,11 @@
       }
     }
     /* Selector de categorías */
+    .category-selector-home{
+        position: relative;
+        width: 100%;
+        z-index: 8;
+    }
     .category-selector {
         position: fixed;
         top: 56px; /* Debajo del topbar */
@@ -636,6 +652,35 @@
         max-width: 760px;
     }
 
+    /* Contenedor inline para clima (solo móvil) */
+    .climate-inline{
+        margin-top: 18px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        display: none;
+        gap: 14px;
+        flex-direction: column;
+    }
+    .climate-inline img{
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+    .climate-inline .climate-inline-small{
+        width: 100%;
+    }
+
+    @media (min-width: 769px){
+        .climate-inline{
+            display: none !important;
+        }
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
         .category-selector {
@@ -676,6 +721,73 @@
         .climate-images-container img {
             max-width: 80%;
         }
+        
+        #galicia-noroeste #layer-explanation{
+            margin-top: 12px !important;
+            padding: 12px 14px !important;
+        }
+        
+        #galicia-noroeste.step{
+            padding-bottom: 44vh;
+        }
+        #galicia-noroeste.step::after{
+            height: 6vh;
+        }
+        .category-selector-inline .category-tab{
+            flex: 1 1 calc(50% - 8px);
+        }
+        #climate-inline-container{
+            margin-left: calc(-1 * (50vw - 50%));
+            margin-right: calc(-1 * (50vw - 50%));
+            width: 100vw;
+            max-width: none;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+        }
+        #climate-inline-container img{
+            width: 100%;
+            max-width: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+
+    /* Selector en modo inline (móvil) */
+    .category-selector-inline{
+        position: static;
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.08);
+        padding: 12px;
+        background: rgba(6, 20, 58, 0.95);
+        box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+        display: flex !important;
+        justify-content: center;
+    }
+    .category-selector-inline .category-tabs{
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        background: transparent;
+        padding: 0;
+    }
+    .category-selector-inline .category-tab{
+        flex: unset;
+        width: 100%;
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 10px;
+        background: rgba(14, 32, 88, 0.85);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+    }
+    .category-mobile-slot{
+        width: 100%;
+        margin: 12px 0;
+    }
+    .category-selector-hidden{
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
 
     @media (max-width: 480px) {
@@ -1399,6 +1511,10 @@ window.addEventListener('load', () => {
     
     // Ocultar también el marcador de Larouco
     window.hideLarouco();
+
+    if (typeof window.__afterHideDefaultLayers === 'function') {
+      try { window.__afterHideDefaultLayers(); } catch(e) {}
+    }
   };
 
   // Funciones para mostrar capas específicas cuando las necesites
@@ -1467,7 +1583,7 @@ window.addEventListener('load', () => {
 
   window.enableChapterCallbacks = function(scroller, config, setLayerOpacity){
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const offsetVal = isMobile ? 0.82 : 0.6; // en móvil activamos más tarde
+    const offsetVal = 0.6; // mismo offset en móvil y escritorio para transiciones coherentes
     scroller
       .setup({ step: '.step', offset: offsetVal, progress: true })
       .onStepEnter(function(response){
@@ -1703,21 +1819,23 @@ window.addEventListener('load', () => {
 </header>
 
 <!-- SELECTOR DE CATEGORÍAS -->
-<div id="category-selector" class="category-selector">
-    <div class="category-tabs" role="tablist" aria-label="Seleccionar categoría de información">
-        <button class="category-tab" role="tab" data-category="geologia" aria-pressed="false" tabindex="0">
-            Geología
-        </button>
-        <button class="category-tab" role="tab" data-category="vegetacion" aria-pressed="false" tabindex="-1">
-            Vegetación
-        </button>
-        <button class="category-tab" role="tab" data-category="clima" aria-pressed="false" tabindex="-1">
-            Clima
-        </button>
-        <button class="category-tab" role="tab" data-category="geografia" aria-pressed="false" tabindex="-1">
-            Geografía
-        </button>
-    </div>
+<div id="category-selector-home" class="category-selector-home">
+  <div id="category-selector" class="category-selector">
+      <div class="category-tabs" role="tablist" aria-label="Seleccionar categoría de información">
+          <button class="category-tab" role="tab" data-category="geologia" aria-pressed="false" tabindex="0">
+              Geología
+          </button>
+          <button class="category-tab" role="tab" data-category="vegetacion" aria-pressed="false" tabindex="-1">
+              Vegetación
+          </button>
+          <button class="category-tab" role="tab" data-category="clima" aria-pressed="false" tabindex="-1">
+              Clima
+          </button>
+          <button class="category-tab" role="tab" data-category="geografia" aria-pressed="false" tabindex="-1">
+              Geografía
+          </button>
+      </div>
+  </div>
 </div>
 
 <!-- Overlay para imágenes de clima -->
@@ -1782,16 +1900,41 @@ window.addEventListener('load', () => {
     (function(){
       try{
         var isMobile = window.matchMedia('(max-width: 768px)').matches;
-        if (isMobile && config && config.chapters && config.chapters[0] && config.chapters[0].location) {
-          config.chapters[0].location.zoom = 6.2; // vista más amplia en móvil
-          // Desplazar el centro hacia el interior para que se vea menos mar
-          config.chapters[0].location.center = [-7.60, 43.45];
-          // Igualar el zoom y centro del capítulo 2 al del primero en móvil para evitar saltos
-          if (config.chapters[1] && config.chapters[1].location) {
-            config.chapters[1].location.zoom = config.chapters[0].location.zoom;
-            config.chapters[1].location.center = config.chapters[0].location.center;
-          }
+        if (!isMobile || !config || !Array.isArray(config.chapters)) return;
+
+        function applyMobileOverrides(chapterId, overrides){
+          var chapter = config.chapters.find(function(ch){ return ch.id === chapterId; });
+          if (!chapter || !chapter.location) return;
+          if (overrides.center) chapter.location.center = overrides.center.slice();
+          ['zoom','pitch','bearing'].forEach(function(prop){
+            if (typeof overrides[prop] === 'number') {
+              chapter.location[prop] = overrides[prop];
+            }
+          });
         }
+
+        var mobileOverrides = {
+          'incendios-2025': {
+            center: [-7.60, 43.45],
+            zoom: 6.2
+          },
+          'tendencia-aumento': {
+            center: [-7.60, 43.45],
+            zoom: 6.2
+          },
+          'galicia-noroeste': {
+            center: [-7.395, 42.289],
+            zoom: 7.7
+          },
+          'tendencia-comparativas': {
+            center: [-7.60, 43.45],
+            zoom: 6.2
+          }
+        };
+
+        Object.keys(mobileOverrides).forEach(function(key){
+          applyMobileOverrides(key, mobileOverrides[key]);
+        });
       }catch(e){}
     })();
     var map = new mapboxgl.Map({
@@ -1867,6 +2010,53 @@ window.addEventListener('load', () => {
 
     // ==== CONTROLADOR DE CATEGORÍAS ====
     
+    const mobileViewportQuery = window.matchMedia('(max-width: 768px)');
+    const climateAttachmentState = { parent: null, placeholder: null };
+    function isMobileViewport(){
+        return mobileViewportQuery.matches;
+    }
+    function placeCategorySelector(){
+        const selector = document.getElementById('category-selector');
+        if (!selector) return;
+        const mobileSlot = document.getElementById('category-mobile-slot');
+        const home = document.getElementById('category-selector-home');
+        if (isMobileViewport() && mobileSlot) {
+            mobileSlot.appendChild(selector);
+            selector.classList.add('category-selector-inline');
+        } else if (home) {
+            home.appendChild(selector);
+            selector.classList.remove('category-selector-inline');
+        }
+    }
+    function placeClimateInline(){
+        const container = document.getElementById('climate-inline-container');
+        const step = document.getElementById('galicia-noroeste');
+        if (!container || !step) return;
+        if (!climateAttachmentState.parent) {
+            climateAttachmentState.parent = container.parentElement;
+        }
+        if (!climateAttachmentState.placeholder) {
+            climateAttachmentState.placeholder = document.createElement('div');
+            climateAttachmentState.placeholder.style.display = 'none';
+        }
+        if (isMobileViewport()) {
+            if (container.parentElement !== step) {
+                climateAttachmentState.parent.insertBefore(climateAttachmentState.placeholder, container);
+                step.appendChild(container);
+                container.classList.add('climate-detached');
+            }
+        } else {
+            if (container.parentElement !== climateAttachmentState.parent && climateAttachmentState.parent) {
+                climateAttachmentState.parent.insertBefore(container, climateAttachmentState.placeholder);
+                if (climateAttachmentState.placeholder.parentElement === climateAttachmentState.parent) {
+                    climateAttachmentState.parent.removeChild(climateAttachmentState.placeholder);
+                }
+                container.classList.remove('climate-detached');
+            }
+        }
+    }
+    placeClimateInline();
+    
     // Utilidades para manejo de visibilidad
     const CategoryController = {
         
@@ -1880,7 +2070,8 @@ window.addEventListener('load', () => {
         },
 
         // Oculta todas las capas y overlays con verificación robusta
-        hideAll() {
+        hideAll(options = {}) {
+            const { preserveInline = false } = options;
             const layersToHide = ['XEOURENSE', 'USOURENSE', 'RELIEVE'];
             
             layersToHide.forEach(layerId => {
@@ -1917,16 +2108,65 @@ window.addEventListener('load', () => {
             if (climateOverlay) {
                 climateOverlay.classList.add('hidden');
             }
+            const climateInline = document.getElementById('climate-inline-container');
+            if (climateInline) {
+                if (preserveInline) {
+                    climateInline.style.display = 'flex';
+                } else {
+                climateInline.style.display = 'none';
+                }
+            }
             
             // Ocultar marcador de Larouco
             window.hideLarouco();
         },
 
+        showCategoryContent(categoryKey, options = {}) {
+            const skipHide = options.skipHide;
+            if (!skipHide) {
+                CategoryController.hideAll();
+            }
+            
+            switch(categoryKey) {
+                case 'geologia':
+                    CategoryController.showLayerSafe('XEOURENSE');
+                    break;
+                case 'vegetacion':
+                    CategoryController.showLayerSafe('USOURENSE');
+                    break;
+                case 'clima':
+                    CategoryController.showImagesForClima();
+                    break;
+                case 'geografia':
+                    CategoryController.showLayerSafe('RELIEVE');
+                    break;
+            }
+        },
+        
+        reapplyCategory(categoryKey) {
+            if (!categoryKey) return;
+            CategoryController.showCategoryContent(categoryKey, { skipHide: true });
+        },
+        
         // Muestra las imágenes de clima
         showImagesForClima() {
             const climateOverlay = document.getElementById('climate-images-overlay');
-            if (climateOverlay) {
-                climateOverlay.classList.remove('hidden');
+            const climateInline = document.getElementById('climate-inline-container');
+            
+            if (isMobileViewport()) {
+                if (climateOverlay) {
+                    climateOverlay.classList.add('hidden');
+                }
+                if (climateInline) {
+                    climateInline.style.display = 'flex';
+                }
+            } else {
+                if (climateInline) {
+                    climateInline.style.display = 'none';
+                }
+                if (climateOverlay) {
+                    climateOverlay.classList.remove('hidden');
+                }
             }
         },
 
@@ -1963,6 +2203,14 @@ window.addEventListener('load', () => {
 
     // Estado actual del selector
     let currentCategory = null;
+    window.__afterHideDefaultLayers = function(){
+        try{
+            const chapter = document.getElementById('galicia-noroeste');
+            if (chapter && chapter.classList.contains('active') && currentCategory){
+                CategoryController.reapplyCategory(currentCategory);
+            }
+        }catch(e){}
+    };
 
     // Contenido de cada categoría (placeholders)
     const categoryContent = {
@@ -2019,34 +2267,13 @@ window.addEventListener('load', () => {
                 return;
             }
 
-            // Siempre ocultar todo primero
-            CategoryController.hideAll();
-            
             // Actualizar inmediatamente estado visual de botones y explicación
             updateCategoryButtons(category);
             updateLayerExplanation(category);
             
             // Pequeña pausa para asegurar que las capas se oculten antes de mostrar nuevas
             setTimeout(() => {
-                // Mostrar contenido según categoría con verificación adicional
-                switch(category) {
-                    case 'geologia':
-                        CategoryController.showLayerSafe('XEOURENSE');
-                        break;
-                        
-                    case 'vegetacion':
-                        CategoryController.showLayerSafe('USOURENSE');
-                        break;
-                        
-                    case 'clima':
-                        CategoryController.showImagesForClima();
-                        break;
-                        
-                    case 'geografia':
-                        CategoryController.showLayerSafe('RELIEVE');
-                        break;
-                }
-                
+                CategoryController.showCategoryContent(category);
                 currentCategory = category;
                 setCategory.isProcessing = false;
             }, 50);
@@ -2128,20 +2355,45 @@ window.addEventListener('load', () => {
         // Se cierra automáticamente al cambiar de categoría
     }
 
+    function handleViewportCategoryPlacement(){
+        const selector = document.getElementById('category-selector');
+        if (selector && selector.style.display !== 'none') {
+            placeCategorySelector();
+        }
+        if (currentCategory === 'clima') {
+            CategoryController.showImagesForClima();
+        }
+        placeClimateInline();
+    }
+    if (mobileViewportQuery && mobileViewportQuery.addEventListener) {
+        mobileViewportQuery.addEventListener('change', handleViewportCategoryPlacement);
+    } else if (mobileViewportQuery && mobileViewportQuery.addListener) {
+        mobileViewportQuery.addListener(handleViewportCategoryPlacement);
+    }
+    
     // Callbacks para integración con capítulos
     window.showCategorySelector = function() {
         const selector = document.getElementById('category-selector');
-        if (selector) {
-            selector.style.display = 'flex';
-        }
+        if (!selector) return;
+        placeCategorySelector();
+        selector.style.display = 'flex';
+        selector.classList.remove('category-selector-hidden');
     };
 
     window.hideCategorySelector = function() {
-        // Forzar limpieza completa
-        CategoryController.hideAll();
-        updateCategoryButtons(null);
-        updateLayerExplanation(null);
-        currentCategory = null;
+        const isMobile = isMobileViewport();
+        const hasSelection = !!currentCategory;
+        const preserveInline = isMobile && hasSelection && currentCategory === 'clima';
+        const preserveState = isMobile && hasSelection;
+        
+        // Forzar limpieza de capas, pero conservar el contenido ya desplegado en móvil para evitar saltos
+        CategoryController.hideAll({ preserveInline });
+        
+        if (!preserveState) {
+            updateCategoryButtons(null);
+            updateLayerExplanation(null);
+            currentCategory = null;
+        }
         
         // Detener cualquier procesamiento del selector de categorías
         if (setCategory.isProcessing) {
@@ -2149,8 +2401,19 @@ window.addEventListener('load', () => {
         }
         
         const selector = document.getElementById('category-selector');
-        if (selector) {
+        if (!selector) return;
+        if (isMobile) {
+            selector.classList.add('category-selector-hidden');
+        } else {
+            const home = document.getElementById('category-selector-home');
+            if (home) {
+                home.appendChild(selector);
+            }
+            selector.classList.remove('category-selector-inline');
             selector.style.display = 'none';
+            updateCategoryButtons(null);
+            updateLayerExplanation(null);
+            currentCategory = null;
         }
         
         // Asegurar que todas las capas problemáticas estén ocultas

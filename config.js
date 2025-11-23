@@ -116,13 +116,14 @@ var config = {
                         <div class="mobile-expl">
                           <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
   El gráfico muestra cómo han evolucionado los <strong>incendios forestales</strong> en Galicia desde 2016.<br><br>
-  Es interactivo: permite explorar cada año y observar cómo cambian las cifras de incendios y de <strong>superficie quemada</strong>.<br><br>
+  Es interactivo: Puedes seleccionar los datos para ver la información con detalle y ocultar categorías haciendo click en la leyenda.<br><br>
   A lo largo del periodo se repite un patrón claro: años de <strong>relativa calma</strong> seguidos de otros mucho más <strong>severos</strong>.<br><br>
   <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> marcan picos importantes, pero <strong>2025</strong> supera todos los registros.<br><br>
   Aunque el número de incendios fluctúa, las <strong>hectáreas afectadas</strong> tienden a aumentar con cada repunte.<br><br>
   En conjunto, la serie refleja una <strong>tendencia ascendente</strong> y un agravamiento progresivo de los <strong>grandes incendios</strong>.
                           </p>
                         </div>
+                        <br class="only-mobile"><br class="only-mobile">
                         
                         <!-- Versión escritorio del mapa (Flourish original) -->
                         <div class="only-desktop">
@@ -140,6 +141,7 @@ var config = {
                                   style="width: 100%; height: 600px;">
                           </iframe>
                         </div>
+                        <br class="only-mobile"><br class="only-mobile">
                         <!-- Explicación 2 (visible en móvil) -->
                         <div class="mobile-expl">
                           <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
@@ -154,17 +156,17 @@ var config = {
                     </div>
                     
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.72; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
   El gráfico muestra cómo han evolucionado los <strong>incendios forestales</strong> en Galicia desde 2016.<br><br>
-  Es interactivo: permite explorar cada año y observar cómo cambian las cifras de incendios y de <strong>superficie quemada</strong>.<br><br>
+  Es interactivo: Puedes seleccionar los datos para ver la información con detalle y ocultar categorías haciendo click en la leyenda.<br><br>
   A lo largo del periodo se repite un patrón claro: años de <strong>relativa calma</strong> seguidos de otros mucho más <strong>severos</strong>.<br><br>
   <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> marcan picos importantes, pero <strong>2025</strong> supera todos los registros.<br><br>
   Aunque el número de incendios fluctúa, las <strong>hectáreas afectadas</strong> tienden a aumentar con cada repunte.<br><br>
   En conjunto, la serie refleja una <strong>tendencia ascendente</strong> y un agravamiento progresivo de los <strong>grandes incendios</strong>.
                         </p>
-<br><br>
+
                         
-                        <p style="margin: 0; font-size: 16px; line-height: 1.6;">
+                        <p style="margin: 0; font-size: 16px; line-height: 1.63;">
   El mapa permite visualizar de forma interactiva la distribución de los <strong>incendios forestales</strong> en Galicia entre 2016 y 2025.<br><br>
   Los círculos representan la magnitud de los incendios y su localización, mientras la línea inferior muestra la evolución anual.<br><br>
   La mayor concentración se mantiene en el sur de la comunidad, especialmente en la provincia de <strong>Ourense</strong>, que actúa como epicentro recurrente.<br><br>
@@ -189,18 +191,23 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'nuevo-capitulo',
+            id: 'galicia-noroeste',
             alignment: 'left',
             hidden: false,
             title: '',
             description: `
             <h2>¿Por qué Galicia y el Noroeste?</h2>
-            <p>Usa el selector superior para explorar los factores que explican por qué esta región es especialmente vulnerable a los incendios forestales.</p>
+            <p>Selecciona una de las categorías para explorar los factores que explican por qué esta región es especialmente vulnerable a los incendios forestales.</p>
+            <div id="category-mobile-slot" class="category-mobile-slot"></div>
             
             <!-- Contenido dinámico que cambia según la capa seleccionada -->
-            <div id="layer-explanation" style="margin-top: 20px; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px;">
+            <div id="layer-explanation" class="layer-explanation">
                 <h3 id="layer-title" style="margin: 0 0 12px 0; color: #F44E11; display: none;"></h3>
                 <p id="layer-description" style="margin: 0; line-height: 1.6;">Selecciona una categoría para conocer cómo influye en la propagación del fuego.</p>
+            </div>
+            <div id="climate-inline-container" class="climate-inline" style="display:none;">
+                <img src="assets/Larouco_Clima.png" alt="Clima en Larouco" class="climate-inline-large" />
+                <img src="assets/Fases_Clima.png" alt="Fases del clima" class="climate-inline-small" />
             </div>
             `,
             location: {
