@@ -244,7 +244,7 @@ var config = {
                           <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Durante más de cinco décadas, los incendios en Ourense han tenido un denominador común: la mayoría fueron provocados.<br><br>
 El gráfico muestra cómo los <strong>fuegos intencionados</strong> (en naranja) dominan casi toda la serie histórica, seguidos de los casos con <strong>causa desconocida</strong>.<br><br>
-Las <strong>quemas agrícolas y ganaderas</strong> —muy ligadas al uso tradicional del fuego para limpiar o preparar terrenos— y las negligencias aparecen en menor medida, mientras que los <strong>incendios naturales</strong> apenas tienen presencia.<br><br>
+Las <strong>quemas agrícolas y ganaderas</strong>, muy ligadas al uso tradicional del fuego para limpiar o preparar terrenos, y las negligencias aparecen en menor medida, mientras que los <strong>incendios naturales</strong> apenas tienen presencia.<br><br>
 En resumen, el fuego en Ourense casi nunca empieza solo: tiene detrás <strong>decisiones humanas</strong>, a veces por costumbre y otras por conflicto.
                           </p>
                         </div>
@@ -301,7 +301,7 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
             title: '',
             description: `
             <h2>Nos hemos alejado del monte</h2>
-                <div style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
+                <div class="cimadevila-layout" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div class="vertical-slider-container">
                             <div class="vertical-slider-wrapper">
@@ -317,7 +317,7 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
                                     <span class="vertical-slider-label-bottom">2020</span>
                                 </div>
                             </div>
-                            <p style="margin: 8px 0 0 0; font-size: 12px; line-height: 1.4; font-style: italic; text-align: right; color: rgba(255, 255, 255, 0.7); background: none !important; border: none !important; padding: 0 !important; box-shadow: none !important; backdrop-filter: none !important; border-radius: 0 !important;">
+                            <p class="slider-caption">
                                 Fuente: Comparador del Plan Nacional de Ortografía Aérea
                             </p>
                         </div>
@@ -329,7 +329,7 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
                                 En este ejemplo, en <strong>Cimadevila</strong> (Nogueira de Ramuín), se ve claro cómo ha cambiado el paisaje gallego en apenas unas décadas.<br><br>
                                 Sabemos que muchos incendios están relacionados con <strong>prácticas agrícolas y ganaderas</strong>. Y no, la mayoría de las veces no hay mala intención: se trata de costumbres heredadas, de una forma tradicional de manejar el territorio.<br><br>
                                 El problema es que el monte ya no se comporta como antes.<br><br>
-                                Durante el último medio siglo hemos pasado de <strong>mosaicos abiertos y pastoreados</strong> —campos, huertas, prados— a <strong>masas forestales cerradas</strong>, donde el combustible vegetal se acumula.<br><br>
+                                Durante el último medio siglo hemos pasado de <strong>mosaicos abiertos y pastoreados</strong> (campos, huertas, prados) a <strong>masas forestales cerradas</strong>, donde el combustible vegetal se acumula.<br><br>
                                 Quienes siguen usando el fuego "como toda la vida" lo hacen en un paisaje completamente distinto, y una simple quema que antes se controlaba fácilmente hoy puede convertirse en un incendio desbocado.
                             </p>
                         </div>
@@ -364,11 +364,21 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
                             El mapa de calor muestra la distribución temporal y espacial de las causas de los incendios forestales. Los colores más intensos indican períodos y zonas donde se concentran más incendios, permitiendo identificar patrones y correlaciones entre las condiciones climáticas extremas y el origen de los fuegos.
                         </p>
                         
-                        <iframe src="https://flo.uri.sh/visualisation/26020279/embed" 
-                                frameborder="0" 
-                                scrolling="no" 
-                                style="width: 100%; height: 720px;">
-                        </iframe>
+                        <div class="only-desktop">
+                            <iframe src="https://flo.uri.sh/visualisation/26020279/embed" 
+                                    frameborder="0" 
+                                    scrolling="no" 
+                                    style="width: 100%; height: 720px;">
+                            </iframe>
+                        </div>
+
+                        <div class="only-mobile">
+                            <iframe src="https://flo.uri.sh/visualisation/26412913/embed"
+                                    frameborder="0"
+                                    scrolling="no"
+                                    style="width: 100%; height: 720px;">
+                            </iframe>
+                        </div>
                         
                         <p style="margin: 20px 0 0 0; font-size: 16px; line-height: 1.6;">
                             Los estudios sobre olas de calor muestran que estos fenómenos extremos no solo aumentan en frecuencia, sino también en intensidad y duración. En este contexto, prácticas que antes eran relativamente seguras —como las <strong>quemas agrícolas y ganaderas</strong>— se convierten en un riesgo elevado cuando coinciden con períodos de alta temperatura, baja humedad y vientos intensos. La combinación de combustible vegetal acumulado, condiciones meteorológicas adversas y prácticas tradicionales que no se adaptan al nuevo escenario climático explica por qué los incendios son cada vez más devastadores.

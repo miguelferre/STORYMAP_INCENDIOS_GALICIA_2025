@@ -1007,6 +1007,46 @@
             font-size: 28px;
         }
     }
+
+    .slider-caption{
+      margin: 8px 0 0 0;
+      font-size: 12px;
+      line-height: 1.4;
+      font-style: italic;
+      text-align: right;
+      color: rgba(255, 255, 255, 0.7);
+      background: none !important;
+      border: none !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      border-radius: 0 !important;
+    }
+
+    @media (max-width: 768px){
+      .slider-caption{
+        font-size: 10px !important;
+      }
+    }
+
+    /* Capítulo Cimadevila: garantizar apilado en móvil */
+    .cimadevila-layout{
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 768px){
+      .cimadevila-layout{
+        flex-direction: column;
+        gap: 18px;
+      }
+      .cimadevila-layout > div{
+        width: 100% !important;
+      }
+    }
   </style>
 </head>
 <script>
