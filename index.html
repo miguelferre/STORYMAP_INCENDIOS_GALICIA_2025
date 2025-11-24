@@ -419,7 +419,7 @@
     /* Contenedor base del capítulo sin fondo específico */
     .step > div.lefty, .step > div.righty, .step > div.centered, .step > div.fully {
       border-radius:12px; padding:18px 20px;
-      line-height:1.45; font-size:14px; color:#f0f0f0;
+      line-height:1.45; font-size:16px; color:#f0f0f0;
     }
     
     /* Solo los párrafos y encabezados obtienen el fondo opaco */
@@ -436,6 +436,14 @@
       display:block;
     }
     h3{margin:0 0 8px 0; font-size:18px}
+    .step h2{
+      font-family:'Montserrat', system-ui, -apple-system, sans-serif;
+      font-weight:800;
+      font-size:clamp(1.9rem, 4vw, 2.9rem);
+      line-height:1.15;
+      margin:8px 0 18px;
+      letter-spacing:-0.01em;
+    }
 
 
     .lefty {
@@ -477,7 +485,6 @@
         /* Un poco más ancho que el valor móvil por defecto (90vw) */
         width: 96vw;
         margin: 0 auto;
-        font-size: 16px; /* cuerpo más grande en móvil */
       }
     }
 
@@ -813,16 +820,115 @@
 
     /* Hero final fuera de Scrollama */
     #hero-final{
-      position:relative; z-index:9;
-      min-height:100vh; width:100%;
-      display:flex; flex-direction:column;
+      --hero-final-extra: 70vh;
+      --hero-final-progress: 0;
+      --hero-panel-opacity: 0;
+      --hero-panel-shift-start: 55%;
+      position:relative; 
+      z-index:9;
+      width:100%;
+      min-height:calc(100vh + var(--hero-final-extra));
+    }
+    #hero-final .hero-final-sticky{
+      position:sticky;
+      top:0;
+      min-height:calc(var(--vh, 1vh) * 100);
+      width:100%;
+      display:flex;
+      flex-direction:column;
       justify-content:flex-start;
       align-items:center;
-      padding-top:18vh;
+      gap:clamp(32px, 6vh, 72px);
+      padding:clamp(12vh, 16vh, 20vh) clamp(20px, 4vw, 60px) clamp(6vh, 10vh, 12vh);
       background-image: url('./assets/Esperanza.webp');
       background-size:cover; 
       background-position:center;
       box-shadow: inset 0 -200px 200px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    #hero-final .hero-inner{
+      width:min(1100px, 96vw);
+      margin:0 auto;
+      text-align:center;
+    }
+    #hero-final .hero-headline{
+      margin-bottom:clamp(3px, 0vh, 64px);
+      font-size:clamp(3rem, 5.5vw, 4.2rem);
+    }
+    #hero-final .hero-glass-panel{
+      width:min(860px, 90vw);
+      margin:0 auto;
+      background:rgba(4, 17, 56, 0.92);
+      border:1px solid rgba(255,255,255,0.24);
+      border-radius:30px;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      padding:clamp(18px, 3vw, 32px);
+      box-shadow:0 30px 80px rgba(3, 7, 18, 0.55);
+      color:#f7f9ff;
+      line-height:1.5;
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+      transform:translateY(var(--hero-panel-shift-current, var(--hero-panel-shift-start)));
+      opacity:var(--hero-panel-opacity, 0);
+      transition:transform 0.35s ease-out, opacity 0.35s ease-out, box-shadow 0.45s ease-out;
+      will-change:transform, opacity;
+    }
+    #hero-final .hero-glass-panel::before,
+    #hero-final .hero-glass-panel::after{
+      content:none;
+    }
+    #hero-final .hero-glass-panel p{
+      margin:0 0 0.75rem;
+      font-size:18px;
+      line-height:1.65;
+    }
+    #hero-final .hero-glass-panel p:last-of-type{
+      margin-bottom:0;
+    }
+    #hero-final .hero-glass-panel ul{
+      margin:0 0 0.65rem;
+      padding-left:1rem;
+      font-size:16px;
+      line-height:1.6;
+    }
+    #hero-final .hero-glass-panel li{
+      margin-bottom:0.5rem;
+    }
+    #hero-final .photo-credit{
+      position:absolute;
+      right:clamp(12px, 4vw, 48px);
+      bottom:clamp(12px, 4vh, 32px);
+      z-index:12;
+    }
+    @media (max-width: 768px){
+      #hero-final{
+        --hero-final-extra: 10vh;
+        --hero-panel-shift-start: 8%;
+        min-height:calc(var(--vh, 1vh) * 100 + var(--hero-final-extra));
+      }
+      #hero-final .hero-final-sticky{
+        padding:clamp(16px, 3vh, 24px) 16px clamp(12px, 3vh, 24px);
+        gap:clamp(12px, 3vh, 24px);
+        justify-content:flex-start;
+      }
+      #hero-final .hero-headline{
+        margin-bottom:clamp(18px, 0vh, 32px);
+        font-size:clamp(1.9rem, 7vw, 3.2rem);
+      }
+      #hero-final .hero-glass-panel{
+        width:min(94vw, 500px);
+        border-radius:26px 26px 18px 18px;
+        padding:clamp(18px, 5vw, 28px);
+      }
+      #hero-final .hero-glass-panel p{
+        font-size:16px;
+        line-height:1.6;
+      }
+      #hero-final .photo-credit{
+        bottom:clamp(6px, 1.6vh, 14px);
+      }
     }
 
     /* Slider vertical para comparación de imágenes Cimadevila */
@@ -1037,6 +1143,17 @@
       background: none;
       border: none;
     }
+    .cimadevila-text-panel{
+      flex:1;
+      background:none;
+      border:none;
+      backdrop-filter:none;
+    }
+    .cimadevila-text-inner{
+      padding:16px;
+      background:none;
+      border-radius:8px;
+    }
 
     @media (max-width: 768px){
       .cimadevila-layout{
@@ -1045,6 +1162,9 @@
       }
       .cimadevila-layout > div{
         width: 100% !important;
+      }
+      .cimadevila-text-inner{
+        padding:0;
       }
     }
   </style>
@@ -1972,6 +2092,14 @@ window.addEventListener('load', () => {
           'tendencia-comparativas': {
             center: [-7.60, 43.45],
             zoom: 6.2
+          },
+          'cimadevila-comparacion': {
+            center: [-7.60, 43.45],
+            zoom: 6.2
+          },
+          'mapa-calor-causas': {
+            center: [-7.60, 43.45],
+            zoom: 6.2
           }
         };
 
@@ -2249,7 +2377,8 @@ window.addEventListener('load', () => {
     window.__afterHideDefaultLayers = function(){
         try{
             const chapter = document.getElementById('galicia-noroeste');
-            if (chapter && chapter.classList.contains('active') && currentCategory){
+            const isCurrentChapter = currentChapterId === 'galicia-noroeste';
+            if (isCurrentChapter && chapter && chapter.classList.contains('active') && currentCategory){
                 CategoryController.reapplyCategory(currentCategory);
             }
         }catch(e){}
@@ -2486,20 +2615,94 @@ window.addEventListener('load', () => {
   </script>
   <!-- HERO FINAL (fuera de Scrollama) -->
   <section id="hero-final" aria-label="Cierre">
-    <div class="hero-inner">
-      <h1 class="hero-headline">
-        Debemos aprender a convivir con el fuego, pero podemos hacer más…
-      </h1>
-      <div class="hero-kicker" style="text-align:left">
-        Pero me temo que no hay tal varita mágica. Hay que aceptar que el fuego seguirá formando parte de la realidad, cada vez más con el cambio climático.<br><br>
-        La prioridad: reducir su impacto y adaptarnos, más que buscar culpables fáciles.<br><br>
-        La respuesta es compleja, y requiere visión a largo plazo: más gestión del paisaje, más pastoreo adaptativo, prevención activa en la interfaz urbano-forestal, educación para la convivencia con el fuego… y mucho más.<br><br>
-        El fuego es un fenómeno natural: frecuentemente negativo y trágico para personas, bienes y modos de vida, pero a menudo positivo para el rejuvenecimiento y la dinámica de los ecosistemas.<br><br>
-        Entenderlo es clave para aprender a convivir con él.
+    <div class="hero-final-sticky">
+      <div class="hero-inner">
+        <h1 class="hero-headline">
+          Debemos aprender a convivir con el fuego, pero podemos hacer más…
+        </h1>
       </div>
+      <div class="hero-glass-panel" id="hero-glass-panel">
+        <p>No existe una solución mágica. Hay que aceptar que el fuego seguirá formando parte de la realidad, cada vez más con el cambio climático. La prioridad: reducir su impacto y adaptarnos, más que buscar culpables fáciles.</p>
+        <p>La respuesta es compleja, y requiere visión a largo plazo: más gestión del paisaje, más pastoreo adaptativo, prevención activa en la interfaz urbano-forestal, educación para la convivencia con el fuego… y mucho más.</p>
+        <p>El fuego es un fenómeno natural: frecuentemente negativo y trágico para personas, bienes y modos de vida, pero a menudo positivo para el rejuvenecimiento y la dinámica de los ecosistemas. Entenderlo es clave para aprender a convivir con él.</p>
+      </div>
+      <div class="photo-credit">FOTO: Pedro Armestre</div>
     </div>
-    <div class="photo-credit">FOTO: Pedro Armestre</div>
   </section>
+  <script>
+    (function(){
+      var heroFinal = document.getElementById('hero-final');
+      var glassPanel = document.getElementById('hero-glass-panel');
+      if (!heroFinal || !glassPanel) return;
+      var ticking = false;
+      var mobileQuery = window.matchMedia('(max-width: 768px)');
+
+      function easeOutExpo(t){
+        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+      }
+
+      function lerpClamp(value, start, end){
+        var range = end - start || 1;
+        var normalized = (value - start) / range;
+        return Math.max(0, Math.min(1, normalized));
+      }
+
+      function getProgress(){
+        var rect = heroFinal.getBoundingClientRect();
+        var viewport = window.innerHeight || document.documentElement.clientHeight || 1;
+        var totalScrollable = Math.max(0, heroFinal.offsetHeight - viewport);
+        if (totalScrollable === 0) return 1;
+        var scrolled = Math.min(totalScrollable, Math.max(0, -rect.top));
+        return scrolled / totalScrollable;
+      }
+
+      function updateGlassPanel(progress){
+        var config = mobileQuery.matches ? {
+          start: 0.025,
+          end: 0.78,
+          maxShift: 38,
+          minOpacity: 0.12
+        } : {
+          start: 0.1,
+          end: 0.88,
+          maxShift: 55,
+          minOpacity: 0.08
+        };
+
+        var clamped = lerpClamp(progress, config.start, config.end);
+        var eased = easeOutExpo(clamped);
+        var translate = config.maxShift * (1 - eased);
+        var opacity = config.minOpacity + eased * (1 - config.minOpacity);
+
+        glassPanel.style.setProperty('--hero-panel-shift-current', translate.toFixed(3) + '%');
+        glassPanel.style.setProperty('--hero-panel-opacity', opacity.toFixed(3));
+      }
+
+      function applyProgress(){
+        var progress = getProgress();
+        heroFinal.style.setProperty('--hero-final-progress', progress.toFixed(3));
+        updateGlassPanel(progress);
+      }
+
+      function onScroll(){
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function(){
+          applyProgress();
+          ticking = false;
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive:true });
+      window.addEventListener('resize', applyProgress);
+      if (typeof mobileQuery.addEventListener === 'function') {
+        mobileQuery.addEventListener('change', applyProgress);
+      } else if (typeof mobileQuery.addListener === 'function') {
+        mobileQuery.addListener(applyProgress);
+      }
+      applyProgress();
+    })();
+  </script>
   <script>
     (function () {
       var topbar = document.getElementById('topbar');

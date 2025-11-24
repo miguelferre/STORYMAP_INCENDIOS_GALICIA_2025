@@ -323,9 +323,9 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
                         </div>
                     </div>
                     
-                    <div style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <div style="padding: 16px; background: none; border-radius: 8px;">
-                            <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                    <div class="cimadevila-text-panel">
+                        <div class="cimadevila-text-inner">
+                            <p style="margin: 0; font-size: 16px; line-height: 1.6;">
                                 En este ejemplo, en <strong>Cimadevila</strong> (Nogueira de Ramuín), se ve claro cómo ha cambiado el paisaje gallego en apenas unas décadas.<br><br>
                                 Sabemos que muchos incendios están relacionados con <strong>prácticas agrícolas y ganaderas</strong>. Y no, la mayoría de las veces no hay mala intención: se trata de costumbres heredadas, de una forma tradicional de manejar el territorio.<br><br>
                                 El problema es que el monte ya no se comporta como antes.<br><br>
@@ -356,12 +356,13 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
             hidden: false,
             title: '',
             description: `
-            <h2>Mapa de calor de causas</h2>
+            <h2>El verano se alarga… y el fuego también</h2>
                 <div style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-                            Estamos en un contexto de <strong>cambio climático</strong>, donde las condiciones meteorológicas extremas se vuelven más frecuentes e intensas. Las <strong>olas de calor</strong>, las sequías prolongadas y los vientos fuertes crean el escenario perfecto para que cualquier chispa se convierta en un incendio descontrolado.<br><br>
-                            El mapa de calor muestra la distribución temporal y espacial de las causas de los incendios forestales. Los colores más intensos indican períodos y zonas donde se concentran más incendios, permitiendo identificar patrones y correlaciones entre las condiciones climáticas extremas y el origen de los fuegos.
+                            Todo esto ocurre en un contexto de cambio climático que aumenta el riesgo y extiende la temporada de incendios. En este gráfico podemos ver cómo han cambiado las temperaturas en Galicia desde los años 40.<br><br>
+                            A medida que avanza la serie temporal, los meses fríos van perdiendo el tono azul que representa las temperaturas bajas. Ese color, tan presente en las primeras décadas, se atenúa poco a poco hasta casi pasar a blanco en los últimos años. Paralelamente, los veranos se vuelven más cálidos y prolongados, ocupando el rojo cada vez más espacio en el mapa de color.<br><br>
+                            Este desplazamiento cromático representa un calentamiento real que amplía la duración de las condiciones estivales y, con ellas, el periodo de mayor riesgo de incendio. Las temperaturas más altas, sumadas a una vegetación cada vez más seca, generan un escenario en el que cualquier chispa tiene más posibilidades de convertirse en un fuego.
                         </p>
                         
                         <div class="only-desktop">
@@ -381,7 +382,9 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
                         </div>
                         
                         <p style="margin: 20px 0 0 0; font-size: 16px; line-height: 1.6;">
-                            Los estudios sobre olas de calor muestran que estos fenómenos extremos no solo aumentan en frecuencia, sino también en intensidad y duración. En este contexto, prácticas que antes eran relativamente seguras —como las <strong>quemas agrícolas y ganaderas</strong>— se convierten en un riesgo elevado cuando coinciden con períodos de alta temperatura, baja humedad y vientos intensos. La combinación de combustible vegetal acumulado, condiciones meteorológicas adversas y prácticas tradicionales que no se adaptan al nuevo escenario climático explica por qué los incendios son cada vez más devastadores.
+                            Los estudios sobre olas de calor muestran que estos fenómenos extremos no solo aumentan en frecuencia, sino también en intensidad y duración.<br><br>
+                            En este contexto, prácticas que antes eran relativamente seguras, como las <strong>quemas agrícolas y ganaderas</strong>, se convierten en un riesgo elevado cuando coinciden con períodos de alta temperatura, baja humedad y vientos intensos.<br><br>
+                            La combinación de combustible vegetal acumulado, condiciones meteorológicas adversas y prácticas tradicionales que no se adaptan al nuevo escenario climático explica por qué los incendios son cada vez más devastadores.
                         </p>
                     </div>
                 </div>
