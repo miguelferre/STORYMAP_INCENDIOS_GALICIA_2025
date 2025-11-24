@@ -408,7 +408,10 @@
     
     /* En móvil: mismo comportamiento que escritorio para evitar saltos */
     @media (max-width: 768px){
-      #features{ padding-top:30vh; padding-bottom:10vh }
+      #features{
+        padding-top: calc(var(--vh, 1vh) * 60); /* Más espacio tras el hero */
+        padding-bottom:10vh;
+      }
       .step{ opacity:.35 }
       .step.active{ opacity:.98 }
     }
