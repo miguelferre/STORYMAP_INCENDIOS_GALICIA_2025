@@ -2589,7 +2589,7 @@ window.addEventListener('load', () => {
         const isMobile = isMobileViewport();
         const hasSelection = !!currentCategory;
         const preserveInline = isMobile && hasSelection && currentCategory === 'clima';
-        const preserveState = isMobile && hasSelection;
+        const preserveState = hasSelection;
         
         // Forzar limpieza de capas, pero conservar el contenido ya desplegado en móvil para evitar saltos
         CategoryController.hideAll({ preserveInline });
@@ -2616,9 +2616,6 @@ window.addEventListener('load', () => {
             }
             selector.classList.remove('category-selector-inline');
             selector.style.display = 'none';
-            updateCategoryButtons(null);
-            updateLayerExplanation(null);
-            currentCategory = null;
         }
         
         // Asegurar que todas las capas problemáticas estén ocultas
