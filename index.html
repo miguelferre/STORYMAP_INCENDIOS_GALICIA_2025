@@ -2344,6 +2344,7 @@ window.addEventListener('load', () => {
             if (!skipHide) {
                 CategoryController.hideAll();
             }
+            this.enforceExclusiveLayer(categoryKey);
             
             switch(categoryKey) {
                 case 'geologia':
@@ -2407,6 +2408,42 @@ window.addEventListener('load', () => {
                     }, 200);
                 }
             }
+        },
+        
+        hideLayerSafe(layerId, retries = 3) {
+            try {
+                if (map && map.getLayer && map.getLayer(layerId)) {
+                    map.setLayoutProperty(layerId, 'visibility', 'none');
+                } else if (retries > 0) {
+                    setTimeout(() => {
+                        this.hideLayerSafe(layerId, retries - 1);
+                    }, 100);
+                }
+            } catch (error) {
+                console.warn(`Error ocultando capa ${layerId}:`, error);
+                if (retries > 0) {
+                    setTimeout(() => {
+                        this.hideLayerSafe(layerId, retries - 1);
+                    }, 200);
+                }
+            }
+        },
+
+        enforceExclusiveLayer(categoryKey) {
+            const mapping = {
+                geologia: 'XEOURENSE',
+                vegetacion: 'USOURENSE',
+                geografia: 'RELIEVE'
+            };
+            Object.keys(mapping).forEach(key => {
+                const layerId = mapping[key];
+                if (!layerId) return;
+                if (key === categoryKey) {
+                    this.showLayerSafe(layerId);
+                } else {
+                    this.hideLayerSafe(layerId);
+                }
+            });
         },
 
         // Verifica si el mapa está listo con múltiples checks
