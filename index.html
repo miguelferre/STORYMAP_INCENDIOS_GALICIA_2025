@@ -1943,10 +1943,13 @@ window.addEventListener('load', () => {
     }
 
     function endDrag(e) {
+      if (!isDragging) return;
       isDragging = false;
       needsRectUpdate = true;
-      e.preventDefault();
-      e.stopPropagation();
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       
       // Restaurar selección de texto
       document.body.style.userSelect = '';
