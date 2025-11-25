@@ -310,10 +310,13 @@ Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas s
   function detachCategorySelector() {
     var selector = document.getElementById('category-selector');
     if (!selector || !selector.parentNode) return null;
+    var computedDisplay = window.getComputedStyle ? window.getComputedStyle(selector).display : (selector.style.display || '');
     var state = {
       selector: selector,
       wasHidden: selector.classList.contains('category-selector-hidden'),
-      display: selector.style.display || ''
+      wasVisible: computedDisplay !== 'none',
+      display: selector.style.display || '',
+      parentId: selector.parentNode.id || ''
     };
     selector.parentNode.removeChild(selector);
     return state;
@@ -322,22 +325,35 @@ Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas s
   function restoreCategorySelector(state) {
     if (!state || !state.selector) return;
     var selector = state.selector;
-    var mobileSlot = document.getElementById('category-mobile-slot');
-    var home = document.getElementById('category-selector-home');
-    var target = (isMobileViewport() && mobileSlot) ? mobileSlot : (home || document.body);
-    target.appendChild(selector);
+    var target = null;
+
+    if (state.parentId) {
+      target = document.getElementById(state.parentId);
+    }
+
+    if (!target) {
+      var mobileSlot = document.getElementById('category-mobile-slot');
+      var home = document.getElementById('category-selector-home');
+      target = (isMobileViewport() && mobileSlot) ? mobileSlot : (home || document.body);
+    }
+
+    if (!target) {
+      document.body.appendChild(selector);
+    } else {
+      target.appendChild(selector);
+    }
 
     selector.style.display = state.display || '';
     selector.classList.toggle('category-selector-hidden', !!state.wasHidden);
 
     if (isMobileViewport()) {
       selector.classList.add('category-selector-inline');
-      if (!selector.style.display) {
+      if (!selector.style.display && state.wasVisible) {
         selector.style.display = 'flex';
       }
     } else {
       selector.classList.remove('category-selector-inline');
-      if (!state.wasHidden && !selector.style.display) {
+      if (state.wasVisible && !selector.style.display) {
         selector.style.display = 'flex';
       }
     }
