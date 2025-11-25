@@ -69,6 +69,36 @@
   margin-left:auto;
 }
 
+.language-selector{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.language-button{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.35);
+  color:#fff;
+  font-size:0.78rem;
+  letter-spacing:0.5px;
+  padding:4px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  text-transform:uppercase;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.language-button:focus-visible{
+  outline:2px solid #F44E11;
+  outline-offset:2px;
+}
+
+.language-button--active,
+.language-button[aria-pressed="true"]{
+  background:#F44E11;
+  border-color:#F44E11;
+}
+
 
 #spacer{ display:none; }
 
@@ -1977,7 +2007,10 @@ window.addEventListener('load', () => {
 
 <!-- HEADER -->
 <header id="topbar" role="banner" aria-label="Cabecera">
-  <div id="brand">Miguel Ferreiro García</div>
+  <div id="language-selector" class="language-selector" role="group" aria-label="Seleccionar idioma">
+    <button type="button" class="language-button language-button--active" data-lang="es" aria-pressed="true">ES</button>
+    <button type="button" class="language-button" data-lang="gl" aria-pressed="false">GA</button>
+  </div>
   <div id="titleRight">¿Por qué arden nuestros montes?</div>
 </header>
 
@@ -2373,7 +2406,7 @@ window.addEventListener('load', () => {
     };
 
     // Estado actual del selector
-    let currentCategory = null;
+    var currentCategory = null;
     window.__afterHideDefaultLayers = function(){
         try{
             const chapter = document.getElementById('galicia-noroeste');
@@ -2385,7 +2418,7 @@ window.addEventListener('load', () => {
     };
 
     // Contenido de cada categoría (placeholders)
-    const categoryContent = {
+    var categoryContent = {
         geologia: {
     title: 'Geología',
     text: '<h2>Geología</h2>En esta capa podemos ver la <strong>litología</strong> del sureste de Galicia. La mayor parte del territorio está compuesta por <strong>rocas metamórficas</strong> y <strong>graníticas</strong>, que dan lugar a <strong>suelos ácidos</strong>.<br>Estos suelos favorecen comunidades de plantas más <strong>inflamables</strong>, debido a la composición de sus tejidos.<br><br><strong>Leyenda:</strong><br><span style="color: #e7298a;">■</span> DEPÓSITOS DETRÍTICOS CUATERNARIOS<br><span style="color: #1b9e77;">■</span> DEPÓSITOS DETRÍTICOS TERCIARIOS<br><span style="color: #e6ab02;">■</span> DEPÓSITOS PLIOCUATERNARIOS<br><span style="color: #8cf0b7;">■</span> ROCAS CARBONATADAS<br><span style="color: #51e723;">■</span> ROCAS FILONIANAS<br><span style="color: #d95f02;">■</span> ROCAS GRANÍTICAS<br><span style="color: #7570b3;">■</span> ROCAS METAMÓRFICAS<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fuente: SERGAS</div>'
@@ -2730,6 +2763,7 @@ window.addEventListener('load', () => {
       }, { passive: true });
     })();
   </script>
+  <script src="./i18n.js"></script>
 </body>
 </html>
 
