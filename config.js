@@ -57,10 +57,10 @@ var config = {
             Nunca antes se había registrado una <strong>superficie tan extensa arrasada</strong> por las llamas.<br>
             El incendio de <strong>Larouco–Seadur</strong>, con más de <strong>31.700 hectáreas</strong> (317 km²), ha sido el <strong>mayor jamás visto</strong> en nuestra comunidad.<br><br>
 
-            Para poder entender su magnitud primero conviene explicar la diferencia entre un <strong>incendio forestal</strong> y un <strong>gran incendio forestal (GIF)</strong>: el primero puede afectar a pocas hectáreas, el segundo es aquel que supera las <strong>500 hectáreas</strong>. El indendio deLarouco multiplicó por más de <strong>60</strong> ese umbral.<br><br>
+            Para poder entender su magnitud primero conviene explicar la diferencia entre un <strong>incendio forestal</strong> y un <strong>gran incendio forestal (GIF)</strong>: el primero puede afectar a pocas hectáreas, el segundo es aquel que supera las <strong>500 hectáreas</strong>. El indendio de Larouco multiplicó por más de <strong>60</strong> ese umbral.<br><br>
 
-            Pero los números pueden confundirnos y abstraernos del problema: ¿cómo dimensionamos algo tan enorme? Una forma es comparar el incendio con un entorno que conozcámos, como<strong> nuestras ciudades</strong>.<br>
-            <br>Para dimensionar su magnitud, el siguiente gráfico compara el área quemada con la superficie municipal de varias ciudades conocidas.
+            Pero los números pueden confundirnos y abstraernos del problema: ¿cómo dimensionamos algo tan enorme? Una forma es comparar el incendio con un entorno que conozcámos, como<strong> nuestras ciudades</strong>.<br><br>
+            Para dimensionar su magnitud, el siguiente gráfico compara el área quemada con la superficie municipal de varias ciudades conocidas.<br><br>
 
             <iframe src="https://flo.uri.sh/visualisation/26265364/embed"
                     frameborder="0"
@@ -203,7 +203,7 @@ var config = {
             <!-- Contenido dinámico que cambia según la capa seleccionada -->
             <div id="layer-explanation" class="layer-explanation">
                 <h3 id="layer-title" style="margin: 0 0 12px 0; color: #F44E11; display: none;"></h3>
-                <p id="layer-description" style="margin: 0; line-height: 1.6;">Selecciona una categoría para conocer cómo influye en la propagación del fuego.</p>
+                <p id="layer-description" style="margin: 0; line-height: 1.6;">Haz tu selección en el menú superior.</p>
             </div>
             <div id="climate-inline-container" class="climate-inline" style="display:none;">
                 <img src="assets/Larouco_Clima.png" alt="Clima en Larouco" class="climate-inline-large" />
@@ -268,7 +268,7 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
                         <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Durante más de cinco décadas, los incendios en Ourense han tenido un denominador común: la mayoría fueron provocados.<br><br>
 El gráfico muestra cómo los <strong>fuegos intencionados</strong> (en naranja) dominan casi toda la serie histórica, seguidos de los casos con <strong>causa desconocida</strong>.<br><br>
-Las <strong>quemas agrícolas y ganaderas</strong> —muy ligadas al uso tradicional del fuego para limpiar o preparar terrenos— y las negligencias aparecen en menor medida, mientras que los <strong>incendios naturales</strong> apenas tienen presencia.<br><br>
+Las <strong>quemas agrícolas y ganaderas</strong>, muy ligadas al uso tradicional del fuego para limpiar o preparar terrenos, y las negligencias aparecen en menor medida, mientras que los <strong>incendios naturales</strong> apenas tienen presencia.<br><br>
 En resumen, el fuego en Ourense casi nunca empieza solo: tiene detrás <strong>decisiones humanas</strong>, a veces por costumbre y otras por conflicto.
                         </p>
                         

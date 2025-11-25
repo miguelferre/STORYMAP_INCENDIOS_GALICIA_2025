@@ -12,7 +12,7 @@
       mapSource: 'Fonte: forest-fire.emergency.copernicus.eu/',
       sliderCaption: 'Fonte: Comparador do Plan Nacional de Ortofotografía Aérea',
       categoryAriaLabel: 'Selecciona unha categoría de información',
-      categoryDefault: 'Escolle unha categoría para coñecer como inflúe na propagación do lume.',
+      categoryDefault: 'Fai a túa selección no menú superior.',
       categoryTabs: {
         geologia: 'Xeoloxía',
         vegetacion: 'Vexetación',
@@ -59,8 +59,8 @@
             Nunca antes se rexistrara unha <strong>superficie tan extensa arrasada</strong> polas chamas.<br>
             O incendio de <strong>Larouco–Seadur</strong>, con máis de <strong>31.700 hectáreas</strong> (317 km²), foi o <strong>maior visto nunca</strong> na nosa comunidade.<br><br>
             Para comprender a súa magnitude convén lembrar a diferenza entre un <strong>incendio forestal</strong> e un <strong>gran incendio forestal (GIF)</strong>: o primeiro pode afectar só a unhas poucas hectáreas, mentres que o segundo supera as <strong>500 hectáreas</strong>. O lume de Larouco multiplicou por máis de <strong>60</strong> ese limiar.<br><br>
-            Mais os números poden enganarnos e afastarnos do problema: como dimensionar algo tan enorme? Un xeito é comparar o incendio cun entorno que coñezamos, como <strong>as nosas cidades</strong>.<br>
-            <br>Para entender mellor a súa magnitude, o seguinte gráfico compara a área queimada coa superficie municipal de varias cidades coñecidas.
+            Mais os números poden enganarnos e afastarnos do problema: como dimensionar algo tan enorme? Un xeito é comparar o incendio cun entorno que coñezamos, como <strong>as nosas cidades</strong>.<br><br>
+            Para entender mellor a súa magnitude, o seguinte gráfico compara a área queimada coa superficie municipal de varias cidades coñecidas.<br><br>
             <iframe src="https://flo.uri.sh/visualisation/26265364/embed"
                     frameborder="0"
                     scrolling="no"
@@ -149,7 +149,7 @@
             <div id="category-mobile-slot" class="category-mobile-slot"></div>
             <div id="layer-explanation" class="layer-explanation">
                 <h3 id="layer-title" style="margin: 0 0 12px 0; color: #F44E11; display: none;"></h3>
-                <p id="layer-description" style="margin: 0; line-height: 1.6;">Escolle unha categoría para coñecer como inflúe na propagación do lume.</p>
+                <p id="layer-description" style="margin: 0; line-height: 1.6;">Fai a túa selección no menú superior.</p>
             </div>
             <div id="climate-inline-container" class="climate-inline" style="display:none;">
                 <img src="assets/Larouco_Clima.png" alt="Clima en Larouco" class="climate-inline-large" />
@@ -196,7 +196,7 @@ Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas s
                         <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Durante máis de cinco décadas, os incendios en Ourense tiveron un denominador común: a maioría foron provocados.<br><br>
 O gráfico amosa como os <strong>lumes intencionados</strong> (en laranxa) dominan case toda a serie histórica, seguidos dos casos con <strong>causa descoñecida</strong>.<br><br>
-As <strong>queimas agrícolas e gandeiras</strong> —moi ligadas ao uso tradicional do lume para limpar ou preparar terreos— e as neglixencias aparecen en menor medida, mentres que os <strong>incendios naturais</strong> apenas teñen presenza.<br><br>
+As <strong>queimas agrícolas e gandeiras</strong>, moi ligadas ao uso tradicional do lume para limpar ou preparar terreos, e as neglixencias aparecen en menor medida, mentres que os <strong>incendios naturais</strong> apenas teñen presenza.<br><br>
 En resumo, o lume en Ourense case nunca empeza só: detrás hai <strong>decisións humanas</strong>, ás veces por costume e outras por conflito.
                         </p>
                         
@@ -297,6 +297,51 @@ Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas s
   var languageSelector = null;
   var categoryTabsContainer = null;
   var layerDescriptionEl = null;
+  var mobileViewportQuery = window.matchMedia ? window.matchMedia('(max-width: 768px)') : null;
+
+  function isMobileViewport() {
+    if (mobileViewportQuery) {
+      return mobileViewportQuery.matches;
+    }
+    var width = window.innerWidth || document.documentElement.clientWidth || 1024;
+    return width <= 768;
+  }
+
+  function detachCategorySelector() {
+    var selector = document.getElementById('category-selector');
+    if (!selector || !selector.parentNode) return null;
+    var state = {
+      selector: selector,
+      wasHidden: selector.classList.contains('category-selector-hidden'),
+      display: selector.style.display || ''
+    };
+    selector.parentNode.removeChild(selector);
+    return state;
+  }
+
+  function restoreCategorySelector(state) {
+    if (!state || !state.selector) return;
+    var selector = state.selector;
+    var mobileSlot = document.getElementById('category-mobile-slot');
+    var home = document.getElementById('category-selector-home');
+    var target = (isMobileViewport() && mobileSlot) ? mobileSlot : (home || document.body);
+    target.appendChild(selector);
+
+    selector.style.display = state.display || '';
+    selector.classList.toggle('category-selector-hidden', !!state.wasHidden);
+
+    if (isMobileViewport()) {
+      selector.classList.add('category-selector-inline');
+      if (!selector.style.display) {
+        selector.style.display = 'flex';
+      }
+    } else {
+      selector.classList.remove('category-selector-inline');
+      if (!state.wasHidden && !selector.style.display) {
+        selector.style.display = 'flex';
+      }
+    }
+  }
 
   function deepClone(value) {
     if (value === undefined || value === null) return value;
@@ -386,6 +431,7 @@ Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas s
 
   function updateChaptersContent(contentMap) {
     if (!contentMap) return;
+    var selectorState = detachCategorySelector();
     Object.keys(chapterRefs).forEach(function (id) {
       var refs = chapterRefs[id];
       if (!refs) return;
@@ -412,6 +458,8 @@ Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas s
         refs.descriptionEl.innerHTML = data.description;
       }
     });
+    layerDescriptionEl = document.getElementById('layer-description');
+    restoreCategorySelector(selectorState);
   }
 
   function refreshCategoryExplanation() {
