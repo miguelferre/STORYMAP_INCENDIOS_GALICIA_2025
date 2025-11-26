@@ -57,9 +57,9 @@ var config = {
             Nunca antes se había registrado una <strong>superficie tan extensa arrasada</strong> por las llamas.<br>
             El incendio de <strong>Larouco–Seadur</strong>, con más de <strong>31.700 hectáreas</strong> (317 km²), ha sido el <strong>mayor jamás visto</strong> en nuestra comunidad.<br><br>
 
-            Para poder entender su magnitud primero conviene explicar la diferencia entre un <strong>incendio forestal</strong> y un <strong>gran incendio forestal (GIF)</strong>: el primero puede afectar a pocas hectáreas, el segundo es aquel que supera las <strong>500 hectáreas</strong>. El incendio de Larouco multiplicó por más de <strong>60</strong> ese umbral.<br><br>
+            Para poder entender su magnitud conviene primero explicar la diferencia entre un <strong>incendio forestal</strong> y un <strong>gran incendio forestal (GIF)</strong>: el primero puede afectar a pocas hectáreas, el segundo es aquel que supera las <strong>500 hectáreas</strong>. El incendio de Larouco multiplicó por más de <strong>60</strong> ese umbral.<br><br>
 
-            Pero los números pueden confundirnos y abstraernos del problema: ¿cómo dimensionamos algo tan enorme? Una forma es comparar el incendio con un entorno que conozcámos, como<strong> nuestras ciudades</strong>.<br><br>
+            Pero los números pueden confundirnos y abstraernos del problema: ¿cómo dimensionamos algo tan enorme? Una forma es comparar el incendio con un entorno que conozcamos, como<strong> nuestras ciudades</strong>.<br><br>
             Para dimensionar su magnitud, el siguiente gráfico compara el área quemada con la superficie municipal de varias ciudades conocidas.<br><br>
 
             <iframe src="https://flo.uri.sh/visualisation/26265364/embed"
