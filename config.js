@@ -1,6 +1,6 @@
 var config = {
     style: 'mapbox://styles/miguel-ferr/cmf4jek5100hv01plgk8pe1lg',
-    accessToken: 'pk.eyJ1IjoibWlndWVsLWZlcnIiLCJhIjoiY21mMnh6eGt1MmY0ejJrcXl2czZtODBhcCJ9.jHIrIN7QvT1D6khuxCsLDg',
+    accessToken: 'pk.eyJ1IjoibWlndWVsLWZlcnIiLCJhIjoiY21pbnI4dWhmMGVjaTNncjEwcTl5NjVmeiJ9.6vtKRrzI4kxzFDiHNFOgpg',
     
     // Capas que se ocultan automáticamente por defecto
     hiddenLayers: ['USOURENSE', 'XEOURENSE', 'RELIEVE'],
