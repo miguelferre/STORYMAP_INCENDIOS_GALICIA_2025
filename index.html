@@ -37,6 +37,91 @@
 
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:#0b0b0b}
+    body.popup-open{overflow:hidden}
+
+    #review-popup{
+      position:fixed;
+      inset:0;
+      z-index:120;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      background:rgba(3,7,18,0.78);
+      backdrop-filter:blur(6px);
+      transition:opacity .25s ease, visibility .25s ease;
+    }
+    #review-popup.popup-hidden{
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+    }
+    .review-popup-panel{
+      width:min(640px, 100%);
+      max-height:90vh;
+      overflow:auto;
+      background:rgba(4,17,56,0.96);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      padding:28px;
+      position:relative;
+      box-shadow:0 25px 60px rgba(0,0,0,0.45);
+      line-height:1.55;
+    }
+    .review-popup-panel h2{
+      margin:0 0 12px 0;
+      font-size:1.35rem;
+    }
+    .review-popup-panel p{
+      margin:0 0 16px 0;
+    }
+    .review-popup-panel ul{
+      margin:0;
+      padding-left:20px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .review-popup-panel li{
+      margin:0;
+    }
+    .review-popup-close{
+      position:absolute;
+      top:12px;
+      right:12px;
+      border:none;
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      font-size:1.1rem;
+      width:36px;
+      height:36px;
+      border-radius:999px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:background .2s ease;
+    }
+    .review-popup-close:hover,
+    .review-popup-close:focus-visible{
+      background:rgba(255,255,255,0.2);
+      outline:none;
+    }
+    @media (max-width: 600px){
+      #review-popup{
+        padding:16px;
+        align-items:flex-start;
+      }
+      .review-popup-panel{
+        margin-top:12vh;
+        padding:20px;
+        border-radius:14px;
+      }
+      .review-popup-close{
+        width:32px;
+        height:32px;
+      }
+    }
 
     /* Mapa fijo detrás */
     #map{position:fixed;inset:0;width:100vw;height:100vh}
@@ -2013,7 +2098,20 @@ window.addEventListener('load', () => {
 </script>
 
 
-<body>
+<body class="popup-open">
+
+  <div id="review-popup" role="dialog" aria-modal="true" aria-labelledby="review-popup-title">
+    <div class="review-popup-panel">
+      <button type="button" class="review-popup-close" id="review-popup-close" aria-label="Cerrar aviso">×</button>
+      <h2 id="review-popup-title">Contenido en revisión</h2>
+      <p>El contenido de este story map se está revisando para incorporar información reciente que afecta a varios apartados. Mientras realizo los cambios, ten en cuenta lo siguiente:</p>
+      <ul>
+        <li>Las tendencias de incendios se están ajustando para basarse en los datos oficiales del PLADIGA, ya que las detecciones satelitales de EFFIS no recogen con fiabilidad los incendios pequeños o muy breves.</li>
+        <li>Los mapas de vegetación se sustituirán por cartografía procedente del Inventario Forestal Continuo de Galicia, SIOSE o CORINE LC, que ofrecen una referencia más precisa y con año de publicación.</li>
+        <li>El gráfico de motivaciones se corregirá para excluir periodos sin registro disponible, evitando interpretaciones erróneas.</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- MAPA DETRÁS -->
   <div id="map"></div>
@@ -2810,6 +2908,34 @@ window.addEventListener('load', () => {
         lastY = y;
       }, { passive: true });
     })();
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var popup = document.getElementById('review-popup');
+      var closeBtn = document.getElementById('review-popup-close');
+      if (!popup || !closeBtn) return;
+
+      function closePopup(){
+        if (popup.classList.contains('popup-hidden')) return;
+        popup.classList.add('popup-hidden');
+        popup.setAttribute('aria-hidden','true');
+        document.body.classList.remove('popup-open');
+      }
+
+      function handleKey(e){
+        if (e.key === 'Escape'){
+          closePopup();
+        }
+      }
+
+      closeBtn.addEventListener('click', closePopup);
+      popup.addEventListener('click', function(evt){
+        if (evt.target === popup){
+          closePopup();
+        }
+      });
+      document.addEventListener('keydown', handleKey);
+    });
   </script>
   <script src="./i18n.js"></script>
 </body>
