@@ -230,31 +230,13 @@ var config = {
             <h2>Las causas detrás del fuego</h2>
                 <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
-                        <iframe src="https://flo.uri.sh/visualisation/25942041/embed"
-                                frameborder="0"
-                                scrolling="no"
-                                style="width: 100%; height: 600px; margin-bottom: 30px;">
-                        </iframe>
+                        <div id="grafica-causas" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
                           <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Durante más de cinco décadas, los incendios en Ourense han tenido un denominador común: la mayoría fueron provocados.<br><br>
-El gráfico muestra cómo los <strong>fuegos intencionados</strong> (en naranja) dominan casi toda la serie histórica, seguidos de los casos con <strong>causa desconocida</strong>.<br><br>
-Las <strong>quemas agrícolas y ganaderas</strong>, muy ligadas al uso tradicional del fuego para limpiar o preparar terrenos, y las negligencias aparecen en menor medida, mientras que los <strong>incendios naturales</strong> apenas tienen presencia.<br><br>
-En resumen, el fuego en Ourense casi nunca empieza solo: tiene detrás <strong>decisiones humanas</strong>, a veces por costumbre y otras por conflicto.
-                          </p>
-                        </div>
-                        <br class="only-mobile"><br class="only-mobile">
-                        <iframe src="https://flo.uri.sh/visualisation/25510523/embed"
-                                frameborder="0"
-                                scrolling="no"
-                                style="width: 100%; height: 600px;">
-                        </iframe>
-                        <div class="mobile-expl">
-                          <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-Detrás de cada incendio intencionado hay un motivo, y en Ourense la mayoría tienen relación con el campo.<br><br>
-Las <strong>prácticas agrícolas y ganaderas</strong> explican buena parte de los fuegos provocados, seguidas por casos de <strong>alarma social</strong>, <strong>piromanía</strong> o <strong>venganzas personales</strong>.<br><br>
-Aun así, miles de hectáreas arden por causas que no llegan a conocerse, reflejo de lo difícil que es investigar este tipo de incendios.<br><br>
-Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas solo por incendios con origen intencionado.
+Sobre el conjunto de los <strong>81.643 partes oficiales</strong> registrados entre <strong>1968 y 2022</strong>, casi <strong>8 de cada 10</strong> son intencionados; el resto se reparte entre causa desconocida (14%), negligencias (4%), reproducciones de incendios anteriores y rayo (apenas un 1,5% cada uno).<br><br>
+Cuando se mira <strong>dentro del grupo de los intencionados</strong>, el patrón se vuelve más nítido: en torno al <strong>43%</strong> son <strong>quemas agrícolas o ganaderas</strong> que se descontrolan, muy ligadas al uso tradicional del fuego para limpiar o preparar terrenos. Caza, vandalismo, piromanía o venganzas suman porcentajes mucho menores.<br><br>
+Y aun así, casi la mitad de los partes intencionados no llegan a tener una motivación reconocida: investigar este tipo de incendios es complicado.
                           </p>
                         </div>
                     </div>
@@ -262,16 +244,9 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
                         <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Durante más de cinco décadas, los incendios en Ourense han tenido un denominador común: la mayoría fueron provocados.<br><br>
-El gráfico muestra cómo los <strong>fuegos intencionados</strong> (en naranja) dominan casi toda la serie histórica, seguidos de los casos con <strong>causa desconocida</strong>.<br><br>
-Las <strong>quemas agrícolas y ganaderas</strong>, muy ligadas al uso tradicional del fuego para limpiar o preparar terrenos, y las negligencias aparecen en menor medida, mientras que los <strong>incendios naturales</strong> apenas tienen presencia.<br><br>
-En resumen, el fuego en Ourense casi nunca empieza solo: tiene detrás <strong>decisiones humanas</strong>, a veces por costumbre y otras por conflicto.
-                        </p>
-                        
-                        <p style="margin: 0; font-size: 16px; line-height: 1.6;">
-Detrás de cada incendio intencionado hay un motivo, y en Ourense la mayoría tienen relación con el campo.<br><br>
-Las <strong>prácticas agrícolas y ganaderas</strong> explican buena parte de los fuegos provocados, seguidas por casos de <strong>alarma social</strong>, <strong>piromanía</strong> o <strong>venganzas personales</strong>.<br><br>
-Aun así, miles de hectáreas arden por causas que no llegan a conocerse, reflejo de lo difícil que es investigar este tipo de incendios.<br><br>
-Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas solo por incendios con origen intencionado.
+Sobre el conjunto de los <strong>81.643 partes oficiales</strong> registrados entre <strong>1968 y 2022</strong>, casi <strong>8 de cada 10</strong> son intencionados; el resto se reparte entre causa desconocida (14%), negligencias (4%), reproducciones y rayo (apenas un 1,5% cada uno).<br><br>
+Cuando se mira <strong>dentro del grupo de los intencionados</strong>, el patrón se vuelve más nítido: en torno al <strong>43%</strong> son <strong>quemas agrícolas o ganaderas</strong> que se descontrolan, muy ligadas al uso tradicional del fuego para limpiar o preparar terrenos. Caza, vandalismo, piromanía o venganzas suman porcentajes mucho menores.<br><br>
+Y aun así, casi la mitad de los partes intencionados no llegan a tener una motivación reconocida: investigar este tipo de incendios es complicado.
                         </p>
                     </div>
                 </div>
@@ -285,7 +260,8 @@ Entre 1968 y 2020, más de <strong>12.000 hectáreas</strong> fueron arrasadas s
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             onChapterEnter: [
-                { callbackName: 'hideDefaultLayers' }
+                { callbackName: 'hideDefaultLayers' },
+                { callbackName: 'renderCausas' }
             ],
             onChapterExit: []
         },

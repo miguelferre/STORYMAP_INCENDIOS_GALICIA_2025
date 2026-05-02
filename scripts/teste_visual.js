@@ -72,7 +72,7 @@ async function correr(viewport, lang, prefijo, log) {
   await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 30000 });
   // Esperamos a que carguen Mapbox e Observable Plot.
   await page.waitForFunction(
-    () => typeof window.mapboxgl !== "undefined" && typeof window.Plot !== "undefined" && typeof window.SerieIncendios !== "undefined",
+    () => typeof window.mapboxgl !== "undefined" && typeof window.Plot !== "undefined" && typeof window.SerieIncendios !== "undefined" && typeof window.CausasOurense !== "undefined",
     null,
     { timeout: 20000 }
   );
@@ -94,29 +94,34 @@ async function correr(viewport, lang, prefijo, log) {
 
   await recorrerCapitulos(page, prefijo, log);
 
-  // Snapshot focal da gráfica de tendencia para revisión detallada.
-  try {
-    await page.evaluate(() => {
-      const tend = document.getElementById("tendencia-aumento");
-      if (tend) tend.scrollIntoView({ behavior: "instant", block: "center" });
-    });
-    await page.waitForTimeout(2500);
-    const grafica = await page.$("#grafica-tendencia");
-    if (grafica) {
-      const visible = await grafica.isVisible().catch(() => false);
-      if (visible) {
-        await grafica.screenshot({
-          path: path.join(OUT, `${prefijo}_zoom_grafica.png`),
-          timeout: 8000,
-        });
+  // Snapshots focais das gráficas nativas para revisión detallada.
+  for (const [chId, hostId] of [
+    ["tendencia-aumento", "grafica-tendencia"],
+    ["tendencia-comparativas", "grafica-causas"],
+  ]) {
+    try {
+      await page.evaluate((id) => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "instant", block: "center" });
+      }, chId);
+      await page.waitForTimeout(2500);
+      const grafica = await page.$("#" + hostId);
+      if (grafica) {
+        const visible = await grafica.isVisible().catch(() => false);
+        if (visible) {
+          await grafica.screenshot({
+            path: path.join(OUT, `${prefijo}_zoom_${hostId}.png`),
+            timeout: 8000,
+          });
+        } else {
+          log.faltantes.push({ prefijo, capitulo: hostId, motivo: "host non visible" });
+        }
       } else {
-        log.faltantes.push({ prefijo, capitulo: "grafica-tendencia", motivo: "host non visible" });
+        log.faltantes.push({ prefijo, capitulo: hostId, motivo: "host non atopado" });
       }
-    } else {
-      log.faltantes.push({ prefijo, capitulo: "grafica-tendencia", motivo: "host non atopado" });
+    } catch (err) {
+      log.faltantes.push({ prefijo, capitulo: hostId, motivo: err.message });
     }
-  } catch (err) {
-    log.faltantes.push({ prefijo, capitulo: "grafica-tendencia", motivo: err.message });
   }
 
   await browser.close();

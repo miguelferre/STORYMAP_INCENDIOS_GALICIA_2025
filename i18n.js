@@ -157,31 +157,13 @@
             <h2>As causas detrás do lume</h2>
                 <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
-                        <iframe src="https://flo.uri.sh/visualisation/25942041/embed"
-                                frameborder="0"
-                                scrolling="no"
-                                style="width: 100%; height: 600px; margin-bottom: 30px;">
-                        </iframe>
+                        <div id="grafica-causas" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
                           <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Durante máis de cinco décadas, os incendios en Ourense tiveron un denominador común: a maioría foron provocados.<br><br>
-O gráfico amosa como os <strong>lumes intencionados</strong> (en laranxa) dominan case toda a serie histórica, seguidos dos casos con <strong>causa descoñecida</strong>.<br><br>
-As <strong>queimas agrícolas e gandeiras</strong>, moi ligadas ao uso tradicional do lume para limpar ou preparar terreos, e as neglixencias aparecen en menor medida, mentres que os <strong>incendios naturais</strong> apenas teñen presenza.<br><br>
-En resumo, o lume en Ourense case nunca empeza só: detrás hai <strong>decisións humanas</strong>, ás veces por costume e outras por conflito.
-                          </p>
-                        </div>
-                        <br class="only-mobile"><br class="only-mobile">
-                        <iframe src="https://flo.uri.sh/visualisation/25510523/embed"
-                                frameborder="0"
-                                scrolling="no"
-                                style="width: 100%; height: 600px;">
-                        </iframe>
-                        <div class="mobile-expl">
-                          <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-Detrás de cada incendio intencionado hai un motivo, e en Ourense a maioría gardan relación co campo.<br><br>
-As <strong>prácticas agrícolas e gandeiras</strong> explican boa parte dos lumes provocados, seguidas por casos de <strong>alarma social</strong>, <strong>piromanía</strong> ou <strong>vinganzas persoais</strong>.<br><br>
-Aínda así, milleiros de hectáreas arden por causas que non chegan a coñecerse, mostra da dificultade que supón investigar este tipo de incendios.<br><br>
-Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas só por lumes de orixe intencionada.
+Sobre o conxunto dos <strong>81.643 partes oficiais</strong> rexistrados entre <strong>1968 e 2022</strong>, case <strong>8 de cada 10</strong> son intencionados; o resto repártese entre causa descoñecida (14%), neglixencias (4%), reproducións e raio (apenas un 1,5% cada un).<br><br>
+Cando se mira <strong>dentro do grupo dos intencionados</strong>, o patrón vólvese máis nítido: arredor do <strong>43%</strong> son <strong>queimas agrícolas ou gandeiras</strong> que se descontrolan, moi ligadas ao uso tradicional do lume para limpar ou preparar terreos. Caza, vandalismo, piromanía ou vinganzas suman porcentaxes moito menores.<br><br>
+E aínda así, case a metade dos partes intencionados non chegan a ter unha motivación recoñecida: investigar este tipo de incendios é complicado.
                           </p>
                         </div>
                     </div>
@@ -189,16 +171,9 @@ Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas s
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
                         <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Durante máis de cinco décadas, os incendios en Ourense tiveron un denominador común: a maioría foron provocados.<br><br>
-O gráfico amosa como os <strong>lumes intencionados</strong> (en laranxa) dominan case toda a serie histórica, seguidos dos casos con <strong>causa descoñecida</strong>.<br><br>
-As <strong>queimas agrícolas e gandeiras</strong>, moi ligadas ao uso tradicional do lume para limpar ou preparar terreos, e as neglixencias aparecen en menor medida, mentres que os <strong>incendios naturais</strong> apenas teñen presenza.<br><br>
-En resumo, o lume en Ourense case nunca empeza só: detrás hai <strong>decisións humanas</strong>, ás veces por costume e outras por conflito.
-                        </p>
-                        
-                        <p style="margin: 0; font-size: 16px; line-height: 1.6;">
-Detrás de cada incendio intencionado hai un motivo, e en Ourense a maioría gardan relación co campo.<br><br>
-As <strong>prácticas agrícolas e gandeiras</strong> explican boa parte dos lumes provocados, seguidas por casos de <strong>alarma social</strong>, <strong>piromanía</strong> ou <strong>vinganzas persoais</strong>.<br><br>
-Aínda así, milleiros de hectáreas arden por causas que non chegan a coñecerse, mostra da dificultade que supón investigar este tipo de incendios.<br><br>
-Entre 1968 e 2020, máis de <strong>12.000 hectáreas</strong> foron arrasadas só por lumes de orixe intencionada.
+Sobre o conxunto dos <strong>81.643 partes oficiais</strong> rexistrados entre <strong>1968 e 2022</strong>, case <strong>8 de cada 10</strong> son intencionados; o resto repártese entre causa descoñecida (14%), neglixencias (4%), reproducións e raio (apenas un 1,5% cada un).<br><br>
+Cando se mira <strong>dentro do grupo dos intencionados</strong>, o patrón vólvese máis nítido: arredor do <strong>43%</strong> son <strong>queimas agrícolas ou gandeiras</strong> que se descontrolan, moi ligadas ao uso tradicional do lume para limpar ou preparar terreos. Caza, vandalismo, piromanía ou vinganzas suman porcentaxes moito menores.<br><br>
+E aínda así, case a metade dos partes intencionados non chegan a ter unha motivación recoñecida: investigar este tipo de incendios é complicado.
                         </p>
                     </div>
                 </div>

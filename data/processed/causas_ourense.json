@@ -1,0 +1,1537 @@
+{
+  "metadatos": {
+    "titulo": "Causas dos incendios forestais en Ourense (1968-2022)",
+    "rango": [
+      1968,
+      2022
+    ],
+    "total_pifs": 81643,
+    "fonte": {
+      "nome": "EGIF — Estadística General de Incendios Forestales",
+      "organismo": "MITECO / MAPA",
+      "url": "https://servicio.mapa.gob.es/incendios/Search/Publico",
+      "descarga": "Exportación XML, provincia 32 (Ourense), todos os anos dispoñibles"
+    },
+    "metodoloxia": "Cada parte de incendio inclúe un código de causa (idcausa) e, para intencionados, un código de motivación (idmotivacion). Os grupos resúmense en 5 categorías (Rayo / Negligencias e accidentes / Intencionado / Causa descoñecida / Reproducción) e as motivacións agréganse segundo o catálogo do Comité de Lucha contra Incendios Forestales (manual EGIF v3.6, p.18). Aproximadamente o 49% dos intencionados teñen código de motivación 400 ('sen motivación recoñecida') —reflicte a dificultade habitual da investigación destes incendios.",
+    "esquema": {
+      "serie_anual": "ano × grupo de causa (5 grupos)",
+      "motivacions": "agregado de motivacións dos intencionados (8 grupos)"
+    }
+  },
+  "serie_anual": [
+    {
+      "ano": 1968,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 24,
+      "ha_total": 212.2
+    },
+    {
+      "ano": 1968,
+      "grupo": "Intencionado",
+      "num_incendios": 16,
+      "ha_total": 830.1
+    },
+    {
+      "ano": 1968,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 34,
+      "ha_total": 3375.8
+    },
+    {
+      "ano": 1968,
+      "grupo": "Rayo",
+      "num_incendios": 4,
+      "ha_total": 25.4
+    },
+    {
+      "ano": 1969,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 33,
+      "ha_total": 390.1
+    },
+    {
+      "ano": 1969,
+      "grupo": "Intencionado",
+      "num_incendios": 22,
+      "ha_total": 591.5
+    },
+    {
+      "ano": 1969,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 37,
+      "ha_total": 385.8
+    },
+    {
+      "ano": 1969,
+      "grupo": "Rayo",
+      "num_incendios": 1,
+      "ha_total": 0.4
+    },
+    {
+      "ano": 1970,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 37,
+      "ha_total": 846.2
+    },
+    {
+      "ano": 1970,
+      "grupo": "Intencionado",
+      "num_incendios": 64,
+      "ha_total": 1777.1
+    },
+    {
+      "ano": 1970,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 124,
+      "ha_total": 4618.2
+    },
+    {
+      "ano": 1970,
+      "grupo": "Rayo",
+      "num_incendios": 14,
+      "ha_total": 57.3
+    },
+    {
+      "ano": 1971,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 35,
+      "ha_total": 514.6
+    },
+    {
+      "ano": 1971,
+      "grupo": "Intencionado",
+      "num_incendios": 39,
+      "ha_total": 579.0
+    },
+    {
+      "ano": 1971,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 34,
+      "ha_total": 1254.1
+    },
+    {
+      "ano": 1971,
+      "grupo": "Rayo",
+      "num_incendios": 6,
+      "ha_total": 11.6
+    },
+    {
+      "ano": 1972,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 18,
+      "ha_total": 443.1
+    },
+    {
+      "ano": 1972,
+      "grupo": "Intencionado",
+      "num_incendios": 83,
+      "ha_total": 4533.2
+    },
+    {
+      "ano": 1972,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 91,
+      "ha_total": 2950.5
+    },
+    {
+      "ano": 1972,
+      "grupo": "Rayo",
+      "num_incendios": 4,
+      "ha_total": 17.0
+    },
+    {
+      "ano": 1973,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 21,
+      "ha_total": 411.0
+    },
+    {
+      "ano": 1973,
+      "grupo": "Intencionado",
+      "num_incendios": 116,
+      "ha_total": 4202.3
+    },
+    {
+      "ano": 1973,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 77,
+      "ha_total": 1867.2
+    },
+    {
+      "ano": 1973,
+      "grupo": "Rayo",
+      "num_incendios": 13,
+      "ha_total": 81.9
+    },
+    {
+      "ano": 1974,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 107,
+      "ha_total": 5611.9
+    },
+    {
+      "ano": 1974,
+      "grupo": "Intencionado",
+      "num_incendios": 215,
+      "ha_total": 9590.1
+    },
+    {
+      "ano": 1974,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 44,
+      "ha_total": 2204.3
+    },
+    {
+      "ano": 1974,
+      "grupo": "Rayo",
+      "num_incendios": 4,
+      "ha_total": 81.4
+    },
+    {
+      "ano": 1975,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 45,
+      "ha_total": 1743.9
+    },
+    {
+      "ano": 1975,
+      "grupo": "Intencionado",
+      "num_incendios": 204,
+      "ha_total": 16970.7
+    },
+    {
+      "ano": 1975,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 25,
+      "ha_total": 1128.1
+    },
+    {
+      "ano": 1975,
+      "grupo": "Rayo",
+      "num_incendios": 8,
+      "ha_total": 46.3
+    },
+    {
+      "ano": 1976,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 98,
+      "ha_total": 5922.4
+    },
+    {
+      "ano": 1976,
+      "grupo": "Intencionado",
+      "num_incendios": 142,
+      "ha_total": 9368.0
+    },
+    {
+      "ano": 1976,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 22,
+      "ha_total": 1601.8
+    },
+    {
+      "ano": 1976,
+      "grupo": "Rayo",
+      "num_incendios": 47,
+      "ha_total": 1395.0
+    },
+    {
+      "ano": 1977,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 21,
+      "ha_total": 429.8
+    },
+    {
+      "ano": 1977,
+      "grupo": "Intencionado",
+      "num_incendios": 47,
+      "ha_total": 613.5
+    },
+    {
+      "ano": 1977,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 18,
+      "ha_total": 263.5
+    },
+    {
+      "ano": 1977,
+      "grupo": "Rayo",
+      "num_incendios": 3,
+      "ha_total": 2.4
+    },
+    {
+      "ano": 1978,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 101,
+      "ha_total": 10298.6
+    },
+    {
+      "ano": 1978,
+      "grupo": "Intencionado",
+      "num_incendios": 375,
+      "ha_total": 24677.6
+    },
+    {
+      "ano": 1978,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 41,
+      "ha_total": 2471.2
+    },
+    {
+      "ano": 1979,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 215,
+      "ha_total": 7033.4
+    },
+    {
+      "ano": 1979,
+      "grupo": "Intencionado",
+      "num_incendios": 389,
+      "ha_total": 16176.1
+    },
+    {
+      "ano": 1979,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 33,
+      "ha_total": 645.3
+    },
+    {
+      "ano": 1979,
+      "grupo": "Rayo",
+      "num_incendios": 3,
+      "ha_total": 42.0
+    },
+    {
+      "ano": 1980,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 115,
+      "ha_total": 1859.6
+    },
+    {
+      "ano": 1980,
+      "grupo": "Intencionado",
+      "num_incendios": 292,
+      "ha_total": 6428.0
+    },
+    {
+      "ano": 1980,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 30,
+      "ha_total": 826.3
+    },
+    {
+      "ano": 1980,
+      "grupo": "Rayo",
+      "num_incendios": 2,
+      "ha_total": 1.6
+    },
+    {
+      "ano": 1981,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 205,
+      "ha_total": 4451.2
+    },
+    {
+      "ano": 1981,
+      "grupo": "Intencionado",
+      "num_incendios": 427,
+      "ha_total": 20331.6
+    },
+    {
+      "ano": 1981,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 34,
+      "ha_total": 722.7
+    },
+    {
+      "ano": 1981,
+      "grupo": "Rayo",
+      "num_incendios": 10,
+      "ha_total": 8.2
+    },
+    {
+      "ano": 1982,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 83,
+      "ha_total": 2852.7
+    },
+    {
+      "ano": 1982,
+      "grupo": "Intencionado",
+      "num_incendios": 294,
+      "ha_total": 9650.4
+    },
+    {
+      "ano": 1982,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 20,
+      "ha_total": 285.0
+    },
+    {
+      "ano": 1982,
+      "grupo": "Rayo",
+      "num_incendios": 4,
+      "ha_total": 10.3
+    },
+    {
+      "ano": 1983,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 34,
+      "ha_total": 406.3
+    },
+    {
+      "ano": 1983,
+      "grupo": "Intencionado",
+      "num_incendios": 131,
+      "ha_total": 1558.0
+    },
+    {
+      "ano": 1983,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 12,
+      "ha_total": 353.9
+    },
+    {
+      "ano": 1983,
+      "grupo": "Rayo",
+      "num_incendios": 5,
+      "ha_total": 1.1
+    },
+    {
+      "ano": 1984,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 96,
+      "ha_total": 1762.9
+    },
+    {
+      "ano": 1984,
+      "grupo": "Intencionado",
+      "num_incendios": 253,
+      "ha_total": 3644.0
+    },
+    {
+      "ano": 1984,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 10,
+      "ha_total": 1226.4
+    },
+    {
+      "ano": 1984,
+      "grupo": "Rayo",
+      "num_incendios": 12,
+      "ha_total": 37.0
+    },
+    {
+      "ano": 1985,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 586,
+      "ha_total": 16204.0
+    },
+    {
+      "ano": 1985,
+      "grupo": "Intencionado",
+      "num_incendios": 299,
+      "ha_total": 8220.1
+    },
+    {
+      "ano": 1985,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 22,
+      "ha_total": 558.3
+    },
+    {
+      "ano": 1985,
+      "grupo": "Rayo",
+      "num_incendios": 13,
+      "ha_total": 72.7
+    },
+    {
+      "ano": 1986,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 421,
+      "ha_total": 10028.1
+    },
+    {
+      "ano": 1986,
+      "grupo": "Intencionado",
+      "num_incendios": 184,
+      "ha_total": 3476.3
+    },
+    {
+      "ano": 1986,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 16,
+      "ha_total": 574.5
+    },
+    {
+      "ano": 1986,
+      "grupo": "Rayo",
+      "num_incendios": 2,
+      "ha_total": 4.5
+    },
+    {
+      "ano": 1987,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 422,
+      "ha_total": 10543.7
+    },
+    {
+      "ano": 1987,
+      "grupo": "Intencionado",
+      "num_incendios": 208,
+      "ha_total": 6049.6
+    },
+    {
+      "ano": 1987,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 10,
+      "ha_total": 265.7
+    },
+    {
+      "ano": 1987,
+      "grupo": "Rayo",
+      "num_incendios": 10,
+      "ha_total": 79.0
+    },
+    {
+      "ano": 1988,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 502,
+      "ha_total": 7332.2
+    },
+    {
+      "ano": 1988,
+      "grupo": "Intencionado",
+      "num_incendios": 355,
+      "ha_total": 4721.1
+    },
+    {
+      "ano": 1988,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 15,
+      "ha_total": 103.3
+    },
+    {
+      "ano": 1988,
+      "grupo": "Rayo",
+      "num_incendios": 5,
+      "ha_total": 13.3
+    },
+    {
+      "ano": 1989,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 1026,
+      "ha_total": 29497.8
+    },
+    {
+      "ano": 1989,
+      "grupo": "Intencionado",
+      "num_incendios": 548,
+      "ha_total": 13109.3
+    },
+    {
+      "ano": 1989,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 23,
+      "ha_total": 445.3
+    },
+    {
+      "ano": 1989,
+      "grupo": "Rayo",
+      "num_incendios": 18,
+      "ha_total": 135.3
+    },
+    {
+      "ano": 1990,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 940,
+      "ha_total": 14702.6
+    },
+    {
+      "ano": 1990,
+      "grupo": "Intencionado",
+      "num_incendios": 238,
+      "ha_total": 7882.1
+    },
+    {
+      "ano": 1990,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 22,
+      "ha_total": 326.6
+    },
+    {
+      "ano": 1990,
+      "grupo": "Rayo",
+      "num_incendios": 25,
+      "ha_total": 226.0
+    },
+    {
+      "ano": 1991,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 730,
+      "ha_total": 2272.0
+    },
+    {
+      "ano": 1991,
+      "grupo": "Intencionado",
+      "num_incendios": 915,
+      "ha_total": 4384.3
+    },
+    {
+      "ano": 1991,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 65,
+      "ha_total": 146.9
+    },
+    {
+      "ano": 1991,
+      "grupo": "Rayo",
+      "num_incendios": 22,
+      "ha_total": 56.1
+    },
+    {
+      "ano": 1992,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 389,
+      "ha_total": 698.2
+    },
+    {
+      "ano": 1992,
+      "grupo": "Intencionado",
+      "num_incendios": 1520,
+      "ha_total": 4116.3
+    },
+    {
+      "ano": 1992,
+      "grupo": "Rayo",
+      "num_incendios": 95,
+      "ha_total": 507.6
+    },
+    {
+      "ano": 1993,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 83,
+      "ha_total": 52.3
+    },
+    {
+      "ano": 1993,
+      "grupo": "Intencionado",
+      "num_incendios": 1569,
+      "ha_total": 2451.1
+    },
+    {
+      "ano": 1993,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 3,
+      "ha_total": 0.6
+    },
+    {
+      "ano": 1993,
+      "grupo": "Rayo",
+      "num_incendios": 85,
+      "ha_total": 100.0
+    },
+    {
+      "ano": 1994,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 123,
+      "ha_total": 1225.4
+    },
+    {
+      "ano": 1994,
+      "grupo": "Intencionado",
+      "num_incendios": 3236,
+      "ha_total": 10185.4
+    },
+    {
+      "ano": 1994,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 169,
+      "ha_total": 333.6
+    },
+    {
+      "ano": 1994,
+      "grupo": "Rayo",
+      "num_incendios": 14,
+      "ha_total": 2.5
+    },
+    {
+      "ano": 1995,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 100,
+      "ha_total": 238.8
+    },
+    {
+      "ano": 1995,
+      "grupo": "Intencionado",
+      "num_incendios": 3322,
+      "ha_total": 17590.8
+    },
+    {
+      "ano": 1995,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 156,
+      "ha_total": 353.4
+    },
+    {
+      "ano": 1995,
+      "grupo": "Rayo",
+      "num_incendios": 27,
+      "ha_total": 24.0
+    },
+    {
+      "ano": 1996,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 274,
+      "ha_total": 480.3
+    },
+    {
+      "ano": 1996,
+      "grupo": "Intencionado",
+      "num_incendios": 3509,
+      "ha_total": 15840.6
+    },
+    {
+      "ano": 1996,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 199,
+      "ha_total": 596.1
+    },
+    {
+      "ano": 1996,
+      "grupo": "Rayo",
+      "num_incendios": 12,
+      "ha_total": 29.6
+    },
+    {
+      "ano": 1997,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 293,
+      "ha_total": 1068.0
+    },
+    {
+      "ano": 1997,
+      "grupo": "Intencionado",
+      "num_incendios": 3317,
+      "ha_total": 11442.3
+    },
+    {
+      "ano": 1997,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 88,
+      "ha_total": 268.9
+    },
+    {
+      "ano": 1997,
+      "grupo": "Rayo",
+      "num_incendios": 32,
+      "ha_total": 33.2
+    },
+    {
+      "ano": 1998,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 295,
+      "ha_total": 944.0
+    },
+    {
+      "ano": 1998,
+      "grupo": "Intencionado",
+      "num_incendios": 3695,
+      "ha_total": 22702.0
+    },
+    {
+      "ano": 1998,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 212,
+      "ha_total": 409.6
+    },
+    {
+      "ano": 1998,
+      "grupo": "Rayo",
+      "num_incendios": 42,
+      "ha_total": 114.4
+    },
+    {
+      "ano": 1998,
+      "grupo": "Reproducción",
+      "num_incendios": 187,
+      "ha_total": 1109.2
+    },
+    {
+      "ano": 1999,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 207,
+      "ha_total": 314.0
+    },
+    {
+      "ano": 1999,
+      "grupo": "Intencionado",
+      "num_incendios": 2724,
+      "ha_total": 5470.3
+    },
+    {
+      "ano": 1999,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 127,
+      "ha_total": 161.9
+    },
+    {
+      "ano": 1999,
+      "grupo": "Rayo",
+      "num_incendios": 51,
+      "ha_total": 38.1
+    },
+    {
+      "ano": 1999,
+      "grupo": "Reproducción",
+      "num_incendios": 44,
+      "ha_total": 101.4
+    },
+    {
+      "ano": 2000,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 297,
+      "ha_total": 935.9
+    },
+    {
+      "ano": 2000,
+      "grupo": "Intencionado",
+      "num_incendios": 4733,
+      "ha_total": 28498.2
+    },
+    {
+      "ano": 2000,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 157,
+      "ha_total": 633.7
+    },
+    {
+      "ano": 2000,
+      "grupo": "Rayo",
+      "num_incendios": 4,
+      "ha_total": 3.6
+    },
+    {
+      "ano": 2000,
+      "grupo": "Reproducción",
+      "num_incendios": 126,
+      "ha_total": 1708.3
+    },
+    {
+      "ano": 2001,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 199,
+      "ha_total": 554.6
+    },
+    {
+      "ano": 2001,
+      "grupo": "Intencionado",
+      "num_incendios": 3226,
+      "ha_total": 8583.3
+    },
+    {
+      "ano": 2001,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 70,
+      "ha_total": 122.3
+    },
+    {
+      "ano": 2001,
+      "grupo": "Rayo",
+      "num_incendios": 19,
+      "ha_total": 181.2
+    },
+    {
+      "ano": 2001,
+      "grupo": "Reproducción",
+      "num_incendios": 45,
+      "ha_total": 81.2
+    },
+    {
+      "ano": 2002,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 281,
+      "ha_total": 712.4
+    },
+    {
+      "ano": 2002,
+      "grupo": "Intencionado",
+      "num_incendios": 3396,
+      "ha_total": 11656.8
+    },
+    {
+      "ano": 2002,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 82,
+      "ha_total": 238.6
+    },
+    {
+      "ano": 2002,
+      "grupo": "Rayo",
+      "num_incendios": 25,
+      "ha_total": 14.2
+    },
+    {
+      "ano": 2002,
+      "grupo": "Reproducción",
+      "num_incendios": 112,
+      "ha_total": 421.7
+    },
+    {
+      "ano": 2003,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 236,
+      "ha_total": 1065.6
+    },
+    {
+      "ano": 2003,
+      "grupo": "Intencionado",
+      "num_incendios": 2227,
+      "ha_total": 5956.7
+    },
+    {
+      "ano": 2003,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 48,
+      "ha_total": 115.3
+    },
+    {
+      "ano": 2003,
+      "grupo": "Rayo",
+      "num_incendios": 87,
+      "ha_total": 209.8
+    },
+    {
+      "ano": 2003,
+      "grupo": "Reproducción",
+      "num_incendios": 97,
+      "ha_total": 273.3
+    },
+    {
+      "ano": 2004,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 184,
+      "ha_total": 186.7
+    },
+    {
+      "ano": 2004,
+      "grupo": "Intencionado",
+      "num_incendios": 3009,
+      "ha_total": 12985.9
+    },
+    {
+      "ano": 2004,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 62,
+      "ha_total": 142.0
+    },
+    {
+      "ano": 2004,
+      "grupo": "Rayo",
+      "num_incendios": 37,
+      "ha_total": 68.1
+    },
+    {
+      "ano": 2004,
+      "grupo": "Reproducción",
+      "num_incendios": 56,
+      "ha_total": 90.4
+    },
+    {
+      "ano": 2005,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 345,
+      "ha_total": 2084.2
+    },
+    {
+      "ano": 2005,
+      "grupo": "Intencionado",
+      "num_incendios": 3692,
+      "ha_total": 26433.9
+    },
+    {
+      "ano": 2005,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 81,
+      "ha_total": 631.5
+    },
+    {
+      "ano": 2005,
+      "grupo": "Rayo",
+      "num_incendios": 16,
+      "ha_total": 485.4
+    },
+    {
+      "ano": 2005,
+      "grupo": "Reproducción",
+      "num_incendios": 158,
+      "ha_total": 789.9
+    },
+    {
+      "ano": 2006,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 160,
+      "ha_total": 324.7
+    },
+    {
+      "ano": 2006,
+      "grupo": "Intencionado",
+      "num_incendios": 1308,
+      "ha_total": 11023.1
+    },
+    {
+      "ano": 2006,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 59,
+      "ha_total": 418.2
+    },
+    {
+      "ano": 2006,
+      "grupo": "Rayo",
+      "num_incendios": 28,
+      "ha_total": 107.7
+    },
+    {
+      "ano": 2006,
+      "grupo": "Reproducción",
+      "num_incendios": 58,
+      "ha_total": 288.5
+    },
+    {
+      "ano": 2007,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 204,
+      "ha_total": 279.9
+    },
+    {
+      "ano": 2007,
+      "grupo": "Intencionado",
+      "num_incendios": 1107,
+      "ha_total": 4138.9
+    },
+    {
+      "ano": 2007,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 118,
+      "ha_total": 281.7
+    },
+    {
+      "ano": 2007,
+      "grupo": "Rayo",
+      "num_incendios": 12,
+      "ha_total": 4.4
+    },
+    {
+      "ano": 2007,
+      "grupo": "Reproducción",
+      "num_incendios": 24,
+      "ha_total": 40.8
+    },
+    {
+      "ano": 2008,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 162,
+      "ha_total": 258.8
+    },
+    {
+      "ano": 2008,
+      "grupo": "Intencionado",
+      "num_incendios": 1060,
+      "ha_total": 3947.7
+    },
+    {
+      "ano": 2008,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 96,
+      "ha_total": 47.5
+    },
+    {
+      "ano": 2008,
+      "grupo": "Rayo",
+      "num_incendios": 19,
+      "ha_total": 82.6
+    },
+    {
+      "ano": 2008,
+      "grupo": "Reproducción",
+      "num_incendios": 11,
+      "ha_total": 10.6
+    },
+    {
+      "ano": 2009,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 198,
+      "ha_total": 1237.2
+    },
+    {
+      "ano": 2009,
+      "grupo": "Intencionado",
+      "num_incendios": 1443,
+      "ha_total": 4994.1
+    },
+    {
+      "ano": 2009,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 115,
+      "ha_total": 427.6
+    },
+    {
+      "ano": 2009,
+      "grupo": "Rayo",
+      "num_incendios": 5,
+      "ha_total": 0.1
+    },
+    {
+      "ano": 2009,
+      "grupo": "Reproducción",
+      "num_incendios": 33,
+      "ha_total": 33.6
+    },
+    {
+      "ano": 2010,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 116,
+      "ha_total": 124.5
+    },
+    {
+      "ano": 2010,
+      "grupo": "Intencionado",
+      "num_incendios": 1174,
+      "ha_total": 8788.9
+    },
+    {
+      "ano": 2010,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 66,
+      "ha_total": 59.5
+    },
+    {
+      "ano": 2010,
+      "grupo": "Rayo",
+      "num_incendios": 29,
+      "ha_total": 4.7
+    },
+    {
+      "ano": 2010,
+      "grupo": "Reproducción",
+      "num_incendios": 31,
+      "ha_total": 101.7
+    },
+    {
+      "ano": 2011,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 297,
+      "ha_total": 2239.5
+    },
+    {
+      "ano": 2011,
+      "grupo": "Intencionado",
+      "num_incendios": 2096,
+      "ha_total": 25095.0
+    },
+    {
+      "ano": 2011,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 93,
+      "ha_total": 780.3
+    },
+    {
+      "ano": 2011,
+      "grupo": "Rayo",
+      "num_incendios": 37,
+      "ha_total": 13.2
+    },
+    {
+      "ano": 2011,
+      "grupo": "Reproducción",
+      "num_incendios": 86,
+      "ha_total": 5186.9
+    },
+    {
+      "ano": 2012,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 179,
+      "ha_total": 909.3
+    },
+    {
+      "ano": 2012,
+      "grupo": "Intencionado",
+      "num_incendios": 1225,
+      "ha_total": 6059.4
+    },
+    {
+      "ano": 2012,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 82,
+      "ha_total": 380.2
+    },
+    {
+      "ano": 2012,
+      "grupo": "Rayo",
+      "num_incendios": 24,
+      "ha_total": 61.8
+    },
+    {
+      "ano": 2012,
+      "grupo": "Reproducción",
+      "num_incendios": 15,
+      "ha_total": 1789.7
+    },
+    {
+      "ano": 2013,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 188,
+      "ha_total": 1836.4
+    },
+    {
+      "ano": 2013,
+      "grupo": "Intencionado",
+      "num_incendios": 877,
+      "ha_total": 5947.2
+    },
+    {
+      "ano": 2013,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 92,
+      "ha_total": 217.3
+    },
+    {
+      "ano": 2013,
+      "grupo": "Rayo",
+      "num_incendios": 28,
+      "ha_total": 11.2
+    },
+    {
+      "ano": 2013,
+      "grupo": "Reproducción",
+      "num_incendios": 42,
+      "ha_total": 224.4
+    },
+    {
+      "ano": 2014,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 89,
+      "ha_total": 117.1
+    },
+    {
+      "ano": 2014,
+      "grupo": "Intencionado",
+      "num_incendios": 305,
+      "ha_total": 877.9
+    },
+    {
+      "ano": 2014,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 51,
+      "ha_total": 97.8
+    },
+    {
+      "ano": 2014,
+      "grupo": "Rayo",
+      "num_incendios": 4,
+      "ha_total": 0.3
+    },
+    {
+      "ano": 2014,
+      "grupo": "Reproducción",
+      "num_incendios": 4,
+      "ha_total": 4.7
+    },
+    {
+      "ano": 2015,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 72,
+      "ha_total": 144.5
+    },
+    {
+      "ano": 2015,
+      "grupo": "Intencionado",
+      "num_incendios": 987,
+      "ha_total": 6713.8
+    },
+    {
+      "ano": 2015,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 91,
+      "ha_total": 445.8
+    },
+    {
+      "ano": 2015,
+      "grupo": "Rayo",
+      "num_incendios": 14,
+      "ha_total": 196.7
+    },
+    {
+      "ano": 2015,
+      "grupo": "Reproducción",
+      "num_incendios": 39,
+      "ha_total": 197.5
+    },
+    {
+      "ano": 2016,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 49,
+      "ha_total": 3133.3
+    },
+    {
+      "ano": 2016,
+      "grupo": "Intencionado",
+      "num_incendios": 629,
+      "ha_total": 7685.5
+    },
+    {
+      "ano": 2016,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 38,
+      "ha_total": 23.2
+    },
+    {
+      "ano": 2016,
+      "grupo": "Rayo",
+      "num_incendios": 35,
+      "ha_total": 33.0
+    },
+    {
+      "ano": 2016,
+      "grupo": "Reproducción",
+      "num_incendios": 23,
+      "ha_total": 828.5
+    },
+    {
+      "ano": 2017,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 69,
+      "ha_total": 3676.3
+    },
+    {
+      "ano": 2017,
+      "grupo": "Intencionado",
+      "num_incendios": 1130,
+      "ha_total": 25486.7
+    },
+    {
+      "ano": 2017,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 72,
+      "ha_total": 110.9
+    },
+    {
+      "ano": 2017,
+      "grupo": "Rayo",
+      "num_incendios": 20,
+      "ha_total": 25.3
+    },
+    {
+      "ano": 2017,
+      "grupo": "Reproducción",
+      "num_incendios": 41,
+      "ha_total": 1149.1
+    },
+    {
+      "ano": 2018,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 31,
+      "ha_total": 40.6
+    },
+    {
+      "ano": 2018,
+      "grupo": "Intencionado",
+      "num_incendios": 356,
+      "ha_total": 1067.2
+    },
+    {
+      "ano": 2018,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 39,
+      "ha_total": 40.9
+    },
+    {
+      "ano": 2018,
+      "grupo": "Rayo",
+      "num_incendios": 27,
+      "ha_total": 160.3
+    },
+    {
+      "ano": 2018,
+      "grupo": "Reproducción",
+      "num_incendios": 9,
+      "ha_total": 12.1
+    },
+    {
+      "ano": 2019,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 34,
+      "ha_total": 76.0
+    },
+    {
+      "ano": 2019,
+      "grupo": "Intencionado",
+      "num_incendios": 515,
+      "ha_total": 2442.4
+    },
+    {
+      "ano": 2019,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 67,
+      "ha_total": 78.9
+    },
+    {
+      "ano": 2019,
+      "grupo": "Rayo",
+      "num_incendios": 21,
+      "ha_total": 6.5
+    },
+    {
+      "ano": 2019,
+      "grupo": "Reproducción",
+      "num_incendios": 10,
+      "ha_total": 46.5
+    },
+    {
+      "ano": 2020,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 46,
+      "ha_total": 59.6
+    },
+    {
+      "ano": 2020,
+      "grupo": "Intencionado",
+      "num_incendios": 447,
+      "ha_total": 12233.4
+    },
+    {
+      "ano": 2020,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 69,
+      "ha_total": 683.5
+    },
+    {
+      "ano": 2020,
+      "grupo": "Rayo",
+      "num_incendios": 20,
+      "ha_total": 5.3
+    },
+    {
+      "ano": 2020,
+      "grupo": "Reproducción",
+      "num_incendios": 11,
+      "ha_total": 232.1
+    },
+    {
+      "ano": 2021,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 23,
+      "ha_total": 9.7
+    },
+    {
+      "ano": 2021,
+      "grupo": "Intencionado",
+      "num_incendios": 283,
+      "ha_total": 389.1
+    },
+    {
+      "ano": 2021,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 40,
+      "ha_total": 418.3
+    },
+    {
+      "ano": 2021,
+      "grupo": "Rayo",
+      "num_incendios": 23,
+      "ha_total": 9.9
+    },
+    {
+      "ano": 2021,
+      "grupo": "Reproducción",
+      "num_incendios": 6,
+      "ha_total": 130.8
+    },
+    {
+      "ano": 2022,
+      "grupo": "Causa descoñecida",
+      "num_incendios": 23,
+      "ha_total": 3051.8
+    },
+    {
+      "ano": 2022,
+      "grupo": "Intencionado",
+      "num_incendios": 433,
+      "ha_total": 7588.4
+    },
+    {
+      "ano": 2022,
+      "grupo": "Negligencias e accidentes",
+      "num_incendios": 83,
+      "ha_total": 1594.3
+    },
+    {
+      "ano": 2022,
+      "grupo": "Rayo",
+      "num_incendios": 66,
+      "ha_total": 20382.3
+    },
+    {
+      "ano": 2022,
+      "grupo": "Reproducción",
+      "num_incendios": 31,
+      "ha_total": 127.5
+    }
+  ],
+  "motivacions": [
+    {
+      "grupo_motivacion": "Intencionado sen motivación recoñecida",
+      "num_incendios": 31890,
+      "ha_total": 301259.4,
+      "pct": 49.51
+    },
+    {
+      "grupo_motivacion": "Prácticas agrícolas e gandeiras",
+      "num_incendios": 27632,
+      "ha_total": 140824.9,
+      "pct": 42.9
+    },
+    {
+      "grupo_motivacion": "Caza",
+      "num_incendios": 1611,
+      "ha_total": 15402.8,
+      "pct": 2.5
+    },
+    {
+      "grupo_motivacion": "Outras motivacións",
+      "num_incendios": 865,
+      "ha_total": 3356.1,
+      "pct": 1.34
+    },
+    {
+      "grupo_motivacion": "Vandalismo",
+      "num_incendios": 834,
+      "ha_total": 11675.0,
+      "pct": 1.29
+    },
+    {
+      "grupo_motivacion": "Piromanía",
+      "num_incendios": 678,
+      "ha_total": 16503.2,
+      "pct": 1.05
+    },
+    {
+      "grupo_motivacion": "Desacordos e protestas",
+      "num_incendios": 498,
+      "ha_total": 6306.5,
+      "pct": 0.77
+    },
+    {
+      "grupo_motivacion": "Vinganzas e disputas",
+      "num_incendios": 277,
+      "ha_total": 1392.8,
+      "pct": 0.43
+    },
+    {
+      "grupo_motivacion": "Propiedade",
+      "num_incendios": 93,
+      "ha_total": 1007.2,
+      "pct": 0.14
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+area,Reproducción,Desconocida,Negligencias,Intencionado,Rayo,metrica
+Noroeste,3.19,1.99,8.16,31.47,1.7,pct_siniestros
+Comunidades interiores,1.05,8.16,44.27,76.83,8.16,pct_siniestros
+Canarias,0.9,10.36,12.45,67.44,1.26,pct_siniestros
+Mediterráneo,0.93,42.05,42.05,,10.36,pct_siniestros
+Noroeste,,,71.24,27.91,8.69,pct_ha_forestal
+Comunidades interiores,,,,71.24,0.78,pct_ha_forestal
+Canarias,,,,,,pct_ha_forestal
+Mediterráneo,,,,,,pct_ha_forestal
