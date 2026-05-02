@@ -115,12 +115,13 @@
       },
       r: { range: [1.2, 14], domain: [0, 25000] },
       marks: [
+        // Coroplético sin tooltip propio para evitar dos popups simultáneos
+        // cuando el cursor cae sobre una parroquia con incendio (el del punto
+        // es más específico y ya incluye el % MVMC de la parroquia).
         Plot.geo(galicia, {
           fill: (d) => d.properties.mvmc_pct,
           stroke: "rgba(255,255,255,0.18)",
           strokeWidth: 0.4,
-          tip: true,
-          title: t.tooltip_concello,
         }),
         Plot.dot(puntos.filter((d) => d.ha_quemadas >= 1), {
           x: "lon",

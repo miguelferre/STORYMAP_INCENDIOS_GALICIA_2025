@@ -104,8 +104,7 @@
         style: { color: "rgba(255,255,255,0.86)" },
       },
       marks: [
-        Plot.barX(filasT, { x: "km2", y: "name", fill: "grupoT", tip: true,
-          title: (d) => `${d.name}\n${d.km2.toLocaleString(lang)} km²` }),
+        Plot.barX(filasT, { x: "km2", y: "name", fill: "grupoT" }),
         Plot.text(filasT, {
           x: "km2",
           y: "name",

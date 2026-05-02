@@ -1439,6 +1439,17 @@
     .dnbr-subtitulo{ margin: 6px 0 0 0; font-size: 0.92rem; color: rgba(255,255,255,0.78); }
     .dnbr-pie{ margin: 14px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
     .dnbr-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
+    .dnbr-leyenda{ display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.85); margin: 4px 0 4px 0; }
+    .dnbr-leyenda i{ display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+    /* Card de barras de severidad cuando se renderiza en el lateral derecho. */
+    .dnbr-bloque-bars{
+      background: rgba(15, 18, 28, 0.6);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px 16px 18px 16px;
+      backdrop-filter: blur(8px);
+      margin-top: 8px;
+    }
 
     /* Cronoloxía PrazaGal — capítulo "O día que se xuntou todo". */
     .cronoloxia-bloque{
@@ -2063,6 +2074,23 @@ window.addEventListener('load', () => {
     window.DnbrLarouco.render(host, langActivo());
   };
 
+  // Muestra/oculta la capa Mapbox de severidad dNBR. Se controla desde los
+  // callbacks del capítulo "A pegada do lume".
+  window.showDnbrLayer = function(){
+    try {
+      if (map && map.getLayer && map.getLayer('DNBR_LAROUCO')) {
+        map.setLayoutProperty('DNBR_LAROUCO', 'visibility', 'visible');
+      }
+    } catch(e){ console.warn('showDnbrLayer:', e); }
+  };
+  window.hideDnbrLayer = function(){
+    try {
+      if (map && map.getLayer && map.getLayer('DNBR_LAROUCO')) {
+        map.setLayoutProperty('DNBR_LAROUCO', 'visibility', 'none');
+      }
+    } catch(e){ console.warn('hideDnbrLayer:', e); }
+  };
+
   // Renderiza la cronología PrazaGal en el capítulo "O día que se xuntou todo".
   window.renderCronoloxia = function(){
     var host = document.getElementById('grafica-cronoloxia');
@@ -2603,6 +2631,42 @@ window.addEventListener('load', () => {
         }
       } catch (e) { console.warn('No se pudo añadir VEGETACION_GALICIA:', e); }
 
+      // Capa dNBR Larouco (severidad reclasificada Sentinel-2). Se renderiza
+      // como capa Mapbox para que se asiente sobre el basemap real, no sobre
+      // un rectángulo plano dentro de la card del capítulo.
+      try {
+        if (!map.getSource('dnbr-larouco')) {
+          map.addSource('dnbr-larouco', {
+            type: 'geojson',
+            data: 'assets/data/dnbr_larouco_clases.geojson'
+          });
+        }
+        if (!map.getLayer('DNBR_LAROUCO')) {
+          var beforeIdDnbr = null;
+          var layersDnbr = map.getStyle().layers || [];
+          for (var k = 0; k < layersDnbr.length; k++) {
+            if (layersDnbr[k].type === 'symbol') { beforeIdDnbr = layersDnbr[k].id; break; }
+          }
+          map.addLayer({
+            id: 'DNBR_LAROUCO',
+            type: 'fill',
+            source: 'dnbr-larouco',
+            layout: { visibility: 'none' },
+            paint: {
+              'fill-color': [
+                'match', ['get', 'etiqueta'],
+                'Severidade moderada-baixa', '#fdae61',
+                'Severidade moderada-alta', '#d73027',
+                'Severidade alta', '#7f1d1d',
+                'rgba(0,0,0,0)'
+              ],
+              'fill-opacity': 0.78,
+              'fill-outline-color': 'rgba(0,0,0,0.45)'
+            }
+          }, beforeIdDnbr);
+        }
+      } catch (e) { console.warn('No se pudo añadir DNBR_LAROUCO:', e); }
+
       // Asegurar limpieza completa inicial
       CategoryController.hideAll();
 
@@ -2677,7 +2741,7 @@ window.addEventListener('load', () => {
         // Oculta todas las capas y overlays con verificación robusta
         hideAll(options = {}) {
             const { preserveInline = false } = options;
-            const layersToHide = ['XEOURENSE', 'USOURENSE', 'VEGETACION_GALICIA', 'RELIEVE'];
+            const layersToHide = ['XEOURENSE', 'USOURENSE', 'VEGETACION_GALICIA', 'RELIEVE', 'DNBR_LAROUCO'];
             
             layersToHide.forEach(layerId => {
                 try {
@@ -2776,83 +2840,37 @@ window.addEventListener('load', () => {
             }
         },
 
-        // Memoria de opacidad original por capa para poder restaurarla en fade-in.
-        _origOpacity: {},
-        _fadeTimers: {},
-        FADE_MS: 380,
-
-        // Fade combinando layout.visibility con paint.opacity. Para mostrar:
-        // visibility=visible y opacity 0→original con transición. Para ocultar:
-        // opacity actual→0 con transición, después visibility=none.
-        fadeLayer(layerId, show, retries = 3) {
-            const self = this;
+        // Versión segura para mostrar capas. Volvemos al toggle directo de
+        // visibility para evitar romper capas Mapbox cuyo paint-opacity no es
+        // un número simple (hillshade, expresiones de zoom, etc).
+        showLayerSafe(layerId, retries = 3) {
             try {
-                if (!(map && map.getLayer && map.getLayer(layerId))) {
-                    if (retries > 0) {
-                        setTimeout(() => self.fadeLayer(layerId, show, retries - 1), 120);
-                    }
-                    return;
-                }
-                const type = map.getLayer(layerId).type;
-                const props = layerTypes[type] || ['fill-opacity'];
-                const primary = props[0];
-
-                if (self._origOpacity[layerId] === undefined) {
-                    let v = map.getPaintProperty(layerId, primary);
-                    if (typeof v !== 'number') v = 1;
-                    self._origOpacity[layerId] = v;
-                }
-                const target = self._origOpacity[layerId];
-
-                // Cancela transición pendiente si la había.
-                if (self._fadeTimers[layerId]) {
-                    clearTimeout(self._fadeTimers[layerId]);
-                    delete self._fadeTimers[layerId];
-                }
-
-                props.forEach((prop) => {
-                    map.setPaintProperty(layerId, prop + '-transition', { duration: self.FADE_MS });
-                });
-
-                if (show) {
-                    if (map.getLayoutProperty(layerId, 'visibility') === 'none') {
-                        // Forzar visibility a visible con opacity 0 para evitar pop-in.
-                        props.forEach((prop) => map.setPaintProperty(layerId, prop, 0));
-                        map.setLayoutProperty(layerId, 'visibility', 'visible');
-                        // Siguiente frame: subir a opacity objetivo con transición.
-                        requestAnimationFrame(() => {
-                            props.forEach((prop) => map.setPaintProperty(layerId, prop, target));
-                        });
-                    } else {
-                        props.forEach((prop) => map.setPaintProperty(layerId, prop, target));
-                    }
-                } else {
-                    if (map.getLayoutProperty(layerId, 'visibility') === 'none') return;
-                    props.forEach((prop) => map.setPaintProperty(layerId, prop, 0));
-                    self._fadeTimers[layerId] = setTimeout(() => {
-                        try {
-                            if (map.getLayer(layerId)) {
-                                map.setLayoutProperty(layerId, 'visibility', 'none');
-                                // Restaurar opacity al valor original tras ocultar para que
-                                // el siguiente fade-in pueda animar desde 0 sin saltos.
-                                props.forEach((prop) => map.setPaintProperty(layerId, prop, target));
-                            }
-                        } catch (e) { /* no-op */ }
-                        delete self._fadeTimers[layerId];
-                    }, self.FADE_MS + 40);
+                if (map && map.getLayer && map.getLayer(layerId)) {
+                    map.setLayoutProperty(layerId, 'visibility', 'visible');
+                } else if (retries > 0) {
+                    setTimeout(() => this.showLayerSafe(layerId, retries - 1), 100);
                 }
             } catch (error) {
-                console.warn(`Error en fadeLayer ${layerId}:`, error);
+                console.warn(`Error mostrando capa ${layerId}:`, error);
+                if (retries > 0) {
+                    setTimeout(() => this.showLayerSafe(layerId, retries - 1), 200);
+                }
             }
         },
 
-        // Versión segura para mostrar capas
-        showLayerSafe(layerId, retries = 3) {
-            this.fadeLayer(layerId, true, retries);
-        },
-
         hideLayerSafe(layerId, retries = 3) {
-            this.fadeLayer(layerId, false, retries);
+            try {
+                if (map && map.getLayer && map.getLayer(layerId)) {
+                    map.setLayoutProperty(layerId, 'visibility', 'none');
+                } else if (retries > 0) {
+                    setTimeout(() => this.hideLayerSafe(layerId, retries - 1), 100);
+                }
+            } catch (error) {
+                console.warn(`Error ocultando capa ${layerId}:`, error);
+                if (retries > 0) {
+                    setTimeout(() => this.hideLayerSafe(layerId, retries - 1), 200);
+                }
+            }
         },
 
         enforceExclusiveLayer(categoryKey) {

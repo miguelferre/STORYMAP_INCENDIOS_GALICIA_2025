@@ -13,31 +13,35 @@
  *              agrupadas e ordenadas por nº de incendios.
  */
 (function (global) {
-  // Paleta unificada: naranja sólo para Intencionado (la causa-personaje),
-  // el resto en una rampa de grises fríos para reducir ruido cromático.
+  // Paleta de causas: naranja para Intencionado (la causa-personaje, la
+  // dominante en toda la serie), tonos diferenciables y de menor saturación
+  // para el resto. Cada grupo no-intencionado tiene un matiz propio para que
+  // las barras apiladas se distingan, sin que ningún color compita con el
+  // naranja del fuego.
   const COR_GRUPO = {
     "Intencionado": "#F44E11",
-    "Causa descoñecida": "#7A8694",
-    "Negligencias e accidentes": "#9CA8B6",
-    "Reproducción": "#5C6672",
-    "Rayo": "#3F4751",
+    "Causa descoñecida": "#6B9DC6",
+    "Negligencias e accidentes": "#D9A03B",
+    "Reproducción": "#8B7AA8",
+    "Rayo": "#65A864",
   };
 
-  // Motivacións dos intencionados: gradiente del naranja del fuego al gris,
-  // para que la motivación dominante (prácticas agrícolas) destaque sobre el
-  // resto sin que cada motivación tenga un color distinto que no aporta nada.
+  // Motivacións dos intencionados: misma lógica. La motivación dominante
+  // (prácticas agrícolas) hereda el naranja del Intencionado para enlazar
+  // visualmente ambos gráficos. El resto reutiliza los matices del primer
+  // gráfico, ordenados por prevalencia.
   const COR_MOTIV = {
-    "Intencionado sen motivación recoñecida": "rgba(244,78,17,0.30)",
+    "Intencionado sen motivación recoñecida": "rgba(244,78,17,0.32)",
     "Prácticas agrícolas e gandeiras": "#F44E11",
-    "Caza": "#C66640",
-    "Vandalismo": "#A4685A",
-    "Piromanía": "#856B6E",
-    "Desacordos e protestas": "#6F6E7B",
-    "Vinganzas e disputas": "#5C6672",
-    "Propiedade": "#525B66",
-    "Beneficio económico": "#48505A",
-    "Outras motivacións": "#3F4751",
-    "Forzas de orde público": "#363D45",
+    "Caza": "#D9A03B",
+    "Vandalismo": "#8B7AA8",
+    "Piromanía": "#B91C1C",
+    "Desacordos e protestas": "#6B9DC6",
+    "Vinganzas e disputas": "#C66640",
+    "Propiedade": "#65A864",
+    "Beneficio económico": "#A88A3F",
+    "Outras motivacións": "#6F6E7B",
+    "Forzas de orde público": "#475569",
   };
 
   const ORDE_GRUPOS = [

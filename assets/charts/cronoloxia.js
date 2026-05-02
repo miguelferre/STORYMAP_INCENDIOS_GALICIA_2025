@@ -82,7 +82,13 @@
         fontSize: "11.5px",
         overflow: "visible",
       },
-      x: { label: null, type: "time", grid: false },
+      x: {
+        label: null,
+        type: "time",
+        grid: false,
+        domain: [new Date("2025-07-01T00:00:00"), new Date("2025-10-01T00:00:00")],
+        clip: true,
+      },
       y: {
         label: t.eje_y,
         labelAnchor: "top",

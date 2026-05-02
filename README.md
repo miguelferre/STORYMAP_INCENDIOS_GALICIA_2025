@@ -1,8 +1,13 @@
 # Storymap — incendios forestais en Galicia, verán 2025
 
+[![Deploy](https://img.shields.io/badge/deploy-GitHub_Pages-2EA44F)](https://miguelferre.github.io/STORYMAP_INCENDIOS_GALICIA_2025/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Content: CC BY 4.0](https://img.shields.io/badge/Contenido-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Languages: ES · GL](https://img.shields.io/badge/idiomas-ES%20%C2%B7%20GL-orange.svg)](#)
+
 Pieza divulgativa que reconstruye el verano de incendios de Galicia 2025 a partir de datos abiertos: el incendio de Larouco–Seadur (31.778 ha, el mayor de la historia gallega) y los más de 1.400 fuegos que lo acompañaron. La intención es doble: contarle al público no especializado **qué pasó y por qué**, y al mismo tiempo dejar visible el pipeline geoespacial completo —desde el dato bruto hasta el render web— como demostración técnica.
 
-Despliegue: [miguelferre.github.io/STORYMAP_INCENDIOS_GALICIA_2025](https://miguelferre.github.io/STORYMAP_INCENDIOS_GALICIA_2025/) · idiomas ES/GL.
+**Despliegue**: [miguelferre.github.io/STORYMAP_INCENDIOS_GALICIA_2025](https://miguelferre.github.io/STORYMAP_INCENDIOS_GALICIA_2025/) · idiomas ES/GL.
 
 ## Capítulos
 
@@ -78,8 +83,31 @@ Storymap original (capítulos visuales y narrativa de partida): equipo del [Desa
 
 Las iteraciones técnicas posteriores —pipelines geoespaciales, sustitución de iframes Flourish por charts nativos, capítulos nuevos de propiedad del monte y dNBR Sentinel-2— las firma Miguel Ferreiro García.
 
+## Estructura del repositorio
+
+```
+.
+├── index.html                # entrada principal (Mapbox GL + Scrollama)
+├── config.js                 # capítulos del storymap (orden, descripciones, callbacks)
+├── i18n.js                   # cadenas en ES/GL
+├── assets/
+│   ├── charts/*.js           # componentes Observable Plot (causas, comparador, dNBR…)
+│   └── data/                 # datasets ligeros servidos al frontend
+├── data/
+│   ├── raw/                  # descargas crudas (gitignored, regenerable con scripts/)
+│   ├── processed/            # datasets intermedios
+│   └── teste_visual/         # capturas Playwright (gitignored)
+├── scripts/
+│   ├── 01–15_*.py            # pipelines geoespaciales reproducibles
+│   └── teste_visual.js       # test visual Playwright
+├── notebooks/                # análisis y notas de trabajo
+├── CHANGELOG.md / DATA_SOURCES.md / SECURITY.md / LICENSE
+└── package.json              # scripts npm: serve, test:visual
+```
+
 ## Notas
 
 - El token de Mapbox (`config.js`) es un token público restringido por dominio. Detalles en [`SECURITY.md`](SECURITY.md).
 - Hay un iframe Flourish residual (heatmap temperaturas 1940-2024) cuyo reemplazo nativo requiere descarga AEMET con API key. Pendiente para próxima iteración.
 - Capturas de las gráficas y mapas nativos en `data/teste_visual/` (no versionado).
+- Análisis estético en curso: ver [`notebooks/analisis_estetico.md`](notebooks/analisis_estetico.md).

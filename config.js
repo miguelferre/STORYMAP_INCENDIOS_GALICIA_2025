@@ -108,18 +108,20 @@ var config = {
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div id="grafica-cronoloxia" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-Larouco-Seadur fue el más grande, pero no fue el único. Entre el <strong>8 y el 15 de agosto</strong> se prendió Galicia entera: una semana en la que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha) se solaparon en el tiempo y agotaron los recursos de extinción.<br><br>
-El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios y casi 49.000 hectáreas reportadas</strong>. El 13, otras 25.000. Cinco días, más de 100.000 ha.
+                          <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.7; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Larouco-Seadur fue el incendio más grande, pero no estuvo solo. La gráfica resume todo el periodo crítico, del <strong>1 de julio al 1 de octubre de 2025</strong>: cada barra naranja es la suma de hectáreas reportadas ese día por PrazaGal, y cada círculo amarillo es uno de los <strong>35 incendios mayores de 100 ha</strong> que ocurrieron en esos tres meses.<br><br>
+La lectura es brutal: durante junio y julio Galicia mantiene niveles bajos, pero entre el <strong>8 y el 15 de agosto</strong> se concentra prácticamente toda la siniestralidad. En esa única semana se solapan <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha), agotando los recursos de extinción de toda la comunidad.<br><br>
+El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios activos y casi 49.000 hectáreas reportadas</strong>. El 13 se sumaron 25.000 más. En cinco días ardieron <strong>más de 100.000 hectáreas</strong> — la mayor parte de todo el daño anual.
                           </p>
                         </div>
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-Larouco-Seadur fue el más grande, pero no fue el único. Entre el <strong>8 y el 15 de agosto</strong> se prendió Galicia entera: una semana en la que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha) se solaparon en el tiempo y agotaron los recursos de extinción.<br><br>
-El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios y casi 49.000 hectáreas reportadas</strong>. El 13, otras 25.000. Cinco días, más de 100.000 hectáreas perdidas.<br><br>
-La gráfica deja muy clara la concentración: tras un junio y un julio relativamente discretos, casi todo el daño del verano cabe en una sola semana de agosto.
+                        <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.7; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Larouco-Seadur fue el incendio más grande, pero no estuvo solo. La gráfica resume todo el periodo crítico, del <strong>1 de julio al 1 de octubre de 2025</strong>: cada barra naranja es la suma de hectáreas reportadas ese día por PrazaGal, y cada círculo amarillo es uno de los <strong>35 incendios mayores de 100 ha</strong> que ocurrieron en esos tres meses, con su tamaño proporcional a las hectáreas que arrasaron.<br><br>
+La lectura es brutal: durante junio y julio Galicia mantiene niveles bajos, pero entre el <strong>8 y el 15 de agosto</strong> se concentra prácticamente toda la siniestralidad del verano. En esa única semana se solapan <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha), agotando los recursos de extinción de toda la comunidad.<br><br>
+El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios activos y casi 49.000 hectáreas reportadas</strong>. El 13 se sumaron otras 25.000. En cinco días ardieron <strong>más de 100.000 hectáreas</strong>, la mayor parte de todo el daño anual.<br><br>
+Tras el pico, septiembre se desinfla. Una sola semana decidió un verano entero.
                         </p>
                     </div>
                 </div>
@@ -175,9 +177,12 @@ Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</stro
             rotateAnimation: false,
             onChapterEnter: [
                 { callbackName: 'hideDefaultLayers' },
+                { callbackName: 'showDnbrLayer' },
                 { callbackName: 'renderDnbr' }
             ],
-            onChapterExit: []
+            onChapterExit: [
+                { callbackName: 'hideDnbrLayer' }
+            ]
         },
         {
             id: 'tendencia-aumento',
@@ -206,12 +211,10 @@ Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</stro
                         <!-- Explicación 2 (visible en móvil) -->
                         <div class="mobile-expl">
                           <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-  El mapa permite visualizar de forma interactiva la distribución de los <strong>incendios forestales</strong> en Galicia entre 2016 y 2025.<br><br>
-  Los círculos representan la magnitud de los incendios y su localización, mientras la línea inferior muestra la evolución anual.<br><br>
-  La mayor concentración se mantiene en el sur de la comunidad, especialmente en la provincia de <strong>Ourense</strong>, que actúa como epicentro recurrente.<br><br>
-  En los años <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> los focos se multiplican, y en <strong>2025</strong> la extensión quemada alcanza valores excepcionales.<br><br>
-  Los datos evidencian un patrón de recurrencia: los incendios tienden a repetirse en las mismas zonas, con una intensidad cada vez mayor.<br><br>
-  Más que episodios aislados, reflejan un proceso sostenido que amplifica su impacto con el paso del tiempo.
+  El segundo gráfico desglosa el mismo problema en el espacio. Cada celda es la superficie quemada en uno de los <strong>19 distritos forestales de Galicia</strong> en un año concreto, entre 2018 y 2025. Cuanto más cálido el color, más hectáreas perdidas.<br><br>
+  El patrón es nítido: las cinco filas superiores — <strong>Valdeorras-Trives, Verín-Viana, Terra de Lemos, A Limia y Miño-Arnoia</strong> — concentran prácticamente toda la actividad año tras año. Los cinco pertenecen al <strong>sureste de Ourense</strong>, el epicentro estructural de los incendios en la comunidad.<br><br>
+  La columna de <strong>2025</strong> destaca especialmente: Valdeorras-Trives roza los 40.000 ha en un solo año, una intensidad que no aparece en ningún otro punto de la serie.<br><br>
+  Los incendios no se reparten al azar: se repiten en los mismos distritos, con una intensidad creciente.
                           </p>
                         </div>
                     </div>
@@ -226,13 +229,10 @@ Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</stro
                         </p>
 
                         
-                        <p style="margin: 0; font-size: 16px; line-height: 1.63;">
-  El mapa permite visualizar de forma interactiva la distribución de los <strong>incendios forestales</strong> en Galicia entre 2016 y 2025.<br><br>
-  Los círculos representan la magnitud de los incendios y su localización, mientras la línea inferior muestra la evolución anual.<br><br>
-  La mayor concentración se mantiene en el sur de la comunidad, especialmente en la provincia de <strong>Ourense</strong>, que actúa como epicentro recurrente.<br><br>
-  En los años <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> los focos se multiplican, y en <strong>2025</strong> la extensión quemada alcanza valores excepcionales.<br><br>
-  Los datos evidencian un patrón de recurrencia: los incendios tienden a repetirse en las mismas zonas, con una intensidad cada vez mayor.<br><br>
-  Más que episodios aislados, reflejan un proceso sostenido que amplifica su impacto con el paso del tiempo.
+                        <p style="margin: 0; font-size: 16px; line-height: 1.63; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+  El segundo gráfico desglosa el mismo problema en el espacio. Cada celda es la superficie quemada en uno de los <strong>19 distritos forestales de Galicia</strong> en un año concreto, entre 2018 y 2025. Cuanto más cálido el color, más hectáreas perdidas.<br><br>
+  El patrón es nítido: las cinco filas superiores — <strong>Valdeorras-Trives, Verín-Viana, Terra de Lemos, A Limia y Miño-Arnoia</strong> — concentran prácticamente toda la actividad año tras año. Los cinco pertenecen al <strong>sureste de Ourense</strong>, el epicentro estructural de los incendios en la comunidad.<br><br>
+  La columna de <strong>2025</strong> destaca especialmente: Valdeorras-Trives roza los 40.000 ha en un solo año, una intensidad que no aparece en ningún otro punto de la serie. Los incendios no se reparten al azar: se repiten en los mismos distritos, con una intensidad creciente.
                         </p>
                     </div>
                 </div>

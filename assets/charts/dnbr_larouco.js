@@ -161,19 +161,25 @@
   function pintar(host, j, lang) {
     const t = TEXTOS[lang] || TEXTOS.es;
     const slot = host.querySelector(".dnbr-paneles");
-    if (!slot) return;
-    const ancho = Math.max(320, Math.min(slot.clientWidth || host.clientWidth || 720, 920));
+    if (!slot) {
+      return;
+    }
+    // El mapa de severidad ahora se renderiza como capa Mapbox sobre el
+    // basemap real (DNBR_LAROUCO en index.html). Aquí ya no pintamos un
+    // mapa SVG; el panel del capítulo sólo conserva la leyenda de severidad
+    // como ayuda al lector.
     slot.innerHTML = "";
+    const lex = document.createElement("div");
+    lex.className = "dnbr-leyenda";
+    lex.innerHTML = `
+      <span><i style="background:#fdae61"></i>${tr(lang, "Severidade moderada-baixa")}</span>
+      <span><i style="background:#d73027"></i>${tr(lang, "Severidade moderada-alta")}</span>
+      <span><i style="background:#7f1d1d"></i>${tr(lang, "Severidade alta")}</span>
+    `;
+    slot.appendChild(lex);
 
-    const tA = document.createElement("p");
-    tA.className = "dnbr-subtitulo";
-    tA.textContent = t.panel_mapa;
-    slot.appendChild(tA);
-    slot.appendChild(panelMapa(j.clases, j.resumo, ancho, lang));
-
-    // Si existe un host externo visible para las barras (`#grafica-dnbr-bars`),
-    // renderiza ahí; si no (móvil con desktop-expl oculto, o sin host), las
-    // pinta debajo del mapa.
+    // Las barras siguen renderizándose: si hay host externo (lateral derecho),
+    // ahí; si no, al final del bloque del capítulo.
     const barsHost = document.getElementById("grafica-dnbr-bars");
     const barsHostVisible = barsHost && barsHost.offsetParent !== null;
     if (barsHostVisible) {
@@ -190,7 +196,8 @@
       tB.className = "dnbr-subtitulo";
       tB.textContent = t.panel_barras;
       slot.appendChild(tB);
-      slot.appendChild(panelBarras(j.resumo, ancho, lang));
+      const anchoBars = Math.max(320, Math.min(slot.clientWidth || host.clientWidth || 720, 920));
+      slot.appendChild(panelBarras(j.resumo, anchoBars, lang));
     }
   }
 

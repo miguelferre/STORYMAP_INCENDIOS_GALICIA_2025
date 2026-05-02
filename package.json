@@ -1,7 +1,15 @@
 {
   "name": "storymap-incendios-galicia-2025",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
+  "description": "Storymap divulgativo sobre los incendios forestales de Galicia en 2025: pipelines geoespaciales reproducibles + frontend Mapbox/Observable Plot.",
+  "homepage": "https://miguelferre.github.io/STORYMAP_INCENDIOS_GALICIA_2025/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelferre/STORYMAP_INCENDIOS_GALICIA_2025.git"
+  },
+  "license": "MIT",
+  "author": "Miguel Ferreiro García",
   "scripts": {
     "serve": "python -m http.server 8000",
     "test:visual": "node scripts/teste_visual.js"
