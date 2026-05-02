@@ -1439,8 +1439,11 @@
     .dnbr-subtitulo{ margin: 6px 0 0 0; font-size: 0.92rem; color: rgba(255,255,255,0.78); }
     .dnbr-pie{ margin: 14px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
     .dnbr-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
-    .dnbr-leyenda{ display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.85); margin: 4px 0 4px 0; }
+    .dnbr-leyenda{ display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; color: rgba(255,255,255,0.85); margin: 4px 0 4px 0; }
+    .dnbr-leyenda-grupo{ display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+    .dnbr-leyenda-titulo{ font-weight: 600; color: rgba(255,255,255,0.95); margin-right: 4px; font-size: 0.8rem; letter-spacing: 0.02em; text-transform: uppercase; }
     .dnbr-leyenda i{ display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+    .dnbr-leyenda i.dnbr-leyenda-linea{ background: transparent; border: 0; border-top: 2px solid; height: 0; width: 18px; border-radius: 0; vertical-align: middle; }
     /* Card de barras de severidad cuando se renderiza en el lateral derecho. */
     .dnbr-bloque-bars{
       background: rgba(15, 18, 28, 0.6);
@@ -1465,6 +1468,7 @@
     .cronoloxia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .cronoloxia-cabecera p{ margin: 0 0 12px 0; font-size: 0.95rem; line-height: 1.55; color: rgba(255,255,255,0.78); }
     .cronoloxia-paneles svg{ max-width: 100%; height: auto; }
+    .cronoloxia-subtitulo{ margin: 14px 0 4px 0; font-size: 0.92rem; color: rgba(255,220,130,0.85); font-weight: 600; letter-spacing: 0.01em; }
     .cronoloxia-pie{ margin: 12px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
     .cronoloxia-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
 

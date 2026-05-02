@@ -40,20 +40,28 @@
     es: {
       titulo: "La huella del fuego",
       subtitulo:
-        "Diferencia del Normalized Burn Ratio (dNBR) calculada con Sentinel-2 sobre el perímetro Larouco-Seadur: imagen pre-fuego del 24 de julio de 2025 contra una imagen post-fuego del 10 de octubre de 2025. La rampa de severidad sigue la clasificación Key & Benson (2006).",
+        "Diferencia del Normalized Burn Ratio (dNBR) sobre Sentinel-2 (24 jul vs 10 oct 2025), reclasificada según Key & Benson 2006. Sobre el dNBR superponemos la capa SILVIS Global WUI 2020 (Schug et al. 2023, ráster 10 m): bordes amarillos y cian marcan núcleos rurales en contacto con el monte combustible.",
       panel_mapa: "Severidad reclasificada (clases moderada-baja, moderada-alta y alta)",
       panel_barras: "Hectáreas por clase de severidad",
+      sev_titulo: "Severidad dNBR",
+      wui_titulo: "Wildland-Urban Interface",
+      wui_forestal: "WUI forestal-matorral",
+      wui_pradeira: "WUI pradera",
       pie:
-        "Datos: Sentinel-2 L2A (Copernicus) servidos por Microsoft Planetary Computer. Cálculo dNBR + reclasificación KB-2006 con rasterio + xarray.",
+        "Datos: Sentinel-2 L2A (Copernicus / Microsoft Planetary Computer); Wildland-Urban Interface: Schug et al. 2023 (DOI 10.5281/zenodo.7941460).",
     },
     gl: {
       titulo: "A pegada do lume",
       subtitulo:
-        "Diferenza do Normalized Burn Ratio (dNBR) calculada con Sentinel-2 sobre o perímetro Larouco-Seadur: imaxe pre-lume do 24 de xullo de 2025 fronte a unha imaxe post-lume do 10 de outubro de 2025. A rampa de severidade segue a clasificación Key & Benson (2006).",
+        "Diferenza do Normalized Burn Ratio (dNBR) sobre Sentinel-2 (24 xul vs 10 out 2025), reclasificada segundo Key & Benson 2006. Sobre o dNBR superpoñemos a capa SILVIS Global WUI 2020 (Schug et al. 2023, ráster 10 m): bordes amarelos e cian marcan núcleos rurais en contacto co monte combustible.",
       panel_mapa: "Severidade reclasificada (clases moderada-baixa, moderada-alta e alta)",
       panel_barras: "Hectáreas por clase de severidade",
+      sev_titulo: "Severidade dNBR",
+      wui_titulo: "Wildland-Urban Interface",
+      wui_forestal: "WUI forestal-matorral",
+      wui_pradeira: "WUI pradeira",
       pie:
-        "Datos: Sentinel-2 L2A (Copernicus) servidos por Microsoft Planetary Computer. Cálculo dNBR + reclasificación KB-2006 con rasterio + xarray.",
+        "Datos: Sentinel-2 L2A (Copernicus / Microsoft Planetary Computer); Wildland-Urban Interface: Schug et al. 2023 (DOI 10.5281/zenodo.7941460).",
     },
   };
 
@@ -172,9 +180,17 @@
     const lex = document.createElement("div");
     lex.className = "dnbr-leyenda";
     lex.innerHTML = `
-      <span><i style="background:#fdae61"></i>${tr(lang, "Severidade moderada-baixa")}</span>
-      <span><i style="background:#d73027"></i>${tr(lang, "Severidade moderada-alta")}</span>
-      <span><i style="background:#7f1d1d"></i>${tr(lang, "Severidade alta")}</span>
+      <div class="dnbr-leyenda-grupo">
+        <span class="dnbr-leyenda-titulo">${t.sev_titulo}</span>
+        <span><i style="background:#fdae61"></i>${tr(lang, "Severidade moderada-baixa")}</span>
+        <span><i style="background:#d73027"></i>${tr(lang, "Severidade moderada-alta")}</span>
+        <span><i style="background:#7f1d1d"></i>${tr(lang, "Severidade alta")}</span>
+      </div>
+      <div class="dnbr-leyenda-grupo">
+        <span class="dnbr-leyenda-titulo">${t.wui_titulo}</span>
+        <span><i class="dnbr-leyenda-linea" style="border-color:#ffd23f"></i>${t.wui_forestal}</span>
+        <span><i class="dnbr-leyenda-linea" style="border-color:#2ec4b6"></i>${t.wui_pradeira}</span>
+      </div>
     `;
     slot.appendChild(lex);
 

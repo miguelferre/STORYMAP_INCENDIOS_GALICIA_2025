@@ -18,8 +18,10 @@
       pico_13: "13 ago — Larouco-Seadur, 23.527 ha",
       pico_15: "15 ago — 34 lumes, 14.241 ha",
       pie:
-        "Fuente: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregado por día. Período junio-octubre 2025.",
+        "Fuente: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregado por día. Período julio-octubre 2025.",
+      overview_y: "ha (escala raíz)",
       eje_y: "Hectáreas quemadas / día",
+      zoom_titulo: "Zoom: 5 al 22 de agosto, la semana en que ardió todo",
       tooltip_dia: (d) =>
         `${d.data_str}\n${d.n_incendios} lumes — ${Math.round(d.ha_total).toLocaleString("es")} ha\nMaior: ${d.top_concello} / ${d.top_parroquia} (${Math.round(d.top_ha).toLocaleString("es")} ha)`,
       tooltip_grande: (d) =>
@@ -33,8 +35,10 @@
       pico_13: "13 ago — Larouco-Seadur, 23.527 ha",
       pico_15: "15 ago — 34 lumes, 14.241 ha",
       pie:
-        "Fonte: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregada por día. Período xuño-outubro 2025.",
+        "Fonte: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregada por día. Período xullo-outubro 2025.",
+      overview_y: "ha (escala raíz)",
       eje_y: "Hectáreas queimadas / día",
+      zoom_titulo: "Zoom: do 5 ao 22 de agosto, a semana na que ardeu todo",
       tooltip_dia: (d) =>
         `${d.data_str}\n${d.n_incendios} lumes — ${Math.round(d.ha_total).toLocaleString("gl")} ha\nMaior: ${d.top_concello} / ${d.top_parroquia} (${Math.round(d.top_ha).toLocaleString("gl")} ha)`,
       tooltip_grande: (d) =>
@@ -60,9 +64,78 @@
     return cargaPromesa;
   }
 
-  function panel(j, ancho, lang) {
+  // Panel superior: visión do verán enteiro (Xul-Out), barras a escala
+  // sqrt para que os días pequenos non desaparezan baixo o pico do 12 ago.
+  // Sen tooltips nin anotacións; serve de contexto.
+  function panelOverview(j, ancho, lang) {
     const Plot = global.Plot;
     const t = TEXTOS[lang] || TEXTOS.es;
+    return Plot.plot({
+      width: ancho,
+      height: 110,
+      marginLeft: 56,
+      marginRight: 18,
+      marginTop: 8,
+      marginBottom: 22,
+      style: {
+        background: "transparent",
+        color: "rgba(255,255,255,0.7)",
+        fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+        fontSize: "10.5px",
+        overflow: "visible",
+      },
+      x: {
+        label: null,
+        type: "time",
+        grid: false,
+        domain: [new Date("2025-07-01T00:00:00"), new Date("2025-10-01T00:00:00")],
+        clip: true,
+      },
+      y: {
+        label: t.overview_y,
+        labelAnchor: "top",
+        labelOffset: 36,
+        type: "sqrt",
+        grid: false,
+      },
+      marks: [
+        Plot.rectY(j.diario, {
+          x: "fecha",
+          y: "ha_total",
+          interval: "day",
+          fill: "rgba(244, 78, 17, 0.7)",
+          stroke: "rgba(244, 78, 17, 0.9)",
+          strokeWidth: 0.3,
+        }),
+        // Sombreado do tramo do panel detalle.
+        Plot.rect([{
+          x1: new Date("2025-08-05T00:00:00"),
+          x2: new Date("2025-08-22T00:00:00"),
+          y1: 0,
+          y2: 50000,
+        }], {
+          x1: "x1", x2: "x2", y1: "y1", y2: "y2",
+          fill: "rgba(255, 220, 130, 0.18)",
+          stroke: "rgba(255, 220, 130, 0.55)",
+          strokeWidth: 0.8,
+          strokeDasharray: "3 3",
+        }),
+        Plot.ruleY([0], { stroke: "rgba(255,255,255,0.35)" }),
+      ],
+    });
+  }
+
+  // Panel detalle: zoom á semana crítica (5-22 ago), barras + grandes
+  // incendios + anotacións. Só Plot.rectY ten tip activo, así evítase
+  // o solapamento de dous tooltips simultáneos.
+  function panelDetalle(j, ancho, lang) {
+    const Plot = global.Plot;
+    const t = TEXTOS[lang] || TEXTOS.es;
+    const inicio = new Date("2025-08-05T00:00:00");
+    const fin = new Date("2025-08-22T00:00:00");
+    const enRango = (d) => d.fecha >= inicio && d.fecha <= fin;
+    const diarioZoom = j.diario.filter(enRango);
+    const grandesZoom = j.grandes.filter(enRango);
     const anotacions = [
       { fecha: new Date("2025-08-12T00:00:00"), txt: t.pico_12, ha: 48949 },
       { fecha: new Date("2025-08-13T00:00:00"), txt: t.pico_13, ha: 25338 },
@@ -70,10 +143,10 @@
     ];
     return Plot.plot({
       width: ancho,
-      height: 420,
+      height: 340,
       marginLeft: 56,
       marginRight: 18,
-      marginTop: 22,
+      marginTop: 28,
       marginBottom: 38,
       style: {
         background: "transparent",
@@ -86,8 +159,9 @@
         label: null,
         type: "time",
         grid: false,
-        domain: [new Date("2025-07-01T00:00:00"), new Date("2025-10-01T00:00:00")],
+        domain: [inicio, fin],
         clip: true,
+        tickFormat: "%d %b",
       },
       y: {
         label: t.eje_y,
@@ -98,7 +172,7 @@
       },
       r: { range: [2, 14], domain: [100, 25000] },
       marks: [
-        Plot.rectY(j.diario, {
+        Plot.rectY(diarioZoom, {
           x: "fecha",
           y: "ha_total",
           interval: "day",
@@ -108,15 +182,15 @@
           tip: true,
           title: t.tooltip_dia,
         }),
-        Plot.dot(j.grandes, {
+        Plot.dot(grandesZoom, {
           x: "fecha",
           y: "hectareas",
           r: "hectareas",
           fill: "rgba(255, 220, 130, 0.78)",
           stroke: "rgba(255, 200, 60, 0.95)",
           strokeWidth: 0.7,
-          tip: true,
-          title: t.tooltip_grande,
+          // Sen tip: evita o duplo popup. A info dos grandes incendios xa
+          // se ve no tooltip da barra (campo top_concello/top_parroquia).
         }),
         Plot.text(anotacions, {
           x: "fecha",
@@ -140,7 +214,13 @@
     if (!slot) return;
     const ancho = Math.max(320, Math.min(slot.clientWidth || host.clientWidth || 720, 920));
     slot.innerHTML = "";
-    slot.appendChild(panel(j, ancho, lang));
+    slot.appendChild(panelOverview(j, ancho, lang));
+    const t = TEXTOS[lang] || TEXTOS.es;
+    const sub = document.createElement("p");
+    sub.className = "cronoloxia-subtitulo";
+    sub.textContent = t.zoom_titulo;
+    slot.appendChild(sub);
+    slot.appendChild(panelDetalle(j, ancho, lang));
   }
 
   function render(host, lang) {
