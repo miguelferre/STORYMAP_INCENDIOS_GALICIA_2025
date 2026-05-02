@@ -96,6 +96,52 @@ var config = {
             ]
         },
         {
+            id: 'pegada-lume',
+            alignment: 'full',
+            hidden: false,
+            title: '',
+            description: `
+            <h2>La huella del fuego, vista desde el espacio</h2>
+                <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
+                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
+                        <div id="grafica-dnbr" class="grafica-host" style="margin-bottom: 30px;"></div>
+                        <div class="mobile-expl">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Para medir lo que dejó atrás el incendio recurrimos al <strong>dNBR</strong> (differential Normalized Burn Ratio), una métrica estándar en teledetección post-incendio que combina las bandas del infrarrojo cercano y del SWIR2 de Sentinel-2. La diferencia entre una imagen previa al fuego (24 julio) y otra posterior (10 octubre) descubre, píxel a píxel, dónde se quemó la vegetación y con qué intensidad.<br><br>
+Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus 24.451 hectáreas quemadas así: <strong>13.335 ha de severidad baja</strong>, <strong>5.395 de moderada-baja</strong>, <strong>5.265 de moderada-alta</strong> y <strong>457 ha de severidad alta</strong> — los focos de vegetación arrasada total, donde la regeneración natural será más lenta.<br><br>
+Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta. Lo que para un equipo de modelización significa puntos calientes para validar simulaciones de propagación.
+                          </p>
+                        </div>
+                    </div>
+
+                    <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Para medir lo que dejó atrás el incendio recurrimos al <strong>dNBR</strong> (differential Normalized Burn Ratio), una métrica estándar en teledetección post-incendio que combina las bandas del infrarrojo cercano y del SWIR2 de Sentinel-2. La diferencia entre una imagen previa al fuego (24 julio) y otra posterior (10 octubre) descubre, píxel a píxel, dónde se quemó la vegetación y con qué intensidad.<br><br>
+Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus <strong>24.451 ha quemadas</strong> así:<br>
+&nbsp;&nbsp;13.335 ha — severidad baja<br>
+&nbsp;&nbsp;5.395 ha — moderada-baja<br>
+&nbsp;&nbsp;5.265 ha — moderada-alta<br>
+&nbsp;&nbsp;457 ha — severidad alta<br><br>
+La concentración de severidad alta marca los focos donde la regeneración natural será más lenta. Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta. Para un equipo de modelización son puntos calientes para validar simulaciones de propagación.
+                        </p>
+                    </div>
+                </div>
+            `,
+            location: {
+                center: [-7.075, 42.46],
+                zoom: 9.0,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            onChapterEnter: [
+                { callbackName: 'hideDefaultLayers' },
+                { callbackName: 'renderDnbr' }
+            ],
+            onChapterExit: []
+        },
+        {
             id: 'tendencia-aumento',
             alignment: 'full',
             hidden: false,

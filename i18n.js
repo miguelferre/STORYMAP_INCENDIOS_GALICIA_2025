@@ -64,6 +64,36 @@
             <div id="grafica-comparador" class="grafica-host" style="margin-top: 12px;"></div>
           `
         },
+        'pegada-lume': {
+          title: '',
+          description: `
+            <h2>A pegada do lume, vista dende o espazo</h2>
+                <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
+                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
+                        <div id="grafica-dnbr" class="grafica-host" style="margin-bottom: 30px;"></div>
+                        <div class="mobile-expl">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Para medir o que deixou atrás o lume recorremos ao <strong>dNBR</strong> (differential Normalized Burn Ratio), unha métrica estándar en teledetección post-lume que combina as bandas do infravermello próximo e do SWIR2 de Sentinel-2. A diferenza entre unha imaxe previa (24 xullo) e outra posterior (10 outubro) descobre, píxel a píxel, onde se queimou a vexetación e con que intensidade.<br><br>
+Reclasificando eses valores cos limiares <strong>Key &amp; Benson 2006</strong>, o bbox do lume reparte as súas 24.451 hectáreas queimadas así: <strong>13.335 ha de severidade baixa</strong>, <strong>5.395 de moderada-baixa</strong>, <strong>5.265 de moderada-alta</strong> e <strong>457 ha de severidade alta</strong> — os focos de vexetación arrasada total, onde a rexeneración natural será máis lenta.<br><br>
+É unha análise reproducible: dúas escenas Sentinel-2 abertas, dúas bandas, unha resta. O que para un equipo de modelización significa puntos quentes para validar simulacións de propagación.
+                          </p>
+                        </div>
+                    </div>
+
+                    <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Para medir o que deixou atrás o lume recorremos ao <strong>dNBR</strong> (differential Normalized Burn Ratio), unha métrica estándar en teledetección post-lume que combina as bandas do infravermello próximo e do SWIR2 de Sentinel-2. A diferenza entre unha imaxe previa (24 xullo) e outra posterior (10 outubro) descobre, píxel a píxel, onde se queimou a vexetación e con que intensidade.<br><br>
+Reclasificando eses valores cos limiares <strong>Key &amp; Benson 2006</strong>, o bbox do lume reparte as súas <strong>24.451 ha queimadas</strong> así:<br>
+&nbsp;&nbsp;13.335 ha — severidade baixa<br>
+&nbsp;&nbsp;5.395 ha — moderada-baixa<br>
+&nbsp;&nbsp;5.265 ha — moderada-alta<br>
+&nbsp;&nbsp;457 ha — severidade alta<br><br>
+A concentración de severidade alta marca os focos onde a rexeneración natural será máis lenta. É unha análise reproducible: dúas escenas Sentinel-2 abertas, dúas bandas, unha resta. Para un equipo de modelización son puntos quentes para validar simulacións de propagación.
+                        </p>
+                    </div>
+                </div>
+          `
+        },
         'tendencia-aumento': {
           title: '',
           description: `

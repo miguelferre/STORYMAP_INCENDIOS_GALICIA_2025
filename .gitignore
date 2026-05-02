@@ -8,6 +8,9 @@ data/raw/*
 # Capturas de teste visual (rexeneranse)
 data/teste_visual/
 
+# Raster dNBR pesado (~21 MB) — rexenerable con scripts/14_dnbr_larouco.py
+data/processed/dnbr_larouco_2025.tif
+
 # Cachés Python / Jupyter
 __pycache__/
 *.pyc

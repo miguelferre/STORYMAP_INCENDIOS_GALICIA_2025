@@ -1,0 +1,104 @@
+{
+  "metadatos": {
+    "pre_scene": "S2A_MSIL2A_20250724T112131_R037_T29TPG_20250724T161713",
+    "post_scene": "S2C_MSIL2A_20251010T112131_R037_T29TPG_20251010T151313",
+    "pre_nubes_pct": 0.054263,
+    "post_nubes_pct": 0.002107,
+    "bbox_lonlat": [
+      -7.3,
+      42.3,
+      -6.85,
+      42.62
+    ],
+    "fonte": "Sentinel-2 L2A vía Microsoft Planetary Computer",
+    "limiares_kb": {
+      "Rebrote post-lume": {
+        "min": -1,
+        "max": -0.25
+      },
+      "Non queimado": {
+        "min": -0.25,
+        "max": 0.1
+      },
+      "Severidade baixa": {
+        "min": 0.1,
+        "max": 0.27
+      },
+      "Severidade moderada-baixa": {
+        "min": 0.27,
+        "max": 0.44
+      },
+      "Severidade moderada-alta": {
+        "min": 0.44,
+        "max": 0.66
+      },
+      "Severidade alta": {
+        "min": 0.66,
+        "max": 2
+      }
+    },
+    "ha_per_pixel": 0.01
+  },
+  "clases": [
+    {
+      "etiqueta": "Rebrote post-lume",
+      "color": "#1b9e77",
+      "indice": 0,
+      "pixeles": 521,
+      "ha": 5.2,
+      "pct_valido": 0.01,
+      "dnbr_min": -1,
+      "dnbr_max": -0.25
+    },
+    {
+      "etiqueta": "Non queimado",
+      "color": "#bababa",
+      "indice": 1,
+      "pixeles": 3439102,
+      "ha": 34391.0,
+      "pct_valido": 58.44,
+      "dnbr_min": -0.25,
+      "dnbr_max": 0.1
+    },
+    {
+      "etiqueta": "Severidade baixa",
+      "color": "#fee08b",
+      "indice": 2,
+      "pixeles": 1333480,
+      "ha": 13334.8,
+      "pct_valido": 22.66,
+      "dnbr_min": 0.1,
+      "dnbr_max": 0.27
+    },
+    {
+      "etiqueta": "Severidade moderada-baixa",
+      "color": "#fdae61",
+      "indice": 3,
+      "pixeles": 539477,
+      "ha": 5394.8,
+      "pct_valido": 9.17,
+      "dnbr_min": 0.27,
+      "dnbr_max": 0.44
+    },
+    {
+      "etiqueta": "Severidade moderada-alta",
+      "color": "#d73027",
+      "indice": 4,
+      "pixeles": 526492,
+      "ha": 5264.9,
+      "pct_valido": 8.95,
+      "dnbr_min": 0.44,
+      "dnbr_max": 0.66
+    },
+    {
+      "etiqueta": "Severidade alta",
+      "color": "#7f1d1d",
+      "indice": 5,
+      "pixeles": 45658,
+      "ha": 456.6,
+      "pct_valido": 0.78,
+      "dnbr_min": 0.66,
+      "dnbr_max": 2
+    }
+  ]
+}
