@@ -107,20 +107,15 @@ var config = {
             <h2>Una tendencia en <strong>aumento</strong></h2>
                 <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
-                        <iframe src="https://flo.uri.sh/visualisation/25013636/embed" 
-                                frameborder="0" 
-                                scrolling="no" 
-                                style="width: 100%; height: 600px; margin-bottom: 30px;">
-                        </iframe>
+                        <div id="grafica-tendencia" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <!-- Explicación 1 (visible en móvil) -->
                         <div class="mobile-expl">
                           <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-  El gráfico muestra cómo han evolucionado los <strong>incendios forestales</strong> en Galicia desde 2016.<br><br>
-  Es interactivo: Puedes seleccionar los datos para ver la información con detalle y ocultar categorías haciendo click en la leyenda.<br><br>
-  A lo largo del periodo se repite un patrón claro: años de <strong>relativa calma</strong> seguidos de otros mucho más <strong>severos</strong>.<br><br>
-  <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> marcan picos importantes, pero <strong>2025</strong> supera todos los registros.<br><br>
-  Aunque el número de incendios fluctúa, las <strong>hectáreas afectadas</strong> tienden a aumentar con cada repunte.<br><br>
-  En conjunto, la serie refleja una <strong>tendencia ascendente</strong> y un agravamiento progresivo de los <strong>grandes incendios</strong>.
+  Hablar de incendios en Galicia depende mucho de quién los cuente.<br><br>
+  Si miramos los datos del satélite (<strong>EFFIS</strong>), los grandes fuegos saltan a la vista, pero la mayoría de los pequeños se nos escapan: solo recoge los que dejan una huella suficientemente visible desde el espacio.<br><br>
+  El registro <strong>oficial de la Xunta</strong> los recoge todos. Y ahí los números cambian de orden: en años recientes hay más de <strong>1.000 incendios al año</strong>, no las pocas decenas que ve el satélite.<br><br>
+  Los picos siguen estando en <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong>, pero <strong>2025</strong> rompe todas las escalas: cerca de <strong>120.000 hectáreas</strong> arrasadas en una sola temporada.<br><br>
+  No es solo que ardan más hectáreas: es que los grandes incendios pesan cada vez más dentro del total.
                           </p>
                         </div>
                         <br class="only-mobile"><br class="only-mobile">
@@ -157,12 +152,11 @@ var config = {
                     
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
                         <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.72; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-  El gráfico muestra cómo han evolucionado los <strong>incendios forestales</strong> en Galicia desde 2016.<br><br>
-  Es interactivo: Puedes seleccionar los datos para ver la información con detalle y ocultar categorías haciendo click en la leyenda.<br><br>
-  A lo largo del periodo se repite un patrón claro: años de <strong>relativa calma</strong> seguidos de otros mucho más <strong>severos</strong>.<br><br>
-  <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong> marcan picos importantes, pero <strong>2025</strong> supera todos los registros.<br><br>
-  Aunque el número de incendios fluctúa, las <strong>hectáreas afectadas</strong> tienden a aumentar con cada repunte.<br><br>
-  En conjunto, la serie refleja una <strong>tendencia ascendente</strong> y un agravamiento progresivo de los <strong>grandes incendios</strong>.
+  Hablar de incendios en Galicia depende mucho de quién los cuente.<br><br>
+  Si miramos los datos del satélite (<strong>EFFIS</strong>), los grandes fuegos saltan a la vista, pero la mayoría de los pequeños se nos escapan: solo recoge los que dejan una huella suficientemente visible desde el espacio.<br><br>
+  El registro <strong>oficial de la Xunta</strong> los recoge todos. Y ahí los números cambian de orden: en años recientes hay más de <strong>1.000 incendios al año</strong>, no las pocas decenas que ve el satélite.<br><br>
+  Los picos siguen estando en <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong>, pero <strong>2025</strong> rompe todas las escalas: cerca de <strong>120.000 hectáreas</strong> arrasadas en una sola temporada.<br><br>
+  No es solo que ardan más hectáreas: es que los grandes incendios pesan cada vez más dentro del total.
                         </p>
 
                         
@@ -186,7 +180,8 @@ var config = {
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             onChapterEnter: [
-                { callbackName: 'hideDefaultLayers' }
+                { callbackName: 'hideDefaultLayers' },
+                { callbackName: 'renderTendencia' }
             ],
             onChapterExit: []
         },

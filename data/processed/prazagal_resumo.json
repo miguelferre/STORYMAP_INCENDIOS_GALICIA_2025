@@ -1,0 +1,1319 @@
+{
+  "metadata": {
+    "fonte": "Praza.gal vía Lei de Transparencia (PRAZA-GAL-LT-2026)",
+    "licenza": "CC BY-NC-SA 4.0",
+    "url_fonte": "https://praza.gal/politica/todos-os-incendios-de-2025-en-galicia-liberamos-os-datos",
+    "rexistros": 1475,
+    "data_minima": "2025-01-01",
+    "data_maxima": "2025-12-31",
+    "hectareas_totais": 118763.65,
+    "concellos_afectados": 280,
+    "parroquias_afectadas": 838
+  },
+  "serie_diaria": [
+    {
+      "data": "2025-01-01",
+      "num_incendios": 3,
+      "hectareas": 0.26
+    },
+    {
+      "data": "2025-01-03",
+      "num_incendios": 1,
+      "hectareas": 1.37
+    },
+    {
+      "data": "2025-01-04",
+      "num_incendios": 2,
+      "hectareas": 4.96
+    },
+    {
+      "data": "2025-01-05",
+      "num_incendios": 1,
+      "hectareas": 0.52
+    },
+    {
+      "data": "2025-01-16",
+      "num_incendios": 2,
+      "hectareas": 0.83
+    },
+    {
+      "data": "2025-01-17",
+      "num_incendios": 2,
+      "hectareas": 0.4
+    },
+    {
+      "data": "2025-01-18",
+      "num_incendios": 5,
+      "hectareas": 26.5
+    },
+    {
+      "data": "2025-02-18",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-02-19",
+      "num_incendios": 1,
+      "hectareas": 0.04
+    },
+    {
+      "data": "2025-03-01",
+      "num_incendios": 4,
+      "hectareas": 0.52
+    },
+    {
+      "data": "2025-03-02",
+      "num_incendios": 4,
+      "hectareas": 4.699999999999999
+    },
+    {
+      "data": "2025-03-03",
+      "num_incendios": 1,
+      "hectareas": 0.19
+    },
+    {
+      "data": "2025-03-04",
+      "num_incendios": 4,
+      "hectareas": 5.029999999999999
+    },
+    {
+      "data": "2025-03-14",
+      "num_incendios": 1,
+      "hectareas": 0.44
+    },
+    {
+      "data": "2025-03-15",
+      "num_incendios": 3,
+      "hectareas": 0.19
+    },
+    {
+      "data": "2025-03-16",
+      "num_incendios": 2,
+      "hectareas": 0.41000000000000003
+    },
+    {
+      "data": "2025-03-17",
+      "num_incendios": 1,
+      "hectareas": 0.11
+    },
+    {
+      "data": "2025-03-18",
+      "num_incendios": 2,
+      "hectareas": 0.04
+    },
+    {
+      "data": "2025-03-19",
+      "num_incendios": 11,
+      "hectareas": 4.34
+    },
+    {
+      "data": "2025-03-20",
+      "num_incendios": 11,
+      "hectareas": 22.830000000000002
+    },
+    {
+      "data": "2025-03-25",
+      "num_incendios": 1,
+      "hectareas": 0.05
+    },
+    {
+      "data": "2025-03-26",
+      "num_incendios": 2,
+      "hectareas": 0.02
+    },
+    {
+      "data": "2025-03-27",
+      "num_incendios": 1,
+      "hectareas": 0.81
+    },
+    {
+      "data": "2025-03-28",
+      "num_incendios": 5,
+      "hectareas": 0.47
+    },
+    {
+      "data": "2025-03-29",
+      "num_incendios": 4,
+      "hectareas": 4.67
+    },
+    {
+      "data": "2025-03-30",
+      "num_incendios": 7,
+      "hectareas": 6.52
+    },
+    {
+      "data": "2025-03-31",
+      "num_incendios": 12,
+      "hectareas": 5.64
+    },
+    {
+      "data": "2025-04-01",
+      "num_incendios": 7,
+      "hectareas": 4.44
+    },
+    {
+      "data": "2025-04-02",
+      "num_incendios": 3,
+      "hectareas": 0.12
+    },
+    {
+      "data": "2025-04-03",
+      "num_incendios": 2,
+      "hectareas": 4.32
+    },
+    {
+      "data": "2025-04-04",
+      "num_incendios": 1,
+      "hectareas": 0.61
+    },
+    {
+      "data": "2025-04-05",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-04-06",
+      "num_incendios": 1,
+      "hectareas": 0.89
+    },
+    {
+      "data": "2025-04-07",
+      "num_incendios": 1,
+      "hectareas": 0.12
+    },
+    {
+      "data": "2025-04-08",
+      "num_incendios": 3,
+      "hectareas": 0.75
+    },
+    {
+      "data": "2025-04-09",
+      "num_incendios": 11,
+      "hectareas": 22.67
+    },
+    {
+      "data": "2025-04-10",
+      "num_incendios": 7,
+      "hectareas": 7.57
+    },
+    {
+      "data": "2025-04-11",
+      "num_incendios": 1,
+      "hectareas": 0.02
+    },
+    {
+      "data": "2025-04-23",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-04-24",
+      "num_incendios": 3,
+      "hectareas": 0.5800000000000001
+    },
+    {
+      "data": "2025-04-27",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-04-28",
+      "num_incendios": 3,
+      "hectareas": 0.89
+    },
+    {
+      "data": "2025-04-29",
+      "num_incendios": 7,
+      "hectareas": 1.36
+    },
+    {
+      "data": "2025-04-30",
+      "num_incendios": 4,
+      "hectareas": 0.16
+    },
+    {
+      "data": "2025-05-08",
+      "num_incendios": 1,
+      "hectareas": 0.59
+    },
+    {
+      "data": "2025-05-09",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-05-11",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-05-14",
+      "num_incendios": 2,
+      "hectareas": 0.14
+    },
+    {
+      "data": "2025-05-16",
+      "num_incendios": 2,
+      "hectareas": 0.5
+    },
+    {
+      "data": "2025-05-17",
+      "num_incendios": 1,
+      "hectareas": 0.05
+    },
+    {
+      "data": "2025-05-18",
+      "num_incendios": 3,
+      "hectareas": 0.61
+    },
+    {
+      "data": "2025-05-21",
+      "num_incendios": 1,
+      "hectareas": 0.24
+    },
+    {
+      "data": "2025-05-22",
+      "num_incendios": 1,
+      "hectareas": 0.08
+    },
+    {
+      "data": "2025-05-24",
+      "num_incendios": 2,
+      "hectareas": 0.21000000000000002
+    },
+    {
+      "data": "2025-05-25",
+      "num_incendios": 2,
+      "hectareas": 0.76
+    },
+    {
+      "data": "2025-05-26",
+      "num_incendios": 4,
+      "hectareas": 0.97
+    },
+    {
+      "data": "2025-05-28",
+      "num_incendios": 2,
+      "hectareas": 0.8099999999999999
+    },
+    {
+      "data": "2025-05-29",
+      "num_incendios": 6,
+      "hectareas": 1.58
+    },
+    {
+      "data": "2025-05-30",
+      "num_incendios": 3,
+      "hectareas": 0.39
+    },
+    {
+      "data": "2025-05-31",
+      "num_incendios": 1,
+      "hectareas": 0.34
+    },
+    {
+      "data": "2025-06-01",
+      "num_incendios": 2,
+      "hectareas": 0.13
+    },
+    {
+      "data": "2025-06-03",
+      "num_incendios": 3,
+      "hectareas": 0.5
+    },
+    {
+      "data": "2025-06-05",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-06-09",
+      "num_incendios": 4,
+      "hectareas": 1.2599999999999998
+    },
+    {
+      "data": "2025-06-10",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-06-11",
+      "num_incendios": 1,
+      "hectareas": 0.31
+    },
+    {
+      "data": "2025-06-12",
+      "num_incendios": 2,
+      "hectareas": 0.49
+    },
+    {
+      "data": "2025-06-13",
+      "num_incendios": 2,
+      "hectareas": 0.17
+    },
+    {
+      "data": "2025-06-14",
+      "num_incendios": 1,
+      "hectareas": 0.06
+    },
+    {
+      "data": "2025-06-15",
+      "num_incendios": 7,
+      "hectareas": 5.61
+    },
+    {
+      "data": "2025-06-16",
+      "num_incendios": 7,
+      "hectareas": 0.7100000000000001
+    },
+    {
+      "data": "2025-06-17",
+      "num_incendios": 2,
+      "hectareas": 0.04
+    },
+    {
+      "data": "2025-06-18",
+      "num_incendios": 3,
+      "hectareas": 0.5599999999999999
+    },
+    {
+      "data": "2025-06-19",
+      "num_incendios": 5,
+      "hectareas": 0.99
+    },
+    {
+      "data": "2025-06-20",
+      "num_incendios": 2,
+      "hectareas": 1.26
+    },
+    {
+      "data": "2025-06-21",
+      "num_incendios": 4,
+      "hectareas": 0.04
+    },
+    {
+      "data": "2025-06-22",
+      "num_incendios": 4,
+      "hectareas": 0.52
+    },
+    {
+      "data": "2025-06-23",
+      "num_incendios": 12,
+      "hectareas": 4.01
+    },
+    {
+      "data": "2025-06-24",
+      "num_incendios": 6,
+      "hectareas": 6.28
+    },
+    {
+      "data": "2025-06-25",
+      "num_incendios": 4,
+      "hectareas": 0.6
+    },
+    {
+      "data": "2025-06-26",
+      "num_incendios": 6,
+      "hectareas": 0.2
+    },
+    {
+      "data": "2025-06-27",
+      "num_incendios": 3,
+      "hectareas": 0.17
+    },
+    {
+      "data": "2025-06-28",
+      "num_incendios": 6,
+      "hectareas": 2.3400000000000003
+    },
+    {
+      "data": "2025-06-29",
+      "num_incendios": 12,
+      "hectareas": 2.95
+    },
+    {
+      "data": "2025-06-30",
+      "num_incendios": 7,
+      "hectareas": 8.8
+    },
+    {
+      "data": "2025-07-01",
+      "num_incendios": 9,
+      "hectareas": 50.23
+    },
+    {
+      "data": "2025-07-02",
+      "num_incendios": 10,
+      "hectareas": 34.68
+    },
+    {
+      "data": "2025-07-03",
+      "num_incendios": 9,
+      "hectareas": 39.93
+    },
+    {
+      "data": "2025-07-04",
+      "num_incendios": 16,
+      "hectareas": 114.39
+    },
+    {
+      "data": "2025-07-05",
+      "num_incendios": 10,
+      "hectareas": 3.46
+    },
+    {
+      "data": "2025-07-06",
+      "num_incendios": 3,
+      "hectareas": 0.03
+    },
+    {
+      "data": "2025-07-07",
+      "num_incendios": 8,
+      "hectareas": 13.270000000000001
+    },
+    {
+      "data": "2025-07-08",
+      "num_incendios": 7,
+      "hectareas": 7.04
+    },
+    {
+      "data": "2025-07-09",
+      "num_incendios": 7,
+      "hectareas": 1.25
+    },
+    {
+      "data": "2025-07-10",
+      "num_incendios": 11,
+      "hectareas": 7.16
+    },
+    {
+      "data": "2025-07-11",
+      "num_incendios": 6,
+      "hectareas": 0.93
+    },
+    {
+      "data": "2025-07-12",
+      "num_incendios": 13,
+      "hectareas": 7.79
+    },
+    {
+      "data": "2025-07-13",
+      "num_incendios": 4,
+      "hectareas": 0.9400000000000001
+    },
+    {
+      "data": "2025-07-14",
+      "num_incendios": 11,
+      "hectareas": 15.47
+    },
+    {
+      "data": "2025-07-15",
+      "num_incendios": 11,
+      "hectareas": 15.1
+    },
+    {
+      "data": "2025-07-16",
+      "num_incendios": 15,
+      "hectareas": 75.55
+    },
+    {
+      "data": "2025-07-17",
+      "num_incendios": 5,
+      "hectareas": 3.86
+    },
+    {
+      "data": "2025-07-18",
+      "num_incendios": 5,
+      "hectareas": 0.4
+    },
+    {
+      "data": "2025-07-19",
+      "num_incendios": 4,
+      "hectareas": 2.42
+    },
+    {
+      "data": "2025-07-21",
+      "num_incendios": 2,
+      "hectareas": 0.12
+    },
+    {
+      "data": "2025-07-22",
+      "num_incendios": 6,
+      "hectareas": 0.74
+    },
+    {
+      "data": "2025-07-23",
+      "num_incendios": 9,
+      "hectareas": 101.14
+    },
+    {
+      "data": "2025-07-24",
+      "num_incendios": 12,
+      "hectareas": 3.38
+    },
+    {
+      "data": "2025-07-25",
+      "num_incendios": 15,
+      "hectareas": 5.03
+    },
+    {
+      "data": "2025-07-26",
+      "num_incendios": 14,
+      "hectareas": 13.88
+    },
+    {
+      "data": "2025-07-27",
+      "num_incendios": 18,
+      "hectareas": 13.81
+    },
+    {
+      "data": "2025-07-28",
+      "num_incendios": 22,
+      "hectareas": 89.03999999999999
+    },
+    {
+      "data": "2025-07-29",
+      "num_incendios": 24,
+      "hectareas": 162.99
+    },
+    {
+      "data": "2025-07-30",
+      "num_incendios": 36,
+      "hectareas": 357.96
+    },
+    {
+      "data": "2025-07-31",
+      "num_incendios": 21,
+      "hectareas": 13.06
+    },
+    {
+      "data": "2025-08-01",
+      "num_incendios": 19,
+      "hectareas": 567.49
+    },
+    {
+      "data": "2025-08-02",
+      "num_incendios": 34,
+      "hectareas": 505.51
+    },
+    {
+      "data": "2025-08-03",
+      "num_incendios": 31,
+      "hectareas": 140.9
+    },
+    {
+      "data": "2025-08-04",
+      "num_incendios": 18,
+      "hectareas": 4.7
+    },
+    {
+      "data": "2025-08-05",
+      "num_incendios": 37,
+      "hectareas": 340.38
+    },
+    {
+      "data": "2025-08-06",
+      "num_incendios": 29,
+      "hectareas": 255.47
+    },
+    {
+      "data": "2025-08-07",
+      "num_incendios": 27,
+      "hectareas": 15.709999999999999
+    },
+    {
+      "data": "2025-08-08",
+      "num_incendios": 21,
+      "hectareas": 6376.14
+    },
+    {
+      "data": "2025-08-09",
+      "num_incendios": 29,
+      "hectareas": 1892.99
+    },
+    {
+      "data": "2025-08-10",
+      "num_incendios": 30,
+      "hectareas": 5560.969999999999
+    },
+    {
+      "data": "2025-08-11",
+      "num_incendios": 34,
+      "hectareas": 1588.45
+    },
+    {
+      "data": "2025-08-12",
+      "num_incendios": 32,
+      "hectareas": 48948.89
+    },
+    {
+      "data": "2025-08-13",
+      "num_incendios": 29,
+      "hectareas": 25338.24
+    },
+    {
+      "data": "2025-08-14",
+      "num_incendios": 17,
+      "hectareas": 499.99
+    },
+    {
+      "data": "2025-08-15",
+      "num_incendios": 34,
+      "hectareas": 14240.83
+    },
+    {
+      "data": "2025-08-16",
+      "num_incendios": 27,
+      "hectareas": 290.44
+    },
+    {
+      "data": "2025-08-17",
+      "num_incendios": 26,
+      "hectareas": 22.45
+    },
+    {
+      "data": "2025-08-18",
+      "num_incendios": 25,
+      "hectareas": 5357.89
+    },
+    {
+      "data": "2025-08-19",
+      "num_incendios": 18,
+      "hectareas": 12.87
+    },
+    {
+      "data": "2025-08-20",
+      "num_incendios": 16,
+      "hectareas": 10.92
+    },
+    {
+      "data": "2025-08-21",
+      "num_incendios": 19,
+      "hectareas": 260.22
+    },
+    {
+      "data": "2025-08-22",
+      "num_incendios": 20,
+      "hectareas": 9.540000000000001
+    },
+    {
+      "data": "2025-08-23",
+      "num_incendios": 32,
+      "hectareas": 22.38
+    },
+    {
+      "data": "2025-08-24",
+      "num_incendios": 14,
+      "hectareas": 347.25
+    },
+    {
+      "data": "2025-08-25",
+      "num_incendios": 10,
+      "hectareas": 1027.46
+    },
+    {
+      "data": "2025-08-26",
+      "num_incendios": 10,
+      "hectareas": 48.55
+    },
+    {
+      "data": "2025-08-27",
+      "num_incendios": 6,
+      "hectareas": 1.8499999999999999
+    },
+    {
+      "data": "2025-08-28",
+      "num_incendios": 3,
+      "hectareas": 1.53
+    },
+    {
+      "data": "2025-08-29",
+      "num_incendios": 1,
+      "hectareas": 0.07
+    },
+    {
+      "data": "2025-08-30",
+      "num_incendios": 5,
+      "hectareas": 0.77
+    },
+    {
+      "data": "2025-08-31",
+      "num_incendios": 2,
+      "hectareas": 0.08
+    },
+    {
+      "data": "2025-09-01",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-09-05",
+      "num_incendios": 2,
+      "hectareas": 15.82
+    },
+    {
+      "data": "2025-09-06",
+      "num_incendios": 7,
+      "hectareas": 984.49
+    },
+    {
+      "data": "2025-09-07",
+      "num_incendios": 2,
+      "hectareas": 0.16
+    },
+    {
+      "data": "2025-09-08",
+      "num_incendios": 4,
+      "hectareas": 26.73
+    },
+    {
+      "data": "2025-09-09",
+      "num_incendios": 3,
+      "hectareas": 0.21
+    },
+    {
+      "data": "2025-09-13",
+      "num_incendios": 3,
+      "hectareas": 2.23
+    },
+    {
+      "data": "2025-09-14",
+      "num_incendios": 2,
+      "hectareas": 156.0
+    },
+    {
+      "data": "2025-09-15",
+      "num_incendios": 3,
+      "hectareas": 0.03
+    },
+    {
+      "data": "2025-09-16",
+      "num_incendios": 5,
+      "hectareas": 0.45
+    },
+    {
+      "data": "2025-09-17",
+      "num_incendios": 5,
+      "hectareas": 8.75
+    },
+    {
+      "data": "2025-09-18",
+      "num_incendios": 9,
+      "hectareas": 2158.37
+    },
+    {
+      "data": "2025-09-19",
+      "num_incendios": 5,
+      "hectareas": 13.68
+    },
+    {
+      "data": "2025-09-20",
+      "num_incendios": 8,
+      "hectareas": 51.28
+    },
+    {
+      "data": "2025-09-21",
+      "num_incendios": 5,
+      "hectareas": 3.44
+    },
+    {
+      "data": "2025-09-22",
+      "num_incendios": 3,
+      "hectareas": 1.85
+    },
+    {
+      "data": "2025-09-23",
+      "num_incendios": 3,
+      "hectareas": 0.9400000000000001
+    },
+    {
+      "data": "2025-09-24",
+      "num_incendios": 3,
+      "hectareas": 21.01
+    },
+    {
+      "data": "2025-09-25",
+      "num_incendios": 4,
+      "hectareas": 2.8
+    },
+    {
+      "data": "2025-09-26",
+      "num_incendios": 10,
+      "hectareas": 6.4799999999999995
+    },
+    {
+      "data": "2025-09-27",
+      "num_incendios": 2,
+      "hectareas": 0.05
+    },
+    {
+      "data": "2025-09-30",
+      "num_incendios": 2,
+      "hectareas": 1.16
+    },
+    {
+      "data": "2025-10-01",
+      "num_incendios": 2,
+      "hectareas": 1.05
+    },
+    {
+      "data": "2025-10-02",
+      "num_incendios": 3,
+      "hectareas": 3.75
+    },
+    {
+      "data": "2025-10-03",
+      "num_incendios": 1,
+      "hectareas": 0.1
+    },
+    {
+      "data": "2025-10-04",
+      "num_incendios": 2,
+      "hectareas": 0.08
+    },
+    {
+      "data": "2025-10-05",
+      "num_incendios": 1,
+      "hectareas": 0.3
+    },
+    {
+      "data": "2025-10-06",
+      "num_incendios": 2,
+      "hectareas": 0.09
+    },
+    {
+      "data": "2025-10-07",
+      "num_incendios": 3,
+      "hectareas": 0.03
+    },
+    {
+      "data": "2025-10-08",
+      "num_incendios": 3,
+      "hectareas": 0.03
+    },
+    {
+      "data": "2025-10-09",
+      "num_incendios": 8,
+      "hectareas": 10.08
+    },
+    {
+      "data": "2025-10-10",
+      "num_incendios": 2,
+      "hectareas": 0.21000000000000002
+    },
+    {
+      "data": "2025-10-11",
+      "num_incendios": 4,
+      "hectareas": 25.61
+    },
+    {
+      "data": "2025-10-12",
+      "num_incendios": 6,
+      "hectareas": 92.27
+    },
+    {
+      "data": "2025-10-13",
+      "num_incendios": 10,
+      "hectareas": 4.51
+    },
+    {
+      "data": "2025-10-14",
+      "num_incendios": 3,
+      "hectareas": 1.91
+    },
+    {
+      "data": "2025-10-15",
+      "num_incendios": 6,
+      "hectareas": 44.3
+    },
+    {
+      "data": "2025-10-16",
+      "num_incendios": 9,
+      "hectareas": 12.83
+    },
+    {
+      "data": "2025-10-17",
+      "num_incendios": 9,
+      "hectareas": 6.16
+    },
+    {
+      "data": "2025-10-18",
+      "num_incendios": 13,
+      "hectareas": 22.34
+    },
+    {
+      "data": "2025-10-19",
+      "num_incendios": 1,
+      "hectareas": 30.53
+    },
+    {
+      "data": "2025-10-26",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-10-27",
+      "num_incendios": 1,
+      "hectareas": 0.08
+    },
+    {
+      "data": "2025-11-05",
+      "num_incendios": 1,
+      "hectareas": 22.34
+    },
+    {
+      "data": "2025-11-29",
+      "num_incendios": 1,
+      "hectareas": 0.01
+    },
+    {
+      "data": "2025-12-09",
+      "num_incendios": 1,
+      "hectareas": 0.63
+    },
+    {
+      "data": "2025-12-15",
+      "num_incendios": 1,
+      "hectareas": 0.25
+    },
+    {
+      "data": "2025-12-31",
+      "num_incendios": 1,
+      "hectareas": 0.52
+    }
+  ],
+  "top_concellos": [
+    {
+      "concello": "Larouco",
+      "num_incendios": 1,
+      "hectareas": 23527.31
+    },
+    {
+      "concello": "Oímbra",
+      "num_incendios": 2,
+      "hectareas": 22317.19
+    },
+    {
+      "concello": "Chandrexa de Queixa",
+      "num_incendios": 9,
+      "hectareas": 19169.45
+    },
+    {
+      "concello": "A Mezquita",
+      "num_incendios": 12,
+      "hectareas": 10825.25
+    },
+    {
+      "concello": "Quiroga",
+      "num_incendios": 8,
+      "hectareas": 9481.380000000001
+    },
+    {
+      "concello": "Carballeda de Valdeorras",
+      "num_incendios": 7,
+      "hectareas": 6321.64
+    },
+    {
+      "concello": "Vilariño de Conso",
+      "num_incendios": 5,
+      "hectareas": 5501.12
+    },
+    {
+      "concello": "Maceda",
+      "num_incendios": 7,
+      "hectareas": 4507.13
+    },
+    {
+      "concello": "Vilardevós",
+      "num_incendios": 14,
+      "hectareas": 3496.46
+    },
+    {
+      "concello": "Carballeda de Avia",
+      "num_incendios": 5,
+      "hectareas": 3041.31
+    },
+    {
+      "concello": "Pantón",
+      "num_incendios": 7,
+      "hectareas": 1945.34
+    },
+    {
+      "concello": "Xinzo de Limia",
+      "num_incendios": 11,
+      "hectareas": 1032.22
+    },
+    {
+      "concello": "A Pobra do Brollón",
+      "num_incendios": 4,
+      "hectareas": 1016.27
+    },
+    {
+      "concello": "Ponteceso",
+      "num_incendios": 19,
+      "hectareas": 624.24
+    },
+    {
+      "concello": "Agolada",
+      "num_incendios": 7,
+      "hectareas": 496.44
+    },
+    {
+      "concello": "Toques",
+      "num_incendios": 9,
+      "hectareas": 394.7
+    },
+    {
+      "concello": "Avión",
+      "num_incendios": 3,
+      "hectareas": 343.85
+    },
+    {
+      "concello": "A Cañiza",
+      "num_incendios": 14,
+      "hectareas": 307.9
+    },
+    {
+      "concello": "A Fonsagrada",
+      "num_incendios": 9,
+      "hectareas": 265.61
+    },
+    {
+      "concello": "Dozón",
+      "num_incendios": 4,
+      "hectareas": 252.6
+    },
+    {
+      "concello": "Samos",
+      "num_incendios": 3,
+      "hectareas": 240.74
+    },
+    {
+      "concello": "O Bolo",
+      "num_incendios": 5,
+      "hectareas": 234.75
+    },
+    {
+      "concello": "Montederramo",
+      "num_incendios": 6,
+      "hectareas": 226.38000000000002
+    },
+    {
+      "concello": "Riós",
+      "num_incendios": 5,
+      "hectareas": 173.35000000000002
+    },
+    {
+      "concello": "Beade",
+      "num_incendios": 1,
+      "hectareas": 166.82
+    },
+    {
+      "concello": "Barreiros",
+      "num_incendios": 2,
+      "hectareas": 154.70000000000002
+    },
+    {
+      "concello": "Cervantes",
+      "num_incendios": 8,
+      "hectareas": 145.67
+    },
+    {
+      "concello": "Carballedo",
+      "num_incendios": 8,
+      "hectareas": 136.99
+    },
+    {
+      "concello": "Ourense",
+      "num_incendios": 15,
+      "hectareas": 123.01
+    },
+    {
+      "concello": "A Gudiña",
+      "num_incendios": 15,
+      "hectareas": 108.4
+    }
+  ],
+  "top_parroquias": [
+    {
+      "concello": "Larouco",
+      "parroquia": "Seadur (Santa Mariña)",
+      "num_incendios": 1,
+      "hectareas": 23527.31
+    },
+    {
+      "concello": "Oímbra",
+      "parroquia": "A Granxa (San Xoán)",
+      "num_incendios": 1,
+      "hectareas": 22317.05
+    },
+    {
+      "concello": "Chandrexa de Queixa",
+      "parroquia": "Parafita (San Bartolomeu)",
+      "num_incendios": 4,
+      "hectareas": 12838.85
+    },
+    {
+      "concello": "A Mezquita",
+      "parroquia": "A Mezquita (San Martiño)",
+      "num_incendios": 2,
+      "hectareas": 10742.7
+    },
+    {
+      "concello": "Quiroga",
+      "parroquia": "Vilanuíde (Santo Antonio)",
+      "num_incendios": 1,
+      "hectareas": 9472.29
+    },
+    {
+      "concello": "Chandrexa de Queixa",
+      "parroquia": "Requeixo (Santa María Madanela)",
+      "num_incendios": 1,
+      "hectareas": 6320.64
+    },
+    {
+      "concello": "Carballeda de Valdeorras",
+      "parroquia": "Casaio (Santa María)",
+      "num_incendios": 5,
+      "hectareas": 6320.4800000000005
+    },
+    {
+      "concello": "Vilariño de Conso",
+      "parroquia": "Mormentelos (Nosa Señora da O)",
+      "num_incendios": 3,
+      "hectareas": 5498.92
+    },
+    {
+      "concello": "Carballeda de Avia",
+      "parroquia": "Vilar de Condes (Santa María)",
+      "num_incendios": 1,
+      "hectareas": 3017.22
+    },
+    {
+      "concello": "Maceda",
+      "parroquia": "Santiso (Santa María)",
+      "num_incendios": 2,
+      "hectareas": 2649.53
+    },
+    {
+      "concello": "Pantón",
+      "parroquia": "Frontón (San Xoán)",
+      "num_incendios": 2,
+      "hectareas": 1909.6499999999999
+    },
+    {
+      "concello": "Maceda",
+      "parroquia": "Castro de Escuadro (Santa Baia)",
+      "num_incendios": 4,
+      "hectareas": 1857.5900000000001
+    },
+    {
+      "concello": "Vilardevós",
+      "parroquia": "Vilar de Cervos (San Vicente)",
+      "num_incendios": 1,
+      "hectareas": 1808.02
+    },
+    {
+      "concello": "Vilardevós",
+      "parroquia": "Moialde (Santa María)",
+      "num_incendios": 2,
+      "hectareas": 1106.13
+    },
+    {
+      "concello": "Xinzo de Limia",
+      "parroquia": "Gudín (San Miguel)",
+      "num_incendios": 1,
+      "hectareas": 1023.35
+    },
+    {
+      "concello": "A Pobra do Brollón",
+      "parroquia": "Abrence (San Xoán)",
+      "num_incendios": 1,
+      "hectareas": 1015.36
+    },
+    {
+      "concello": "Vilardevós",
+      "parroquia": "Terroso (Santa Cruz)",
+      "num_incendios": 2,
+      "hectareas": 563.71
+    },
+    {
+      "concello": "Agolada",
+      "parroquia": "O Sexo (Santiago)",
+      "num_incendios": 1,
+      "hectareas": 491.17
+    },
+    {
+      "concello": "Toques",
+      "parroquia": "San Martiño de Oleiros (San Martiño)",
+      "num_incendios": 4,
+      "hectareas": 379.21000000000004
+    },
+    {
+      "concello": "Avión",
+      "parroquia": "Nieva (Santa María)",
+      "num_incendios": 1,
+      "hectareas": 340.37
+    },
+    {
+      "concello": "A Cañiza",
+      "parroquia": "O Couto (San Bartolomeu)",
+      "num_incendios": 3,
+      "hectareas": 294.25
+    },
+    {
+      "concello": "Dozón",
+      "parroquia": "O Castro (San Salvador)",
+      "num_incendios": 2,
+      "hectareas": 251.65
+    },
+    {
+      "concello": "Ponteceso",
+      "parroquia": "Cospindo (San Tirso)",
+      "num_incendios": 4,
+      "hectareas": 245.57
+    },
+    {
+      "concello": "O Bolo",
+      "parroquia": "Vilaseco (San Donato)",
+      "num_incendios": 1,
+      "hectareas": 234.11
+    },
+    {
+      "concello": "Samos",
+      "parroquia": "Santalla (San Xosé)",
+      "num_incendios": 1,
+      "hectareas": 231.94
+    },
+    {
+      "concello": "Montederramo",
+      "parroquia": "Paredes (Santa María)",
+      "num_incendios": 1,
+      "hectareas": 208.55
+    },
+    {
+      "concello": "Ponteceso",
+      "parroquia": "Brantuas (San Xián)",
+      "num_incendios": 1,
+      "hectareas": 198.17
+    },
+    {
+      "concello": "Beade",
+      "parroquia": "As Regadas (San Amaro)",
+      "num_incendios": 1,
+      "hectareas": 166.82
+    },
+    {
+      "concello": "Barreiros",
+      "parroquia": "San Xusto de Cabarcos (San Xusto)",
+      "num_incendios": 1,
+      "hectareas": 153.99
+    },
+    {
+      "concello": "A Fonsagrada",
+      "parroquia": "Monteseiro (San Bartolo)",
+      "num_incendios": 2,
+      "hectareas": 148.5
+    }
+  ]
+}

@@ -1293,7 +1293,75 @@
         padding:0;
       }
     }
+
+    /* Gráfica nativa de tendencia (substitúe iframe Flourish 25013636) */
+    .tendencia-bloque{
+      width: 100%;
+      max-width: 920px;
+      margin: 0 0 30px 0;
+      padding: 18px 20px 22px 20px;
+      background: rgba(15, 18, 28, 0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .tendencia-cabecera h3{
+      margin: 0 0 6px 0;
+      font-family: 'Georgia', 'Cambria', serif;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      color: #fff;
+    }
+    .tendencia-cabecera p{
+      margin: 0 0 14px 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.75);
+    }
+    .tendencia-leyenda{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 12px;
+    }
+    .tendencia-leyenda i{
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .tendencia-paneles{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tendencia-paneles svg{
+      max-width: 100%;
+      height: auto;
+    }
+    .tendencia-pie{
+      margin: 14px 0 0 0;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.5);
+    }
+    .tendencia-erro{
+      padding: 12px;
+      color: rgba(255,180,180,0.9);
+      background: rgba(80,20,20,0.4);
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
   </style>
+
+  <!-- Observable Plot para as gráficas nativas (substitúe iframes Flourish) -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+  <script src="assets/charts/serie_incendios.js"></script>
 </head>
 <script>
 window.addEventListener('load', () => {
@@ -1824,6 +1892,28 @@ window.addEventListener('load', () => {
       map.setLayoutProperty('XEOURENSE', 'visibility', 'visible');
     }
   };
+
+  // Idioma activo (lo refleja el botón con aria-pressed=true).
+  function langActivo(){
+    var btn = document.querySelector('#language-selector .language-button[aria-pressed="true"]');
+    return btn ? (btn.getAttribute('data-lang') || 'es') : 'es';
+  }
+
+  // Renderiza la gráfica de tendencia (Observable Plot) en el contenedor del capítulo.
+  window.renderTendencia = function(){
+    var host = document.getElementById('grafica-tendencia');
+    if (!host || !window.SerieIncendios) return;
+    window.SerieIncendios.render(host, langActivo());
+  };
+
+  // Cuando cambia el idioma, re-renderiza las gráficas nativas si están en pantalla.
+  document.addEventListener('click', function(ev){
+    var btn = ev.target.closest('#language-selector .language-button');
+    if (!btn) return;
+    setTimeout(function(){
+      if (typeof window.renderTendencia === 'function') window.renderTendencia();
+    }, 30);
+  });
 
   // 3) Sistema robusto para manejar transiciones entre capítulos
   let currentChapterId = null;

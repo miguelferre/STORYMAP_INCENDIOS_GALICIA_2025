@@ -1,0 +1,1476 @@
+data,hora,concello,parroquia,hectareas,mes,semana_ano
+2025-08-13,18:55:00,Larouco,Seadur (Santa Mariña),23527.31,8,33
+2025-08-12,14:39:00,Oímbra,A Granxa (San Xoán),22317.05,8,33
+2025-08-12,16:49:00,Chandrexa de Queixa,Parafita (San Bartolomeu),12783.53,8,33
+2025-08-12,09:42:00,A Mezquita,A Mezquita (San Martiño),10742.67,8,33
+2025-08-15,14:22:00,Quiroga,Vilanuíde (Santo Antonio),9472.29,8,33
+2025-08-08,15:51:00,Chandrexa de Queixa,Requeixo (Santa María Madanela),6320.64,8,32
+2025-08-10,17:30:00,Vilariño de Conso,Mormentelos (Nosa Señora da O),5489.57,8,32
+2025-08-18,18:42:00,Carballeda de Valdeorras,Casaio (Santa María),5300.0,8,34
+2025-08-15,16:28:00,Carballeda de Avia,Vilar de Condes (Santa María),3017.22,8,33
+2025-08-12,03:13:00,Maceda,Santiso (Santa María),2649.5,8,33
+2025-09-18,14:16:00,Pantón,Frontón (San Xoán),1909.55,9,38
+2025-08-09,23:19:00,Maceda,Castro de Escuadro (Santa Baia),1856.18,8,32
+2025-08-13,18:09:00,Vilardevós,Vilar de Cervos (San Vicente),1808.02,8,33
+2025-08-11,16:05:00,Vilardevós,Moialde (Santa María),1105.89,8,33
+2025-08-15,17:22:00,Xinzo de Limia,Gudín (San Miguel),1023.35,8,33
+2025-08-25,13:06:00,A Pobra do Brollón,Abrence (San Xoán),1015.36,8,35
+2025-09-06,14:56:00,Carballeda de Valdeorras,Casaio (Santa María),973.2,9,36
+2025-08-01,23:04:00,Vilardevós,Terroso (Santa Cruz),563.62,8,31
+2025-08-15,13:26:00,Agolada,O Sexo (Santiago),491.17,8,33
+2025-08-14,18:49:00,Toques,San Martiño de Oleiros (San Martiño),360.67,8,33
+2025-08-24,17:09:00,Avión,Nieva (Santa María),340.37,8,34
+2025-07-30,16:23:00,A Cañiza,O Couto (San Bartolomeu),294.0,7,31
+2025-08-12,14:32:00,Dozón,O Castro (San Salvador),248.69,8,33
+2025-08-02,16:12:00,Ponteceso,Cospindo (San Tirso),245.29,8,31
+2025-09-18,23:47:00,O Bolo,Vilaseco (San Donato),234.11,9,38
+2025-08-11,23:27:00,Samos,Santalla (San Xosé),231.94,8,33
+2025-08-11,04:50:00,Montederramo,Paredes (Santa María),208.55,8,33
+2025-08-02,20:30:00,Ponteceso,Brantuas (San Xián),198.17,8,31
+2025-08-15,18:16:00,Beade,As Regadas (San Amaro),166.82,8,33
+2025-09-14,16:14:00,Barreiros,San Xusto de Cabarcos (San Xusto),153.99,9,37
+2025-08-05,15:30:00,A Fonsagrada,Monteseiro (San Bartolo),142.5,8,32
+2025-08-16,05:27:00,Cervantes,Vilarello (Santa María),140.0,8,33
+2025-08-14,17:41:00,Riós,Fumaces e A Trepa (Santa María),130.52,8,33
+2025-08-21,18:14:00,Carballedo,A Cova (San Xoán),118.6,8,34
+2025-08-12,14:14:00,Ourense,Seixalbo (San Breixo),117.47,8,33
+2025-07-23,16:38:00,Cualedro,San Millao (Santa María),97.27,7,30
+2025-08-06,16:41:00,As Neves,San Pedro de Batalláns (San Pedro),91.22,8,32
+2025-08-06,16:17:00,Salceda de Caselas,A Picoña (San Martiño),91.0,8,32
+2025-08-05,14:12:00,Ponteceso,Corme Aldea (Santo Adrán),83.13,8,32
+2025-07-29,00:11:00,Meaño,Xil (Santa Eulalia),82.89,7,31
+2025-08-03,00:30:00,Ponteceso,A Graña (San Vicenzo),82.73,8,31
+2025-08-21,16:37:00,Vilaboa,Santa Cristina de Cobres (Santa Cristina),74.45,8,34
+2025-08-16,15:00:00,O Saviñao,Chave (San Sadurniño),74.01,8,33
+2025-07-16,13:07:00,Lalín,Maceira (San Martiño),66.21,7,29
+2025-08-21,18:41:00,Oia,Mougás (Santa Uxía),64.62,8,34
+2025-10-12,19:45:00,A Gudiña,Parada da Serra (San Lucas),58.64,10,41
+2025-07-28,15:45:00,Salvaterra de Miño,Pesqueiras (Santa Mariña),56.07,7,31
+2025-07-04,00:58:00,Chandrexa de Queixa,Parafita (San Bartolomeu),54.95,7,27
+2025-08-05,16:57:00,Camariñas,Xaviña (Santa María),51.98,8,32
+2025-08-26,01:50:00,A Fonsagrada,San Pedro de Río (San Pedro),47.5,8,35
+2025-08-12,08:20:00,A Pobra de Trives,Xunqueira (San Pedro),47.34,8,33
+2025-07-04,06:16:00,Carballeda de Valdeorras,Casaio (Santa María),46.16,7,27
+2025-08-16,14:30:00,San Cibrao das Viñas,Rante (Santo André),45.09,8,33
+2025-10-15,16:32:00,A Gudiña,Parada da Serra (San Lucas),43.47,10,42
+2025-09-20,02:25:00,A Fonsagrada,O Trobo (Santa María),39.49,9,38
+2025-08-08,22:03:00,Padrenda,Padrenda (San Cibrán),39.41,8,32
+2025-07-01,19:46:00,A Mezquita,Chaguazoso (Santiago),38.64,7,27
+2025-07-03,23:59:00,Boiro,Cures (Santo André),37.98,7,27
+2025-07-30,02:42:00,Tomiño,Piñeiro (San Salvador),35.55,7,31
+2025-08-18,14:33:00,Riós,Trasestrada (Santo Estevo),33.52,8,34
+2025-10-12,14:26:00,Rodeiro,Carboentes (Santo Estevo),33.4,10,41
+2025-07-02,05:34:00,Lousame,Tállara (San Pedro),30.65,7,27
+2025-10-19,01:46:00,Pantón,Cangas (Santiago),30.53,10,42
+2025-08-06,13:07:00,A Fonsagrada,Cereixido (Santiago),29.99,8,32
+2025-08-02,02:52:00,Porto do Son,Miñortos (San Martiño),28.3,8,31
+2025-08-10,12:37:00,A Estrada,Souto (Santo André),28.23,8,32
+2025-10-11,18:46:00,Fisterra,San Martiño de Duio (San Martiño),24.53,10,41
+2025-08-06,22:03:00,As Pontes de García Rodríguez,O Freixo (San Xoán),23.72,8,32
+2025-09-08,18:24:00,A Mezquita,A Vilavella (Santa María da Cabeza),23.06,9,37
+2025-07-29,12:59:00,Carballeda de Avia,Carballeda (San Miguel),22.49,7,31
+2025-11-05,04:03:00,Cervo,Cervo (Santa María),22.34,11,45
+2025-01-18,19:20:00,Arbo,Cabeiras (San Sebastián),20.95,1,3
+2025-08-12,14:43:00,Piñor,A Corna (Santa María do Desterro),20.74,8,33
+2025-08-05,00:20:00,Mondariz,Riofrío (San Miguel),19.56,8,32
+2025-08-15,18:11:00,Muxía,San Martiño de Ozón (San Martiño),19.11,8,33
+2025-09-24,21:22:00,Piñor,A Corna (Santa María do Desterro),17.57,9,39
+2025-07-28,23:40:00,Fornelos de Montes,Fornelos de Montes (San Lourenzo),17.22,7,31
+2025-08-03,12:31:00,Vilar de Barrio,Rebordechau (Santa María),17.12,8,31
+2025-08-15,14:00:00,Montederramo,Sas do Monte (San Pedro),16.34,8,33
+2025-08-03,20:02:00,Fisterra,Duio (San Vicezo),16.29,8,31
+2025-09-05,15:42:00,A Mezquita,Castromil (Nosa Señora da Encarnación),15.46,9,36
+2025-07-29,16:41:00,Carballedo,San Mamede de Lousada (San Mamede),15.38,7,31
+2025-08-11,18:28:00,Cartelle,Anfeoz (Santa Baia),14.6,8,33
+2025-08-09,23:21:00,Toques,Vilamor (Santo Estevo),14.15,8,32
+2025-09-18,11:54:00,Becerreá,Vilachá (San Pedro),13.5,9,38
+2025-03-20,05:41:00,O Carballiño,Lobás (Santa Ouxea),12.8,3,12
+2025-04-09,22:29:00,Valdoviño,Meirás (San Vicente),12.23,4,15
+2025-08-12,16:24:00,Chantada,Muradelle (San Paio),11.65,8,33
+2025-07-26,00:22:00,Ribas de Sil,Ribas de Sil (San Clodio),11.5,7,30
+2025-08-02,13:05:00,Carballo,Carballo (San Xoán),11.26,8,31
+2025-08-23,16:21:00,Castroverde,Bolaño (Santa Baia),11.07,8,34
+2025-08-16,11:58:00,Melide,O Leboreiro (Santa María),10.93,8,33
+2025-07-14,15:37:00,Paradela,Castro de Rei de Lemos (Santa María),10.81,7,29
+2025-08-18,17:54:00,Toques,San Martiño de Oleiros (San Martiño),10.66,8,34
+2025-07-29,18:23:00,Arbo,Arbo (Santa María),10.21,7,31
+2025-08-15,16:12:00,Paderne de Allariz,Golpellás (Santa Baia),9.59,8,33
+2025-08-03,05:30:00,Meaño,Xil (Santa Eulalia),9.32,8,31
+2025-07-07,20:27:00,Pontevedra,Lourizán (Santo André),9.3,7,28
+2025-08-09,14:47:00,Vilariño de Conso,Mormentelos (Nosa Señora da O),9.14,8,32
+2025-08-10,18:07:00,A Estrada,Frades (Santa María),9.09,8,32
+2025-08-11,13:15:00,Verín,Mourazos (San Martiño),8.97,8,33
+2025-07-30,16:14:00,A Cañiza,Oroso (Santa María),8.76,7,31
+2025-07-30,15:43:00,Ponteceso,Xornes (San Xoán),8.71,7,31
+2025-08-10,18:32:00,Ramirás,Vilameá de Ramirás (Santa María),8.64,8,32
+2025-08-15,16:54:00,Guntín,Zolle (Santa María),8.6,8,33
+2025-08-05,16:57:00,Vilalba,Belesar  (San Martiño),8.5,8,32
+2025-09-20,05:55:00,Samos,San Xoán de Lóuzara (San Xoán),8.5,9,38
+2025-10-18,23:15:00,A Lama,Seixido (San Bartolomeu),8.5,10,42
+2025-08-17,05:47:00,Castrelo de Miño,Macendo (Santa María),8.19,8,33
+2025-08-10,16:16:00,Monfero,San Fiz de Monfero (San Fiz),8.14,8,32
+2025-07-15,17:36:00,Riós,Castrelo de Cima (Santa María),8.04,7,29
+2025-08-18,18:32:00,A Lama,Seixido (San Bartolomeu),7.99,8,34
+2025-08-05,02:58:00,Muros,Esteiro (Santa Mariña),7.74,8,32
+2025-08-17,16:26:00,Cartelle,Espiñoso (San Miguel),7.59,8,33
+2025-09-17,15:29:00,San Cristovo de Cea,Vilaseco (San Miguel),7.47,9,38
+2025-08-14,20:23:00,Melide,O Leboreiro (Santa María),7.4,8,33
+2025-07-29,14:39:00,Vilardevós,Santa María de Traseirexa (Santa María),7.33,7,31
+2025-07-27,15:21:00,Marín,Marín (San Xián),7.27,7,30
+2025-07-31,00:00:00,Sobrado,A Ciadella (Santa María),7.17,7,31
+2025-08-16,17:59:00,Vilalba,Belesar  (San Martiño),7.07,8,33
+2025-09-06,14:14:00,Portomarín,Gonzar (Santa María),6.92,9,36
+2025-08-05,05:46:00,Zas,San Cremenzo de Pazos (San Cremenzo),6.51,8,32
+2025-09-19,12:53:00,Xunqueira de Ambía,Armariz (San Salvador),6.34,9,38
+2025-08-11,17:21:00,Curtis,Curtis (Santaia),6.21,8,33
+2025-10-16,14:48:00,Piñor,A Corna (Santa María do Desterro),6.15,10,42
+2025-08-06,06:17:00,Castro de Rei,Duarría (Santiago),6.12,8,32
+2025-07-29,13:54:00,Cotobade,Tenorio (San Pedro),6.05,7,31
+2025-08-16,00:23:00,Becerreá,Vilouta (Santa Mariña),6.0,8,33
+2025-08-25,12:48:00,A Fonsagrada,Monteseiro (San Bartolo),6.0,8,35
+2025-10-18,15:24:00,Forcarei,Aciveiro (Santa María),6.0,10,42
+2025-08-23,00:49:00,Crecente,Quintela (San Caetano),5.89,8,34
+2025-03-20,06:04:00,Tui,Ribadelouro (Santa Comba),5.84,3,12
+2025-09-19,15:37:00,Castro de Rei,Bendia (San Pedro),5.81,9,38
+2025-06-24,14:52:00,Quiroga,Quintá de Lor (Santa María),5.73,6,26
+2025-07-29,12:18:00,Lalín,Lodeiro (San Paio),5.57,7,31
+2025-06-30,16:38:00,O Incio,San Salvador do Mao (San Salvador),5.54,6,27
+2025-08-03,16:53:00,Salceda de Caselas,Santo Estevo de Budiño (Santo Estevo),5.45,8,31
+2025-03-30,13:34:00,Toques,San Martiño de Oleiros (San Martiño),5.42,3,13
+2025-08-03,19:09:00,Noia,Boa (San Pedro),5.41,8,31
+2025-08-15,13:13:00,Muxía,Nosa Señora da O (Santa María),5.15,8,33
+2025-07-01,16:39:00,Pantón,San Vicente de Castillón (San Vicente),5.1,7,27
+2025-08-24,16:48:00,O Páramo,Sa (Santiago),4.9,8,34
+2025-08-10,17:01:00,Monfero,Queixeiro (San Xurxo),4.88,8,32
+2025-10-16,17:31:00,Amoeiro,Trasalba (San Pedro),4.75,10,42
+2025-08-07,18:39:00,O Saviñao,Piñeiró (San Sadurniño),4.6,8,32
+2025-08-11,17:31:00,Mondariz,Sabaxáns (San Mamede),4.53,8,33
+2025-10-17,20:33:00,Outes,Valadares (San Miguel),4.47,10,42
+2025-01-04,21:43:00,Muíños,Parada de Ventosa (San Pedro),4.46,1,1
+2025-04-09,22:24:00,Narón,O Val (Santa María A Maior),4.38,4,15
+2025-08-12,08:07:00,Baleira,Córneas (Santiago),4.3,8,33
+2025-08-25,15:28:00,San Amaro,Anllo (Santiago),4.29,8,35
+2025-03-04,15:17:00,Cedeira,Cervo (Santalla),4.27,3,10
+2025-06-15,13:32:00,Lalín,Vilatuxe (San Lourenzo),4.24,6,24
+2025-07-15,17:09:00,As Pontes de García Rodríguez,O Freixo (San Xoán),4.11,7,29
+2025-03-02,14:15:00,Chandrexa de Queixa,Rabal (Santa María),4.1,3,9
+2025-09-06,13:55:00,Camariñas,A Ponte do Porto (San Pedro),4.07,9,36
+2025-08-19,14:07:00,Coristanco,Couso (San Miguel),4.02,8,34
+2025-07-04,17:04:00,Cervantes,Cereixedo (Santiago),4.0,7,27
+2025-10-09,19:57:00,Fisterra,San Martiño de Duio (San Martiño),3.99,10,41
+2025-08-05,07:13:00,Taboada,Bouzoa (San Xoán),3.74,8,32
+2025-08-02,01:58:00,Arteixo,Pastoriza (Santa María),3.7,8,31
+2025-08-22,21:25:00,Mazaricos,Coiro (Santa María),3.66,8,34
+2025-10-13,00:16:00,Vilardevós,Berrande (San Bartolomeu),3.65,10,42
+2025-10-02,22:57:00,Silleda,Cortegada (Santa María),3.62,10,40
+2025-07-28,23:08:00,Salvaterra de Miño,Leirado (San Salvador),3.61,7,31
+2025-08-07,14:03:00,Coirós,Santa María de Ois (Santa María),3.61,8,32
+2025-08-02,15:32:00,Dodro,Dodro (Santa María),3.51,8,31
+2025-09-08,14:39:00,Chandrexa de Queixa,Casteloais (San Pedro),3.5,9,37
+2025-10-18,23:17:00,Muras,Muras (San Pedro),3.49,10,42
+2025-04-09,22:30:00,Narón,O Val (Santa María A Maior),3.48,4,15
+2025-08-09,01:00:00,Vilalba,Lanzós (San Martiño),3.45,8,32
+2025-03-29,17:28:00,A Estrada,Frades (Santa María),3.43,3,13
+2025-07-16,23:39:00,Padrenda,Padrenda (San Cibrán),3.42,7,29
+2025-01-18,22:34:00,Muíños,Requiás (Santiago),3.39,1,3
+2025-08-08,16:35:00,Palas de Rei,Ramil (San Martiño),3.34,8,32
+2025-08-11,01:58:00,Xinzo de Limia,Solbeira de Limia (San Pedro),3.28,8,33
+2025-07-10,18:19:00,San Cibrao das Viñas,Rante (Santo André),3.27,7,28
+2025-04-01,14:54:00,Cabanas,Santa Cruz do Salto (Santa Cruz),3.22,4,14
+2025-06-23,15:21:00,Aranga,San Vicente de Fervenzas (San Vicente),3.22,6,26
+2025-08-08,00:38:00,Rodeiro,Carboentes (Santo Estevo),3.17,8,32
+2025-10-09,18:10:00,Avión,Avión (Santos Xusto e Pastor),3.14,10,41
+2025-08-07,22:46:00,A Mezquita,A Vilavella (Santa María da Cabeza),3.12,8,32
+2025-07-28,17:36:00,Rodeiro,O Salto (Santo Estevo),3.09,7,31
+2025-07-04,05:16:00,Dumbría,Dumbría (Santa Baia),3.05,7,27
+2025-04-03,20:57:00,Arbo,Cabeiras (San Sebastián),3.02,4,14
+2025-09-26,12:48:00,Oza-Cesuras,Rodeiro (Santa María),3.01,9,39
+2025-07-01,16:50:00,Monforte de Lemos,Seoane (San Salvador),2.99,7,27
+2025-07-10,13:08:00,Agolada,Val de Sangorza (Santa María),2.96,7,28
+2025-09-24,21:27:00,Dozón,O Castro (San Salvador),2.96,9,39
+2025-07-28,22:53:00,Gondomar,Vincios (Santa Mariña),2.88,7,31
+2025-08-20,00:26:00,Pazos de Borbén,Xunqueiras (San Salvador),2.83,8,34
+2025-03-19,20:48:00,Redondela,Reboreda (Santa María),2.8,3,12
+2025-08-05,17:50:00,Folgoso do Courel,Folgoso do Courel (Santa María),2.8,8,32
+2025-09-25,18:00:00,Vilardevós,Berrande (San Bartolomeu),2.76,9,39
+2025-08-06,07:08:00,Boiro,Cures (Santo André),2.74,8,32
+2025-09-21,05:07:00,Lobios,Río Caldo (Santa María),2.73,9,38
+2025-08-08,16:39:00,Rairiz de Veiga,Guillamil (Santo André),2.72,8,32
+2025-06-30,17:08:00,Ames,Ameixenda (Santa María),2.71,6,27
+2025-04-10,13:22:00,Muíños,Requiás (Santiago),2.7,4,15
+2025-07-31,23:05:00,Becerreá,Quintá de Cancelada (Santa Eulalia),2.7,7,31
+2025-08-08,23:01:00,Caldas de Reis,Bemil (Santa María),2.7,8,32
+2025-08-05,13:07:00,Oza-Cesuras,Rodeiro (Santa María),2.67,8,32
+2025-08-19,02:30:00,Sarreaus,Bresmaus (San Bartolomeu),2.53,8,34
+2025-07-28,14:45:00,Vilardevós,Santa María de Traseirexa (Santa María),2.51,7,31
+2025-07-08,13:55:00,Toques,San Martiño de Oleiros (San Martiño),2.46,7,28
+2025-07-12,19:36:00,Oia,Loureza (San Mamede),2.45,7,28
+2025-08-16,14:01:00,Ponteceso,A Graña (San Vicenzo),2.43,8,33
+2025-09-20,02:09:00,Xinzo de Limia,Morgade (San Tomé),2.4,9,38
+2025-07-29,00:23:00,Bueu,Ermelo (Santiago),2.38,7,31
+2025-07-29,18:15:00,A Gudiña,Barxa (San Xoán),2.38,7,31
+2025-07-07,22:18:00,Boiro,Cures (Santo André),2.36,7,28
+2025-08-20,19:47:00,Tomiño,Estás (Santiago),2.33,8,34
+2025-07-15,16:33:00,O Irixo,San Cosmede de Cusanca (San Cosmede),2.28,7,29
+2025-07-01,18:19:00,Chandrexa de Queixa,Casteligo (San Martiño),2.23,7,27
+2025-08-12,11:57:00,Santiago de Compostela,San Caetano (Santiago),2.19,8,33
+2025-09-13,16:45:00,Vilariño de Conso,Pradoalbar (Santo André),2.19,9,37
+2025-07-08,13:30:00,Cee,A Ameixenda (Santiago),2.15,7,28
+2025-07-12,18:58:00,O Rosal,O Rosal (Santa Mariña),2.14,7,28
+2025-08-16,16:59:00,Pazos de Borbén,Pazos (Santa María),2.09,8,33
+2025-03-31,15:01:00,A Cañiza,As Achas (San Sebastián),2.08,3,14
+2025-08-15,17:35:00,Xermade,Cazás (San Xulián),2.07,8,33
+2025-07-27,03:33:00,Carballedo,San Mamede de Lousada (San Mamede),2.02,7,30
+2025-09-14,04:21:00,Viana do Bolo,Grixoa (San Pedro),2.01,9,37
+2025-04-10,18:03:00,Abadín,Montouto (Santa María),2.0,4,15
+2025-07-17,10:52:00,Vilalba,Lanzós (San Martiño),2.0,7,29
+2025-08-02,14:49:00,Xermade,Cazás (San Xulián),2.0,8,31
+2025-08-22,14:43:00,Arteixo,Pastoriza (Santa María),1.97,8,34
+2025-07-30,14:50:00,Toén,Mugares (Santa María),1.94,7,31
+2025-08-10,05:46:00,Vilalba,Belesar  (San Martiño),1.91,8,32
+2025-07-02,17:28:00,Vilagarcía de Arousa,Solobeira (San Fins),1.9,7,27
+2025-06-28,15:25:00,Arbo,Sela (Santa María),1.87,6,26
+2025-08-05,22:17:00,Forcarei,Millarada (San Amedio),1.86,8,32
+2025-08-18,05:49:00,Culleredo,Culleredo (Santo Estevo),1.85,8,34
+2025-08-02,03:13:00,Noia,Argalo (Santa María),1.84,8,31
+2025-09-22,17:26:00,Vilardevós,Osoño (San Pedro),1.81,9,39
+2025-08-02,14:22:00,Gondomar,Borreiros (San Martiño),1.8,8,31
+2025-07-29,16:52:00,Quiroga,Augas Mestas (Santiago),1.79,7,31
+2025-10-18,15:25:00,Aranga,Vilarraso (San Lourenzo),1.75,10,42
+2025-08-06,22:03:00,As Pontes de García Rodríguez,As Pontes de García Rodríguez (Santa María),1.74,8,32
+2025-07-30,18:06:00,Sanxenxo,Noalla (Santo Estevo),1.73,7,31
+2025-07-17,06:51:00,Vilalba,San Simón da Costa (San Simón),1.72,7,29
+2025-07-29,15:18:00,Castroverde,Bolaño (Santa Baia),1.71,7,31
+2025-07-16,18:58:00,Xunqueira de Ambía,Xunqueira de Ambía (Santa María a Real),1.7,7,29
+2025-08-06,10:51:00,Ribeira,Corrubedo (Santa María),1.67,8,32
+2025-08-19,07:21:00,Zas,Loroño (Santiago),1.65,8,34
+2025-07-19,21:49:00,Fornelos de Montes,Fornelos de Montes (San Lourenzo),1.64,7,29
+2025-08-08,05:22:00,Campo Lameiro,O Campo (San Miguel),1.64,8,32
+2025-07-14,14:08:00,Guntín,Grolos (Santa Cruz),1.62,7,29
+2025-07-08,14:10:00,Portomarín,Bagude (San Bartolomeu),1.61,7,28
+2025-08-25,08:34:00,Baleira,Córneas (Santiago),1.6,8,35
+2025-07-24,14:21:00,O Grove,San Vicente do Grove (San Vicente),1.58,7,30
+2025-07-04,18:59:00,Ponte Caldelas,Anceu (Santo André),1.57,7,27
+2025-08-15,16:51:00,Palas de Rei,O Carballal (San Sebastián),1.56,8,33
+2025-08-20,18:58:00,Ponteareas,Prado (San Nicolao),1.56,8,34
+2025-07-25,20:17:00,Gondomar,Vincios (Santa Mariña),1.54,7,30
+2025-07-27,19:51:00,Muíños,Prado de Limia (San Salvador),1.53,7,30
+2025-08-06,16:03:00,Dumbría,Dumbría (Santa Baia),1.53,8,32
+2025-08-09,05:03:00,Melide,O Leboreiro (Santa María),1.5,8,32
+2025-08-15,13:53:00,Boimorto,Cardeiro (San Pedro),1.5,8,33
+2025-10-14,00:44:00,Baleira,Córneas (Santiago),1.5,10,42
+2025-08-02,23:59:00,Vilalba,Belesar  (San Martiño),1.49,8,31
+2025-08-10,02:27:00,Ponteareas,Nogueira (San Salvador),1.48,8,32
+2025-08-17,17:50:00,A Estrada,Oca (Santo Estevo),1.48,8,33
+2025-07-05,18:37:00,Monforte de Lemos,Seoane (San Salvador),1.47,7,27
+2025-08-06,02:18:00,As Neves,Tortoreos (Santiago),1.47,8,32
+2025-07-03,04:45:00,Santiago de Compostela,Figueiras (Santa María),1.46,7,27
+2025-09-26,17:29:00,San Cristovo de Cea,Covas (Santa María),1.41,9,39
+2025-03-20,05:23:00,Laza,O Castro de Laza (San Pedro),1.4,3,12
+2025-07-04,19:38:00,Mondariz,Mouriscados (San Cibrán),1.4,7,27
+2025-08-02,07:15:00,Rianxo,Asados (Santa María),1.4,8,31
+2025-01-03,16:41:00,Arbo,Cabeiras (San Sebastián),1.37,1,1
+2025-08-10,14:47:00,Sobrado,A Ciadella (Santa María),1.35,8,32
+2025-09-26,15:28:00,Rubiá,A Veiga de Cascallá (Santa Cruz),1.35,9,39
+2025-08-19,08:32:00,Zas,Santa Sía de Roma (Santa Sía),1.33,8,34
+2025-09-19,22:36:00,Baños de Molgas,Betán (San Martiño),1.33,9,38
+2025-03-20,08:54:00,Ordes,Parada (Santa Mariña),1.3,3,12
+2025-04-03,22:43:00,As Neves,San Xosé de Ribarteme (San Xosé),1.3,4,14
+2025-05-29,17:27:00,Sarreaus,Codosedo (Santa María),1.3,5,22
+2025-07-12,00:30:00,Vilalba,Goiriz (Santiago),1.3,7,28
+2025-10-16,15:53:00,Xinzo de Limia,Solbeira de Limia (San Pedro),1.3,10,42
+2025-08-06,13:53:00,Zas,Muíño (San Tirso),1.29,8,32
+2025-07-23,18:13:00,Ourense,Velle (Santa Marta),1.28,7,30
+2025-08-23,19:03:00,Culleredo,Culleredo (Santo Estevo),1.27,8,34
+2025-08-17,21:11:00,Monfero,Queixeiro (San Xurxo),1.25,8,33
+2025-04-10,11:32:00,Allariz,Augas Santas (Santa Mariña),1.22,4,15
+2025-08-27,22:10:00,O Pereiro de Aguiar,Prexigueiró (San Salvador),1.2,8,35
+2025-08-28,22:54:00,Riós,Riós (Santa María),1.19,8,35
+2025-07-04,11:34:00,Xinzo de Limia,San Pedro de Laroá (San Pedro),1.18,7,27
+2025-07-02,21:23:00,O Pereiro de Aguiar,Melias (Santa María),1.17,7,27
+2025-08-05,18:53:00,Santiago de Compostela,Sabugueira (San Paio),1.17,8,32
+2025-08-10,02:22:00,Ponteareas,Nogueira (San Salvador),1.16,8,32
+2025-10-09,23:04:00,Silleda,Cortegada (Santa María),1.16,10,41
+2025-01-18,14:59:00,Laza,Laza (San Xoán),1.15,1,3
+2025-09-30,21:23:00,Carballeda de Valdeorras,Santa Cruz (Santa Cruz),1.15,9,40
+2025-06-09,16:15:00,Cee,A Ameixenda (Santiago),1.13,6,24
+2025-07-25,20:17:00,Ourense,Ourense,1.13,7,30
+2025-07-29,12:04:00,Agolada,Berredo (Santa María),1.13,7,31
+2025-08-10,16:11:00,Catoira,Oeste (Santa Baia),1.13,8,32
+2025-06-29,19:51:00,Palas de Rei,O Carballal (San Sebastián),1.1,6,26
+2025-08-01,02:07:00,A Lama,Antas (Santiago),1.1,8,31
+2025-08-09,06:04:00,Lousame,Fruíme (San Martiño),1.1,8,32
+2025-08-20,18:54:00,A Merca,A Manchica (Nosa Señora de Lourdes),1.1,8,34
+2025-07-30,12:43:00,Tui,Rebordáns (San Bartolomeu),1.09,7,31
+2025-07-16,07:30:00,A Peroxa,Gueral (San Martiño),1.08,7,29
+2025-07-28,21:34:00,Mondariz,Sabaxáns (San Mamede),1.07,7,31
+2025-08-06,09:57:00,Oza-Cesuras,Filgueira de Traba (San Miguel),1.07,8,32
+2025-03-31,21:14:00,As Pontes de García Rodríguez,O Freixo (San Xoán),1.06,3,14
+2025-08-19,09:54:00,Crecente,Albeos (San Xoán),1.06,8,34
+2025-07-27,01:25:00,A Gudiña,A Gudiña (San Martiño e San Pedro),1.05,7,30
+2025-08-09,16:32:00,Ponteceso,Niñóns (San Xoán),1.04,8,32
+2025-10-01,14:10:00,A Gudiña,A Gudiña (San Martiño e San Pedro),1.04,10,40
+2025-06-20,20:13:00,Quiroga,Quintá de Lor (Santa María),1.03,6,25
+2025-08-05,14:50:00,Carballo,Carballo (San Xoán),1.03,8,32
+2025-08-15,14:08:00,O Saviñao,Chave (San Sadurniño),1.02,8,33
+2025-08-04,22:04:00,As Pontes de García Rodríguez,Somede (San Mamede),1.01,8,32
+2025-08-05,05:48:00,Rodeiro,O Salto (Santo Estevo),1.01,8,32
+2025-08-18,14:40:00,Tordoia,Numide (Santiago),1.0,8,34
+2025-03-30,04:09:00,Meaño,Xil (Santa Eulalia),0.99,3,13
+2025-07-16,16:49:00,Gondomar,Vincios (Santa Mariña),0.98,7,29
+2025-07-14,15:23:00,Guntín,Ferroi (Santiago),0.97,7,29
+2025-08-09,12:48:00,Begonte,Baamonde (Santiago),0.97,8,32
+2025-07-12,17:54:00,Lalín,Busto (San Facundo),0.96,7,28
+2025-08-03,07:23:00,Vilalba,Goiriz (Santiago),0.96,8,31
+2025-08-19,06:11:00,Vimianzo,Treos (San Miguel),0.96,8,34
+2025-07-07,22:54:00,Fisterra,Duio (San Vicezo),0.95,7,28
+2025-07-14,18:00:00,Agolada,Merlín (San Pedro),0.95,7,29
+2025-08-02,00:45:00,Vilalba,Goiriz (Santiago),0.94,8,31
+2025-08-05,19:52:00,Muxía,Frixe (Santa Locacia),0.94,8,32
+2025-07-05,03:03:00,A Mezquita,Chaguazoso (Santiago),0.93,7,27
+2025-08-07,18:57:00,Dumbría,Dumbría (Santa Baia),0.93,8,32
+2025-08-09,02:41:00,Sarreaus,Bresmaus (San Bartolomeu),0.93,8,32
+2025-08-02,21:36:00,A Cañiza,As Achas (San Sebastián),0.92,8,31
+2025-09-17,00:15:00,Lalín,Vilatuxe (San Lourenzo),0.92,9,38
+2025-10-09,22:15:00,Aranga,San Vicente de Fervenzas (San Vicente),0.92,10,41
+2025-08-08,19:02:00,Trazo,Chaián (Santa María),0.91,8,32
+2025-04-06,17:00:00,Carballo,Carballo (San Xoán),0.89,4,14
+2025-03-29,15:54:00,Carballeda de Avia,Abelenda das Penas (Santo André),0.88,3,13
+2025-04-09,19:10:00,Carballo,Sofán (San Salvador),0.88,4,15
+2025-08-05,22:33:00,Muxía,Moraime (San Xulián),0.88,8,32
+2025-08-15,01:07:00,Aranga,Muniferral (San Cristovo),0.88,8,33
+2025-07-23,21:10:00,Carballo,Carballo (San Xoán),0.87,7,30
+2025-04-10,10:24:00,Pontedeva,Trado (San Paio),0.86,4,15
+2025-08-11,23:20:00,Friol,Seoane da Pregación (San Xoán),0.86,8,33
+2025-08-02,13:15:00,Padrenda,Padrenda (San Cibrán),0.85,8,31
+2025-08-02,17:33:00,Meis,Meis (San Salvador),0.85,8,31
+2025-08-09,22:45:00,Dozón,Dozón (Santa María),0.85,8,32
+2025-08-09,03:24:00,O Corgo,Santo André de Chamoso (Santo André),0.84,8,32
+2025-06-19,11:44:00,Muxía,Frixe (Santa Locacia),0.83,6,25
+2025-08-17,21:45:00,As Pontes de García Rodríguez,O Freixo (San Xoán),0.82,8,33
+2025-10-18,22:06:00,Beariz,Xirazga (San Salvador),0.82,10,42
+2025-03-27,17:16:00,A Cañiza,Oroso (Santa María),0.81,3,13
+2025-07-29,23:58:00,Meaño,Dena (Santa Eulalia),0.81,7,31
+2025-07-30,17:51:00,Montederramo,Montederramo (Santa María),0.81,7,31
+2025-09-23,19:10:00,Fisterra,San Martiño de Duio (San Martiño),0.81,9,39
+2025-04-01,17:18:00,Vedra,Merín (San Cristovo),0.8,4,14
+2025-07-25,00:42:00,Vilalba,Belesar  (San Martiño),0.8,7,30
+2025-08-09,22:55:00,Baralla,Penarrubia (Santa María),0.8,8,32
+2025-08-10,18:20:00,Mondariz,Riofrío (San Miguel),0.8,8,32
+2025-08-22,23:27:00,As Neves,Taboexa (Santa María),0.8,8,34
+2025-08-17,21:35:00,A Merca,Zarracós (Santo André),0.79,8,33
+2025-08-20,17:14:00,Tui,Areas (Santa Mariña),0.79,8,34
+2025-08-16,00:13:00,Fornelos de Montes,Ventín (San Miguel),0.78,8,33
+2025-08-15,00:50:00,Salceda de Caselas,Santo Estevo de Budiño (Santo Estevo),0.77,8,33
+2025-04-10,17:18:00,Vimianzo,Baíñas (Santo Antoíño),0.75,4,15
+2025-05-25,17:42:00,Ribeira,Oleiros (San Martiño),0.75,5,21
+2025-07-27,00:49:00,Vilalba,Carballido (Santa María),0.75,7,30
+2025-07-29,02:57:00,Rodeiro,Arnego (Santiago),0.75,7,31
+2025-08-21,23:40:00,Salceda de Caselas,Soutelo (San Vicente),0.75,8,34
+2025-10-11,15:12:00,Curtis,Fisteus (Santa María),0.75,10,41
+2025-07-28,13:28:00,Mondariz,Mouriscados (San Cibrán),0.74,7,31
+2025-07-30,15:15:00,Aranga,Vilarraso (San Lourenzo),0.74,7,31
+2025-08-04,20:20:00,Vilasantar,Vilariño (Santa María),0.74,8,32
+2025-08-05,15:35:00,Dodro,Dodro (Santa María),0.74,8,32
+2025-08-15,17:02:00,Ponteceso,Xornes (San Xoán),0.74,8,33
+2025-07-01,17:59:00,O Pereiro de Aguiar,Sabadelle (San Martiño),0.73,7,27
+2025-07-04,22:41:00,Nigrán,Chandebrito (San Xosé),0.73,7,27
+2025-07-08,13:25:00,Friol,Miraz (Santiago),0.73,7,28
+2025-03-31,18:13:00,Coristanco,Ferreira (Santa María),0.72,3,14
+2025-06-29,21:47:00,Bóveda,Remesar (San Xoán),0.71,6,26
+2025-08-05,01:57:00,Ourense,Ourense,0.71,8,32
+2025-08-12,16:11:00,Barreiros,Cabarcos (San Xulián),0.71,8,33
+2025-03-19,18:40:00,Mondariz,Sabaxáns (San Mamede),0.7,3,12
+2025-08-02,23:14:00,Maceda,Castro de Escuadro (Santa Baia),0.7,8,31
+2025-08-15,13:59:00,Antas de Ulla,Senande (San Miguel),0.7,8,33
+2025-08-20,17:17:00,Toques,A Capela (Santa María),0.7,8,34
+2025-07-30,23:35:00,Salceda de Caselas,Santo Estevo de Budiño (Santo Estevo),0.69,7,31
+2025-08-11,22:47:00,As Pontes de García Rodríguez,Somede (San Mamede),0.69,8,33
+2025-10-15,22:46:00,Palas de Rei,Remonde (San Miguel),0.69,10,42
+2025-07-30,18:21:00,Carballeda de Avia,Abelenda das Penas (Santo André),0.68,7,31
+2025-08-10,08:29:00,Ponteceso,Xornes (San Xoán),0.68,8,32
+2025-07-04,15:38:00,Bóveda,Teilán (Santa Baia),0.66,7,27
+2025-04-09,15:48:00,Folgoso do Courel,Seoanedo Courel (San Xoán),0.65,4,15
+2025-04-28,19:12:00,Boiro,Boiro (Santa Baia),0.65,4,18
+2025-07-19,15:24:00,Porto do Son,Goiáns (San Sadurniño),0.65,7,29
+2025-07-29,17:56:00,Meaño,Dena (Santa Eulalia),0.65,7,31
+2025-07-30,04:52:00,Salvaterra de Miño,Salvaterra (San Lourenzo),0.65,7,31
+2025-07-23,17:09:00,Malpica de Bergantiños,Barizo (San Pedro),0.64,7,30
+2025-09-18,17:50:00,Vilar de Barrio,Vilar de Barrio (San Pedro Fiz),0.63,9,38
+2025-12-09,05:08:00,Mañón,Mogor (Santa María),0.63,12,50
+2025-08-03,23:37:00,Caldas de Reis,Carracedo (Santa Mariña),0.62,8,31
+2025-08-21,11:19:00,As Neves,As Neves (Santa María),0.62,8,34
+2025-10-09,03:00:00,Castro de Rei,Duarría (Santiago),0.62,10,41
+2025-04-04,17:25:00,Irixoa,Mántaras (Santa María),0.61,4,14
+2025-08-04,13:48:00,Ourense,Ourense,0.61,8,32
+2025-08-12,13:11:00,Curtis,Foxados (Santa María),0.61,8,33
+2025-01-16,19:12:00,Carballeda de Valdeorras,Casaio (Santa María),0.6,1,3
+2025-05-26,08:25:00,Arbo,Mourentán (San Cristovo),0.6,5,22
+2025-07-24,01:33:00,Vilalba,Goiriz (Santiago),0.6,7,30
+2025-08-05,20:04:00,San Cristovo de Cea,Viña (San Román),0.6,8,32
+2025-08-16,15:55:00,Carballo,Rus (Santa María),0.6,8,33
+2025-08-22,21:41:00,Cervantes,A Ribeira (San Martín),0.6,8,34
+2025-10-13,18:31:00,Cervantes,A Ribeira (San Martín),0.6,10,42
+2025-05-08,17:34:00,Covelo,Campo (Santa María),0.59,5,19
+2025-08-30,12:07:00,Ourense,Santa Mariña do Monte (Santa Mariña),0.59,8,35
+2025-09-21,05:09:00,Lobios,Río Caldo (Santa María),0.59,9,38
+2025-05-28,16:10:00,Beariz,Beariz (Santa María),0.58,5,22
+2025-07-09,17:13:00,San Cristovo de Cea,Castrelo (San Cibrao),0.58,7,28
+2025-07-16,13:12:00,San Xoán de Río,Seoane de Argas (San Xoán),0.58,7,29
+2025-08-04,13:48:00,Zas,San Cremenzo de Pazos (San Cremenzo),0.57,8,32
+2025-08-10,01:11:00,Ramirás,Vilameá de Ramirás (Santa María),0.57,8,32
+2025-08-13,20:29:00,Soutomaior,Soutomaior (San Salvador),0.57,8,33
+2025-08-03,21:22:00,Muxía,Frixe (Santa Locacia),0.56,8,31
+2025-03-20,09:48:00,Coirós,Santiago de Ois (Santiago),0.55,3,12
+2025-07-26,03:28:00,Ames,Biduído (Santa María),0.55,7,30
+2025-07-13,08:52:00,Vilalba,Goiriz (Santiago),0.54,7,28
+2025-08-07,19:56:00,Cerceda,As Encrobas (San Román),0.53,8,32
+2025-08-12,11:56:00,Dumbría,Dumbría (Santa Baia),0.53,8,33
+2025-08-22,01:51:00,Porto do Son,Nebra (Santa María),0.53,8,34
+2025-08-23,16:29:00,O Porriño,Pontellas (Santiago),0.53,8,34
+2025-01-05,01:00:00,Arbo,Mourentán (San Cristovo),0.52,1,1
+2025-05-18,20:04:00,O Incio,A Cervela (San Cristovo),0.52,5,20
+2025-07-16,00:00:00,Vilamarín,Boimorto (Santa Baia),0.52,7,29
+2025-08-23,17:21:00,O Saviñao,Chave (San Sadurniño),0.52,8,34
+2025-09-18,16:39:00,Carballeda de Valdeorras,Casaio (Santa María),0.52,9,38
+2025-12-31,16:00:00,Manzaneda,Reigada (Santa María Madanela),0.52,12,1
+2025-01-18,18:05:00,Maceda,Castro de Escuadro (Santa Baia),0.51,1,3
+2025-04-09,13:07:00,Silleda,Cortegada (Santa María),0.51,4,15
+2025-08-01,20:22:00,A Mezquita,O Pereiro (San Pedro),0.51,8,31
+2025-08-10,07:10:00,O Porriño,Pontellas (Santiago),0.51,8,32
+2025-01-04,16:09:00,A Cañiza,Valeixe (Santa Cristina),0.5,1,1
+2025-01-18,14:14:00,A Mezquita,O Pereiro (San Pedro),0.5,1,3
+2025-03-31,12:26:00,Ortigueira,Loiba (San Xulián),0.5,3,14
+2025-08-05,17:14:00,Vilalba,Goiriz (Santiago),0.5,8,32
+2025-08-06,14:06:00,A Pobra do Brollón,Castroncelos (Santiago),0.5,8,32
+2025-08-12,01:10:00,Vilar de Santos,Parada de Outeiro (Santa María),0.5,8,33
+2025-08-13,16:34:00,Montederramo,Sas do Monte (San Pedro),0.5,8,33
+2025-10-18,19:25:00,O Porriño,San Salvador de Budiño (San Salvador),0.5,10,42
+2025-05-16,14:28:00,Rois,Ermedelo (San Martiño),0.49,5,20
+2025-07-28,16:11:00,Gondomar,Donas (Santa Baia),0.49,7,31
+2025-07-31,22:43:00,Curtis,Curtis (Santaia),0.49,7,31
+2025-08-07,12:56:00,A Veiga,Baños (San Fiz),0.49,8,32
+2025-06-12,07:36:00,A Capela,Caaveiro (San Boulo),0.48,6,24
+2025-06-15,12:14:00,A Gudiña,Pentes (San Mamede),0.48,6,24
+2025-06-15,15:40:00,Ourense,Ourense,0.48,6,24
+2025-08-10,18:44:00,O Porriño,Pontellas (Santiago),0.48,8,32
+2025-08-23,18:40:00,Vilanova de Arousa,Deiro (San Miguel),0.48,8,34
+2025-09-24,14:28:00,Ponte Caldelas,Ponte Caldelas (Santa Eulalia),0.48,9,39
+2025-07-25,18:42:00,O Saviñao,San Vitoiro de Ribas de Miño (San Vitoiro),0.47,7,30
+2025-07-31,14:25:00,Vilalba,Lanzós (San Martiño),0.47,7,31
+2025-08-18,01:30:00,O Saviñao,San Vitoiro de Ribas de Miño (San Vitoiro),0.47,8,34
+2025-06-30,06:27:00,Camariñas,Xaviña (Santa María),0.46,6,27
+2025-08-07,13:26:00,Valga,Setecoros (San Salvador),0.46,8,32
+2025-08-09,16:00:00,Verín,Vilamaior do Val (Santiago),0.46,8,32
+2025-10-17,15:40:00,Trasmiras,Vila de Rei (San Salvador),0.46,10,42
+2025-03-04,14:25:00,Mos,Louredo (San Salvador),0.45,3,10
+2025-07-31,16:20:00,Porto do Son,Goiáns (San Sadurniño),0.45,7,31
+2025-08-04,18:47:00,Palas de Rei,O Carballal (San Sebastián),0.45,8,32
+2025-08-10,17:48:00,Santiago de Compostela,Vidán (Divino Salvador),0.45,8,32
+2025-08-23,15:24:00,Santa Comba,Grixoa (San Xoán),0.45,8,34
+2025-03-14,19:39:00,A Pobra de Trives,Pareisás (Santo Antonio),0.44,3,11
+2025-04-29,06:34:00,Ames,Covas (Santo Estevo),0.44,4,18
+2025-07-28,15:04:00,Fornelos de Montes,As Estacas (Santa María),0.44,7,31
+2025-07-30,01:48:00,As Neves,Tortoreos (Santiago),0.44,7,31
+2025-08-10,14:42:00,San Amaro,Beariz (San Martiño),0.44,8,32
+2025-08-24,14:46:00,A Coruña,Elviña (San Vicenzo),0.44,8,34
+2025-07-27,06:39:00,Vilaboa,Santa Cristina de Cobres (Santa Cristina),0.43,7,30
+2025-08-01,06:55:00,As Neves,San Pedro de Batalláns (San Pedro),0.43,8,31
+2025-08-02,22:49:00,Cotobade,Tenorio (San Pedro),0.43,8,31
+2025-08-04,21:18:00,Boimorto,Andavao (San Martiño),0.43,8,32
+2025-08-16,16:04:00,Tomiño,Amorín (San Xoán),0.43,8,33
+2025-08-18,18:11:00,A Guarda,Salcidos (San Lourenzo),0.42,8,34
+2025-07-16,13:29:00,O Vicedo,O Vicedo (Santo Estevo),0.41,7,29
+2025-07-23,22:51:00,Vilamarín,Boimorto (Santa Baia),0.41,7,30
+2025-08-18,19:07:00,Malpica de Bergantiños,Cerqueda (San Cristovo),0.41,8,34
+2025-08-18,22:55:00,Ponteceso,Xornes (San Xoán),0.41,8,34
+2025-03-16,16:20:00,Vilagarcía de Arousa,Cea (San Pedro),0.4,3,11
+2025-04-24,16:43:00,A Gudiña,O Tameirón (Santa María),0.4,4,17
+2025-07-14,17:48:00,Xunqueira de Espadanedo,Xunqueira de Espadanedo (Santa María),0.4,7,29
+2025-07-26,16:18:00,Santiso,Belmil (San Pedro),0.4,7,30
+2025-08-15,15:41:00,Baños de Molgas,Betán (San Martiño),0.4,8,33
+2025-08-20,06:23:00,Maside,Piñeiro (San Xoán),0.4,8,34
+2025-08-20,22:19:00,San Cristovo de Cea,Covas (Santa María),0.4,8,34
+2025-08-22,01:15:00,Muíños,Requiás (Santiago),0.4,8,34
+2025-08-24,08:08:00,Vilalba,Alba  (San Xoán),0.4,8,34
+2025-09-20,02:19:00,Sarreaus,Codosedo (Santa María),0.4,9,38
+2025-09-26,06:46:00,A Merca,A Manchica (Nosa Señora de Lourdes),0.4,9,39
+2025-10-14,01:18:00,Baleira,Córneas (Santiago),0.4,10,42
+2025-10-17,18:00:00,Quiroga,Paradaseca (San Marcos),0.4,10,42
+2025-01-17,19:08:00,Lobeira,San Xes de Vilariño (San Xes),0.39,1,3
+2025-06-16,23:06:00,Mos,Tameiga (San Martiño),0.39,6,25
+2025-07-05,03:22:00,Dumbría,Olveiroa (Santiago),0.39,7,27
+2025-08-05,17:13:00,Monterrei,Flariz (San Pedro),0.39,8,32
+2025-08-19,12:20:00,Melide,Melide (San Pedro),0.39,8,34
+2025-08-26,03:04:00,O Pino,Lardeiros (San Xiao),0.39,8,35
+2025-08-27,17:14:00,Sarreaus,Codosedo (Santa María),0.39,8,35
+2025-03-20,08:01:00,Lugo,Coeses (Santa María Madanela),0.38,3,12
+2025-07-29,15:34:00,O Pino,Ferreiros (San Breixo),0.38,7,31
+2025-08-03,14:14:00,Vilaboa,Santa Cristina de Cobres (Santa Cristina),0.38,8,31
+2025-08-16,06:31:00,Mondariz,Sabaxáns (San Mamede),0.38,8,33
+2025-08-22,23:56:00,Palas de Rei,Pidre (Santa María),0.38,8,34
+2025-10-18,14:51:00,Frades,Moar (Santaia),0.38,10,42
+2025-10-18,23:55:00,O Porriño,Chenlo (San Xoán),0.38,10,42
+2025-05-30,23:50:00,Rianxo,O Araño (Santa Baia),0.37,5,22
+2025-08-17,23:42:00,Baños de Molgas,Ponte Ambía (Santa María),0.37,8,33
+2025-08-18,00:21:00,Boqueixón,A Granxa (San Lourenzo),0.37,8,34
+2025-03-20,21:11:00,Arteixo,Chamín (Santaia),0.36,3,12
+2025-04-08,17:14:00,San Cibrao das Viñas,Pazos de San Clodio (San Clodio),0.36,4,15
+2025-04-09,21:30:00,Culleredo,Orro (San Salvador),0.36,4,15
+2025-04-29,22:06:00,Castroverde,Serés (San Pedro),0.36,4,18
+2025-07-01,18:44:00,Chandrexa de Queixa,Parafita (San Bartolomeu),0.36,7,27
+2025-08-11,00:23:00,A Gudiña,A Gudiña (San Martiño e San Pedro),0.36,8,33
+2025-09-05,14:01:00,A Coruña,San Cristovo das Viñas (San Cristovo),0.36,9,36
+2025-10-16,13:18:00,Carballedo,Castro (San Cristovo),0.36,10,42
+2025-06-24,18:45:00,Lugo,Bóveda (Santa María),0.35,6,26
+2025-07-02,00:03:00,Lousame,Camboño (San Xoán),0.35,7,27
+2025-07-23,20:07:00,Vilardevós,Osoño (San Pedro),0.35,7,30
+2025-07-24,01:10:00,Os Blancos,Aguís (San Martiño),0.35,7,30
+2025-07-25,00:07:00,Xermade,Cazás (San Xulián),0.35,7,30
+2025-07-31,20:57:00,Toques,A Capela (Santa María),0.35,7,31
+2025-08-02,23:41:00,Guitiriz,O Buriz (San Pedro),0.35,8,31
+2025-08-08,18:12:00,Cervantes,A Ribeira (San Martín),0.35,8,32
+2025-08-14,13:50:00,Caldas de Reis,San Clemente de Cesar (San Clemente),0.35,8,33
+2025-08-17,23:56:00,Vilalba,Rioaveso (San Xurxo),0.35,8,33
+2025-05-31,00:38:00,Santiago de Compostela,Figueiras (Santa María),0.34,5,22
+2025-06-29,04:11:00,Lousame,Tállara (San Pedro),0.34,6,26
+2025-07-26,16:10:00,Castrelo de Miño,Macendo (Santa María),0.34,7,30
+2025-07-29,12:32:00,Padrón,Herbón (Santa María),0.34,7,31
+2025-08-23,16:24:00,Begonte,Baamonde (Santiago),0.34,8,34
+2025-09-17,13:03:00,Avión,Avión (Santos Xusto e Pastor),0.34,9,38
+2025-03-29,16:32:00,A Teixeira,Cristosende (Santa María),0.33,3,13
+2025-07-07,18:59:00,A Pobra do Brollón,Salcedo (San Xoán),0.33,7,28
+2025-07-11,06:40:00,Campo Lameiro,Fragas (Santa Mariña),0.33,7,28
+2025-07-30,20:54:00,Porto do Son,Goiáns (San Sadurniño),0.33,7,31
+2025-06-29,20:30:00,Palas de Rei,Ramil (San Martiño),0.32,6,26
+2025-07-14,17:55:00,Vilamarín,Vilamarín (Santiago),0.32,7,29
+2025-07-30,22:49:00,Cortegada,Cortegada (Santa María),0.32,7,31
+2025-08-01,01:27:00,Meaño,Simes (Santa María),0.32,8,31
+2025-08-02,03:00:00,Sarreaus,Codosedo (Santa María),0.32,8,31
+2025-08-02,13:11:00,Piñor,A Corna (Santa María do Desterro),0.32,8,31
+2025-08-03,00:07:00,Caldas de Reis,Bemil (Santa María),0.32,8,31
+2025-08-07,19:41:00,Forcarei,Millarada (San Amedio),0.32,8,32
+2025-08-28,19:05:00,Xunqueira de Ambía,Sobradelo (San Román),0.32,8,35
+2025-06-11,17:01:00,Covelo,Casteláns (Santo Estevo),0.31,6,24
+2025-07-18,00:01:00,Carballedo,San Mamede de Lousada (San Mamede),0.31,7,29
+2025-07-29,18:56:00,Ourense,Ourense,0.31,7,31
+2025-07-31,18:12:00,Castro Caldelas,Poboeiros (San Xoán),0.31,7,31
+2025-08-11,06:00:00,O Porriño,Pontellas (Santiago),0.31,8,33
+2025-03-19,17:03:00,Redondela,Chapela (San Fausto),0.3,3,12
+2025-03-28,16:48:00,O Bolo,Chandoiro (San Ramón),0.3,3,13
+2025-05-26,23:36:00,Coristanco,Couso (San Miguel),0.3,5,22
+2025-06-03,02:53:00,Lousame,Tállara (San Pedro),0.3,6,23
+2025-06-23,11:28:00,Samos,San Cristovo do Real (San Cristovo),0.3,6,26
+2025-07-10,02:27:00,Dumbría,Dumbría (Santa Baia),0.3,7,28
+2025-07-13,04:56:00,Noia,Argalo (Santa María),0.3,7,28
+2025-07-22,23:53:00,Lugo,Bóveda (Santa María),0.3,7,30
+2025-07-26,19:49:00,Navia de Suarna,Mosteiro (San Salvador),0.3,7,30
+2025-07-30,14:53:00,Bueu,Cela (Santa María),0.3,7,31
+2025-08-01,13:04:00,A Gudiña,A Gudiña (San Martiño e San Pedro),0.3,8,31
+2025-08-06,00:53:00,Curtis,Foxados (Santa María),0.3,8,32
+2025-08-12,17:46:00,Xunqueira de Ambía,A Abeleda (San Vicente),0.3,8,33
+2025-08-23,21:50:00,O Saviñao,San Vitoiro de Ribas de Miño (San Vitoiro),0.3,8,34
+2025-10-05,05:42:00,Xinzo de Limia,Morgade (San Tomé),0.3,10,40
+2025-06-18,21:40:00,Muxía,Frixe (Santa Locacia),0.29,6,25
+2025-06-25,20:01:00,Paderne de Allariz,San Salvador de Mourisco (San Salvador),0.29,6,26
+2025-08-09,18:03:00,Muxía,Frixe (Santa Locacia),0.29,8,32
+2025-08-10,20:49:00,Vilalba,Lanzós (San Martiño),0.29,8,32
+2025-08-21,22:42:00,Amoeiro,Bóveda de Amoeiro (San Paio),0.29,8,34
+2025-04-29,23:46:00,As Pontes de García Rodríguez,Goente (San Martiño),0.28,4,18
+2025-07-11,02:20:00,Tomiño,Goián (San Cristovo),0.28,7,28
+2025-07-23,16:43:00,Parada de Sil,Parada de Sil (Santa Mariña),0.28,7,30
+2025-08-06,22:03:00,As Pontes de García Rodríguez,As Pontes de García Rodríguez (Santa María),0.28,8,32
+2025-08-11,18:21:00,Friol,San Cibrao da Pregación (San Cibrao),0.28,8,33
+2025-03-19,21:09:00,A Cañiza,Luneda (Santa María),0.27,3,12
+2025-03-31,11:56:00,Catoira,Abalo (San Mamede),0.27,3,14
+2025-06-23,12:47:00,Carballo,Ardaña (Santa María),0.27,6,26
+2025-07-04,03:35:00,Cee,Toba (Santo Adrán),0.27,7,27
+2025-07-09,15:43:00,Muíños,Barxés (Santa María),0.27,7,28
+2025-07-26,18:59:00,Salceda de Caselas,A Picoña (San Martiño),0.27,7,30
+2025-08-01,17:32:00,Ponteareas,Prado (San Nicolao),0.27,8,31
+2025-08-06,15:23:00,Meaño,Covas (Santa Cristina),0.27,8,32
+2025-08-07,23:55:00,Sobrado,A Ciadella (Santa María),0.27,8,32
+2025-08-10,04:33:00,Vilalba,Goiriz (Santiago),0.27,8,32
+2025-09-06,18:23:00,Guitiriz,Os Vilares (San Vicenzo),0.27,9,36
+2025-03-02,22:45:00,Monfero,Vilachá (Santa María),0.26,3,9
+2025-06-25,19:58:00,Vilanova de Arousa,Caleiro (Santa María),0.26,6,26
+2025-07-03,18:16:00,Monforte de Lemos,Seoane (San Salvador),0.26,7,27
+2025-08-08,13:49:00,Oroso,Oroso (San Martiño),0.26,8,32
+2025-08-13,01:00:00,O Carballiño,Lobás (Santa Ouxea),0.26,8,33
+2025-08-20,02:15:00,Lousame,Tállara (San Pedro),0.26,8,34
+2025-07-10,13:56:00,Silleda,Silleda (Santa Baia),0.25,7,28
+2025-07-12,00:46:00,Vilalba,Belesar  (San Martiño),0.25,7,28
+2025-07-15,13:02:00,Ames,Covas (Santo Estevo),0.25,7,29
+2025-07-15,14:45:00,A Peroxa,Graíces (San Vicente),0.25,7,29
+2025-07-22,17:38:00,Covelo,Barcia de Mera (San Martiño),0.25,7,30
+2025-07-24,18:10:00,Laxe,Traba (Santiago),0.25,7,30
+2025-08-07,16:32:00,Porto do Son,Miñortos (San Martiño),0.25,8,32
+2025-08-08,12:40:00,Carballo,Entrecruces (San Xens),0.25,8,32
+2025-08-10,18:25:00,Vilalba,Goiriz (Santiago),0.25,8,32
+2025-08-11,19:04:00,Cerdedo,Quireza (San Tomé),0.25,8,33
+2025-08-17,00:42:00,Becerreá,Morcelle (San Xulián),0.25,8,33
+2025-08-17,20:12:00,Forcarei,Castrelo (Santa Mariña),0.25,8,33
+2025-08-17,22:58:00,Vilalba,Nete (San Cosme),0.25,8,33
+2025-08-19,05:31:00,Brión,Ons (Santa María),0.25,8,34
+2025-12-15,09:40:00,Xove,Xuances (San Pedro),0.25,12,51
+2025-03-04,20:27:00,Vilardevós,Moialde (Santa María),0.24,3,10
+2025-05-21,17:57:00,Nigrán,A Ramallosa (San Pedro),0.24,5,21
+2025-06-18,14:15:00,Crecente,Albeos (San Xoán),0.24,6,25
+2025-06-22,06:30:00,Salceda de Caselas,Parderrubias (San Tomé),0.24,6,25
+2025-07-02,02:03:00,A Merca,Zarracós (Santo André),0.24,7,27
+2025-07-12,16:36:00,A Coruña,Elviña (San Vicenzo),0.24,7,28
+2025-08-12,04:22:00,Porto do Son,Miñortos (San Martiño),0.24,8,33
+2025-08-14,17:18:00,Santiago de Compostela,A Peregrina (Santa María),0.24,8,33
+2025-08-15,10:44:00,Taboada,Castelo (Santa María),0.24,8,33
+2025-08-22,14:23:00,Taboada,Cicillón (Santiago),0.24,8,34
+2025-08-22,15:06:00,Monfero,San Fiz de Monfero (San Fiz),0.24,8,34
+2025-09-20,01:51:00,Allariz,Meire (Santa María),0.24,9,38
+2025-09-26,13:05:00,Coles,Santo Eusebio da Peroxa (Santo Eusebio),0.24,9,39
+2025-01-16,10:14:00,Viana do Bolo,Sever (San Lourenzo),0.23,1,3
+2025-05-28,15:32:00,Muros,Torea (San Xián),0.23,5,22
+2025-06-20,17:20:00,Amoeiro,Bóveda de Amoeiro (San Paio),0.23,6,25
+2025-06-22,18:49:00,Vilanova de Arousa,Baión (San Xoán),0.23,6,25
+2025-07-05,12:44:00,San Cristovo de Cea,Oseira (Santa María a Real),0.23,7,27
+2025-07-05,18:28:00,Monforte de Lemos,San Xiao de Tor (San Xiao),0.23,7,27
+2025-07-14,03:44:00,Pontevedra,Lérez (San Salvador),0.23,7,29
+2025-07-16,17:38:00,Portomarín,Bagude (San Bartolomeu),0.23,7,29
+2025-08-01,17:27:00,Salvaterra de Miño,Alxén (San Paio),0.23,8,31
+2025-08-02,03:28:00,Guitiriz,Pedrafita (San Mamede),0.23,8,31
+2025-08-07,15:36:00,Muxía,Nosa Señora da O (Santa María),0.23,8,32
+2025-08-13,15:05:00,Santiago de Compostela,Conxo (Santa María),0.23,8,33
+2025-10-11,16:15:00,Láncara,Armeá (San Pedro),0.23,10,41
+2025-03-02,13:33:00,Vilagarcía de Arousa,Cea (San Pedro),0.22,3,9
+2025-07-31,17:45:00,Cartelle,Cartelle (Santa María),0.22,7,31
+2025-08-05,14:45:00,A Estrada,Frades (Santa María),0.22,8,32
+2025-09-16,14:23:00,A Mezquita,O Pereiro (San Pedro),0.22,9,38
+2025-10-17,14:50:00,Palas de Rei,Remonde (San Miguel),0.22,10,42
+2025-03-31,19:06:00,San Cristovo de Cea,Oseira (Santa María a Real),0.21,3,14
+2025-06-28,07:38:00,Carballo,Sísamo (Santiago),0.21,6,26
+2025-07-11,03:01:00,Moraña,Cosoirado (Santa María),0.21,7,28
+2025-07-26,13:08:00,A Merca,Corvillón (Santa María),0.21,7,30
+2025-08-02,13:04:00,A Pobra de Trives,A Pobra de Trives (Santo Cristo da Misericordia),0.21,8,31
+2025-08-03,13:26:00,Meaño,Xil (Santa Eulalia),0.21,8,31
+2025-08-07,17:05:00,Entrimo,Entrimo (Santa María a Real),0.21,8,32
+2025-08-09,02:30:00,Vilariño de Conso,Mormentelos (Nosa Señora da O),0.21,8,32
+2025-08-17,18:57:00,Maside,Amarante (Santa María),0.21,8,33
+2025-08-21,20:39:00,Antas de Ulla,Antas de Ulla (San Xoán),0.21,8,34
+2025-08-22,19:44:00,Oroso,Pasarelos (San Román),0.21,8,34
+2025-08-27,00:12:00,Castroverde,Bolaño (Santa Baia),0.21,8,35
+2025-10-17,15:25:00,Trazo,Chaián (Santa María),0.21,10,42
+2025-10-17,20:35:00,A Cañiza,O Couto (San Bartolomeu),0.21,10,42
+2025-03-31,12:44:00,Arteixo,Loureda (Santa María),0.2,3,14
+2025-04-08,13:57:00,Maside,Armeses (San Miguel),0.2,4,15
+2025-05-24,19:01:00,Santiso,Santaia de Rairiz (Santaia),0.2,5,21
+2025-07-12,03:14:00,Meis,A Armenteira (Santa María),0.2,7,28
+2025-07-24,20:52:00,Maceda,Castro de Escuadro (Santa Baia),0.2,7,30
+2025-08-03,01:12:00,Xermade,Cazás (San Xulián),0.2,8,31
+2025-08-07,17:04:00,Santiago de Compostela,Vidán (Divino Salvador),0.2,8,32
+2025-08-11,17:08:00,Oroso,Oroso (San Martiño),0.2,8,33
+2025-08-12,07:15:00,A Estrada,Codeseda (San Xurxo),0.2,8,33
+2025-08-13,03:33:00,Salvaterra de Miño,Salvaterra (San Lourenzo),0.2,8,33
+2025-08-14,01:08:00,Vimianzo,Baíñas (Santo Antoíño),0.2,8,33
+2025-08-18,18:57:00,O Corgo,Gomeán (Santiago),0.2,8,34
+2025-08-19,18:08:00,Pontedeume,Ombre (Santa María),0.2,8,34
+2025-08-20,03:48:00,Porto do Son,Goiáns (San Sadurniño),0.2,8,34
+2025-08-23,08:51:00,Cartelle,Couxil (Santa María),0.2,8,34
+2025-08-24,11:57:00,Vilalba,Lanzós (San Martiño),0.2,8,34
+2025-08-26,20:56:00,Vilalba,Alba  (San Xoán),0.2,8,35
+2025-03-03,13:09:00,Castroverde,Bolaño (Santa Baia),0.19,3,10
+2025-04-08,18:57:00,Covelo,Casteláns (Santo Estevo),0.19,4,15
+2025-06-15,13:35:00,Lalín,Vilatuxe (San Lourenzo),0.19,6,24
+2025-07-16,22:12:00,Láncara,Vilouzán (Santo Estevo),0.19,7,29
+2025-07-25,15:16:00,Cartelle,Anfeoz (Santa Baia),0.19,7,30
+2025-07-27,00:30:00,Salvaterra de Miño,Fornelos (San Xoán),0.19,7,30
+2025-07-27,04:19:00,Tomiño,Estás (Santiago),0.19,7,30
+2025-07-31,22:27:00,Xunqueira de Ambía,Sobradelo (San Román),0.19,7,31
+2025-08-11,09:02:00,Carballedo,San Mamede de Lousada (San Mamede),0.19,8,33
+2025-09-09,01:05:00,Viana do Bolo,Vilardemilo (Santa María Madanela),0.19,9,37
+2025-06-03,20:57:00,Tomiño,Goián (San Cristovo),0.18,6,23
+2025-07-07,02:39:00,Covelo,Barcia de Mera (San Martiño),0.18,7,28
+2025-07-25,14:32:00,Ponteceso,Cores (San Martiño),0.18,7,30
+2025-07-28,11:34:00,Mondariz,Mouriscados (San Cibrán),0.18,7,31
+2025-07-29,11:17:00,Meis,A Armenteira (Santa María),0.18,7,31
+2025-07-30,23:33:00,Vilasantar,Vilariño (Santa María),0.18,7,31
+2025-07-31,23:42:00,Carballo,Carballo (San Xoán),0.18,7,31
+2025-08-05,18:40:00,Santiago de Compostela,San Caetano (Santiago),0.18,8,32
+2025-08-13,15:42:00,Parada de Sil,San Lourenzo de Barxacova (San Lourenzo),0.18,8,33
+2025-08-15,05:38:00,Toques,A Capela (Santa María),0.18,8,33
+2025-08-15,06:16:00,Vigo,Bembrive (Santiago),0.18,8,33
+2025-08-15,18:07:00,Taboadela,Taboadela (San Miguel),0.18,8,33
+2025-08-24,02:27:00,Vilalba,Lanzós (San Martiño),0.18,8,34
+2025-10-16,13:26:00,Baños de Molgas,Ambía (Santo Estevo),0.18,10,42
+2025-03-01,19:03:00,Tomiño,Goián (San Cristovo),0.17,3,9
+2025-05-29,13:57:00,Ferrol,Esmelle (San Xoán),0.17,5,22
+2025-07-04,03:24:00,Salvaterra de Miño,Leirado (San Salvador),0.17,7,27
+2025-08-02,23:25:00,O Pino,Pastor (San Lourenzo),0.17,8,31
+2025-08-02,23:45:00,Caldas de Reis,San Clemente de Cesar (San Clemente),0.17,8,31
+2025-08-05,00:17:00,O Bolo,Fornelos (San Bartolomeu),0.17,8,32
+2025-08-05,07:24:00,Montederramo,Montederramo (Santa María),0.17,8,32
+2025-08-15,15:21:00,Mondariz,Sabaxáns (San Mamede),0.17,8,33
+2025-08-17,17:03:00,O Saviñao,Segán (Santa María),0.17,8,33
+2025-08-24,07:31:00,Xinzo de Limia,Morgade (San Tomé),0.17,8,34
+2025-10-18,19:09:00,Mondariz,Sabaxáns (San Mamede),0.17,10,42
+2025-03-31,14:24:00,O Barco de Valdeorras,Éntoma (San Xoán),0.16,3,14
+2025-03-31,15:27:00,O Bolo,Cambela (Santa María),0.16,3,14
+2025-04-01,16:12:00,O Irixo,Corneda (Santiago),0.16,4,14
+2025-06-13,14:32:00,Monterrei,Vilaza (San Salvador),0.16,6,24
+2025-06-28,12:24:00,Verín,Feces de Cima (Santa María),0.16,6,26
+2025-07-02,16:23:00,Vilanova de Arousa,Tremoedo (Santo Estevo),0.16,7,27
+2025-07-10,19:32:00,Xinzo de Limia,San Pedro de Laroá (San Pedro),0.16,7,28
+2025-08-03,12:56:00,Ponteceso,Cores (San Martiño),0.16,8,31
+2025-08-05,03:46:00,Meaño,Xil (Santa Eulalia),0.16,8,32
+2025-08-05,05:12:00,Arteixo,Pastoriza (Santa María),0.16,8,32
+2025-08-09,05:36:00,Noia,Argalo (Santa María),0.16,8,32
+2025-08-09,13:50:00,Maside,Piñeiro (San Xoán),0.16,8,32
+2025-08-12,23:16:00,Cualedro,Rebordondo (San Martiño),0.16,8,33
+2025-08-15,02:49:00,O Porriño,San Salvador de Budiño (San Salvador),0.16,8,33
+2025-08-19,19:43:00,Ponteareas,Ribadetea (San Xurxo),0.16,8,34
+2025-08-23,17:16:00,Ribadumia,Sisán (San Clemenzo),0.16,8,34
+2025-09-08,07:51:00,Viana do Bolo,Paradela (San Pedro),0.16,9,37
+2025-10-17,23:11:00,Guitiriz,Pedrafita (San Mamede),0.16,10,42
+2025-10-18,03:06:00,Poio,Poio (San Xoán),0.16,10,42
+2025-03-31,20:05:00,Salvaterra de Miño,Salvaterra (San Lourenzo),0.15,3,14
+2025-07-27,15:15:00,Cospeito,Lamas (San Martiño),0.15,7,30
+2025-07-28,10:56:00,O Porriño,Pontellas (Santiago),0.15,7,31
+2025-07-28,13:51:00,Ponteareas,Prado (San Nicolao),0.15,7,31
+2025-07-30,12:19:00,Gomesende,O Val (Santa María),0.15,7,31
+2025-08-03,17:30:00,Carballo,Carballo (San Xoán),0.15,8,31
+2025-08-04,01:12:00,Vilalba,Román (Santalla),0.15,8,32
+2025-08-10,19:08:00,Santiago de Compostela,San Lázaro (Santiago),0.15,8,32
+2025-08-11,14:16:00,Cartelle,Anfeoz (Santa Baia),0.15,8,33
+2025-08-18,16:22:00,Coles,A Barra (Santa María),0.15,8,34
+2025-09-07,12:20:00,Lugo,Bóveda (Santa María),0.15,9,36
+2025-09-19,16:47:00,Melón,Quins (Santa María),0.15,9,38
+2025-10-18,15:13:00,Palas de Rei,Aguas Santas (San Xurxo),0.15,10,42
+2025-01-01,17:45:00,Camariñas,Camariñas (San Xurxo),0.14,1,1
+2025-06-15,13:40:00,Lalín,Vilatuxe (San Lourenzo),0.14,6,24
+2025-06-16,11:27:00,Barbadás,A Valenzá (San Bernabeu),0.14,6,25
+2025-06-29,12:54:00,Vila de Cruces,Obra (San Tomé),0.14,6,26
+2025-07-02,23:34:00,A Estrada,Arnois (San Xiao),0.14,7,27
+2025-07-09,16:55:00,Pazos de Borbén,Moscoso (San Paio),0.14,7,28
+2025-07-25,12:38:00,Monforte de Lemos,Moreda (San Salvador),0.14,7,30
+2025-07-28,16:56:00,San Cristovo de Cea,Oseira (Santa María a Real),0.14,7,31
+2025-07-30,17:00:00,Toén,Puga (San Mamede),0.14,7,31
+2025-07-30,17:39:00,Lalín,Vilatuxe (San Lourenzo),0.14,7,31
+2025-08-04,03:50:00,A Merca,Zarracós (Santo André),0.14,8,32
+2025-08-06,15:12:00,Ponteceso,Cospindo (San Tirso),0.14,8,32
+2025-08-08,23:36:00,Begonte,San Martiño de Pacios (San Martiño),0.14,8,32
+2025-08-11,15:45:00,Santiago de Compostela,Vidán (Divino Salvador),0.14,8,33
+2025-08-15,18:39:00,Vilalba,Alba  (San Xoán),0.14,8,33
+2025-08-17,15:43:00,Santiago de Compostela,Conxo (Santa María),0.14,8,33
+2025-08-21,14:25:00,Arbo,Arbo (Santa María),0.14,8,34
+2025-08-21,16:29:00,Ramirás,Grixó (Santa Isabel),0.14,8,34
+2025-08-23,13:14:00,Ponteareas,Nogueira (San Salvador),0.14,8,34
+2025-08-23,17:28:00,Ourense,Ourense,0.14,8,34
+2025-08-24,00:15:00,Melide,Folladela (San Pedro),0.14,8,34
+2025-10-09,16:05:00,Oímbra,Rabal (Santo André),0.14,10,41
+2025-10-10,15:24:00,Ponteareas,Nogueira (San Salvador),0.14,10,41
+2025-03-01,14:33:00,Rodeiro,Negrelos (San Cibrao),0.13,3,9
+2025-03-01,18:50:00,Laza,Carraxo (San Bieito),0.13,3,9
+2025-04-24,18:16:00,A Baña,Cabanas (San Miguel),0.13,4,17
+2025-06-16,16:08:00,Vilanova de Arousa,András (San Lourenzo),0.13,6,25
+2025-07-01,18:44:00,Chandrexa de Queixa,Chaveán (San Bartolomeu),0.13,7,27
+2025-07-09,03:32:00,Sanxenxo,Dorrón (San Xoán),0.13,7,28
+2025-07-29,13:13:00,Camariñas,Camariñas (San Xurxo),0.13,7,31
+2025-07-30,00:57:00,Ramirás,Penosiños (San Salvador),0.13,7,31
+2025-08-03,17:34:00,Carnota,Lariño (San Martiño),0.13,8,31
+2025-08-04,00:26:00,Silleda,Siador (San Miguel),0.13,8,32
+2025-08-04,01:57:00,Lousame,Toxos Outos (San Xusto),0.13,8,32
+2025-08-08,22:39:00,Pontevedra,Verducido (San Martiño),0.13,8,32
+2025-08-09,10:57:00,A Bola,Veiga (San Munio),0.13,8,32
+2025-08-12,11:42:00,Piñor,A Canda (San Mamede),0.13,8,33
+2025-08-26,15:48:00,Ponteceso,Cospindo (San Tirso),0.13,8,35
+2025-08-26,17:19:00,Vilaboa,Santa Cristina de Cobres (Santa Cristina),0.13,8,35
+2025-09-16,22:21:00,Lalín,Vilatuxe (San Lourenzo),0.13,9,38
+2025-09-20,17:38:00,Allariz,Allariz (Santiago),0.13,9,38
+2025-03-02,22:45:00,As Neves,Santiago de Ribarteme (Santiago),0.12,3,9
+2025-04-01,11:55:00,Boborás,Cardelle (San Silvestre),0.12,4,14
+2025-04-07,19:09:00,A Pontenova,Vilaboa (San Xulián),0.12,4,15
+2025-04-28,14:10:00,Castrelo de Miño,Macendo (Santa María),0.12,4,18
+2025-04-28,14:33:00,O Pereiro de Aguiar,Sabadelle (San Martiño),0.12,4,18
+2025-06-26,05:15:00,Salvaterra de Miño,Soutolobre (Santa Comba),0.12,6,26
+2025-07-05,16:35:00,Chantada,A Grade (San Vicente),0.12,7,27
+2025-07-31,20:36:00,Salceda de Caselas,Entenza (Santos Xusto e Pastor),0.12,7,31
+2025-08-03,17:37:00,Pontevedra,Mourente (Santa María),0.12,8,31
+2025-08-07,22:45:00,Mondariz,Mouriscados (San Cibrán),0.12,8,32
+2025-08-08,02:43:00,Ourol,Bravos (Santiago),0.12,8,32
+2025-08-10,12:00:00,Ponteceso,A Graña (San Vicenzo),0.12,8,32
+2025-08-10,12:19:00,Friol,Seoane da Pregación (San Xoán),0.12,8,32
+2025-08-11,23:40:00,Salvaterra de Miño,Lourido (Santo André),0.12,8,33
+2025-08-13,13:08:00,Tomiño,Barrantes (San Vicente),0.12,8,33
+2025-08-14,18:04:00,Miño,Leiro (San Salvador),0.12,8,33
+2025-08-20,22:57:00,Oia,Burgueira (San Pedro),0.12,8,34
+2025-08-22,15:42:00,Carballo,Carballo (San Xoán),0.12,8,34
+2025-08-24,20:42:00,Cospeito,Roás (San Miguel),0.12,8,34
+2025-10-02,16:41:00,Silleda,Ponte (San Miguel),0.12,10,40
+2025-10-13,16:20:00,Vigo,Oia (San Miguel),0.12,10,42
+2025-01-01,01:15:00,Moaña,Meira (Santa Eulalia),0.11,1,1
+2025-03-17,16:06:00,Cenlle,A Pena (San Lourenzo),0.11,3,12
+2025-03-19,20:45:00,Arteixo,Pastoriza (Santa María),0.11,3,12
+2025-04-29,20:40:00,Láncara,Lagos (Santalla),0.11,4,18
+2025-06-01,18:54:00,A Laracha,Golmar (San Bieito),0.11,6,22
+2025-07-03,02:59:00,Salvaterra de Miño,Leirado (San Salvador),0.11,7,27
+2025-07-22,06:04:00,Vilardevós,Osoño (San Pedro),0.11,7,30
+2025-07-24,16:45:00,Abegondo,Cabanas (San Xián),0.11,7,30
+2025-07-30,23:14:00,Monterroso,Ligonde (Santiago),0.11,7,31
+2025-08-01,12:35:00,Betanzos,Tiobre (San Martiño),0.11,8,31
+2025-08-01,16:12:00,Noia,Barro (Santa Cristina),0.11,8,31
+2025-08-01,22:52:00,Guntín,Ferroi (Santiago),0.11,8,31
+2025-08-09,00:02:00,Coles,A Barra (Santa María),0.11,8,32
+2025-08-09,18:20:00,Caldas de Reis,Caldas de Reis (Santa María),0.11,8,32
+2025-08-09,22:27:00,Forcarei,Millarada (San Amedio),0.11,8,32
+2025-08-11,01:38:00,Toques,A Capela (Santa María),0.11,8,33
+2025-08-13,15:51:00,Carballo,Carballo (San Xoán),0.11,8,33
+2025-08-13,18:10:00,Santiago de Compostela,San Caetano (Santiago),0.11,8,33
+2025-08-14,00:30:00,Pontevedra,Ponte Sampaio (Santa María),0.11,8,33
+2025-08-16,00:20:00,Campo Lameiro,O Campo (San Miguel),0.11,8,33
+2025-08-16,04:32:00,Sanxenxo,Dorrón (San Xoán),0.11,8,33
+2025-08-19,02:16:00,Poio,Poio (San Salvador),0.11,8,34
+2025-08-23,14:34:00,Padrenda,Desteriz (San Miguel),0.11,8,34
+2025-08-23,16:29:00,Lousame,Tállara (San Pedro),0.11,8,34
+2025-09-23,22:34:00,Baños de Molgas,Betán (San Martiño),0.11,9,39
+2025-03-20,10:25:00,O Páramo,Friolfe (San Xoán),0.1,3,12
+2025-06-29,15:57:00,Boiro,Abanqueiro (San Cristovo),0.1,6,26
+2025-07-04,18:42:00,Becerreá,Cascallá (Santa María),0.1,7,27
+2025-07-31,17:22:00,Celanova,Amoroce (Santiago),0.1,7,31
+2025-07-31,22:33:00,As Nogais,Santo André (Santo André),0.1,7,31
+2025-08-01,10:02:00,Agolada,Ferreiroa (San Pedro),0.1,8,31
+2025-08-03,18:47:00,Agolada,Berredo (Santa María),0.1,8,31
+2025-08-03,20:02:00,Forcarei,Forcarei (San Martiño),0.1,8,31
+2025-08-04,14:36:00,Taboada,Cicillón (Santiago),0.1,8,32
+2025-08-05,21:07:00,San Cibrao das Viñas,Pazos de San Clodio (San Clodio),0.1,8,32
+2025-08-08,13:12:00,Dozón,Dozón (Santa María),0.1,8,32
+2025-08-11,11:57:00,Vilalba,Belesar  (San Martiño),0.1,8,33
+2025-08-11,13:54:00,A Laracha,Golmar (San Bieito),0.1,8,33
+2025-08-11,23:26:00,Pol,Silva (Santiago),0.1,8,33
+2025-08-12,20:07:00,Toén,Toén (Santa María),0.1,8,33
+2025-08-13,19:33:00,Carballo,Carballo (San Xoán),0.1,8,33
+2025-08-13,20:22:00,A Fonsagrada,Pacios (Santa María),0.1,8,33
+2025-08-14,08:03:00,Abadín,A Graña de Vilarente (Santa María Madanela),0.1,8,33
+2025-08-18,01:23:00,O Saviñao,San Vitoiro de Ribas de Miño (San Vitoiro),0.1,8,34
+2025-08-18,04:44:00,Ponteceso,A Graña (San Vicenzo),0.1,8,34
+2025-08-20,18:43:00,Carnota,San Mamede de Carnota (San Mamede),0.1,8,34
+2025-08-21,00:58:00,Tomiño,Amorín (San Xoán),0.1,8,34
+2025-08-21,18:44:00,Tomiño,Tomiño (Santa María),0.1,8,34
+2025-08-22,14:16:00,Chantada,Mariz (San Martiño),0.1,8,34
+2025-08-22,20:59:00,As Pontes de García Rodríguez,O Freixo (San Xoán),0.1,8,34
+2025-08-22,21:44:00,Cervantes,A Ribeira (San Martín),0.1,8,34
+2025-08-23,12:55:00,Arteixo,Pastoriza (Santa María),0.1,8,34
+2025-08-23,13:13:00,A Bola,Veiga (San Munio),0.1,8,34
+2025-08-24,16:02:00,Castroverde,Bolaño (Santa Baia),0.1,8,34
+2025-08-30,19:05:00,Vilamartín de Valdeorras,Correxais (San Pedro),0.1,8,35
+2025-09-21,18:34:00,O Saviñao,Ousende (Santa María),0.1,9,38
+2025-10-03,15:05:00,A Mezquita,O Pereiro (San Pedro),0.1,10,40
+2025-10-09,13:18:00,Pantón,Frontón (San Xoán),0.1,10,41
+2025-10-11,14:18:00,Celanova,Milmanda (Santa Eufemia),0.1,10,41
+2025-03-01,16:09:00,Barbadás,Bentraces (San Xoán),0.09,3,9
+2025-03-15,02:54:00,Arteixo,Arteixo (Santiago),0.09,3,11
+2025-03-31,18:09:00,Cedeira,San Román de Montoxo (San Román),0.09,3,14
+2025-04-29,20:47:00,Manzaneda,Requeixo (San Bartolomeu),0.09,4,18
+2025-05-14,23:53:00,Vilanova de Arousa,Baión (San Xoán),0.09,5,20
+2025-06-09,01:28:00,A Gudiña,A Gudiña (San Martiño e San Pedro),0.09,6,24
+2025-06-19,20:15:00,Cerdedo,Castro (Santa Baia),0.09,6,25
+2025-06-27,19:06:00,O Porriño,O Porriño (Santa María),0.09,6,26
+2025-07-11,16:17:00,O Vicedo,Suegos (Santa María),0.09,7,28
+2025-07-13,00:43:00,Coristanco,Couso (San Miguel),0.09,7,28
+2025-07-16,01:00:00,A Cañiza,A Cañiza (Santa Teresa),0.09,7,29
+2025-07-19,23:07:00,O Saviñao,Eirexafeita (San Vicente),0.09,7,29
+2025-07-21,16:53:00,Culleredo,Rutis (Santa María),0.09,7,30
+2025-07-27,10:31:00,Vilardevós,Terroso (Santa Cruz),0.09,7,30
+2025-08-03,19:42:00,Ourense,Ourense,0.09,8,31
+2025-08-06,17:39:00,Rianxo,Taragoña (San Salvador),0.09,8,32
+2025-08-10,13:40:00,Ramirás,Vilameá de Ramirás (Santa María),0.09,8,32
+2025-08-11,14:28:00,Xunqueira de Ambía,Sobradelo (San Román),0.09,8,33
+2025-08-11,23:02:00,Melón,Quins (Santa María),0.09,8,33
+2025-08-14,17:35:00,Chantada,San Salvador de Asma (San Salvador),0.09,8,33
+2025-08-20,13:18:00,A Estrada,Codeseda (San Xurxo),0.09,8,34
+2025-08-23,16:30:00,Vilamarín,Vilamarín (Santiago),0.09,8,34
+2025-08-24,00:48:00,Rianxo,Leiro (Santa María),0.09,8,34
+2025-03-15,13:59:00,Valga,Xanza (Santa María),0.08,3,11
+2025-03-19,16:05:00,As Neves,Vide (Santa María),0.08,3,12
+2025-04-02,13:21:00,Cenlle,Cenlle (Santa María),0.08,4,14
+2025-04-09,18:47:00,O Porriño,San Salvador de Budiño (San Salvador),0.08,4,15
+2025-05-18,00:51:00,Salvaterra de Miño,Salvaterra (San Lourenzo),0.08,5,20
+2025-05-22,12:58:00,As Neves,Taboexa (Santa María),0.08,5,21
+2025-06-24,00:20:00,Salceda de Caselas,Entenza (Santos Xusto e Pastor),0.08,6,26
+2025-07-07,18:12:00,Covelo,Barcia de Mera (San Martiño),0.08,7,28
+2025-07-12,01:24:00,O Grove,O Grove (San Martiño),0.08,7,28
+2025-07-14,14:32:00,Ribeira,Artes (San Xián),0.08,7,29
+2025-07-24,01:24:00,Arbo,Mourentán (San Cristovo),0.08,7,30
+2025-07-24,14:08:00,Tui,Ribadelouro (Santa Comba),0.08,7,30
+2025-07-26,02:39:00,Vilaboa,Vilaboa (San Martiño),0.08,7,30
+2025-07-28,14:37:00,Pontevedra,Marcón (San Miguel),0.08,7,31
+2025-08-01,12:21:00,Ourense,Velle (Santa Marta),0.08,8,31
+2025-08-03,08:09:00,Sarreaus,Bresmaus (San Bartolomeu),0.08,8,31
+2025-08-04,13:07:00,A Bola,Veiga (San Munio),0.08,8,32
+2025-08-07,00:08:00,A Cañiza,Valeixe (Santa Cristina),0.08,8,32
+2025-08-09,15:47:00,Carballo,Carballo (San Xoán),0.08,8,32
+2025-08-11,21:05:00,Muxía,Frixe (Santa Locacia),0.08,8,33
+2025-08-12,18:00:00,A Merca,A Manchica (Nosa Señora de Lourdes),0.08,8,33
+2025-08-13,01:33:00,Lalín,Vilatuxe (San Lourenzo),0.08,8,33
+2025-08-13,23:25:00,O Pereiro de Aguiar,Prexigueiró (San Salvador),0.08,8,33
+2025-08-14,14:38:00,Arbo,Mourentán (San Cristovo),0.08,8,33
+2025-08-15,21:14:00,A Pobra do Brollón,Castroncelos (Santiago),0.08,8,33
+2025-08-17,02:20:00,Ponteareas,Nogueira (San Salvador),0.08,8,33
+2025-08-17,10:33:00,Riós,Riós (Santa María),0.08,8,33
+2025-08-18,02:18:00,Coles,Gustei (Santiago),0.08,8,34
+2025-08-24,14:32:00,Oroso,Deixebre (Santa María),0.08,8,34
+2025-08-25,17:52:00,Guntín,Ferroi (Santiago),0.08,8,35
+2025-10-06,22:35:00,Viana do Bolo,Paradela (San Pedro),0.08,10,41
+2025-10-15,18:37:00,Teo,Baamonde (Santa María),0.08,10,42
+2025-10-27,14:45:00,Sandiás,Sandiás (Santo Estevo),0.08,10,44
+2025-03-04,12:32:00,Padrón,Carcacia (San Pedro),0.07,3,10
+2025-03-28,21:11:00,Vilardevós,Soutochao (Santa María),0.07,3,13
+2025-04-01,19:59:00,Carballedo,Santa Baia de Búbal (Santa Baia),0.07,4,14
+2025-06-15,21:57:00,Catoira,Oeste (Santa Baia),0.07,6,24
+2025-06-24,00:09:00,Mos,Cela (San Pedro),0.07,6,26
+2025-06-27,19:54:00,Mondariz,Mondariz (Santa Baia),0.07,6,26
+2025-06-29,07:05:00,Campo Lameiro,Moimenta (Santa María),0.07,6,26
+2025-06-29,20:01:00,Celanova,Milmanda (Santa Eufemia),0.07,6,26
+2025-07-04,09:08:00,As Neves,Taboexa (Santa María),0.07,7,27
+2025-07-09,19:32:00,O Porriño,Pontellas (Santiago),0.07,7,28
+2025-07-10,13:37:00,Vigo,Valadares (Santo André),0.07,7,28
+2025-07-12,01:58:00,Sanxenxo,Dorrón (San Xoán),0.07,7,28
+2025-07-12,19:10:00,Cambados,Vilariño (Santo Adrián),0.07,7,28
+2025-07-24,21:04:00,Nigrán,Parada (Santiago),0.07,7,30
+2025-07-25,23:03:00,Moaña,Meira (Santa Eulalia),0.07,7,30
+2025-08-01,14:48:00,Tui,Malvas (Santiago),0.07,8,31
+2025-08-02,22:24:00,Cartelle,As Seixadas (San Xoán),0.07,8,31
+2025-08-03,02:49:00,Ourense,Ourense,0.07,8,31
+2025-08-05,18:20:00,Muxía,Frixe (Santa Locacia),0.07,8,32
+2025-08-08,14:23:00,Castro Caldelas,Poboeiros (San Xoán),0.07,8,32
+2025-08-09,16:57:00,A Cañiza,Valeixe (Santa Cristina),0.07,8,32
+2025-08-11,18:59:00,O Porriño,Pontellas (Santiago),0.07,8,33
+2025-08-15,15:37:00,Mos,Torroso (San Mamede),0.07,8,33
+2025-08-16,04:34:00,San Sadurniño,Igrexafeita (Santa María),0.07,8,33
+2025-08-21,06:09:00,A Merca,A Merca (Santa María),0.07,8,34
+2025-08-29,19:12:00,Xunqueira de Ambía,Sobradelo (San Román),0.07,8,35
+2025-09-16,23:23:00,Maside,Garabás (San Pedro),0.07,9,38
+2025-09-20,13:53:00,Punxín,Freás (Santa María),0.07,9,38
+2025-10-04,05:56:00,Quiroga,Quiroga (San Martiño),0.07,10,40
+2025-10-10,01:17:00,O Pereiro de Aguiar,Melias (Santa María),0.07,10,41
+2025-10-12,00:14:00,Mondariz,Toutón (San Mateo),0.07,10,41
+2025-10-12,07:58:00,Muíños,Prado de Limia (San Salvador),0.07,10,41
+2025-10-13,20:41:00,Teo,Recesende (San Xoán),0.07,10,42
+2025-04-01,01:31:00,Quiroga,Vilar de Lor (San Xosé),0.06,4,14
+2025-04-09,23:20:00,Lalín,A Xesta (San Fiz),0.06,4,15
+2025-04-29,19:43:00,Arteixo,Arteixo (Santiago),0.06,4,18
+2025-04-30,10:15:00,A Gudiña,O Tameirón (Santa María),0.06,4,18
+2025-05-26,20:06:00,A Illa de Arousa,A Illa de Arousa (San Xulián),0.06,5,22
+2025-06-14,15:58:00,Gondomar,Chaín (Santa María),0.06,6,24
+2025-06-23,22:50:00,Padrón,Cruces (Santa María),0.06,6,26
+2025-06-30,15:29:00,O Pereiro de Aguiar,Vilariño (Santa Cristina),0.06,6,27
+2025-07-03,05:06:00,Meis,A Armenteira (Santa María),0.06,7,27
+2025-07-07,17:50:00,Verín,A Rasela (Santa María),0.06,7,28
+2025-07-10,00:44:00,Salvaterra de Miño,Leirado (San Salvador),0.06,7,28
+2025-07-14,21:26:00,A Gudiña,A Gudiña (San Martiño e San Pedro),0.06,7,29
+2025-07-15,19:35:00,Padrón,Herbón (Santa María),0.06,7,29
+2025-07-16,17:17:00,Cambados,Vilariño (Santo Adrián),0.06,7,29
+2025-07-17,00:00:00,Xunqueira de Espadanedo,Ramil (San Miguel),0.06,7,29
+2025-07-26,02:14:00,Vilalba,Goiriz (Santiago),0.06,7,30
+2025-07-28,23:10:00,Pazos de Borbén,Borbén (Santiago),0.06,7,31
+2025-07-31,07:11:00,Meaño,Lores (San Miguel),0.06,7,31
+2025-07-31,20:21:00,Carballo,Entrecruces (San Xens),0.06,7,31
+2025-08-02,02:37:00,Gondomar,Borreiros (San Martiño),0.06,8,31
+2025-08-03,14:30:00,Guitiriz,O Buriz (San Pedro),0.06,8,31
+2025-08-03,16:18:00,Ponteceso,Cores (San Martiño),0.06,8,31
+2025-08-05,21:08:00,Carballo,Entrecruces (San Xens),0.06,8,32
+2025-08-06,16:29:00,O Rosal,O Rosal (Santa Mariña),0.06,8,32
+2025-08-06,19:21:00,Lalín,Goiás (San Miguel),0.06,8,32
+2025-08-07,22:39:00,Forcarei,Millarada (San Amedio),0.06,8,32
+2025-08-08,20:45:00,O Pino,Castrofeito (Santa María),0.06,8,32
+2025-08-08,23:19:00,Parada de Sil,Sacardebois (San Martiño),0.06,8,32
+2025-08-10,20:40:00,Cuntis,Piñeiro (San Mamede),0.06,8,32
+2025-08-11,22:38:00,Ames,Ames (San Tomé),0.06,8,33
+2025-08-11,22:43:00,San Amaro,Grixoa (Santa María das Neves),0.06,8,33
+2025-08-15,15:48:00,Melón,Melón (Santa María),0.06,8,33
+2025-08-16,20:33:00,A Estrada,Souto (Santo André),0.06,8,33
+2025-08-17,15:40:00,Mos,Torroso (San Mamede),0.06,8,33
+2025-08-19,01:36:00,Meaño,Simes (Santa María),0.06,8,34
+2025-08-19,22:06:00,Carballedo,San Mamede de Lousada (San Mamede),0.06,8,34
+2025-08-23,06:00:00,Vigo,Bembrive (Santiago),0.06,8,34
+2025-08-26,14:09:00,Xinzo de Limia,Lamas (Santa María),0.06,8,35
+2025-08-26,14:21:00,Cartelle,Cartelle (Santa María),0.06,8,35
+2025-08-30,17:53:00,Cervo,Castelo (San Xiao),0.06,8,35
+2025-10-12,16:32:00,Coles,Albán (San Paio),0.06,10,41
+2025-03-20,07:43:00,Bóveda,Remesar (San Xoán),0.05,3,12
+2025-03-25,20:30:00,Viana do Bolo,Punxeiro (San Marcos),0.05,3,13
+2025-03-28,22:07:00,Celanova,Celanova (San Rosendo),0.05,3,13
+2025-03-30,22:55:00,O Carballiño,Arcos (Santa María),0.05,3,13
+2025-04-24,14:29:00,Petín,Freixido (Sagrado Corazón de Xesús),0.05,4,17
+2025-04-30,16:19:00,Baleira,A Esperela (San Pedro),0.05,4,18
+2025-05-14,19:07:00,Narón,O Val (Santa María A Maior),0.05,5,20
+2025-05-17,19:44:00,As Neves,Taboexa (Santa María),0.05,5,20
+2025-06-19,12:08:00,Coristanco,Couso (San Miguel),0.05,6,25
+2025-06-23,21:48:00,Melón,Melón (Santa María),0.05,6,26
+2025-06-28,12:46:00,A Baña,Troitosende (Santa María),0.05,6,26
+2025-07-08,14:07:00,Lalín,Maceira (San Martiño),0.05,7,28
+2025-07-10,18:00:00,Becerreá,Penamaior (Santa María de San Lourenzo),0.05,7,28
+2025-07-15,15:06:00,Dumbría,Dumbría (Santa Baia),0.05,7,29
+2025-07-16,17:40:00,Castroverde,Agustín (Santa María),0.05,7,29
+2025-07-18,15:07:00,Vilagarcía de Arousa,Sobrán (San Martiño de Fóra),0.05,7,29
+2025-07-25,01:50:00,A Gudiña,A Gudiña (San Martiño e San Pedro),0.05,7,30
+2025-07-26,20:16:00,Begonte,San Martiño de Pacios (San Martiño),0.05,7,30
+2025-07-27,00:56:00,Vilalba,Árbol (San Lourenzo),0.05,7,30
+2025-07-28,09:07:00,Mesía,Boado (Santiago),0.05,7,31
+2025-07-29,12:49:00,Porqueira,Sobreganade (San Mamede),0.05,7,31
+2025-07-30,15:18:00,Tomiño,Figueiró (San Martiño),0.05,7,31
+2025-07-30,21:23:00,Celanova,Amoroce (Santiago),0.05,7,31
+2025-07-30,23:10:00,Vilalba,Santaballa (San Pedro),0.05,7,31
+2025-08-01,23:01:00,Cotobade,Rebordelo (San Martiño),0.05,8,31
+2025-08-03,20:59:00,Porto do Son,Nebra (Santa María),0.05,8,31
+2025-08-04,11:08:00,Ames,Biduído (Santa María),0.05,8,32
+2025-08-04,19:33:00,Caldas de Reis,Carracedo (Santa Mariña),0.05,8,32
+2025-08-06,02:00:00,Silleda,Taboada (Santiago),0.05,8,32
+2025-08-06,02:18:00,Castro de Rei,Outeiro (Santa María),0.05,8,32
+2025-08-07,11:21:00,Arteixo,Pastoriza (Santa María),0.05,8,32
+2025-08-07,13:36:00,Carballo,Entrecruces (San Xens),0.05,8,32
+2025-08-08,17:16:00,Ribeira,Palmeira (San Pedro),0.05,8,32
+2025-08-09,16:02:00,Arzúa,Viladavil (Santa María),0.05,8,32
+2025-08-10,03:11:00,Sarreaus,Codosedo (Santa María),0.05,8,32
+2025-08-12,16:16:00,Vilalba,Gondaísque (Santa María),0.05,8,33
+2025-08-13,15:20:00,Cuntis,Troáns (Santa María),0.05,8,33
+2025-08-13,19:31:00,O Pino,Castrofeito (Santa María),0.05,8,33
+2025-08-15,01:39:00,A Cañiza,A Cañiza (Santa Teresa),0.05,8,33
+2025-08-16,20:29:00,Carballo,Entrecruces (San Xens),0.05,8,33
+2025-08-19,21:11:00,Chantada,San Fiz de Asma (San Fiz),0.05,8,34
+2025-08-21,18:35:00,Mos,Louredo (San Salvador),0.05,8,34
+2025-08-23,08:52:00,Mondariz,Lougares (San Fiz),0.05,8,34
+2025-08-23,18:54:00,Vilanova de Arousa,Caleiro (Santa María),0.05,8,34
+2025-08-24,17:54:00,Curtis,Fisteus (Santa María),0.05,8,34
+2025-08-25,12:48:00,Arzúa,San Martiño de Calvos de Sobrecamiño (San Martiño),0.05,8,35
+2025-08-31,17:48:00,Lugo,Meilán (Santiago),0.05,8,35
+2025-09-19,20:31:00,Guitiriz,Vilar (Santa María),0.05,9,38
+2025-09-20,03:42:00,Castroverde,Serés (San Pedro),0.05,9,38
+2025-02-19,15:41:00,A Laracha,Lestón (San Martiño),0.04,2,8
+2025-03-20,08:12:00,Navia de Suarna,Muñís (San Xosé),0.04,3,12
+2025-03-28,17:34:00,Esgos,Esgos (Santa María),0.04,3,13
+2025-03-31,19:59:00,Pontevedra,Mourente (Santa María),0.04,3,14
+2025-04-30,06:39:00,Arteixo,Arteixo (Santiago),0.04,4,18
+2025-05-29,18:22:00,Calvos de Randín,Randín (San Xoán),0.04,5,22
+2025-06-22,15:49:00,Begonte,Saavedra (Santa María),0.04,6,25
+2025-06-23,16:41:00,Ferrol,Covas (San Martiño),0.04,6,26
+2025-06-25,04:57:00,Arbo,Mourentán (San Cristovo),0.04,6,26
+2025-06-26,07:56:00,As Neves,As Neves (Santa María),0.04,6,26
+2025-06-28,00:13:00,Rianxo,Asados (Santa María),0.04,6,26
+2025-06-29,17:59:00,As Pontes de García Rodríguez,O Aparral (Santa María),0.04,6,26
+2025-07-01,23:10:00,Carballo,Carballo (San Xoán),0.04,7,27
+2025-07-04,22:39:00,O Porriño,Torneiros (San Salvador),0.04,7,27
+2025-07-05,18:20:00,Monforte de Lemos,Moreda (San Salvador),0.04,7,27
+2025-07-09,12:22:00,Celanova,Amoroce (Santiago),0.04,7,28
+2025-07-17,20:36:00,A Cañiza,O Couto (San Bartolomeu),0.04,7,29
+2025-07-17,20:40:00,Crecente,Albeos (San Xoán),0.04,7,29
+2025-07-19,14:13:00,O Porriño,Pontellas (Santiago),0.04,7,29
+2025-07-22,17:13:00,Verín,Queizás (San Pedro),0.04,7,30
+2025-07-24,00:42:00,Vilalba,Goiriz (Santiago),0.04,7,30
+2025-07-25,14:10:00,Mazaricos,Arcos (Santiago),0.04,7,30
+2025-07-26,01:54:00,Cuntis,Troáns (Santa María),0.04,7,30
+2025-07-26,22:30:00,Salvaterra de Miño,Alxén (San Paio),0.04,7,30
+2025-07-28,11:37:00,Porto do Son,Goiáns (San Sadurniño),0.04,7,31
+2025-07-29,17:51:00,Carballeda de Avia,Carballeda (San Miguel),0.04,7,31
+2025-07-30,17:38:00,A Bola,Veiga (San Munio),0.04,7,31
+2025-07-30,17:49:00,Mazaricos,Coiro (Santa María),0.04,7,31
+2025-08-01,23:14:00,Oza-Cesuras,Rodeiro (Santa María),0.04,8,31
+2025-08-02,01:14:00,Ramirás,Grixó (Santa Isabel),0.04,8,31
+2025-08-03,14:07:00,A Peroxa,Vilarrubín (San Martiño),0.04,8,31
+2025-08-03,16:41:00,Vilalba,Goiriz (Santiago),0.04,8,31
+2025-08-05,19:43:00,Vigo,Bembrive (Santiago),0.04,8,32
+2025-08-09,02:29:00,Lousame,Tállara (San Pedro),0.04,8,32
+2025-08-12,13:37:00,A Merca,Olás de Vilariño (Santa María),0.04,8,33
+2025-08-13,02:43:00,Taboada,Sobrecedo (Santiago),0.04,8,33
+2025-08-14,17:10:00,Guitiriz,Pedrafita (San Mamede),0.04,8,33
+2025-08-16,01:17:00,Baños de Molgas,Betán (San Martiño),0.04,8,33
+2025-08-16,18:00:00,Mazaricos,Coiro (Santa María),0.04,8,33
+2025-08-18,22:56:00,Baños de Molgas,Ponte Ambía (Santa María),0.04,8,34
+2025-08-22,22:38:00,Mos,Cela (San Pedro),0.04,8,34
+2025-08-23,09:08:00,Arteixo,Pastoriza (Santa María),0.04,8,34
+2025-08-26,19:30:00,Boqueixón,Oural (Santa María),0.04,8,35
+2025-09-27,00:13:00,Taboada,Carballo (San Tomé),0.04,9,39
+2025-10-15,12:55:00,Silleda,Silleda (Santa Baia),0.04,10,42
+2025-10-16,18:31:00,Tomiño,Sobrada (San Salvador),0.04,10,42
+2025-03-18,15:56:00,A Arnoia,A Arnoia (San Salvador),0.03,3,12
+2025-03-19,15:24:00,As Pontes de García Rodríguez,Ribadeume (Santa María),0.03,3,12
+2025-03-29,17:10:00,Pantón,Eiré (San Xulián),0.03,3,13
+2025-04-09,16:19:00,Santiago de Compostela,Marrozos (Santa María),0.03,4,15
+2025-04-10,21:53:00,Sarreaus,O Freixo (Santiago),0.03,4,15
+2025-05-29,20:03:00,Rairiz de Veiga,Lampaza (Santa María),0.03,5,22
+2025-05-29,21:09:00,Maceda,Santiso (Santa María),0.03,5,22
+2025-06-09,19:23:00,Verín,Mourazos (San Martiño),0.03,6,24
+2025-06-17,09:16:00,O Porriño,Torneiros (San Salvador),0.03,6,25
+2025-06-18,07:04:00,Redondela,Negros (Santo Estevo),0.03,6,25
+2025-06-24,19:10:00,Ponteareas,Angoares (San Pedro),0.03,6,26
+2025-06-29,19:50:00,Carballo,Razo (San Martiño),0.03,6,26
+2025-07-02,10:04:00,Tomiño,Sobrada (San Salvador),0.03,7,27
+2025-07-02,19:46:00,Vilanova de Arousa,András (San Lourenzo),0.03,7,27
+2025-07-05,02:42:00,Salvaterra de Miño,Leirado (San Salvador),0.03,7,27
+2025-07-08,20:59:00,Monterrei,Infesta (San Vicenzo),0.03,7,28
+2025-07-15,00:46:00,O Porriño,Pontellas (Santiago),0.03,7,29
+2025-07-21,14:43:00,Agolada,Ferreiroa (San Pedro),0.03,7,30
+2025-07-22,23:49:00,Abadín,Baroncelle (Santiago),0.03,7,30
+2025-07-23,10:27:00,Pontevedra,Lourizán (Santo André),0.03,7,30
+2025-07-25,21:51:00,O Porriño,Atios (Santa Eulalia),0.03,7,30
+2025-07-26,15:34:00,Ortigueira,Luía (Santa María),0.03,7,30
+2025-07-28,22:01:00,A Mezquita,A Mezquita (San Martiño),0.03,7,31
+2025-07-29,17:37:00,Cartelle,Cartelle (Santa María),0.03,7,31
+2025-07-30,23:10:00,Ourense,Ourense,0.03,7,31
+2025-08-02,16:08:00,Cedeira,Montoxo (San Xiao),0.03,8,31
+2025-08-02,21:51:00,Santiago de Compostela,Vista Alegre (San Xoán),0.03,8,31
+2025-08-03,13:57:00,Porto do Son,Xuño (Santa Mariña),0.03,8,31
+2025-08-03,23:39:00,Vimianzo,Baíñas (Santo Antoíño),0.03,8,31
+2025-08-04,11:57:00,Porto do Son,Goiáns (San Sadurniño),0.03,8,32
+2025-08-05,12:18:00,Forcarei,Millarada (San Amedio),0.03,8,32
+2025-08-06,01:22:00,Outes,Outes (San Pedro),0.03,8,32
+2025-08-07,22:10:00,Salvaterra de Miño,Salvaterra (San Lourenzo),0.03,8,32
+2025-08-07,23:26:00,As Neves,As Neves (Santa María),0.03,8,32
+2025-08-09,21:07:00,Carballo,Entrecruces (San Xens),0.03,8,32
+2025-08-10,17:22:00,Cee,A Pereiriña (San Xián),0.03,8,32
+2025-08-11,18:08:00,Ribadavia,Ribadavia (San Domingos de Fóra),0.03,8,33
+2025-08-12,19:33:00,Boiro,Cures (Santo André),0.03,8,33
+2025-08-14,22:02:00,Castro de Rei,Outeiro (Santa María),0.03,8,33
+2025-08-16,14:48:00,Outes,O Freixo de Sabardes (San Xoán),0.03,8,33
+2025-08-16,21:45:00,Cangas,Coiro (San Salvador),0.03,8,33
+2025-08-16,22:10:00,Santiago de Compostela,Santiago de Compostela,0.03,8,33
+2025-08-17,20:18:00,Dumbría,Dumbría (Santa Baia),0.03,8,33
+2025-08-18,15:54:00,A Estrada,Vinseiro (Santa Cristina),0.03,8,34
+2025-08-18,20:04:00,A Merca,A Manchica (Nosa Señora de Lourdes),0.03,8,34
+2025-08-21,16:14:00,Oza-Cesuras,Filgueira de Traba (San Miguel),0.03,8,34
+2025-08-23,00:20:00,A Estrada,Souto (Santo André),0.03,8,34
+2025-08-23,15:37:00,Vilalba,Alba  (San Xoán),0.03,8,34
+2025-08-23,22:02:00,Mos,Cela (San Pedro),0.03,8,34
+2025-08-25,18:13:00,Ribadavia,Campo Redondo (Santo André),0.03,8,35
+2025-08-25,20:14:00,Ponteareas,Guillade (San Miguel),0.03,8,35
+2025-08-26,00:36:00,Baralla,San Martín de Neira de Rei (San Pedro),0.03,8,35
+2025-08-31,15:58:00,Verín,Queizás (San Pedro),0.03,8,35
+2025-09-13,23:02:00,O Corgo,Santo Estevo de Farnadeiros (Santo Estevo),0.03,9,37
+2025-09-18,18:06:00,Fornelos de Montes,Calvos (Santo Adrián),0.03,9,38
+2025-09-22,19:16:00,Celanova,Mourillós (San Pedro),0.03,9,39
+2025-10-12,20:27:00,Pontevedra,Marcón (San Miguel),0.03,10,41
+2025-10-16,13:16:00,Sobrado,Pousada (San Mamede),0.03,10,42
+2025-03-15,20:05:00,Viana do Bolo,Viana do Bolo (Santa María),0.02,3,11
+2025-03-19,20:14:00,A Pobra de Trives,A Encomenda (Santo Antonio),0.02,3,12
+2025-03-30,10:48:00,Cartelle,As Seixadas (San Xoán),0.02,3,13
+2025-03-30,11:48:00,Sanxenxo,Dorrón (San Xoán),0.02,3,13
+2025-04-02,14:15:00,Arzúa,Santa María da Arzúa (Santa María),0.02,4,14
+2025-04-02,20:42:00,Melón,Melón (Santa María),0.02,4,14
+2025-04-11,20:07:00,A Laracha,Vilaño (Santiago),0.02,4,15
+2025-04-29,21:47:00,Outes,Valadares (San Miguel),0.02,4,18
+2025-06-01,21:36:00,Coles,Gustei (Santiago),0.02,6,22
+2025-06-03,14:29:00,Cenlle,Sadurnín (San Xoán),0.02,6,23
+2025-06-16,23:58:00,O Porriño,Torneiros (San Salvador),0.02,6,25
+2025-06-23,02:28:00,O Porriño,Pontellas (Santiago),0.02,6,26
+2025-06-24,15:32:00,Cangas,Darbo (Santa María),0.02,6,26
+2025-06-29,12:56:00,Cuntis,Cuntis (Santa María),0.02,6,26
+2025-07-03,21:20:00,Pantón,Santalla de Toiriz (Santalla),0.02,7,27
+2025-07-03,23:31:00,Monforte de Lemos,Moreda (San Salvador),0.02,7,27
+2025-07-04,09:03:00,Triacastela,Lamas do Biduedo (Santo Isidro),0.02,7,27
+2025-07-04,11:57:00,Sarria,Betote (San Vicenzo),0.02,7,27
+2025-07-09,01:43:00,A Guarda,A Guarda (Santa María),0.02,7,28
+2025-07-10,13:39:00,Cambre,Cecebre (San Salvador),0.02,7,28
+2025-07-14,11:33:00,A Cañiza,A Franqueira (Santa María),0.02,7,29
+2025-07-16,02:39:00,Taboadela,O Mesón de Calvos (Santa María),0.02,7,29
+2025-07-18,20:20:00,O Carballiño,O Carballiño (San Cibrao),0.02,7,29
+2025-07-25,15:22:00,A Laracha,Soutullo (Santa María),0.02,7,30
+2025-07-27,01:50:00,O Porriño,Atios (Santa Eulalia),0.02,7,30
+2025-07-27,15:23:00,Narón,Xubia (San Martiño),0.02,7,30
+2025-07-28,14:27:00,Catoira,Catoira (San Miguel),0.02,7,31
+2025-07-30,08:36:00,Tomiño,San Salvador de Tebra (San Salvador),0.02,7,31
+2025-07-30,15:39:00,A Rúa,A Rúa de Valdeorras (Santo Estevo),0.02,7,31
+2025-07-30,23:59:00,Xunqueira de Ambía,Sobradelo (San Román),0.02,7,31
+2025-07-31,00:37:00,Celanova,Amoroce (Santiago),0.02,7,31
+2025-07-31,07:01:00,Mondariz,Mondariz (Santa Baia),0.02,7,31
+2025-07-31,15:49:00,Pontedeume,Nogueirosa (San Cosme),0.02,7,31
+2025-08-01,05:59:00,A Pobra do Caramiñal,O Xobre ou O Maño (Santa María),0.02,8,31
+2025-08-02,02:11:00,Oia,Loureza (San Mamede),0.02,8,31
+2025-08-05,17:02:00,Cabana de Bergantiños,Cánduas (San Martiño),0.02,8,32
+2025-08-06,15:25:00,O Carballiño,O Carballiño (San Cibrao),0.02,8,32
+2025-08-06,16:50:00,Muxía,Vilastose (San Cibrán),0.02,8,32
+2025-08-10,03:38:00,Carballo,Carballo (San Xoán),0.02,8,32
+2025-08-12,22:57:00,Pontecesures,Pontecesures (San Xulián),0.02,8,33
+2025-08-13,08:11:00,Arbo,Arbo (Santa María),0.02,8,33
+2025-08-13,08:14:00,Arteixo,Pastoriza (Santa María),0.02,8,33
+2025-08-16,17:08:00,As Pontes de García Rodríguez,As Pontes de García Rodríguez (Santa María),0.02,8,33
+2025-08-17,10:46:00,Cangas,Coiro (San Salvador),0.02,8,33
+2025-08-20,21:17:00,Vilalba,Lanzós (San Martiño),0.02,8,34
+2025-08-23,00:21:00,Cualedro,A Xironda (San Salvador),0.02,8,34
+2025-08-23,11:37:00,Muxía,Frixe (Santa Locacia),0.02,8,34
+2025-08-27,09:53:00,Cuntis,Arcos (San Breixo),0.02,8,35
+2025-08-27,10:59:00,Celanova,Vilanova dos Infantes (San Salvador),0.02,8,35
+2025-08-28,21:17:00,Cospeito,Roás (San Miguel),0.02,8,35
+2025-09-16,12:39:00,A Peroxa,A Peroxa (Santiago),0.02,9,38
+2025-09-23,18:29:00,Fisterra,Duio (San Vicezo),0.02,9,39
+2025-09-25,01:49:00,A Estrada,Moreira (San Miguel),0.02,9,39
+2025-09-26,17:03:00,Santiago de Compostela,San Paio (Santiago),0.02,9,39
+2025-09-26,18:03:00,A Bola,Veiga (San Munio),0.02,9,39
+2025-10-13,14:33:00,Padrón,Carcacia (San Pedro),0.02,10,42
+2025-10-17,21:09:00,A Laracha,Torás (Santa María),0.02,10,42
+2025-10-18,10:32:00,Camariñas,Camariñas (San Xurxo),0.02,10,42
+2025-10-18,19:23:00,Ribadavia,Francelos (Santa María Madanela),0.02,10,42
+2025-01-01,13:02:00,Coristanco,Xaviña (San Tomé),0.01,1,1
+2025-01-17,19:00:00,Xunqueira de Espadanedo,Xunqueira de Espadanedo (Santa María),0.01,1,3
+2025-02-18,17:33:00,Cariño,Cariño (San Bartolomeu),0.01,2,8
+2025-03-16,19:10:00,Coristanco,Cuns (San Vicenzo),0.01,3,11
+2025-03-18,21:16:00,Santiso,Liñares (Santiago),0.01,3,12
+2025-03-19,14:18:00,O Bolo,Chandoiro (San Ramón),0.01,3,12
+2025-03-19,17:32:00,As Neves,Vide (Santa María),0.01,3,12
+2025-03-19,19:30:00,Viana do Bolo,Rubiais (San Cibrao),0.01,3,12
+2025-03-20,09:23:00,A Laracha,Lendo (San Xián),0.01,3,12
+2025-03-26,13:33:00,Rianxo,Taragoña (San Salvador),0.01,3,13
+2025-03-26,19:00:00,Cervantes,San Román de Cervantes (San Román),0.01,3,13
+2025-03-28,19:22:00,A Estrada,A Estrada (San Paio),0.01,3,13
+2025-03-30,18:13:00,As Neves,Vide (Santa María),0.01,3,13
+2025-03-30,23:18:00,Cartelle,As Seixadas (San Xoán),0.01,3,13
+2025-04-01,16:01:00,Meis,Nogueira (San Vicente),0.01,4,14
+2025-04-05,16:35:00,Carballo,Sísamo (Santiago),0.01,4,14
+2025-04-09,21:10:00,Lobios,Torno (San Salvador),0.01,4,15
+2025-04-10,17:09:00,Fornelos de Montes,Fornelos de Montes (San Lourenzo),0.01,4,15
+2025-04-23,18:30:00,Salvaterra de Miño,Oleiros (Santa María),0.01,4,17
+2025-04-27,23:17:00,Outes,O Freixo de Sabardes (San Xoán),0.01,4,17
+2025-04-30,16:42:00,Castroverde,A Meda (Santiago),0.01,4,18
+2025-05-09,07:21:00,Barro,Barro (San Breixo),0.01,5,19
+2025-05-11,01:03:00,Ponteareas,Ponteareas (San Miguel),0.01,5,19
+2025-05-16,20:41:00,Vilanova de Arousa,Baión (San Xoán),0.01,5,20
+2025-05-18,22:05:00,Barro,Perdecanai (Santa María),0.01,5,20
+2025-05-24,08:38:00,Redondela,Negros (Santo Estevo),0.01,5,21
+2025-05-25,18:57:00,Vilanova de Arousa,Baión (San Xoán),0.01,5,21
+2025-05-26,21:31:00,Ribeira,Artes (San Xián),0.01,5,22
+2025-05-29,23:11:00,Pazos de Borbén,A Ermida (Nosa Señora da Anunciación),0.01,5,22
+2025-05-30,12:04:00,Cartelle,As Seixadas (San Xoán),0.01,5,22
+2025-05-30,15:48:00,Valga,Cordeiro (Santa Comba),0.01,5,22
+2025-06-05,21:26:00,Vilamarín,Tamallancos (Santa María),0.01,6,23
+2025-06-09,14:15:00,Cenlle,Trasariz (Santiago),0.01,6,24
+2025-06-10,13:16:00,Sanxenxo,Nantes (Santa Baia),0.01,6,24
+2025-06-12,12:24:00,Betanzos,Piadela (Santo Estevo),0.01,6,24
+2025-06-13,14:22:00,Xinzo de Limia,Boado (San Pedro),0.01,6,24
+2025-06-15,19:15:00,Bande,Bande (San Pedro),0.01,6,24
+2025-06-16,16:37:00,Celanova,Celanova (San Rosendo),0.01,6,25
+2025-06-16,17:49:00,Paderne,Adragonte (Santiago),0.01,6,25
+2025-06-16,19:26:00,Celanova,Amoroce (Santiago),0.01,6,25
+2025-06-17,12:03:00,Zas,Muíño (San Tirso),0.01,6,25
+2025-06-19,17:52:00,Ribeira de Piquín,Santalla (Santalla),0.01,6,25
+2025-06-19,18:39:00,Celanova,Amoroce (Santiago),0.01,6,25
+2025-06-21,03:29:00,Gondomar,Borreiros (San Martiño),0.01,6,25
+2025-06-21,10:16:00,Baleira,A Fontaneira (Santiago),0.01,6,25
+2025-06-21,12:57:00,Baltar,Niñodaguia (San Lourenzo),0.01,6,25
+2025-06-21,15:17:00,Rianxo,O Araño (Santa Baia),0.01,6,25
+2025-06-22,16:18:00,A Illa de Arousa,A Illa de Arousa (San Xulián),0.01,6,25
+2025-06-23,08:15:00,Boiro,Boiro (Santa Baia),0.01,6,26
+2025-06-23,11:54:00,Carballo,Ardaña (Santa María),0.01,6,26
+2025-06-23,13:30:00,Carballo,Sofán (San Salvador),0.01,6,26
+2025-06-23,18:58:00,Ares,Ares (San Xosé),0.01,6,26
+2025-06-23,23:16:00,Carballo,Sísamo (Santiago),0.01,6,26
+2025-06-25,19:35:00,Celanova,Amoroce (Santiago),0.01,6,26
+2025-06-26,06:11:00,Salvaterra de Miño,Soutolobre (Santa Comba),0.01,6,26
+2025-06-26,12:52:00,Vilamarín,Tamallancos (Santa María),0.01,6,26
+2025-06-26,20:00:00,Bóveda,Martín (San Cristovo),0.01,6,26
+2025-06-26,20:36:00,As Neves,San Xosé de Ribarteme (San Xosé),0.01,6,26
+2025-06-27,21:16:00,Betanzos,Brabío (San Martiño),0.01,6,26
+2025-06-28,21:24:00,Melón,Quins (Santa María),0.01,6,26
+2025-06-29,06:05:00,Gondomar,Chaín (Santa María),0.01,6,26
+2025-06-30,08:47:00,Dumbría,Buxantes (San Pedro),0.01,6,27
+2025-06-30,14:41:00,Ames,Ames (San Tomé),0.01,6,27
+2025-06-30,23:14:00,Celanova,Celanova (San Rosendo),0.01,6,27
+2025-07-01,18:28:00,A Pobra de Trives,Cova (Santa María),0.01,7,27
+2025-07-02,11:55:00,Arbo,Cequeliños (San Miguel),0.01,7,27
+2025-07-03,17:43:00,Fisterra,San Martiño de Duio (San Martiño),0.01,7,27
+2025-07-03,23:06:00,O Saviñao,Eirexafeita (San Vicente),0.01,7,27
+2025-07-05,20:01:00,Muxía,Frixe (Santa Locacia),0.01,7,27
+2025-07-05,21:53:00,Silleda,Silleda (Santa Baia),0.01,7,27
+2025-07-06,00:44:00,Bergondo,Ouces (San Xoán),0.01,7,27
+2025-07-06,01:02:00,Culleredo,Almeiras (San Xián),0.01,7,27
+2025-07-06,16:31:00,O Pereiro de Aguiar,Melias (Santa María),0.01,7,27
+2025-07-07,16:56:00,Salceda de Caselas,San Xurxo de Salceda (San Xurxo),0.01,7,28
+2025-07-08,07:22:00,Boborás,Moreiras (Santa Mariña),0.01,7,28
+2025-07-10,01:20:00,Pazos de Borbén,Xunqueiras (San Salvador),0.01,7,28
+2025-07-10,14:03:00,Carballo,Entrecruces (San Xens),0.01,7,28
+2025-07-11,14:27:00,O Porriño,Pontellas (Santiago),0.01,7,28
+2025-07-11,20:12:00,O Grove,O Grove (San Martiño),0.01,7,28
+2025-07-12,13:17:00,Portomarín,Bagude (San Bartolomeu),0.01,7,28
+2025-07-12,18:51:00,San Cristovo de Cea,Oseira (Santa María a Real),0.01,7,28
+2025-07-12,23:39:00,O Vicedo,Suegos (Santa María),0.01,7,28
+2025-07-13,16:49:00,Vilalba,Goiriz (Santiago),0.01,7,28
+2025-07-14,00:28:00,Coles,Gustei (Santiago),0.01,7,29
+2025-07-15,10:41:00,Castroverde,Serés (San Pedro),0.01,7,29
+2025-07-15,14:16:00,Cambados,Corvillón (San Amedio),0.01,7,29
+2025-07-15,17:53:00,Viana do Bolo,Solbeira (Santo Adrao),0.01,7,29
+2025-07-16,12:41:00,Quiroga,Vilaster (Santa María),0.01,7,29
+2025-07-18,18:41:00,Cartelle,As Seixadas (San Xoán),0.01,7,29
+2025-07-18,20:23:00,Cartelle,As Seixadas (San Xoán),0.01,7,29
+2025-07-22,14:44:00,Salvaterra de Miño,Pesqueiras (Santa Mariña),0.01,7,30
+2025-07-23,00:07:00,Vilalba,Árbol (San Lourenzo),0.01,7,30
+2025-07-24,14:01:00,Bergondo,Santa Marta de Babío (Santa Marta),0.01,7,30
+2025-07-24,23:01:00,Ourense,Ourense,0.01,7,30
+2025-07-25,15:07:00,Vilalba,Goiriz (Santiago),0.01,7,30
+2025-07-25,20:47:00,O Pino,Arca (Santaia),0.01,7,30
+2025-07-26,16:40:00,O Porriño,Atios (Santa Eulalia),0.01,7,30
+2025-07-27,13:32:00,Monterrei,Infesta (San Vicenzo),0.01,7,30
+2025-07-27,16:00:00,Ribeira,Carreira (San Paio),0.01,7,30
+2025-07-27,16:15:00,Outes,Cando (San Tirso),0.01,7,30
+2025-07-27,17:09:00,Salvaterra de Miño,Alxén (San Paio),0.01,7,30
+2025-07-27,17:49:00,Betanzos,Tiobre (San Martiño),0.01,7,30
+2025-07-28,19:15:00,Arteixo,Morás (Santo Estevo),0.01,7,31
+2025-07-28,20:11:00,Pontevedra,Marcón (San Miguel),0.01,7,31
+2025-07-29,02:46:00,Gondomar,Donas (Santa Baia),0.01,7,31
+2025-07-30,12:40:00,Vigo,Matamá (San Pedro),0.01,7,31
+2025-07-30,16:38:00,Xunqueira de Ambía,Sobradelo (San Román),0.01,7,31
+2025-07-30,19:05:00,Sarreaus,Nocelo da Pena (San Lourenzo),0.01,7,31
+2025-07-30,20:34:00,Piñor,A Corna (Santa María do Desterro),0.01,7,31
+2025-07-30,22:02:00,O Pereiro de Aguiar,Santa Marta de Moreiras (Santa Marta),0.01,7,31
+2025-07-31,06:58:00,As Neves,San Xosé de Ribarteme (San Xosé),0.01,7,31
+2025-07-31,13:32:00,Curtis,Fisteus (Santa María),0.01,7,31
+2025-07-31,21:32:00,Curtis,Fisteus (Santa María),0.01,7,31
+2025-08-01,19:37:00,Allariz,Coedo (Santiago),0.01,8,31
+2025-08-01,23:49:00,Teo,Calo (San Xoán),0.01,8,31
+2025-08-02,00:48:00,Vilanova de Arousa,Deiro (San Miguel),0.01,8,31
+2025-08-02,01:31:00,Vilamarín,Tamallancos (Santa María),0.01,8,31
+2025-08-02,12:12:00,Oia,Loureza (San Mamede),0.01,8,31
+2025-08-02,14:30:00,Cabana de Bergantiños,Cesullas (Santo Estevo),0.01,8,31
+2025-08-03,08:59:00,Ribeira,Olveira (Santa María),0.01,8,31
+2025-08-03,23:52:00,Santiago de Compostela,O Eixo (San Cristovo),0.01,8,31
+2025-08-04,14:52:00,Cartelle,Cartelle (Santa María),0.01,8,32
+2025-08-04,19:44:00,Montederramo,Montederramo (Santa María),0.01,8,32
+2025-08-04,23:45:00,Santiago de Compostela,Conxo (Santa María),0.01,8,32
+2025-08-05,16:04:00,Cartelle,Cartelle (Santa María),0.01,8,32
+2025-08-05,20:39:00,Ourense,Ourense,0.01,8,32
+2025-08-05,21:53:00,Tomiño,Sobrada (San Salvador),0.01,8,32
+2025-08-05,23:44:00,Paderne,San Pantaleón das Viñas (San Pantaleón),0.01,8,32
+2025-08-06,05:06:00,Meaño,Xil (Santa Eulalia),0.01,8,32
+2025-08-06,15:05:00,Chandrexa de Queixa,Parafita (San Bartolomeu),0.01,8,32
+2025-08-06,18:09:00,Maceda,As Chás (San Xoán),0.01,8,32
+2025-08-06,22:38:00,Arteixo,Arteixo (Santiago),0.01,8,32
+2025-08-07,01:05:00,Ponteceso,Corme Aldea (Santo Adrán),0.01,8,32
+2025-08-07,06:33:00,Lousame,Vilacova (Santa Eulalia),0.01,8,32
+2025-08-07,09:28:00,Cambre,Anceis (San Xoán),0.01,8,32
+2025-08-07,09:38:00,Coristanco,Oca (San Martiño),0.01,8,32
+2025-08-07,14:35:00,Lousame,Camboño (San Xoán),0.01,8,32
+2025-08-07,19:07:00,Pazos de Borbén,Nespereira (San Martiño),0.01,8,32
+2025-08-07,22:39:00,O Pino,Pastor (San Lourenzo),0.01,8,32
+2025-08-08,15:24:00,Santiago de Compostela,Vidán (Divino Salvador),0.01,8,32
+2025-08-08,15:55:00,Poio,Raxó (San Gregorio),0.01,8,32
+2025-08-09,02:51:00,Meaño,Dena (Santa Eulalia),0.01,8,32
+2025-08-09,09:16:00,Petín,Portomourisco (San Víctor),0.01,8,32
+2025-08-09,22:37:00,Chantada,San Salvador de Asma (San Salvador),0.01,8,32
+2025-08-10,00:42:00,Salvaterra de Miño,Salvaterra (San Lourenzo),0.01,8,32
+2025-08-11,00:32:00,Coles,Ribela (San Xillao),0.01,8,33
+2025-08-11,14:05:00,Cervantes,O Castro (Santa María),0.01,8,33
+2025-08-11,21:27:00,San Amaro,Grixoa (Santa María das Neves),0.01,8,33
+2025-08-11,22:41:00,Carballo,Entrecruces (San Xens),0.01,8,33
+2025-08-12,01:08:00,Sanxenxo,Dorrón (San Xoán),0.01,8,33
+2025-08-12,08:49:00,Vilalba,Goiriz (Santiago),0.01,8,33
+2025-08-12,15:45:00,Noia,Barro (Santa Cristina),0.01,8,33
+2025-08-12,16:45:00,Xinzo de Limia,A Pena (San Pedro),0.01,8,33
+2025-08-12,19:29:00,Laza,O Castro de Laza (San Pedro),0.01,8,33
+2025-08-12,20:53:00,Portas,Lantaño (San Pedro),0.01,8,33
+2025-08-13,13:21:00,Boimorto,Sendelle (Santa María),0.01,8,33
+2025-08-13,16:01:00,Toén,Moreiras (San Pedro),0.01,8,33
+2025-08-13,16:08:00,Pontevedra,Mourente (Santa María),0.01,8,33
+2025-08-13,17:20:00,Noia,Barro (Santa Cristina),0.01,8,33
+2025-08-13,17:39:00,A Fonsagrada,Cereixido (Santiago),0.01,8,33
+2025-08-13,20:16:00,Pazos de Borbén,Cepeda (San Pedro),0.01,8,33
+2025-08-13,21:06:00,O Pino,Arca (Santaia),0.01,8,33
+2025-08-13,21:14:00,As Neves,Rubiós (San Xoán),0.01,8,33
+2025-08-13,21:39:00,Cambre,Anceis (San Xoán),0.01,8,33
+2025-08-14,06:44:00,Caldas de Reis,Saiar (Santo Estevo),0.01,8,33
+2025-08-14,14:16:00,Teo,Calo (San Xoán),0.01,8,33
+2025-08-14,16:58:00,Carballo,Carballo (San Xoán),0.01,8,33
+2025-08-14,17:39:00,Chantada,Brigos (San Salvador),0.01,8,33
+2025-08-15,14:07:00,Oza-Cesuras,Dordaño (Santa María),0.01,8,33
+2025-08-15,19:31:00,Leiro,Bieite (Santo Adrao),0.01,8,33
+2025-08-15,23:13:00,Oleiros,Iñás (San Xorxe),0.01,8,33
+2025-08-15,23:43:00,Vedra,Vedra (Santa Eulalia),0.01,8,33
+2025-08-16,00:06:00,Abadín,A Graña de Vilarente (Santa María Madanela),0.01,8,33
+2025-08-16,14:43:00,Bueu,Ermelo (Santiago),0.01,8,33
+2025-08-16,17:55:00,O Porriño,Atios (Santa Eulalia),0.01,8,33
+2025-08-16,20:20:00,Santiago de Compostela,Conxo (Santa María),0.01,8,33
+2025-08-17,03:39:00,Boiro,Cures (Santo André),0.01,8,33
+2025-08-17,05:53:00,Melón,Quins (Santa María),0.01,8,33
+2025-08-17,09:00:00,Celanova,Mourillós (San Pedro),0.01,8,33
+2025-08-17,20:49:00,Salvaterra de Miño,Fornelos (San Xoán),0.01,8,33
+2025-08-17,21:56:00,Toén,Xestosa (Santa María),0.01,8,33
+2025-08-17,22:38:00,Pazos de Borbén,Nespereira (San Martiño),0.01,8,33
+2025-08-17,23:17:00,Vilaboa,Figueirido (Santo André),0.01,8,33
+2025-08-18,06:30:00,Boiro,Boiro (Santa Baia),0.01,8,34
+2025-08-18,09:24:00,Carballo,Entrecruces (San Xens),0.01,8,34
+2025-08-18,11:54:00,Gondomar,Donas (Santa Baia),0.01,8,34
+2025-08-18,14:07:00,Fornelos de Montes,Ventín (San Miguel),0.01,8,34
+2025-08-18,15:50:00,Ponteceso,Cospindo (San Tirso),0.01,8,34
+2025-08-18,18:11:00,Verín,Queizás (San Pedro),0.01,8,34
+2025-08-19,02:00:00,Dodro,Dodro (Santa María),0.01,8,34
+2025-08-19,09:58:00,Carballo,Entrecruces (San Xens),0.01,8,34
+2025-08-19,14:47:00,O Páramo,Sa (Santiago),0.01,8,34
+2025-08-19,15:37:00,Vilardevós,Fumaces e A Trepa (Santa María),0.01,8,34
+2025-08-20,07:49:00,Vilagarcía de Arousa,Arealonga (Santa Baia),0.01,8,34
+2025-08-20,19:20:00,Foz,Santo Acisclo do Valadouro (Santo Acisclo),0.01,8,34
+2025-08-21,00:07:00,Tomiño,Goián (San Cristovo),0.01,8,34
+2025-08-21,00:25:00,Pazos de Borbén,Borbén (Santiago),0.01,8,34
+2025-08-21,01:44:00,Vilaboa,Figueirido (Santo André),0.01,8,34
+2025-08-21,05:41:00,Coles,Gustei (Santiago),0.01,8,34
+2025-08-21,17:27:00,Sarreaus,Codosedo (Santa María),0.01,8,34
+2025-08-22,06:51:00,Coles,Ribela (San Xillao),0.01,8,34
+2025-08-22,07:36:00,San Cibrao das Viñas,San Cibrao das Viñas (Santo Ildefonso),0.01,8,34
+2025-08-22,13:13:00,Muíños,Requiás (Santiago),0.01,8,34
+2025-08-22,13:26:00,Maside,Amarante (Santa María),0.01,8,34
+2025-08-22,22:46:00,Abegondo,Crendes (San Pedro),0.01,8,34
+2025-08-23,11:28:00,Lugo,Adai (Santa María Madanela),0.01,8,34
+2025-08-23,17:06:00,As Pontes de García Rodríguez,As Pontes de García Rodríguez (Santa María),0.01,8,34
+2025-08-23,18:34:00,Coles,Melias (San Miguel),0.01,8,34
+2025-08-23,19:20:00,As Neves,Tortoreos (Santiago),0.01,8,34
+2025-08-23,23:52:00,Cuntis,Cequeril (Santa María),0.01,8,34
+2025-08-24,17:30:00,Vilalba,Goiriz (Santiago),0.01,8,34
+2025-08-25,09:31:00,Melón,Melón (Santa María),0.01,8,35
+2025-08-25,17:43:00,San Amaro,Grixoa (Santa María das Neves),0.01,8,35
+2025-08-26,22:01:00,A Veiga,Baños (San Fiz),0.01,8,35
+2025-08-27,18:32:00,Cariño,Cariño (San Bartolomeu),0.01,8,35
+2025-08-30,13:29:00,O Saviñao,Chave (San Sadurniño),0.01,8,35
+2025-08-30,17:02:00,Xunqueira de Ambía,Sobradelo (San Román),0.01,8,35
+2025-09-01,17:26:00,Carballeda de Valdeorras,San Xusto (San Xusto),0.01,9,36
+2025-09-06,14:10:00,A Pobra de Trives,Somoza (San Miguel),0.01,9,36
+2025-09-06,15:32:00,Manzaneda,Reigada (Santa María Madanela),0.01,9,36
+2025-09-06,17:10:00,Cartelle,Anfeoz (Santa Baia),0.01,9,36
+2025-09-07,11:45:00,A Fonsagrada,Freixo (San Xulián),0.01,9,36
+2025-09-08,18:24:00,Rairiz de Veiga,Ordes (Santa María),0.01,9,37
+2025-09-09,08:40:00,O Pereiro de Aguiar,Melias (Santa María),0.01,9,37
+2025-09-09,15:17:00,Begonte,Felmil (Santiago),0.01,9,37
+2025-09-13,21:31:00,A Laracha,Lestón (San Martiño),0.01,9,37
+2025-09-15,14:43:00,Cualedro,A Xironda (San Salvador),0.01,9,38
+2025-09-15,15:10:00,Baralla,Constantín (Santa María),0.01,9,38
+2025-09-15,18:58:00,Castrelo do Val,Gondulfes (Santa Cruz),0.01,9,38
+2025-09-16,13:37:00,Vilariño de Conso,Chaguazoso (San Bernabé),0.01,9,38
+2025-09-17,13:17:00,Mos,Cela (San Pedro),0.01,9,38
+2025-09-17,18:10:00,Coles,Melias (San Miguel),0.01,9,38
+2025-09-18,17:40:00,A Gudiña,O Tameirón (Santa María),0.01,9,38
+2025-09-18,18:47:00,Manzaneda,Reigada (Santa María Madanela),0.01,9,38
+2025-09-18,19:19:00,Monterrei,Infesta (San Vicenzo),0.01,9,38
+2025-09-21,02:27:00,Ribadavia,Campo Redondo (Santo André),0.01,9,38
+2025-09-21,15:52:00,Monterrei,Vilaza (San Salvador),0.01,9,38
+2025-09-22,13:15:00,Gondomar,Chaín (Santa María),0.01,9,39
+2025-09-25,17:32:00,Ortigueira,Veiga (Santo Adrao),0.01,9,39
+2025-09-25,18:29:00,Aranga,Aranga (San Paio),0.01,9,39
+2025-09-26,16:05:00,Celanova,Vilanova dos Infantes (San Salvador),0.01,9,39
+2025-09-26,17:35:00,Chantada,San Salvador de Asma (San Salvador),0.01,9,39
+2025-09-26,20:29:00,Cospeito,Momán (San Pedro),0.01,9,39
+2025-09-27,10:13:00,Monterrei,A Madanela (Santa María),0.01,9,39
+2025-09-30,23:11:00,Aranga,San Vicente de Fervenzas (San Vicente),0.01,9,40
+2025-10-01,20:21:00,A Bola,Santa Baia de Berredo (Santa Baia),0.01,10,40
+2025-10-02,17:13:00,A Veiga,A Ponte (Santa María Madanela),0.01,10,40
+2025-10-04,16:52:00,As Neves,Tortoreos (Santiago),0.01,10,40
+2025-10-06,05:43:00,Salvaterra de Miño,Soutolobre (Santa Comba),0.01,10,41
+2025-10-07,11:01:00,Aranga,San Vicente de Fervenzas (San Vicente),0.01,10,41
+2025-10-07,12:15:00,O Pereiro de Aguiar,Melias (Santa María),0.01,10,41
+2025-10-07,14:53:00,A Merca,Parderrubias (Santa Olaia),0.01,10,41
+2025-10-08,00:17:00,Cambre,Pravio (San Xoán),0.01,10,41
+2025-10-08,11:00:00,Chantada,Brigos (San Salvador),0.01,10,41
+2025-10-08,16:54:00,O Barco de Valdeorras,Xagoaza (San Miguel),0.01,10,41
+2025-10-09,19:05:00,Toén,Alongos (San Martiño),0.01,10,41
+2025-10-13,07:48:00,Coles,Albán (San Paio),0.01,10,42
+2025-10-13,17:08:00,Celanova,Milmanda (Santa Eufemia),0.01,10,42
+2025-10-13,17:40:00,A Gudiña,O Tameirón (Santa María),0.01,10,42
+2025-10-13,17:51:00,A Fonsagrada,Paradavella (San Xoán),0.01,10,42
+2025-10-13,19:15:00,Celanova,Milmanda (Santa Eufemia),0.01,10,42
+2025-10-14,19:51:00,A Laracha,Lemaio (Santa María),0.01,10,42
+2025-10-15,13:07:00,Celanova,Milmanda (Santa Eufemia),0.01,10,42
+2025-10-15,18:19:00,A Mezquita,O Pereiro (San Pedro),0.01,10,42
+2025-10-16,20:23:00,Vilanova de Arousa,Deiro (San Miguel),0.01,10,42
+2025-10-16,22:38:00,Oza-Cesuras,Rodeiro (Santa María),0.01,10,42
+2025-10-17,20:33:00,Cotobade,Aguasantas (Santa María),0.01,10,42
+2025-10-26,11:54:00,Pantón,Pombeiro (San Vicente),0.01,10,43
+2025-11-29,05:34:00,Trasmiras,Vila de Rei (San Salvador),0.01,11,48

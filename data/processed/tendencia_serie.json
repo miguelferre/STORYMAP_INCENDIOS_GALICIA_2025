@@ -1,0 +1,132 @@
+{
+  "metadatos": {
+    "titulo": "Incendios en Galicia: dato oficial fronte a detección satelital",
+    "fontes": [
+      {
+        "id": "oficial",
+        "nome": "Xunta de Galicia · Consellería do Medio Rural",
+        "detalle": "Lumes-AAAA-por-Distrito (estatísticas oficiais)",
+        "url": "https://mediorural.xunta.gal/es/recursos/estadisticas/estadisticas-forestales/incendios-forestales",
+        "cobertura": "2018-2025"
+      },
+      {
+        "id": "satelital",
+        "nome": "Copernicus EFFIS",
+        "detalle": "Burned Area satelital (Sentinel-2)",
+        "url": "https://forest-fire.emergency.copernicus.eu/",
+        "cobertura": "2016-2025"
+      }
+    ],
+    "nota": "EFFIS só detecta incendios visibles por satélite (en xeral, >30 ha). O dato oficial inclúe os pequenos e curtos, que son a maioría."
+  },
+  "serie": [
+    {
+      "ano": 2016,
+      "fonte": "satelital",
+      "num_incendios": 49,
+      "ha_total": 19391.0
+    },
+    {
+      "ano": 2017,
+      "fonte": "satelital",
+      "num_incendios": 106,
+      "ha_total": 51412.0
+    },
+    {
+      "ano": 2018,
+      "fonte": "oficial",
+      "num_incendios": 1338,
+      "ha_total": 2599.66
+    },
+    {
+      "ano": 2018,
+      "fonte": "satelital",
+      "num_incendios": 17,
+      "ha_total": 1306.0
+    },
+    {
+      "ano": 2019,
+      "fonte": "oficial",
+      "num_incendios": 1653,
+      "ha_total": 6835.53
+    },
+    {
+      "ano": 2019,
+      "fonte": "satelital",
+      "num_incendios": 39,
+      "ha_total": 4753.0
+    },
+    {
+      "ano": 2020,
+      "fonte": "oficial",
+      "num_incendios": 1527,
+      "ha_total": 14823.92
+    },
+    {
+      "ano": 2020,
+      "fonte": "satelital",
+      "num_incendios": 109,
+      "ha_total": 16191.0
+    },
+    {
+      "ano": 2021,
+      "fonte": "oficial",
+      "num_incendios": 950,
+      "ha_total": 4403.18
+    },
+    {
+      "ano": 2021,
+      "fonte": "satelital",
+      "num_incendios": 67,
+      "ha_total": 4397.0
+    },
+    {
+      "ano": 2022,
+      "fonte": "oficial",
+      "num_incendios": 1713,
+      "ha_total": 51642.58
+    },
+    {
+      "ano": 2022,
+      "fonte": "satelital",
+      "num_incendios": 190,
+      "ha_total": 58300.0
+    },
+    {
+      "ano": 2023,
+      "fonte": "oficial",
+      "num_incendios": 908,
+      "ha_total": 6748.92
+    },
+    {
+      "ano": 2023,
+      "fonte": "satelital",
+      "num_incendios": 103,
+      "ha_total": 6528.0
+    },
+    {
+      "ano": 2024,
+      "fonte": "oficial",
+      "num_incendios": 755,
+      "ha_total": 2644.7
+    },
+    {
+      "ano": 2024,
+      "fonte": "satelital",
+      "num_incendios": 73,
+      "ha_total": 2648.0
+    },
+    {
+      "ano": 2025,
+      "fonte": "oficial",
+      "num_incendios": 1475,
+      "ha_total": 118763.65
+    },
+    {
+      "ano": 2025,
+      "fonte": "satelital",
+      "num_incendios": 223,
+      "ha_total": 149326.0
+    }
+  ]
+}

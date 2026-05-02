@@ -1,0 +1,12 @@
+{
+  "name": "storymap-incendios-galicia-2025",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "serve": "python -m http.server 8000",
+    "test:visual": "node scripts/teste_visual.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.59.1"
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "ano": 2018,
+    "num_incendios": 1338,
+    "ha_arborada": 725.01,
+    "ha_rasa": 1874.65,
+    "ha_total": 2599.66
+  },
+  {
+    "ano": 2019,
+    "num_incendios": 1653,
+    "ha_arborada": 3046.95,
+    "ha_rasa": 3788.58,
+    "ha_total": 6835.53
+  },
+  {
+    "ano": 2020,
+    "num_incendios": 1527,
+    "ha_arborada": 1959.06,
+    "ha_rasa": 12864.86,
+    "ha_total": 14823.92
+  },
+  {
+    "ano": 2021,
+    "num_incendios": 950,
+    "ha_arborada": 2270.07,
+    "ha_rasa": 2133.11,
+    "ha_total": 4403.18
+  },
+  {
+    "ano": 2022,
+    "num_incendios": 1713,
+    "ha_arborada": 16766.14,
+    "ha_rasa": 34876.44,
+    "ha_total": 51642.58
+  },
+  {
+    "ano": 2023,
+    "num_incendios": 908,
+    "ha_arborada": 3953.34,
+    "ha_rasa": 2795.58,
+    "ha_total": 6748.92
+  },
+  {
+    "ano": 2024,
+    "num_incendios": 755,
+    "ha_arborada": 1168.45,
+    "ha_rasa": 1476.25,
+    "ha_total": 2644.7
+  },
+  {
+    "ano": 2025,
+    "num_incendios": 1475,
+    "ha_arborada": 38573.6,
+    "ha_rasa": 80190.05,
+    "ha_total": 118763.65
+  }
+]
