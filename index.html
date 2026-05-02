@@ -2021,8 +2021,8 @@ window.addEventListener('load', () => {
   };
 
   window.showXeourense = function() {
-    if (window.map && map.getLayer('XEOURENSE')) {
-      map.setLayoutProperty('XEOURENSE', 'visibility', 'visible');
+    if (window.map && map.getLayer('LITOLOGIA_GALICIA')) {
+      map.setLayoutProperty('LITOLOGIA_GALICIA', 'visibility', 'visible');
     }
   };
 
@@ -2589,6 +2589,42 @@ window.addEventListener('load', () => {
       // Ocultar capas por defecto al cargar el mapa
       window.hideDefaultLayers();
 
+      // Mapa Litolóxico de Galicia. Substitúe a capa Mapbox XEOURENSE (clases brutas
+      // do IGME 1:200k) por unha reclasificación divulgativa en 3 grupos derivada do
+      // Mapa Xeolóxico de España 1:1M (IGME, 1994). Pipeline: scripts/16_reclasifica_litologia.py.
+      try {
+        if (!map.getSource('litologia-galicia')) {
+          map.addSource('litologia-galicia', {
+            type: 'geojson',
+            data: 'assets/data/litologia_galicia.geojson'
+          });
+        }
+        if (!map.getLayer('LITOLOGIA_GALICIA')) {
+          var beforeIdLit = null;
+          var layersLit = map.getStyle().layers || [];
+          for (var l = 0; l < layersLit.length; l++) {
+            if (layersLit[l].type === 'symbol') { beforeIdLit = layersLit[l].id; break; }
+          }
+          map.addLayer({
+            id: 'LITOLOGIA_GALICIA',
+            type: 'fill',
+            source: 'litologia-galicia',
+            layout: { visibility: 'none' },
+            paint: {
+              'fill-color': [
+                'match', ['get', 'categoria'],
+                'acidas', '#e89779',
+                'basicas', '#7a9d6f',
+                'sedimentarios', '#c8b283',
+                '#888888'
+              ],
+              'fill-opacity': 0.55,
+              'fill-outline-color': 'rgba(0,0,0,0)'
+            }
+          }, beforeIdLit);
+        }
+      } catch (e) { console.warn('No se pudo añadir LITOLOGIA_GALICIA:', e); }
+
       // Mapa de Usos do Solo (IET-Xunta 2011, escala 1:250k). Substitúe a capa
       // SERGAS USOURENSE, que carecía de ano de referencia. Reclasificada a 8
       // categorías divulgativas en scripts/13_procesa_vegetacion.py.
@@ -2741,7 +2777,7 @@ window.addEventListener('load', () => {
         // Oculta todas las capas y overlays con verificación robusta
         hideAll(options = {}) {
             const { preserveInline = false } = options;
-            const layersToHide = ['XEOURENSE', 'USOURENSE', 'VEGETACION_GALICIA', 'RELIEVE', 'DNBR_LAROUCO'];
+            const layersToHide = ['LITOLOGIA_GALICIA', 'XEOURENSE', 'USOURENSE', 'VEGETACION_GALICIA', 'RELIEVE', 'DNBR_LAROUCO'];
             
             layersToHide.forEach(layerId => {
                 try {
@@ -2799,7 +2835,7 @@ window.addEventListener('load', () => {
             
             switch(categoryKey) {
                 case 'geologia':
-                    CategoryController.showLayerSafe('XEOURENSE');
+                    CategoryController.showLayerSafe('LITOLOGIA_GALICIA');
                     break;
                 case 'vegetacion':
                     CategoryController.showLayerSafe('VEGETACION_GALICIA');
@@ -2875,7 +2911,7 @@ window.addEventListener('load', () => {
 
         enforceExclusiveLayer(categoryKey) {
             const mapping = {
-                geologia: 'XEOURENSE',
+                geologia: 'LITOLOGIA_GALICIA',
                 vegetacion: 'VEGETACION_GALICIA',
                 geografia: 'RELIEVE'
             };
@@ -3125,7 +3161,7 @@ window.addEventListener('load', () => {
         }
         
         // Asegurar que todas las capas problemáticas estén ocultas
-        ['XEOURENSE', 'USOURENSE', 'RELIEVE', 'FIRES_GLOW_POINT_1', 'FIRES_GLOW_POINT_2', 'FIRES_GLOW_POINT_3', 'FIRES_PERIMETER'].forEach(layerId => {
+        ['LITOLOGIA_GALICIA', 'XEOURENSE', 'USOURENSE', 'RELIEVE', 'FIRES_GLOW_POINT_1', 'FIRES_GLOW_POINT_2', 'FIRES_GLOW_POINT_3', 'FIRES_PERIMETER'].forEach(layerId => {
             try {
                 if (map && map.isStyleLoaded && map.isStyleLoaded() && map.getLayer && map.getLayer(layerId)) {
                     if (layerId.startsWith('FIRES_')) {

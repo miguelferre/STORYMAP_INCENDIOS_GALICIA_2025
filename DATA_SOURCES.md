@@ -56,6 +56,15 @@ Inventario detallado de los datasets utilizados, sus URL de origen y la licencia
 - **Año de referencia**: 2011-06-20 (declarado en metadatos del shapefile).
 - **Licencia**: datos abiertos Xunta de Galicia.
 
+### Mapa Geológico de España 1:1.000.000 (IGME, 1994)
+
+- **Qué**: 15.804 polígonos litoestratigráficos del Macizo Hespérico (España + Baleares), atributos `LITOLOGIA`, `LITOGEN_CL`, `DOMINIO`, `EON_ERA`, etc.
+- **URL**: `https://info.igme.es/cartografiadigital/datos/geologicos1M/Geologico1000_(1994)/shapes/geologico_1000_shapes.zip`
+- **Productor**: Instituto Geológico y Minero de España (IGME).
+- **CRS original**: EPSG:23030 (ED50 UTM30N), encoding cp850.
+- **Reclasificación**: las ~15 unidades presentes en Galicia se agrupan en 3 clases divulgativas (`acidas`, `basicas`, `sedimentarios`) en `scripts/16_reclasifica_litologia.py`. Salida: `assets/data/litologia_galicia.geojson` (~800 KB).
+- **Licencia**: cartografía oficial IGME, redistribución libre con atribución.
+
 ## Teledetección
 
 ### Sentinel-2 L2A — Microsoft Planetary Computer

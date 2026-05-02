@@ -2,6 +2,11 @@
 
 Iteraciones técnicas sobre el storymap original. La sección "feedback" recoge las tres revisiones públicas (señaladas en la propia página) y las propuestas del feedback experto recibido por el autor.
 
+## 2026-05-02 — Quinta iteración (litología IGME + token Mapbox como secret)
+
+- **Token Mapbox a secret de GitHub Actions**: `config.js` con placeholder `__MAPBOX_TOKEN__` y workflow `.github/workflows/deploy.yml` que inyecta el secret `MAPBOX_TOKEN` en build. Pages source movido a `build_type=workflow`. Elimina la fricción de la Push Protection.
+- **Reclasificación litológica del tab "Xeoloxía"**: sustitución de la capa Mapbox `XEOURENSE` (clases brutas IGME, ~7-8 colores compitiendo) por una reclasificación divulgativa en 3 grupos derivada del Mapa Geológico de España 1:1.000.000 IGME (1994). Pipeline `scripts/16_reclasifica_litologia.py`: descarga shp, recorta a Galicia, mapea ~15 unidades a `acidas` / `basicas` / `sedimentarios`. Distribución resultante: 83,5 % ácidas (granitos hercínicos + metasedimentos paleozoicos), 11,4 % básicas y carbonatadas (Cabo Ortegal, calizas), 5,1 % sedimentarios recientes (cuencas terciarias As Pontes / Monforte). GeoJSON 797 KB.
+
 ## 2026-05-02 — Cuarta iteración (rediseño técnico)
 
 Cuatro commits encadenados en un mismo día (`5c7e36f`, `368cab2`, `8b93384`, `c1f8c74`) más una quinta entrega (`be8100f`) cerrando los puntos críticos del rediseño:
@@ -33,4 +38,3 @@ Versión inicial del Desafío 2 RACE: capítulos visuales originales (Larouco, C
 - **B.3** — Análisis FWI (Fire Weather Index) sobre el evento 12-15 ago 2025. CEMS Fire Danger Indices NetCDF + WRF 1 km MeteoGalicia.
 - **B.4** — Exposición WUI (Wildland-Urban Interface) sobre el perímetro Larouco con SILVIS Global WUI 2020.
 - **Heatmap temperaturas** — sustitución del último iframe Flourish residual; requiere AEMET API key.
-- **Token Mapbox** — placeholder + GitHub Action que substituya el token desde un secret en build.

@@ -3,13 +3,13 @@ var config = {
     accessToken: '__MAPBOX_TOKEN__',
     
     // Capas que se ocultan automáticamente por defecto
-    hiddenLayers: ['USOURENSE', 'XEOURENSE', 'RELIEVE'],
+    hiddenLayers: ['USOURENSE', 'XEOURENSE', 'LITOLOGIA_GALICIA', 'RELIEVE'],
     
     // Explicaciones de las categorías
     layerExplanations: {
         'geologia': {
             title: 'Geología',
-            description: 'La composición del suelo y subsuelo influye directamente en la retención de humedad y la facilidad de propagación del fuego.<br>Los suelos más secos y rocosos favorecen la expansión rápida de las llamas.'
+            description: 'Galicia es un mosaico dominado por <strong>rocas ácidas</strong> (granitos y esquistos paleozoicos, ~84% del territorio), con afloramientos puntuales de <strong>básicas y carbonatadas</strong> en Cabo Ortegal (~11%) y <strong>depósitos sedimentarios recientes</strong> en las cuencas terciarias de As Pontes y Monforte (~5%).<br>Los sustratos siliciclásticos dan suelos ácidos que favorecen vegetaciones más inflamables.'
         },
         'vegetacion': {
             title: 'Vegetación',
@@ -29,7 +29,7 @@ var config = {
     layerExplanations: {
         'geologia': {
             title: 'Geología',
-            description: 'La composición del suelo y subsuelo influye directamente en la retención de humedad y la facilidad de propagación del fuego.<br>Los suelos más secos y rocosos favorecen la expansión rápida de las llamas.'
+            description: 'Galicia es un mosaico dominado por <strong>rocas ácidas</strong> (granitos y esquistos paleozoicos, ~84% del territorio), con afloramientos puntuales de <strong>básicas y carbonatadas</strong> en Cabo Ortegal (~11%) y <strong>depósitos sedimentarios recientes</strong> en las cuencas terciarias de As Pontes y Monforte (~5%).<br>Los sustratos siliciclásticos dan suelos ácidos que favorecen vegetaciones más inflamables.'
         },
         'vegetacion': {
             title: 'Vegetación',
