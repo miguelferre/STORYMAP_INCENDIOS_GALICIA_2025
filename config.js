@@ -153,7 +153,8 @@ Tras el pico, septiembre se desinfla. Una sola semana decidió un verano entero.
                         <div class="mobile-expl">
                           <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Para medir lo que dejó atrás el incendio recurrimos al <strong>dNBR</strong> (differential Normalized Burn Ratio), una métrica estándar en teledetección post-incendio que combina las bandas del infrarrojo cercano y del SWIR2 de Sentinel-2. La diferencia entre una imagen previa al fuego (24 julio) y otra posterior (10 octubre) descubre, píxel a píxel, dónde se quemó la vegetación y con qué intensidad.<br><br>
-Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus <strong>24.451 ha quemadas</strong> en clases de severidad. La concentración de severidad alta marca los focos donde la regeneración natural será más lenta. Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta.
+Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus <strong>24.451 ha quemadas</strong> en clases de severidad. La concentración de severidad alta marca los focos donde la regeneración natural será más lenta. Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta.<br><br>
+Sobre el dNBR superponemos la capa <strong>SILVIS Global WUI 2020</strong> (Schug et al. 2023): <strong>472 ha</strong> de la interfaz urbano-forestal (376 ha forestal-matorral + 96 ha pradera) cayeron dentro del perímetro afectado, un <strong>6%</strong> del total con severidad moderada o superior. Los bordes amarillo y cian marcan núcleos rurales y mosaicos agrarios en contacto directo con el monte combustible.
                           </p>
                         </div>
                     </div>
@@ -161,7 +162,8 @@ Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</stro
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
                         <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Para medir lo que dejó atrás el incendio recurrimos al <strong>dNBR</strong> (differential Normalized Burn Ratio), una métrica estándar en teledetección post-incendio que combina las bandas del infrarrojo cercano y del SWIR2 de Sentinel-2. La diferencia entre una imagen previa al fuego (24 julio) y otra posterior (10 octubre) descubre, píxel a píxel, dónde se quemó la vegetación y con qué intensidad.<br><br>
-Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus <strong>24.451 ha quemadas</strong> en clases de severidad. La concentración de severidad alta marca los focos donde la regeneración natural será más lenta. Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta. Para un equipo de modelización son puntos calientes para validar simulaciones de propagación.
+Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus <strong>24.451 ha quemadas</strong> en clases de severidad. La concentración de severidad alta marca los focos donde la regeneración natural será más lenta. Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta. Para un equipo de modelización son puntos calientes para validar simulaciones de propagación.<br><br>
+Sobre el dNBR superponemos la capa <strong>SILVIS Global WUI 2020</strong> (Schug et al. 2023, ráster a 10 m). De las 15.572 ha de Wildland-Urban Interface en el bbox, <strong>472 ha</strong> (376 forestal-matorral + 96 pradera) cayeron dentro del perímetro con severidad moderada o superior — un <strong>6%</strong> del área quemada. Los bordes amarillo y cian sobre el mapa marcan núcleos rurales y mosaicos agrarios en contacto directo con el monte combustible: el espacio donde la probabilidad de afectar bienes y vidas es mayor.
                         </p>
                         <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 8px;"></div>
                     </div>
@@ -178,10 +180,12 @@ Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</stro
             onChapterEnter: [
                 { callbackName: 'hideDefaultLayers' },
                 { callbackName: 'showDnbrLayer' },
+                { callbackName: 'showWuiLayer' },
                 { callbackName: 'renderDnbr' }
             ],
             onChapterExit: [
-                { callbackName: 'hideDnbrLayer' }
+                { callbackName: 'hideDnbrLayer' },
+                { callbackName: 'hideWuiLayer' }
             ]
         },
         {

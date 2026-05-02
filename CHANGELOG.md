@@ -2,10 +2,11 @@
 
 Iteraciones técnicas sobre el storymap original. La sección "feedback" recoge las tres revisiones públicas (señaladas en la propia página) y las propuestas del feedback experto recibido por el autor.
 
-## 2026-05-02 — Quinta iteración (litología IGME + token Mapbox como secret)
+## 2026-05-02 — Quinta iteración (litología IGME + token Mapbox como secret + SILVIS WUI sobre Larouco)
 
 - **Token Mapbox a secret de GitHub Actions**: `config.js` con placeholder `__MAPBOX_TOKEN__` y workflow `.github/workflows/deploy.yml` que inyecta el secret `MAPBOX_TOKEN` en build. Pages source movido a `build_type=workflow`. Elimina la fricción de la Push Protection.
 - **Reclasificación litológica del tab "Xeoloxía"**: sustitución de la capa Mapbox `XEOURENSE` (clases brutas IGME, ~7-8 colores compitiendo) por una reclasificación divulgativa en 3 grupos derivada del Mapa Geológico de España 1:1.000.000 IGME (1994). Pipeline `scripts/16_reclasifica_litologia.py`: descarga shp, recorta a Galicia, mapea ~15 unidades a `acidas` / `basicas` / `sedimentarios`. Distribución resultante: 83,5 % ácidas (granitos hercínicos + metasedimentos paleozoicos), 11,4 % básicas y carbonatadas (Cabo Ortegal, calizas), 5,1 % sedimentarios recientes (cuencas terciarias As Pontes / Monforte). GeoJSON 797 KB.
+- **B.4 — Capa WUI sobre el dNBR de Larouco**: integración del dataset SILVIS Global WUI 2020 (Schug et al. 2023, DOI 10.5281/zenodo.7941460), ráster a 10 m vectorizado al bbox Larouco-Seadur. Pipeline scripts/17 (descarga idempotente del tile europeo 1,8 GB con verificación MD5) + scripts/18 (mosaic de 3 tiles SILVIS en EPSG:27704, recorte al bbox, reclasificación a `wui_forestal` / `wui_pradeira`, vectorización). En el bbox hay 15.572 ha de WUI; **472 ha** (376 forestal-matorral + 96 pradera) cayeron dentro del perímetro afectado con severidad moderada o superior, un 6 % del área quemada. Renderizado como fill+line (amarillo / cian) sobre el dNBR del capítulo "A pegada do lume".
 
 ## 2026-05-02 — Cuarta iteración (rediseño técnico)
 
@@ -36,5 +37,4 @@ Versión inicial del Desafío 2 RACE: capítulos visuales originales (Larouco, C
 ## Pendiente
 
 - **B.3** — Análisis FWI (Fire Weather Index) sobre el evento 12-15 ago 2025. CEMS Fire Danger Indices NetCDF + WRF 1 km MeteoGalicia.
-- **B.4** — Exposición WUI (Wildland-Urban Interface) sobre el perímetro Larouco con SILVIS Global WUI 2020.
 - **Heatmap temperaturas** — sustitución del último iframe Flourish residual; requiere AEMET API key.

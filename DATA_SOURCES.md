@@ -82,6 +82,14 @@ Inventario detallado de los datasets utilizados, sus URL de origen y la licencia
 - **Origen**: Key, C.H. & Benson, N.C. (2006). *Landscape Assessment: Sampling and Analysis Methods*. USDA Forest Service General Technical Report RMRS-GTR-164-CD.
 - **Umbrales aplicados (sobre dNBR continuo)**: regrowth ≤ −0.25 < no quemado < 0.10 < severidad baja < 0.27 < moderada-baja < 0.44 < moderada-alta < 0.66 < alta.
 
+### SILVIS Global WUI 2020 (Schug et al. 2023)
+
+- **Qué**: ráster mundial de la Wildland-Urban Interface a 10 m, 8 clases (intermix/interface forestal y de pradera × WUI/non-WUI). Tile europeo `EU.zip` ~1,8 GB.
+- **URL**: `https://zenodo.org/records/7941460/files/EU.zip` (DOI 10.5281/zenodo.7941460).
+- **Cita**: Schug, F., Bar-Massada, A., Carlson, A.R., Cox, H., Hawbaker, T.J., Helmers, D., Hostert, P., Kaim, D., Kasraee, N.K., Martinuzzi, S., Mockrin, M.H., Pfoch, K.A., Radeloff, V.C. (2023). The global wildland-urban interface. *Nature*. DOI 10.1038/s41586-023-06320-0.
+- **Licencia**: CC-BY 4.0.
+- **Reclasificación**: el ráster se recorta al bbox de Larouco-Seadur ([-7.30, 42.30, -6.85, 42.62]) en `scripts/18_recorta_silvis_wui.py` y se vectoriza a 2 categorías divulgativas (`wui_forestal`, `wui_pradeira`). Ráster crudo no versionado (data/raw/* en .gitignore).
+
 ## Otras
 
 ### Comparador de superficies municipales (`assets/cities.csv`)

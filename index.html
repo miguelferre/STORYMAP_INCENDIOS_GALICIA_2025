@@ -2076,6 +2076,25 @@ window.addEventListener('load', () => {
 
   // Muestra/oculta la capa Mapbox de severidad dNBR. Se controla desde los
   // callbacks del capítulo "A pegada do lume".
+  window.showWuiLayer = function(){
+    try{
+      ['WUI_LAROUCO_FILL', 'WUI_LAROUCO_LINE'].forEach(function(id){
+        if (map && map.getLayer && map.getLayer(id)) {
+          map.setLayoutProperty(id, 'visibility', 'visible');
+        }
+      });
+    } catch(e){ console.warn('showWuiLayer:', e); }
+  };
+  window.hideWuiLayer = function(){
+    try{
+      ['WUI_LAROUCO_FILL', 'WUI_LAROUCO_LINE'].forEach(function(id){
+        if (map && map.getLayer && map.getLayer(id)) {
+          map.setLayoutProperty(id, 'visibility', 'none');
+        }
+      });
+    } catch(e){ console.warn('hideWuiLayer:', e); }
+  };
+
   window.showDnbrLayer = function(){
     try {
       if (map && map.getLayer && map.getLayer('DNBR_LAROUCO')) {
@@ -2703,6 +2722,61 @@ window.addEventListener('load', () => {
         }
       } catch (e) { console.warn('No se pudo añadir DNBR_LAROUCO:', e); }
 
+      // Capa WUI Larouco (Wildland-Urban Interface, SILVIS Global WUI 2020,
+      // Schug et al. 2023). Ráster a 10 m recortado ao bbox e vectorizado en
+      // 2 clases divulgativas: WUI forestal-matorral (clases 1+2 do dataset)
+      // e WUI pradera (3+4). Renderizada como fill suave + outline para non
+      // competir co dNBR pero permitir ler onde están os bordos urbano-forestais.
+      try {
+        if (!map.getSource('wui-larouco')) {
+          map.addSource('wui-larouco', {
+            type: 'geojson',
+            data: 'assets/data/wui_larouco.geojson'
+          });
+        }
+        var beforeIdWui = null;
+        var layersWui = map.getStyle().layers || [];
+        for (var w = 0; w < layersWui.length; w++) {
+          if (layersWui[w].type === 'symbol') { beforeIdWui = layersWui[w].id; break; }
+        }
+        if (!map.getLayer('WUI_LAROUCO_FILL')) {
+          map.addLayer({
+            id: 'WUI_LAROUCO_FILL',
+            type: 'fill',
+            source: 'wui-larouco',
+            layout: { visibility: 'none' },
+            paint: {
+              'fill-color': [
+                'match', ['get', 'categoria'],
+                'wui_forestal', '#ffd23f',
+                'wui_pradeira', '#2ec4b6',
+                'rgba(0,0,0,0)'
+              ],
+              'fill-opacity': 0.18,
+              'fill-outline-color': 'rgba(0,0,0,0)'
+            }
+          }, beforeIdWui);
+        }
+        if (!map.getLayer('WUI_LAROUCO_LINE')) {
+          map.addLayer({
+            id: 'WUI_LAROUCO_LINE',
+            type: 'line',
+            source: 'wui-larouco',
+            layout: { visibility: 'none' },
+            paint: {
+              'line-color': [
+                'match', ['get', 'categoria'],
+                'wui_forestal', '#ffd23f',
+                'wui_pradeira', '#2ec4b6',
+                'rgba(0,0,0,0)'
+              ],
+              'line-width': 1.4,
+              'line-opacity': 0.9
+            }
+          }, beforeIdWui);
+        }
+      } catch (e) { console.warn('No se pudo añadir WUI_LAROUCO:', e); }
+
       // Asegurar limpieza completa inicial
       CategoryController.hideAll();
 
@@ -2777,7 +2851,7 @@ window.addEventListener('load', () => {
         // Oculta todas las capas y overlays con verificación robusta
         hideAll(options = {}) {
             const { preserveInline = false } = options;
-            const layersToHide = ['LITOLOGIA_GALICIA', 'XEOURENSE', 'USOURENSE', 'VEGETACION_GALICIA', 'RELIEVE', 'DNBR_LAROUCO'];
+            const layersToHide = ['LITOLOGIA_GALICIA', 'XEOURENSE', 'USOURENSE', 'VEGETACION_GALICIA', 'RELIEVE', 'DNBR_LAROUCO', 'WUI_LAROUCO_FILL', 'WUI_LAROUCO_LINE'];
             
             layersToHide.forEach(layerId => {
                 try {
