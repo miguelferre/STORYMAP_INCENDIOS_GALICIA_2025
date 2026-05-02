@@ -25,6 +25,7 @@ const CAPITULOS = [
   "tendencia-aumento",
   "galicia-noroeste",
   "tendencia-comparativas",
+  "propiedade-monte",
   "cimadevila-comparacion",
   "mapa-calor-causas",
 ];
@@ -72,7 +73,7 @@ async function correr(viewport, lang, prefijo, log) {
   await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 30000 });
   // Esperamos a que carguen Mapbox e Observable Plot.
   await page.waitForFunction(
-    () => typeof window.mapboxgl !== "undefined" && typeof window.Plot !== "undefined" && typeof window.SerieIncendios !== "undefined" && typeof window.CausasOurense !== "undefined",
+    () => typeof window.mapboxgl !== "undefined" && typeof window.Plot !== "undefined" && typeof window.SerieIncendios !== "undefined" && typeof window.CausasOurense !== "undefined" && typeof window.PropiedadeMonte !== "undefined",
     null,
     { timeout: 20000 }
   );
@@ -98,6 +99,7 @@ async function correr(viewport, lang, prefijo, log) {
   for (const [chId, hostId] of [
     ["tendencia-aumento", "grafica-tendencia"],
     ["tendencia-comparativas", "grafica-causas"],
+    ["propiedade-monte", "grafica-propiedade"],
   ]) {
     try {
       await page.evaluate((id) => {

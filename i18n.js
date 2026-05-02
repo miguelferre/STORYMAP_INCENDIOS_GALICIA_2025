@@ -179,6 +179,35 @@ E aínda así, case a metade dos partes intencionados non chegan a ter unha moti
                 </div>
           `
         },
+        'propiedade-monte': {
+          title: '',
+          description: `
+            <h2>De quén son os montes que arden</h2>
+                <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
+                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
+                        <div id="grafica-propiedade" class="grafica-host" style="margin-bottom: 30px;"></div>
+                        <div class="mobile-expl">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+A propiedade do monte galego é unha rareza no contexto estatal. Preto dun terzo do territorio forestal está organizado como <strong>monte veciñal en man común</strong> (MVMC): terras xestionadas colectivamente polos veciños dunha parroquia desde antes das desamortizacións, devoltas ás súas comunidades pola Lei 13/1989.<br><br>
+Os <strong>3.290 montes veciñais</strong> clasificados suman <strong>660.000 hectáreas</strong> — un <strong>22,3%</strong> do territorio galego, case todas concentradas en Ourense e Lugo.<br><br>
+Cando se cruza o rexistro MVMC cos <strong>1.475 incendios</strong> que documentou PrazaGal en 2025, o contraste é claro: <strong>o 39% das hectáreas estimadas queimadas</strong> cae sobre MVMC, case o dobre do peso que lles correspondería por superficie. Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) ou Castro de Escuadro (74%) están entre as parroquias máis castigadas — e son xustamente as de maior concentración veciñal.<br><br>
+A explicación ten pouco que ver co réxime xurídico en si: as comunidades de montes foron historicamente un dos poucos axentes que aínda fan xestión activa do monte. A correlación fala, sobre todo, de <strong>onde queda o monte</strong>: nas parroquias rurais do interior ourensán, baleiradas polo éxodo, onde a propiedade colectiva sobrevive porque o minifundio privado se abandonou.
+                          </p>
+                        </div>
+                    </div>
+
+                    <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+A propiedade do monte galego é unha rareza no contexto estatal. Preto dun terzo do territorio forestal está organizado como <strong>monte veciñal en man común</strong> (MVMC): terras xestionadas colectivamente polos veciños dunha parroquia desde antes das desamortizacións, devoltas ás súas comunidades pola Lei 13/1989.<br><br>
+Os <strong>3.290 montes veciñais</strong> clasificados suman <strong>660.000 hectáreas</strong> — un <strong>22,3%</strong> do territorio galego, case todas concentradas en Ourense e Lugo.<br><br>
+Cando se cruza o rexistro MVMC cos <strong>1.475 incendios</strong> que documentou PrazaGal en 2025, o contraste é claro: <strong>o 39% das hectáreas estimadas queimadas</strong> cae sobre MVMC, case o dobre do peso que lles correspondería por superficie.<br><br>
+Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) ou Castro de Escuadro (74%) están entre as parroquias máis castigadas — e son xustamente as de maior concentración veciñal.<br><br>
+A explicación ten pouco que ver co réxime xurídico en si: as comunidades de montes foron historicamente un dos poucos axentes que aínda fan xestión activa do monte. A correlación fala, sobre todo, de <strong>onde queda o monte</strong>: nas parroquias rurais do interior ourensán, baleiradas polo éxodo, onde a propiedade colectiva sobrevive porque o minifundio privado se abandonou.
+                        </p>
+                    </div>
+                </div>
+          `
+        },
         'cimadevila-comparacion': {
           title: '',
           description: `

@@ -266,6 +266,51 @@ Y aun así, casi la mitad de los partes intencionados no llegan a tener una moti
             onChapterExit: []
         },
         {
+            id: 'propiedade-monte',
+            alignment: 'full',
+            hidden: false,
+            title: '',
+            description: `
+            <h2>De quién son los montes que arden</h2>
+                <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
+                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
+                        <div id="grafica-propiedade" class="grafica-host" style="margin-bottom: 30px;"></div>
+                        <div class="mobile-expl">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+La propiedad del monte gallego es una rareza en el contexto estatal. Cerca de un tercio del territorio forestal está organizado como <strong>monte vecinal en mano común</strong> (MVMC): tierras gestionadas colectivamente por los vecinos de una parroquia desde antes de las desamortizaciones, devueltas a sus comunidades por la Lei 13/1989.<br><br>
+Los <strong>3.290 montes vecinales</strong> clasificados suman <strong>660.000 hectáreas</strong> — un <strong>22,3%</strong> del territorio gallego, casi todas concentradas en Ourense y Lugo.<br><br>
+Cuando se cruza el registro MVMC con los <strong>1.475 incendios</strong> que documentó PrazaGal en 2025, el contraste es claro: <strong>el 39% de las hectáreas estimadas quemadas</strong> cae sobre MVMC, casi el doble del peso que les correspondería por superficie. Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) o Castro de Escuadro (74%) están entre las parroquias más castigadas — y son justamente las de mayor concentración vecinal.<br><br>
+La explicación tiene poco que ver con el régimen jurídico en sí: las comunidades de montes han sido históricamente uno de los pocos agentes que aún hacen gestión activa del monte. La correlación habla, sobre todo, de <strong>dónde queda el monte</strong>: en las parroquias rurales del interior orensano, vaciadas por el éxodo, donde la propiedad colectiva sobrevive porque el minifundio privado se abandonó.
+                          </p>
+                        </div>
+                    </div>
+
+                    <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+La propiedad del monte gallego es una rareza en el contexto estatal. Cerca de un tercio del territorio forestal está organizado como <strong>monte vecinal en mano común</strong> (MVMC): tierras gestionadas colectivamente por los vecinos de una parroquia desde antes de las desamortizaciones, devueltas a sus comunidades por la Lei 13/1989.<br><br>
+Los <strong>3.290 montes vecinales</strong> clasificados suman <strong>660.000 hectáreas</strong> — un <strong>22,3%</strong> del territorio gallego, casi todas concentradas en Ourense y Lugo.<br><br>
+Cuando se cruza el registro MVMC con los <strong>1.475 incendios</strong> que documentó PrazaGal en 2025, el contraste es claro: <strong>el 39% de las hectáreas estimadas quemadas</strong> cae sobre MVMC, casi el doble del peso que les correspondería por superficie.<br><br>
+Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) o Castro de Escuadro (74%) están entre las parroquias más castigadas — y son justamente las de mayor concentración vecinal.<br><br>
+La explicación tiene poco que ver con el régimen jurídico en sí: las comunidades de montes han sido históricamente uno de los pocos agentes que aún hacen gestión activa del monte. La correlación habla, sobre todo, de <strong>dónde queda el monte</strong>: en las parroquias rurales del interior orensano, vaciadas por el éxodo, donde la propiedad colectiva sobrevive porque el minifundio privado se abandonó.
+                        </p>
+                    </div>
+                </div>
+            `,
+            location: {
+                center: [-7.85, 42.45],
+                zoom: 7.6,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            onChapterEnter: [
+                { callbackName: 'hideDefaultLayers' },
+                { callbackName: 'renderPropiedade' }
+            ],
+            onChapterExit: []
+        },
+        {
             id: 'cimadevila-comparacion',
             alignment: 'full',
             hidden: false,

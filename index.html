@@ -1414,6 +1414,37 @@
       border-radius: 6px;
       font-size: 0.9rem;
     }
+
+    /* Gráfica de propiedade do monte (capítulo "De quén son os montes que arden?") */
+    .propiedade-bloque{
+      width: 100%;
+      max-width: 920px;
+      margin: 0 0 30px 0;
+      padding: 18px 20px 22px 20px;
+      background: rgba(15, 18, 28, 0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .propiedade-cabecera h3{
+      margin: 0 0 6px 0;
+      font-family: 'Georgia', 'Cambria', serif;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      color: #fff;
+    }
+    .propiedade-cabecera p{
+      margin: 0 0 14px 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.75);
+    }
+    .propiedade-paneles{ display: flex; flex-direction: column; gap: 14px; }
+    .propiedade-paneles svg{ max-width: 100%; height: auto; }
+    .propiedade-subtitulo{ margin: 6px 0 0 0; font-size: 0.92rem; color: rgba(255,255,255,0.78); }
+    .propiedade-nota{ margin: 4px 0 0 0; font-size: 0.85rem; line-height: 1.5; color: rgba(255,255,255,0.65); }
+    .propiedade-pie{ margin: 14px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
+    .propiedade-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
   </style>
 
   <!-- Observable Plot para as gráficas nativas (substitúe iframes Flourish) -->
@@ -1421,6 +1452,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
   <script src="assets/charts/serie_incendios.js"></script>
   <script src="assets/charts/causas.js"></script>
+  <script src="assets/charts/propiedade.js"></script>
 </head>
 <script>
 window.addEventListener('load', () => {
@@ -1972,6 +2004,13 @@ window.addEventListener('load', () => {
     window.CausasOurense.render(host, langActivo());
   };
 
+  // Renderiza la gráfica de propiedad del monte en su capítulo.
+  window.renderPropiedade = function(){
+    var host = document.getElementById('grafica-propiedade');
+    if (!host || !window.PropiedadeMonte) return;
+    window.PropiedadeMonte.render(host, langActivo());
+  };
+
   // Cuando cambia el idioma, re-renderiza las gráficas nativas si están en pantalla.
   document.addEventListener('click', function(ev){
     var btn = ev.target.closest('#language-selector .language-button');
@@ -1979,6 +2018,7 @@ window.addEventListener('load', () => {
     setTimeout(function(){
       if (typeof window.renderTendencia === 'function') window.renderTendencia();
       if (typeof window.renderCausas === 'function') window.renderCausas();
+      if (typeof window.renderPropiedade === 'function') window.renderPropiedade();
     }, 30);
   });
 

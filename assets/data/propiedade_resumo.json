@@ -1,0 +1,90 @@
+{
+  "galicia": {
+    "parroquias": 3785,
+    "area_total_ha": 2957684.8,
+    "area_mvmc_ha": 660729.2,
+    "pct_mvmc_galicia": 22.34
+  },
+  "incendios_2025": {
+    "parroquias_afectadas": 825,
+    "incendios_total": 1456,
+    "ha_quemadas_total": 118738.0,
+    "ha_estimadas_mvmc": 46800.8,
+    "ha_estimadas_non_mvmc": 71937.2,
+    "pct_quemadas_mvmc_estimado": 39.42,
+    "match_prazagal_pct": 98.21,
+    "ha_orfas_sen_match": 25.6
+  },
+  "top_parroquias_mvmc_quemadas": [
+    {
+      "CONCELLO": "Chandrexa de Queixa",
+      "PARROQUIA": "Parafita (San Bartolomeu)",
+      "mvmc_pct": 79.58510149966507,
+      "ha_quemadas": 12838.85,
+      "ha_mvmc_est": 10217.81180388975
+    },
+    {
+      "CONCELLO": "Oímbra",
+      "PARROQUIA": "A Granxa (San Xoán)",
+      "mvmc_pct": 26.968699878711455,
+      "ha_quemadas": 22317.05,
+      "ha_mvmc_est": 6018.6182362819745
+    },
+    {
+      "CONCELLO": "Carballeda de Valdeorras",
+      "PARROQUIA": "Casaio (Santa María)",
+      "mvmc_pct": 88.06470923251118,
+      "ha_quemadas": 6320.4800000000005,
+      "ha_mvmc_est": 5566.112334099023
+    },
+    {
+      "CONCELLO": "Quiroga",
+      "PARROQUIA": "Vilanuíde (Santo Antonio)",
+      "mvmc_pct": 55.808335183735494,
+      "ha_quemadas": 9472.29,
+      "ha_mvmc_est": 5286.32735277546
+    },
+    {
+      "CONCELLO": "Larouco",
+      "PARROQUIA": "Seadur (Santa Mariña)",
+      "mvmc_pct": 18.339534427954103,
+      "ha_quemadas": 23527.31,
+      "ha_mvmc_est": 4314.7991174214885
+    },
+    {
+      "CONCELLO": "Mezquita, A",
+      "PARROQUIA": "A Mezquita (San Martiño)",
+      "mvmc_pct": 32.692395372608615,
+      "ha_quemadas": 10742.7,
+      "ha_mvmc_est": 3512.045957693226
+    },
+    {
+      "CONCELLO": "Chandrexa de Queixa",
+      "PARROQUIA": "Requeixo (Santa María Madanela)",
+      "mvmc_pct": 44.09160858865827,
+      "ha_quemadas": 6320.64,
+      "ha_mvmc_est": 2786.87184909817
+    },
+    {
+      "CONCELLO": "Maceda",
+      "PARROQUIA": "Castro de Escuadro (Santa Baia)",
+      "mvmc_pct": 73.92743120788312,
+      "ha_quemadas": 1857.5900000000001,
+      "ha_mvmc_est": 1373.2685693745161
+    },
+    {
+      "CONCELLO": "Maceda",
+      "PARROQUIA": "Santiso (Santa María)",
+      "mvmc_pct": 51.173929745681704,
+      "ha_quemadas": 2649.53,
+      "ha_mvmc_est": 1355.8686207907606
+    },
+    {
+      "CONCELLO": "Vilariño de Conso",
+      "PARROQUIA": "Mormentelos (Nosa Señora da O)",
+      "mvmc_pct": 24.187456634246445,
+      "ha_quemadas": 5498.92,
+      "ha_mvmc_est": 1330.0488903519044
+    }
+  ]
+}
