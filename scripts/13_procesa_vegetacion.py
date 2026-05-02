@@ -30,37 +30,38 @@ PROC = ROOT / "data" / "processed"
 ASSETS = ROOT / "assets" / "data"
 
 MAPEO = {
-    "Especies caducifolias": "frondosas",
-    "Coníferas": "pineiro",
-    "Eucalipto": "eucaliptal",
-    "Eucalipto e coníferas": "eucaliptal",
-    "Mestura de especies arbóreas": "mixto",
-    "Mato e especies arbóreas": "mixto",
+    # Bosque autóctono = frondosas caducifolias + mestura natural arbórea
+    "Especies caducifolias": "autoctono",
+    "Mestura de especies arbóreas": "autoctono",
+    "Mato e especies arbóreas": "autoctono",
+    # Plantacións = eucalipto + coníferas (incluso mestura), narrativamente
+    # son a peza clave do combustible forestal galego.
+    "Eucalipto": "plantacion",
+    "Eucalipto e coníferas": "plantacion",
+    "Coníferas": "plantacion",
+    # Matorral natural
     "Mato": "mato",
     "Mato e rochedo": "mato",
-    "Cultivos e prados": "agricola",
-    "Mosaico de cultivos e especies arbóreas": "agricola",
-    "Mosaico de agrícola e mato": "agricola",
-    "Mosaico agrícola e urbano": "agricola",
-    "Viñedo e cultivos leñosos": "agricola",
-    "Coberturas artificiais": "urbano",
-    "Zonas urbanas": "urbano",
-    "Zonas de extracción ou vertido": "outros",
-    "Augas cotinentais": "outros",
-    "Augas mariñas": "outros",
-    "Humidais": "outros",
-    "Praias e cantís": "outros",
+    # Agrario + urbano + outros (auga, humidais, praias, extracción) = non monte combustible
+    "Cultivos e prados": "agrario_outros",
+    "Mosaico de cultivos e especies arbóreas": "agrario_outros",
+    "Mosaico de agrícola e mato": "agrario_outros",
+    "Mosaico agrícola e urbano": "agrario_outros",
+    "Viñedo e cultivos leñosos": "agrario_outros",
+    "Coberturas artificiais": "agrario_outros",
+    "Zonas urbanas": "agrario_outros",
+    "Zonas de extracción ou vertido": "agrario_outros",
+    "Augas cotinentais": "agrario_outros",
+    "Augas mariñas": "agrario_outros",
+    "Humidais": "agrario_outros",
+    "Praias e cantís": "agrario_outros",
 }
 
 ETIQUETAS = {
-    "frondosas": "Frondosas autóctonas",
-    "eucaliptal": "Eucalipto",
-    "pineiro": "Piñeiro / coníferas",
-    "mato": "Mato",
-    "mixto": "Mestura arbórea",
-    "agricola": "Agrícola e mosaicos",
-    "urbano": "Urbano e artificial",
-    "outros": "Auga e outros",
+    "autoctono": "Bosque autóctono",
+    "plantacion": "Plantacións (eucalipto, coníferas)",
+    "mato": "Matorral",
+    "agrario_outros": "Agrario, urbano e outros",
 }
 
 

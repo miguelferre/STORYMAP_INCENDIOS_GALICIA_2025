@@ -13,7 +13,7 @@ var config = {
         },
         'vegetacion': {
             title: 'Vegetación',
-            description: 'Los tipos de bosque y matorral predominantes determinan la cantidad de combustible disponible para el fuego.<br>Mapa de Usos do Solo del IET (Xunta, 2011, 1:250.000), reclasificado a ocho clases divulgativas.'
+            description: 'Los tipos de bosque y matorral determinan la cantidad y continuidad del combustible disponible. Las 20 clases del Mapa de Usos do Solo del IET (Xunta, 2011, 1:250.000) se reagrupan en cuatro categorías divulgativas: <strong>bosque autóctono</strong>, <strong>plantaciones</strong> (eucalipto y coníferas), <strong>matorral</strong> y <strong>agrario/urbano/otros</strong>.'
         },
         'clima': {
             title: 'Clima',
@@ -33,7 +33,7 @@ var config = {
         },
         'vegetacion': {
             title: 'Vegetación',
-            description: 'Los tipos de bosque y matorral predominantes determinan la cantidad de combustible disponible para el fuego.<br>Mapa de Usos do Solo del IET (Xunta, 2011, 1:250.000), reclasificado a ocho clases divulgativas.'
+            description: 'Los tipos de bosque y matorral determinan la cantidad y continuidad del combustible disponible. Las 20 clases del Mapa de Usos do Solo del IET (Xunta, 2011, 1:250.000) se reagrupan en cuatro categorías divulgativas: <strong>bosque autóctono</strong>, <strong>plantaciones</strong> (eucalipto y coníferas), <strong>matorral</strong> y <strong>agrario/urbano/otros</strong>.'
         },
         'clima': {
             title: 'Clima',

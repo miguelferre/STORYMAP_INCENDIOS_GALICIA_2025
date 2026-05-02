@@ -2669,17 +2669,13 @@ window.addEventListener('load', () => {
             paint: {
               'fill-color': [
                 'match', ['get', 'categoria'],
-                'frondosas', '#2e7d32',
-                'eucaliptal', '#c2185b',
-                'pineiro', '#5d4037',
+                'autoctono', '#2e7d32',
+                'plantacion', '#c2185b',
                 'mato', '#fbc02d',
-                'mixto', '#7cb342',
-                'agricola', '#fb8c00',
-                'urbano', '#616161',
-                'outros', '#0288d1',
+                'agrario_outros', '#8d6e63',
                 '#888888'
               ],
-              'fill-opacity': 0.5,
+              'fill-opacity': 0.55,
               'fill-outline-color': 'rgba(0,0,0,0)'
             }
           }, beforeId);
@@ -3013,7 +3009,7 @@ window.addEventListener('load', () => {
 
         vegetacion: {
     title: 'Vegetación',
-    text: '<h2>Vegetación</h2>Esta capa muestra los <strong>usos del suelo</strong> de Galicia agrupados en ocho clases divulgativas. El paisaje gallego es un mosaico dominado por el <strong>agrosistema</strong>, con una huella enorme de <strong>eucaliptal</strong> y <strong>matorral</strong> en el monte combustible, y una presencia menor de <strong>frondosas autóctonas</strong>. Esta distribución es clave para entender la cantidad y la continuidad del <strong>combustible vegetal</strong>, factores decisivos en la propagación de los incendios.<br><br><strong>Leyenda:</strong><br><span style="color: #2e7d32;">■</span> Frondosas autóctonas<br><span style="color: #c2185b;">■</span> Eucalipto<br><span style="color: #5d4037;">■</span> Piñeiro / coníferas<br><span style="color: #fbc02d;">■</span> Mato<br><span style="color: #7cb342;">■</span> Mestura arbórea<br><span style="color: #fb8c00;">■</span> Agrícola y mosaicos<br><span style="color: #616161;">■</span> Urbano y artificial<br><span style="color: #0288d1;">■</span> Agua y otros<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fuente: Mapa de Usos do Solo, IET — Xunta de Galicia, escala 1:250.000 (2011)</div>'
+    text: '<h2>Vegetación</h2>Las 20 clases del Mapa de Usos do Solo del IET (Xunta, 2011) se reagrupan aquí en cuatro categorías que cuentan la historia del combustible: <strong>bosque autóctono</strong> (frondosas caducifolias y mezclas naturales, ~14% del territorio), <strong>plantaciones</strong> de eucalipto y coníferas (~17%, la masa forestal más inflamable y la pieza clave del monte productivo gallego), <strong>matorral</strong> (~16%, el combustible que cierra el ciclo tras el abandono) y <strong>agrario, urbano y otros</strong> (~32%, mosaicos rurales que ya no son monte combustible).<br><br><strong>Leyenda:</strong><br><span style="color: #2e7d32;">■</span> Bosque autóctono<br><span style="color: #c2185b;">■</span> Plantaciones (eucalipto, coníferas)<br><span style="color: #fbc02d;">■</span> Matorral<br><span style="color: #8d6e63;">■</span> Agrario, urbano y otros<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fuente: Mapa de Usos do Solo, IET — Xunta de Galicia, escala 1:250.000 (2011), reclasificado en 4 grupos divulgativos</div>'
 },
 
         clima: {
