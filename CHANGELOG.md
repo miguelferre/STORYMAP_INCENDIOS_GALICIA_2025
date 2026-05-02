@@ -2,6 +2,18 @@
 
 Iteraciones técnicas sobre el storymap original. La sección "feedback" recoge las tres revisiones públicas (señaladas en la propia página) y las propuestas del feedback experto recibido por el autor.
 
+## 2026-05-03 — Sexta iteración (feedback experto: cronoloxía, pegada do lume, vegetación, causas)
+
+- **Cronoloxía "El día que se juntó todo"**: rediseño con dos paneles: overview superior (jul-oct, escala raíz, sin tooltips) que mantiene el contexto del verano completo + zoom inferior (5-22 ago) con todo el detalle (anotaciones del 12-13-15 ago, dots de los grandes incendios). El tip duplicado (rectY + dot) eliminado: solo las barras tienen hover.
+- **Pegada do lume**: alignment cambiado de `full` a `right`. La card pasa de cubrir media pantalla a una columna lateral estrecha. Estructura nueva: título → invitación a mirar el mapa → leyenda completa con dos bloques (severidad dNBR cuadraditos + WUI líneas amarilla/cian, idénticas a las del mapa) → cifras editoriales (24.451 ha quemadas, 472 ha de WUI = 6%) → barras de severidad. dnbr_larouco.js compactado (sin título/subtítulo duplicados).
+- **WUI outline-only**: tras la prueba inicial (fill amarillo dominante), se quitó el fill y se dejaron solo las líneas (ffd23f forestal-matorral, 2ec4b6 pradera) para no competir con el rojo del dNBR.
+- **Vegetación reducida a 4 clases**: las 20 categorías del Mapa de Usos do Solo (IET) se colapsan en bosque autóctono (~14%, frondosas + mestura natural) / plantaciones (~17%, eucalipto + coníferas) / matorral (~16%) / agrario, urbano y otros (~32%). Paleta nueva más contrastada (verde bosque / magenta plantación / amarillo matorral / marrón agrario).
+- **Color sedimentarios litología**: del beige pálido `#c8b283` al mostaza saturado `#e0b46d`, distinguible sobre el fondo oscuro y separado del salmón de las ácidas.
+- **Causas — fix offset visual**: el panel anual usaba `Plot.rectY` con `interval: 1` que dibujaba las barras en `[ano, ano+1)`, dando la sensación de que las pezas apiladas estaban desplazadas a la derecha sobre las naranjas. Cambiado a `Plot.barY` con escala `band` — las barras ya se centran exactamente sobre el tick de su año.
+- **Glosario de motivaciones EGIF**: el capítulo "Las causas detrás del fuego" ahora explica brevemente qué significa cada categoría (caza, vandalismo, piromanía, desacuerdos, propiedad, beneficio económico, etc.) en lugar de mencionarlas a secas.
+- **Spearman en lenguaje accesible**: el dato `ρ ≈ 0,09` del capítulo MVMC ahora va acompañado de una frase divulgativa ("Spearman mide si dos variables se mueven juntas en orden — 0 indica sin relación, +1 una relación creciente perfecta y −1 decreciente perfecta. 0,09 es muy débil"). Añadido también en la versión gallega que no lo tenía.
+- **APIs configuradas**: AEMET key en `storymap/.env` y CDS key en `~/.cdsapirc`. Cliente `cdsapi` instalado, terms aceptados en `cems-fire-historical-v1`. Listo para descargar FWI cuando se aborde.
+
 ## 2026-05-02 — Quinta iteración (litología IGME + token Mapbox como secret + SILVIS WUI sobre Larouco)
 
 - **Token Mapbox a secret de GitHub Actions**: `config.js` con placeholder `__MAPBOX_TOKEN__` y workflow `.github/workflows/deploy.yml` que inyecta el secret `MAPBOX_TOKEN` en build. Pages source movido a `build_type=workflow`. Elimina la fricción de la Push Protection.
@@ -36,5 +48,6 @@ Versión inicial del Desafío 2 RACE: capítulos visuales originales (Larouco, C
 
 ## Pendiente
 
-- **B.3** — Análisis FWI (Fire Weather Index) sobre el evento 12-15 ago 2025. CEMS Fire Danger Indices NetCDF + WRF 1 km MeteoGalicia.
-- **Heatmap temperaturas** — sustitución del último iframe Flourish residual; requiere AEMET API key.
+- **B.3** — Análisis FWI (Fire Weather Index) sobre el evento 12-15 ago 2025. CEMS Fire Danger Indices NetCDF. CDS API key ya configurada y terms aceptados en `cems-fire-historical-v1`.
+- **Heatmap temperaturas** — sustitución de los iframes Flourish 26020279 / 26412913 del capítulo "El verano se alarga" por chart Observable Plot nativo con datos AEMET. AEMET API key ya en `storymap/.env`.
+- **Diseño general del documento** — pendiente histórico, pendiente de conversación con el usuario para concretar.
