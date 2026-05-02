@@ -72,17 +72,17 @@
     const anos = [...new Set(serie.map((d) => d.ano))].sort();
 
     return Plot.plot({
-      marginLeft: 64,
-      marginRight: 14,
-      marginTop: 10,
+      marginLeft: 72,
+      marginRight: 16,
+      marginTop: 30,
       marginBottom: 30,
       width: ancho,
-      height: 220,
+      height: 230,
       style: {
         background: "transparent",
         color: COLORES.texto,
-        fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-        fontSize: "11.5px",
+        fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+        fontSize: "12px",
         overflow: "visible",
       },
       x: {
@@ -94,7 +94,7 @@
       y: {
         label: titulo,
         labelAnchor: "top",
-        labelOffset: 36,
+        labelOffset: 60,
         grid: true,
         tickFormat: formato,
         nice: true,
@@ -112,16 +112,17 @@
           x: "ano",
           y: campo,
           stroke: COLORES.satelital,
-          strokeWidth: 2,
+          strokeWidth: 1.8,
+          strokeDasharray: "4 3",
           curve: "monotone-x",
         }),
         Plot.dot(satelital, {
           x: "ano",
           y: campo,
           fill: COLORES.satelital,
-          stroke: "white",
-          strokeWidth: 1,
-          r: 3.5,
+          stroke: "rgba(15,18,28,0.9)",
+          strokeWidth: 1.2,
+          r: 3.2,
           title: (d) =>
             `${d.ano}\nEFFIS (satélite): ${campo === "num_incendios" ? d.num_incendios.toLocaleString(lang) + " incendios" : Math.round(d.ha_total).toLocaleString(lang) + " ha"}`,
         }),

@@ -48,21 +48,23 @@ var config = {
     chapters: [
         {
             id: 'incendios-2025',
-            alignment: 'left',   
+            alignment: 'left',
             hidden: false,
             title: '',
             description: `
-            <h2>Un verano para <s style="color: rgba(255, 255, 255, 0.64);">olvidar</s> <strong>reaccionar</strong></h2>
-            Los incendios del verano de <strong>2025</strong> quedarán marcados en la <strong>historia de Galicia</strong>.<br>
-            Nunca antes se había registrado una <strong>superficie tan extensa arrasada</strong> por las llamas.<br>
-            El incendio de <strong>Larouco–Seadur</strong>, con más de <strong>31.700 hectáreas</strong> (317 km²), ha sido el <strong>mayor jamás visto</strong> en nuestra comunidad.<br><br>
-
-            Para poder entender su magnitud conviene primero explicar la diferencia entre un <strong>incendio forestal</strong> y un <strong>gran incendio forestal (GIF)</strong>: el primero puede afectar a pocas hectáreas, el segundo es aquel que supera las <strong>500 hectáreas</strong>. El incendio de Larouco multiplicó por más de <strong>60</strong> ese umbral.<br><br>
-
-            Pero los números pueden confundirnos y abstraernos del problema: ¿cómo dimensionamos algo tan enorme? Una forma es comparar el incendio con un entorno que conozcamos, como<strong> nuestras ciudades</strong>.<br><br>
-            Para dimensionar su magnitud, el siguiente gráfico compara el área quemada con la superficie municipal de varias ciudades conocidas.<br><br>
-
-            <div id="grafica-comparador" class="grafica-host" style="margin-top: 12px;"></div>
+            <div class="portada-card">
+              <h2>Un verano para <s style="color: rgba(255, 255, 255, 0.64);">olvidar</s> <strong>reaccionar</strong></h2>
+              <p class="portada-parrafo">
+                Los incendios del verano de <strong>2025</strong> quedarán marcados en la <strong>historia de Galicia</strong>. Nunca antes se había registrado una <strong>superficie tan extensa arrasada</strong> por las llamas. El incendio de <strong>Larouco–Seadur</strong>, con más de <strong>31.700 hectáreas</strong> (317 km²), ha sido el <strong>mayor jamás visto</strong> en nuestra comunidad.
+              </p>
+              <p class="portada-parrafo">
+                Para entender su magnitud conviene primero explicar la diferencia entre un <strong>incendio forestal</strong> y un <strong>gran incendio forestal (GIF)</strong>: el primero puede afectar a pocas hectáreas, el segundo es aquel que supera las <strong>500 hectáreas</strong>. Larouco multiplicó por más de <strong>60</strong> ese umbral.
+              </p>
+              <p class="portada-parrafo">
+                Pero los números pueden abstraernos del problema. Una forma de dimensionar algo tan enorme es compararlo con un entorno que conozcamos, como <strong>nuestras ciudades</strong>. El siguiente gráfico compara el área quemada con la superficie municipal de varias ciudades conocidas.
+              </p>
+              <div id="grafica-comparador" class="grafica-host" style="margin-top: 12px;"></div>
+            </div>
 `,
 
             
@@ -147,24 +149,19 @@ La gráfica deja muy clara la concentración: tras un junio y un julio relativam
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div id="grafica-dnbr" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Para medir lo que dejó atrás el incendio recurrimos al <strong>dNBR</strong> (differential Normalized Burn Ratio), una métrica estándar en teledetección post-incendio que combina las bandas del infrarrojo cercano y del SWIR2 de Sentinel-2. La diferencia entre una imagen previa al fuego (24 julio) y otra posterior (10 octubre) descubre, píxel a píxel, dónde se quemó la vegetación y con qué intensidad.<br><br>
-Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus 24.451 hectáreas quemadas así: <strong>13.335 ha de severidad baja</strong>, <strong>5.395 de moderada-baja</strong>, <strong>5.265 de moderada-alta</strong> y <strong>457 ha de severidad alta</strong> — los focos de vegetación arrasada total, donde la regeneración natural será más lenta.<br><br>
-Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta. Lo que para un equipo de modelización significa puntos calientes para validar simulaciones de propagación.
+Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus <strong>24.451 ha quemadas</strong> en clases de severidad. La concentración de severidad alta marca los focos donde la regeneración natural será más lenta. Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta.
                           </p>
                         </div>
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Para medir lo que dejó atrás el incendio recurrimos al <strong>dNBR</strong> (differential Normalized Burn Ratio), una métrica estándar en teledetección post-incendio que combina las bandas del infrarrojo cercano y del SWIR2 de Sentinel-2. La diferencia entre una imagen previa al fuego (24 julio) y otra posterior (10 octubre) descubre, píxel a píxel, dónde se quemó la vegetación y con qué intensidad.<br><br>
-Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus <strong>24.451 ha quemadas</strong> así:<br>
-&nbsp;&nbsp;13.335 ha — severidad baja<br>
-&nbsp;&nbsp;5.395 ha — moderada-baja<br>
-&nbsp;&nbsp;5.265 ha — moderada-alta<br>
-&nbsp;&nbsp;457 ha — severidad alta<br><br>
-La concentración de severidad alta marca los focos donde la regeneración natural será más lenta. Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta. Para un equipo de modelización son puntos calientes para validar simulaciones de propagación.
+Reclasificando esos valores con los umbrales <strong>Key &amp; Benson 2006</strong>, el bbox del incendio reparte sus <strong>24.451 ha quemadas</strong> en clases de severidad. La concentración de severidad alta marca los focos donde la regeneración natural será más lenta. Es un análisis reproducible: dos escenas Sentinel-2 abiertas, dos bandas, una resta. Para un equipo de modelización son puntos calientes para validar simulaciones de propagación.
                         </p>
+                        <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 8px;"></div>
                     </div>
                 </div>
             `,
@@ -350,7 +347,8 @@ Y aun así, casi la mitad de los partes intencionados no llegan a tener una moti
 La propiedad del monte gallego es una rareza en el contexto estatal. Cerca de un tercio del territorio forestal está organizado como <strong>monte vecinal en mano común</strong> (MVMC): tierras gestionadas colectivamente por los vecinos de una parroquia desde antes de las desamortizaciones, devueltas a sus comunidades por la Lei 13/1989.<br><br>
 Los <strong>3.290 montes vecinales</strong> clasificados suman <strong>660.000 hectáreas</strong> — un <strong>22,3%</strong> del territorio gallego, casi todas concentradas en Ourense y Lugo.<br><br>
 Cuando se cruza el registro MVMC con los <strong>1.475 incendios</strong> que documentó PrazaGal en 2025, el contraste es claro: <strong>el 39% de las hectáreas estimadas quemadas</strong> cae sobre MVMC, casi el doble del peso que les correspondería por superficie. Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) o Castro de Escuadro (74%) están entre las parroquias más castigadas — y son justamente las de mayor concentración vecinal.<br><br>
-La explicación tiene poco que ver con el régimen jurídico en sí: las comunidades de montes han sido históricamente uno de los pocos agentes que aún hacen gestión activa del monte. La correlación habla, sobre todo, de <strong>dónde queda el monte</strong>: en las parroquias rurales del interior orensano, vaciadas por el éxodo, donde la propiedad colectiva sobrevive porque el minifundio privado se abandonó.
+A nivel parroquia el patrón se suaviza: sobre las <strong>825 parroquias con al menos un incendio</strong>, la correlación de Spearman entre %MVMC y hectáreas quemadas es de <strong>ρ ≈ 0,09</strong> (0,15 con la superficie quemada en escala logarítmica). El efecto existe pero es modesto. Lo que sí cambia con claridad es la cola de fuegos grandes: en las parroquias con ≥20% de MVMC la <strong>media de hectáreas quemadas es de 272 ha</strong> frente a las <strong>62 ha</strong> del resto.<br><br>
+La explicación tiene poco que ver con el régimen jurídico en sí: las comunidades de montes han sido históricamente uno de los pocos agentes que aún hacen gestión activa del monte. La correlación habla, sobre todo, de <strong>dónde queda el monte</strong>: en las parroquias rurales del interior orensano, vaciadas por el éxodo, donde la propiedad colectiva sobrevive porque el minifundio privado se abandonó. La estimación de hectáreas sobre MVMC es proporcional al peso de MVMC en cada parroquia — una aproximación honesta a falta de los perímetros oficiales.
                           </p>
                         </div>
                     </div>
@@ -361,7 +359,8 @@ La propiedad del monte gallego es una rareza en el contexto estatal. Cerca de un
 Los <strong>3.290 montes vecinales</strong> clasificados suman <strong>660.000 hectáreas</strong> — un <strong>22,3%</strong> del territorio gallego, casi todas concentradas en Ourense y Lugo.<br><br>
 Cuando se cruza el registro MVMC con los <strong>1.475 incendios</strong> que documentó PrazaGal en 2025, el contraste es claro: <strong>el 39% de las hectáreas estimadas quemadas</strong> cae sobre MVMC, casi el doble del peso que les correspondería por superficie.<br><br>
 Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) o Castro de Escuadro (74%) están entre las parroquias más castigadas — y son justamente las de mayor concentración vecinal.<br><br>
-La explicación tiene poco que ver con el régimen jurídico en sí: las comunidades de montes han sido históricamente uno de los pocos agentes que aún hacen gestión activa del monte. La correlación habla, sobre todo, de <strong>dónde queda el monte</strong>: en las parroquias rurales del interior orensano, vaciadas por el éxodo, donde la propiedad colectiva sobrevive porque el minifundio privado se abandonó.
+A nivel parroquia el patrón se suaviza: sobre las <strong>825 parroquias con al menos un incendio</strong>, la correlación de Spearman entre %MVMC y hectáreas quemadas es de <strong>ρ ≈ 0,09</strong> (0,15 con la superficie en escala logarítmica). El efecto es modesto, pero la cola de fuegos grandes sí cambia: <strong>media de 272 ha</strong> en parroquias con ≥20% de MVMC frente a <strong>62 ha</strong> en el resto.<br><br>
+La explicación tiene poco que ver con el régimen jurídico en sí: las comunidades de montes han sido históricamente uno de los pocos agentes que aún hacen gestión activa del monte. La correlación habla, sobre todo, de <strong>dónde queda el monte</strong>: en las parroquias rurales del interior orensano, vaciadas por el éxodo, donde la propiedad colectiva sobrevive porque el minifundio privado se abandonó. La estimación de hectáreas sobre MVMC es proporcional al peso de MVMC en cada parroquia — una aproximación honesta a falta de los perímetros oficiales.
                         </p>
                     </div>
                 </div>

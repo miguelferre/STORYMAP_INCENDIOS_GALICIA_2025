@@ -6,7 +6,7 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
   <script src="https://unpkg.com/scrollama"></script>
@@ -37,91 +37,6 @@
 
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:#0b0b0b}
-    body.popup-open{overflow:hidden}
-
-    #review-popup{
-      position:fixed;
-      inset:0;
-      z-index:120;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      background:rgba(3,7,18,0.78);
-      backdrop-filter:blur(6px);
-      transition:opacity .25s ease, visibility .25s ease;
-    }
-    #review-popup.popup-hidden{
-      opacity:0;
-      visibility:hidden;
-      pointer-events:none;
-    }
-    .review-popup-panel{
-      width:min(640px, 100%);
-      max-height:90vh;
-      overflow:auto;
-      background:rgba(4,17,56,0.96);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:18px;
-      padding:28px;
-      position:relative;
-      box-shadow:0 25px 60px rgba(0,0,0,0.45);
-      line-height:1.55;
-    }
-    .review-popup-panel h2{
-      margin:0 0 12px 0;
-      font-size:1.35rem;
-    }
-    .review-popup-panel p{
-      margin:0 0 16px 0;
-    }
-    .review-popup-panel ul{
-      margin:0;
-      padding-left:20px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .review-popup-panel li{
-      margin:0;
-    }
-    .review-popup-close{
-      position:absolute;
-      top:12px;
-      right:12px;
-      border:none;
-      background:rgba(255,255,255,0.08);
-      color:#fff;
-      font-size:1.1rem;
-      width:36px;
-      height:36px;
-      border-radius:999px;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:background .2s ease;
-    }
-    .review-popup-close:hover,
-    .review-popup-close:focus-visible{
-      background:rgba(255,255,255,0.2);
-      outline:none;
-    }
-    @media (max-width: 600px){
-      #review-popup{
-        padding:16px;
-        align-items:flex-start;
-      }
-      .review-popup-panel{
-        margin-top:12vh;
-        padding:20px;
-        border-radius:14px;
-      }
-      .review-popup-close{
-        width:32px;
-        height:32px;
-      }
-    }
 
     /* Mapa fijo detrás */
     #map{position:fixed;inset:0;width:100vw;height:100vh}
@@ -1261,6 +1176,32 @@
       }
     }
 
+    /* Portada: tarjeta contenida al estilo del cierre. */
+    .portada-card{
+      background: rgba(15, 18, 28, 0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 22px 26px 26px 26px;
+      backdrop-filter: blur(8px);
+      max-width: 640px;
+    }
+    .portada-card h2{
+      margin: 0 0 16px 0;
+    }
+    .portada-card .portada-parrafo{
+      background: none !important;
+      border: none !important;
+      backdrop-filter: none !important;
+      padding: 0 !important;
+      margin: 0 0 14px 0 !important;
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.92);
+    }
+    .portada-card .portada-parrafo:last-of-type{
+      margin-bottom: 18px !important;
+    }
+
     /* Capítulo Cimadevila: garantizar apilado en móvil */
     .cimadevila-layout{
       display: flex;
@@ -1307,7 +1248,7 @@
     }
     .tendencia-cabecera h3{
       margin: 0 0 6px 0;
-      font-family: 'Georgia', 'Cambria', serif;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em;
       font-size: 1.35rem;
       line-height: 1.25;
       color: #fff;
@@ -1370,7 +1311,7 @@
     }
     .causas-cabecera h3{
       margin: 0 0 6px 0;
-      font-family: 'Georgia', 'Cambria', serif;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em;
       font-size: 1.35rem;
       line-height: 1.25;
       color: #fff;
@@ -1428,7 +1369,7 @@
     }
     .propiedade-cabecera h3{
       margin: 0 0 6px 0;
-      font-family: 'Georgia', 'Cambria', serif;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em;
       font-size: 1.35rem;
       line-height: 1.25;
       color: #fff;
@@ -1457,7 +1398,7 @@
       border-radius: 14px;
       backdrop-filter: blur(8px);
     }
-    .comparador-cabecera h3{ margin: 0 0 6px 0; font-family: 'Georgia','Cambria',serif; font-size: 1.25rem; color: #fff; }
+    .comparador-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .comparador-cabecera p{ margin: 0 0 12px 0; font-size: 0.92rem; line-height: 1.5; color: rgba(255,255,255,0.78); }
     .comparador-paneles svg{ max-width: 100%; height: auto; }
     .comparador-pie{ margin: 12px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
@@ -1474,7 +1415,7 @@
       border-radius: 14px;
       backdrop-filter: blur(8px);
     }
-    .tendencia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Georgia','Cambria',serif; font-size: 1.25rem; color: #fff; }
+    .tendencia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .tendencia-cabecera p{ margin: 0 0 12px 0; font-size: 0.92rem; line-height: 1.5; color: rgba(255,255,255,0.78); }
     .tendencia-paneles svg{ max-width: 100%; height: auto; }
     .tendencia-pie{ margin: 12px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
@@ -1491,7 +1432,7 @@
       border-radius: 14px;
       backdrop-filter: blur(8px);
     }
-    .dnbr-cabecera h3{ margin: 0 0 6px 0; font-family: 'Georgia','Cambria',serif; font-size: 1.35rem; color: #fff; }
+    .dnbr-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .dnbr-cabecera p{ margin: 0 0 14px 0; font-size: 0.95rem; line-height: 1.55; color: rgba(255,255,255,0.78); }
     .dnbr-paneles{ display: flex; flex-direction: column; gap: 14px; }
     .dnbr-paneles svg{ max-width: 100%; height: auto; }
@@ -1510,11 +1451,27 @@
       border-radius: 14px;
       backdrop-filter: blur(8px);
     }
-    .cronoloxia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Georgia','Cambria',serif; font-size: 1.35rem; color: #fff; }
+    .cronoloxia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .cronoloxia-cabecera p{ margin: 0 0 12px 0; font-size: 0.95rem; line-height: 1.55; color: rgba(255,255,255,0.78); }
     .cronoloxia-paneles svg{ max-width: 100%; height: auto; }
     .cronoloxia-pie{ margin: 12px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
     .cronoloxia-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
+
+    /* Tooltips Observable Plot (tip:true) — fuerza tema oscuro y texto legible. */
+    figure g[aria-label="tip"] path,
+    svg g[aria-label="tip"] path{
+      fill: rgba(15, 18, 28, 0.96) !important;
+      stroke: rgba(255,255,255,0.25) !important;
+      stroke-width: 1px !important;
+    }
+    figure g[aria-label="tip"] text,
+    figure g[aria-label="tip"] tspan,
+    svg g[aria-label="tip"] text,
+    svg g[aria-label="tip"] tspan{
+      fill: #f5f5f5 !important;
+      paint-order: stroke;
+      stroke: none !important;
+    }
   </style>
 
   <!-- Observable Plot para as gráficas nativas (substitúe iframes Flourish) -->
@@ -2401,20 +2358,7 @@ window.addEventListener('load', () => {
 </script>
 
 
-<body class="popup-open">
-
-  <div id="review-popup" role="dialog" aria-modal="true" aria-labelledby="review-popup-title">
-    <div class="review-popup-panel">
-      <button type="button" class="review-popup-close" id="review-popup-close" aria-label="Cerrar aviso">×</button>
-      <h2 id="review-popup-title">Contenido en revisión</h2>
-      <p>El contenido de este story map se está revisando para incorporar información reciente que afecta a varios apartados. Mientras realizo los cambios, ten en cuenta lo siguiente:</p>
-      <ul>
-        <li>Las tendencias de incendios se están ajustando para basarse en los datos oficiales del PLADIGA, ya que las detecciones satelitales de EFFIS no recogen con fiabilidad los incendios pequeños o muy breves.</li>
-        <li>Los mapas de vegetación se sustituirán por cartografía procedente del Inventario Forestal Continuo de Galicia, SIOSE o CORINE LC, que ofrecen una referencia más precisa y con año de publicación.</li>
-        <li>El gráfico de motivaciones se corregirá para excluir periodos sin registro disponible, evitando interpretaciones erróneas.</li>
-      </ul>
-    </div>
-  </div>
+<body>
 
   <!-- MAPA DETRÁS -->
   <div id="map"></div>
@@ -2652,8 +2596,8 @@ window.addEventListener('load', () => {
                 'outros', '#0288d1',
                 '#888888'
               ],
-              'fill-opacity': 0.62,
-              'fill-outline-color': 'rgba(255,255,255,0.22)'
+              'fill-opacity': 0.5,
+              'fill-outline-color': 'rgba(0,0,0,0)'
             }
           }, beforeId);
         }
@@ -2832,44 +2776,83 @@ window.addEventListener('load', () => {
             }
         },
 
-        // Versión segura para mostrar capas
-        showLayerSafe(layerId, retries = 3) {
+        // Memoria de opacidad original por capa para poder restaurarla en fade-in.
+        _origOpacity: {},
+        _fadeTimers: {},
+        FADE_MS: 380,
+
+        // Fade combinando layout.visibility con paint.opacity. Para mostrar:
+        // visibility=visible y opacity 0→original con transición. Para ocultar:
+        // opacity actual→0 con transición, después visibility=none.
+        fadeLayer(layerId, show, retries = 3) {
+            const self = this;
             try {
-                if (map && map.getLayer && map.getLayer(layerId)) {
-                    map.setLayoutProperty(layerId, 'visibility', 'visible');
-                } else if (retries > 0) {
-                    // Reintentar si la capa no está disponible
-                    setTimeout(() => {
-                        this.showLayerSafe(layerId, retries - 1);
-                    }, 100);
+                if (!(map && map.getLayer && map.getLayer(layerId))) {
+                    if (retries > 0) {
+                        setTimeout(() => self.fadeLayer(layerId, show, retries - 1), 120);
+                    }
+                    return;
+                }
+                const type = map.getLayer(layerId).type;
+                const props = layerTypes[type] || ['fill-opacity'];
+                const primary = props[0];
+
+                if (self._origOpacity[layerId] === undefined) {
+                    let v = map.getPaintProperty(layerId, primary);
+                    if (typeof v !== 'number') v = 1;
+                    self._origOpacity[layerId] = v;
+                }
+                const target = self._origOpacity[layerId];
+
+                // Cancela transición pendiente si la había.
+                if (self._fadeTimers[layerId]) {
+                    clearTimeout(self._fadeTimers[layerId]);
+                    delete self._fadeTimers[layerId];
+                }
+
+                props.forEach((prop) => {
+                    map.setPaintProperty(layerId, prop + '-transition', { duration: self.FADE_MS });
+                });
+
+                if (show) {
+                    if (map.getLayoutProperty(layerId, 'visibility') === 'none') {
+                        // Forzar visibility a visible con opacity 0 para evitar pop-in.
+                        props.forEach((prop) => map.setPaintProperty(layerId, prop, 0));
+                        map.setLayoutProperty(layerId, 'visibility', 'visible');
+                        // Siguiente frame: subir a opacity objetivo con transición.
+                        requestAnimationFrame(() => {
+                            props.forEach((prop) => map.setPaintProperty(layerId, prop, target));
+                        });
+                    } else {
+                        props.forEach((prop) => map.setPaintProperty(layerId, prop, target));
+                    }
+                } else {
+                    if (map.getLayoutProperty(layerId, 'visibility') === 'none') return;
+                    props.forEach((prop) => map.setPaintProperty(layerId, prop, 0));
+                    self._fadeTimers[layerId] = setTimeout(() => {
+                        try {
+                            if (map.getLayer(layerId)) {
+                                map.setLayoutProperty(layerId, 'visibility', 'none');
+                                // Restaurar opacity al valor original tras ocultar para que
+                                // el siguiente fade-in pueda animar desde 0 sin saltos.
+                                props.forEach((prop) => map.setPaintProperty(layerId, prop, target));
+                            }
+                        } catch (e) { /* no-op */ }
+                        delete self._fadeTimers[layerId];
+                    }, self.FADE_MS + 40);
                 }
             } catch (error) {
-                console.warn(`Error mostrando capa ${layerId}:`, error);
-                if (retries > 0) {
-                    setTimeout(() => {
-                        this.showLayerSafe(layerId, retries - 1);
-                    }, 200);
-                }
+                console.warn(`Error en fadeLayer ${layerId}:`, error);
             }
         },
-        
+
+        // Versión segura para mostrar capas
+        showLayerSafe(layerId, retries = 3) {
+            this.fadeLayer(layerId, true, retries);
+        },
+
         hideLayerSafe(layerId, retries = 3) {
-            try {
-                if (map && map.getLayer && map.getLayer(layerId)) {
-                    map.setLayoutProperty(layerId, 'visibility', 'none');
-                } else if (retries > 0) {
-                    setTimeout(() => {
-                        this.hideLayerSafe(layerId, retries - 1);
-                    }, 100);
-                }
-            } catch (error) {
-                console.warn(`Error ocultando capa ${layerId}:`, error);
-                if (retries > 0) {
-                    setTimeout(() => {
-                        this.hideLayerSafe(layerId, retries - 1);
-                    }, 200);
-                }
-            }
+            this.fadeLayer(layerId, false, retries);
         },
 
         enforceExclusiveLayer(categoryKey) {
@@ -2972,7 +2955,18 @@ window.addEventListener('load', () => {
             
             // Pequeña pausa para asegurar que las capas se oculten antes de mostrar nuevas
             setTimeout(() => {
-                CategoryController.showCategoryContent(category);
+                // skipHide:true para que enforceExclusiveLayer haga cross-fade
+                // entre la capa anterior y la nueva, sin un flash intermedio
+                // por hideAll instantáneo. Los overlays (clima, marcador) se
+                // siguen ocultando explícitamente para no quedar colgados al
+                // cambiar de categoría.
+                const climateOverlay = document.getElementById('climate-images-overlay');
+                if (climateOverlay) climateOverlay.classList.add('hidden');
+                const climateInline = document.getElementById('climate-inline-container');
+                if (climateInline && category !== 'clima') climateInline.style.display = 'none';
+                if (category !== 'clima' && typeof window.hideLarouco === 'function') window.hideLarouco();
+
+                CategoryController.showCategoryContent(category, { skipHide: true });
                 currentCategory = category;
                 setCategory.isProcessing = false;
             }, 50);
@@ -3253,34 +3247,6 @@ window.addEventListener('load', () => {
         lastY = y;
       }, { passive: true });
     })();
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      var popup = document.getElementById('review-popup');
-      var closeBtn = document.getElementById('review-popup-close');
-      if (!popup || !closeBtn) return;
-
-      function closePopup(){
-        if (popup.classList.contains('popup-hidden')) return;
-        popup.classList.add('popup-hidden');
-        popup.setAttribute('aria-hidden','true');
-        document.body.classList.remove('popup-open');
-      }
-
-      function handleKey(e){
-        if (e.key === 'Escape'){
-          closePopup();
-        }
-      }
-
-      closeBtn.addEventListener('click', closePopup);
-      popup.addEventListener('click', function(evt){
-        if (evt.target === popup){
-          closePopup();
-        }
-      });
-      document.addEventListener('keydown', handleKey);
-    });
   </script>
   <script src="./i18n.js"></script>
 </body>

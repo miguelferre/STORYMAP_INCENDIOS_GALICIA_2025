@@ -14,21 +14,21 @@
     es: {
       titulo: "Distritos forestales: el reparto del fuego",
       subtitulo:
-        "Cada celda es la superficie quemada en un distrito forestal en un año concreto. Los cinco distritos de Ourense (Verín-Viana, Valdeorras-Trives, Miño-Arnoia, A Limia, O Ribeiro-Arenteiro) concentran la actividad año tras año. El verano de 2025 colorea casi toda la columna.",
+        "Cada celda es la superficie quemada en uno de los 19 distritos forestales de Galicia en un año concreto. Los cinco distritos de Ourense (Verín-Viana, Valdeorras-Trives, Miño-Arnoia, A Limia, O Ribeiro-Arenteiro) concentran la actividad año tras año. El verano de 2025 colorea casi toda la columna.",
       eje_y: "Distrito forestal",
       eje_x: "Año",
       pie:
-        "Fuente: hojas anuales \"Lumes-AAAA-por-Distrito\" (Consellería do Medio Rural, Xunta de Galicia, 2018-2025).",
+        "Fuente: estadísticas oficiales de incendios por distrito (Consellería do Medio Rural, Xunta de Galicia, 2018-2025).",
       legend: "Hectáreas quemadas",
     },
     gl: {
       titulo: "Distritos forestais: o reparto do lume",
       subtitulo:
-        "Cada cela é a superficie queimada nun distrito forestal nun ano concreto. Os cinco distritos de Ourense (Verín-Viana, Valdeorras-Trives, Miño-Arnoia, A Limia, O Ribeiro-Arenteiro) concentran a actividade ano tras ano. O verán de 2025 colorea case toda a columna.",
+        "Cada cela é a superficie queimada nun dos 19 distritos forestais de Galicia nun ano concreto. Os cinco distritos de Ourense (Verín-Viana, Valdeorras-Trives, Miño-Arnoia, A Limia, O Ribeiro-Arenteiro) concentran a actividade ano tras ano. O verán de 2025 colorea case toda a columna.",
       eje_y: "Distrito forestal",
       eje_x: "Ano",
       pie:
-        "Fonte: follas anuais \"Lumes-AAAA-por-Distrito\" (Consellería do Medio Rural, Xunta de Galicia, 2018-2025).",
+        "Fonte: estatísticas oficiais de lumes por distrito (Consellería do Medio Rural, Xunta de Galicia, 2018-2025).",
       legend: "Hectáreas queimadas",
     },
   };

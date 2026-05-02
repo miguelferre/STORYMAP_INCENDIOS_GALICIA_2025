@@ -12,6 +12,30 @@
  *   - Panel B: barras horizontales coa distribución de hectáreas por clase.
  */
 (function (global) {
+  const ETIQUETAS = {
+    es: {
+      "Rebrote post-lume": "Rebrote post-fuego",
+      "Non queimado": "No quemado",
+      "Severidade baixa": "Severidad baja",
+      "Severidade moderada-baixa": "Severidad moderada-baja",
+      "Severidade moderada-alta": "Severidad moderada-alta",
+      "Severidade alta": "Severidad alta",
+    },
+    gl: {
+      "Rebrote post-lume": "Rebrote post-lume",
+      "Non queimado": "Non queimado",
+      "Severidade baixa": "Severidade baixa",
+      "Severidade moderada-baixa": "Severidade moderada-baixa",
+      "Severidade moderada-alta": "Severidade moderada-alta",
+      "Severidade alta": "Severidade alta",
+    },
+  };
+
+  function tr(lang, etq) {
+    const tabla = ETIQUETAS[lang] || ETIQUETAS.es;
+    return tabla[etq] || etq;
+  }
+
   const TEXTOS = {
     es: {
       titulo: "La huella del fuego",
@@ -49,9 +73,10 @@
     return cargaPromesa;
   }
 
-  function panelMapa(clases, resumo, ancho) {
+  function panelMapa(clases, resumo, ancho, lang) {
     const Plot = global.Plot;
-    const ordeColor = ["Severidade moderada-baixa", "Severidade moderada-alta", "Severidade alta"];
+    const claves = ["Severidade moderada-baixa", "Severidade moderada-alta", "Severidade alta"];
+    const ordeColor = claves.map((k) => tr(lang, k));
     const cores = ["#fdae61", "#d73027", "#7f1d1d"];
     return Plot.plot({
       width: ancho,
@@ -62,7 +87,7 @@
       marginBottom: 30,
       projection: { type: "mercator", domain: clases, inset: 14 },
       style: {
-        background: "#0a0d12",
+        background: "transparent",
         color: "rgba(255,255,255,0.86)",
         fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
         fontSize: "11.5px",
@@ -76,12 +101,14 @@
         style: { color: "rgba(255,255,255,0.86)" },
       },
       marks: [
+        Plot.geo({ type: "Sphere" }, { fill: "rgba(15,18,28,0.55)", stroke: "none" }),
+        Plot.graticule({ stroke: "rgba(255,255,255,0.08)", strokeWidth: 0.5 }),
         Plot.geo(clases, {
-          fill: (d) => d.properties.etiqueta,
+          fill: (d) => tr(lang, d.properties.etiqueta),
           stroke: "rgba(0,0,0,0.4)",
           strokeWidth: 0.3,
           tip: true,
-          title: (d) => `${d.properties.etiqueta}`,
+          title: (d) => tr(lang, d.properties.etiqueta),
         }),
       ],
     });
@@ -91,7 +118,7 @@
     const Plot = global.Plot;
     const datos = resumo.clases.filter((c) => c.indice >= 1).map((c) => ({
       ...c,
-      etq: c.etiqueta,
+      etq: tr(lang, c.etiqueta),
     }));
     return Plot.plot({
       width: ancho,
@@ -142,13 +169,29 @@
     tA.className = "dnbr-subtitulo";
     tA.textContent = t.panel_mapa;
     slot.appendChild(tA);
-    slot.appendChild(panelMapa(j.clases, j.resumo, ancho));
+    slot.appendChild(panelMapa(j.clases, j.resumo, ancho, lang));
 
-    const tB = document.createElement("p");
-    tB.className = "dnbr-subtitulo";
-    tB.textContent = t.panel_barras;
-    slot.appendChild(tB);
-    slot.appendChild(panelBarras(j.resumo, ancho, lang));
+    // Si existe un host externo visible para las barras (`#grafica-dnbr-bars`),
+    // renderiza ahí; si no (móvil con desktop-expl oculto, o sin host), las
+    // pinta debajo del mapa.
+    const barsHost = document.getElementById("grafica-dnbr-bars");
+    const barsHostVisible = barsHost && barsHost.offsetParent !== null;
+    if (barsHostVisible) {
+      barsHost.classList.add("dnbr-bloque-bars");
+      barsHost.innerHTML = "";
+      const tB = document.createElement("p");
+      tB.className = "dnbr-subtitulo";
+      tB.textContent = t.panel_barras;
+      barsHost.appendChild(tB);
+      const anchoB = Math.max(280, Math.min(barsHost.clientWidth || 420, 600));
+      barsHost.appendChild(panelBarras(j.resumo, anchoB, lang));
+    } else {
+      const tB = document.createElement("p");
+      tB.className = "dnbr-subtitulo";
+      tB.textContent = t.panel_barras;
+      slot.appendChild(tB);
+      slot.appendChild(panelBarras(j.resumo, ancho, lang));
+    }
   }
 
   function render(host, lang) {

@@ -9,9 +9,7 @@
   const FIRE_KM2 = 317;
   const COR_GRUPO = {
     Lume: "#F44E11",
-    Galicia: "#4FB7B3",
-    España: "#F2C14E",
-    Europa: "#9CC5F0",
+    Ciudad: "#6E7A8A",
   };
 
   const TEXTOS = {
@@ -21,7 +19,7 @@
         "El incendio de Larouco–Seadur arrasó 317 km², equivalentes a la suma de Vigo, A Coruña y Ourense. Cada barra es el área municipal de una ciudad conocida.",
       eje: "Superficie (km²)",
       label_lume: "Incendio Larouco–Seadur 2025",
-      grupos: { Lume: "Incendio 2025", Galicia: "Galicia", España: "España", Europa: "Europa" },
+      grupos: { Lume: "Incendio 2025", Ciudad: "Ciudad" },
       pie:
         "Fuentes: superficie del incendio, Consellería do Medio Rural; áreas municipales, INE / Eurostat.",
     },
@@ -31,7 +29,7 @@
         "O lume de Larouco–Seadur arrasou 317 km², equivalentes á suma de Vigo, A Coruña e Ourense. Cada barra é a área municipal dunha cidade coñecida.",
       eje: "Superficie (km²)",
       label_lume: "Incendio Larouco–Seadur 2025",
-      grupos: { Lume: "Lume 2025", Galicia: "Galicia", España: "España", Europa: "Europa" },
+      grupos: { Lume: "Lume 2025", Ciudad: "Cidade" },
       pie:
         "Fontes: superficie do lume, Consellería do Medio Rural; áreas municipais, INE / Eurostat.",
     },
@@ -69,13 +67,11 @@
     const t = TEXTOS[lang] || TEXTOS.es;
     const filas = [
       { name: t.label_lume, km2: FIRE_KM2, grupo: "Lume" },
-      ...items.map((d) => ({ name: d.name, km2: d.km2, grupo: d.grupo })),
+      ...items.map((d) => ({ name: d.name, km2: d.km2, grupo: "Ciudad" })),
     ].sort((a, b) => b.km2 - a.km2);
-    const ordeColor = ["Lume", "Galicia", "España", "Europa"].map(
-      (k) => t.grupos[k] || k
-    );
+    const ordeColor = ["Lume", "Ciudad"].map((k) => t.grupos[k] || k);
     const cores = ordeColor.map((etq) => {
-      const orig = ["Lume", "Galicia", "España", "Europa"].find((k) => (t.grupos[k] || k) === etq);
+      const orig = ["Lume", "Ciudad"].find((k) => (t.grupos[k] || k) === etq);
       return COR_GRUPO[orig] || "#888";
     });
     const filasT = filas.map((d) => ({ ...d, grupoT: t.grupos[d.grupo] || d.grupo }));

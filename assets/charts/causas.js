@@ -13,27 +13,31 @@
  *              agrupadas e ordenadas por nº de incendios.
  */
 (function (global) {
-  // Paleta consistente coa identidade visual do storymap.
+  // Paleta unificada: naranja sólo para Intencionado (la causa-personaje),
+  // el resto en una rampa de grises fríos para reducir ruido cromático.
   const COR_GRUPO = {
     "Intencionado": "#F44E11",
-    "Causa descoñecida": "#9CC5F0",
-    "Negligencias e accidentes": "#F2C14E",
-    "Reproducción": "#A8A8A8",
-    "Rayo": "#7BAE7F",
+    "Causa descoñecida": "#7A8694",
+    "Negligencias e accidentes": "#9CA8B6",
+    "Reproducción": "#5C6672",
+    "Rayo": "#3F4751",
   };
 
+  // Motivacións dos intencionados: gradiente del naranja del fuego al gris,
+  // para que la motivación dominante (prácticas agrícolas) destaque sobre el
+  // resto sin que cada motivación tenga un color distinto que no aporta nada.
   const COR_MOTIV = {
-    "Intencionado sen motivación recoñecida": "rgba(244,78,17,0.35)",
+    "Intencionado sen motivación recoñecida": "rgba(244,78,17,0.30)",
     "Prácticas agrícolas e gandeiras": "#F44E11",
-    "Caza": "#D97706",
-    "Vandalismo": "#9333EA",
-    "Piromanía": "#B91C1C",
-    "Desacordos e protestas": "#0EA5E9",
-    "Vinganzas e disputas": "#EA580C",
-    "Propiedade": "#65A30D",
-    "Beneficio económico": "#CA8A04",
-    "Outras motivacións": "#6B7280",
-    "Forzas de orde público": "#475569",
+    "Caza": "#C66640",
+    "Vandalismo": "#A4685A",
+    "Piromanía": "#856B6E",
+    "Desacordos e protestas": "#6F6E7B",
+    "Vinganzas e disputas": "#5C6672",
+    "Propiedade": "#525B66",
+    "Beneficio económico": "#48505A",
+    "Outras motivacións": "#3F4751",
+    "Forzas de orde público": "#363D45",
   };
 
   const ORDE_GRUPOS = [
@@ -278,11 +282,6 @@
     tituloB.textContent = t.panel_motiv;
     slot.appendChild(tituloB);
     slot.appendChild(panelMotivacions(json.motivacions, ancho, lang));
-
-    const nota = document.createElement("p");
-    nota.className = "causas-nota";
-    nota.textContent = t.nota_motiv;
-    slot.appendChild(nota);
   }
 
   function render(host, lang) {
