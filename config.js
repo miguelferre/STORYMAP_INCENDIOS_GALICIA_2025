@@ -13,7 +13,7 @@ var config = {
         },
         'vegetacion': {
             title: 'Vegetación',
-            description: 'Los tipos de bosque y matorral predominantes determinan la cantidad de combustible disponible para el fuego.<br>Las especies más resinosas y la densidad de la vegetación son factores críticos en la intensidad de los incendios.'
+            description: 'Los tipos de bosque y matorral predominantes determinan la cantidad de combustible disponible para el fuego.<br>Mapa de Usos do Solo del IET (Xunta, 2011, 1:250.000), reclasificado a ocho clases divulgativas.'
         },
         'clima': {
             title: 'Clima',
@@ -24,7 +24,7 @@ var config = {
             description: 'El relieve y la topografía del terreno afectan tanto la velocidad como la dirección de propagación del fuego.<br>Las pendientes pronunciadas y los valles estrechos actúan como corredores que aceleran las llamas.'
         }
     },
-    
+
     // Explicaciones de las categorías
     layerExplanations: {
         'geologia': {
@@ -33,7 +33,7 @@ var config = {
         },
         'vegetacion': {
             title: 'Vegetación',
-            description: 'Los tipos de bosque y matorral predominantes determinan la cantidad de combustible disponible para el fuego.<br>Las especies más resinosas y la densidad de la vegetación son factores críticos en la intensidad de los incendios.'
+            description: 'Los tipos de bosque y matorral predominantes determinan la cantidad de combustible disponible para el fuego.<br>Mapa de Usos do Solo del IET (Xunta, 2011, 1:250.000), reclasificado a ocho clases divulgativas.'
         },
         'clima': {
             title: 'Clima',

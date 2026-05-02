@@ -95,6 +95,25 @@ async function correr(viewport, lang, prefijo, log) {
 
   await recorrerCapitulos(page, prefijo, log);
 
+  // Snapshot da capa de vexetación (botón categoría "vegetación").
+  try {
+    await page.evaluate(() => {
+      const el = document.getElementById("galicia-noroeste");
+      if (el) el.scrollIntoView({ behavior: "instant", block: "center" });
+    });
+    await page.waitForTimeout(1200);
+    const vegBtn = await page.$('#category-selector .category-tab[data-category="vegetacion"]');
+    if (vegBtn) {
+      await vegBtn.click();
+      await page.waitForTimeout(2000);
+      await page.screenshot({ path: path.join(OUT, `${prefijo}_capa_vegetacion.png`), fullPage: false });
+    } else {
+      log.faltantes.push({ prefijo, capitulo: "vegetacion-categoria", motivo: "boton non atopado" });
+    }
+  } catch (err) {
+    log.faltantes.push({ prefijo, capitulo: "vegetacion-categoria", motivo: err.message });
+  }
+
   // Snapshots focais das gráficas nativas para revisión detallada.
   for (const [chId, hostId] of [
     ["tendencia-aumento", "grafica-tendencia"],
