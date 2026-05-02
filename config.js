@@ -96,6 +96,47 @@ var config = {
             ]
         },
         {
+            id: 'dia-xuntou-todo',
+            alignment: 'full',
+            hidden: false,
+            title: '',
+            description: `
+            <h2>El día que se juntó todo</h2>
+                <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
+                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
+                        <div id="grafica-cronoloxia" class="grafica-host" style="margin-bottom: 30px;"></div>
+                        <div class="mobile-expl">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Larouco-Seadur fue el más grande, pero no fue el único. Entre el <strong>8 y el 15 de agosto</strong> se prendió Galicia entera: una semana en la que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha) se solaparon en el tiempo y agotaron los recursos de extinción.<br><br>
+El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios y casi 49.000 hectáreas reportadas</strong>. El 13, otras 25.000. Cinco días, más de 100.000 ha.
+                          </p>
+                        </div>
+                    </div>
+
+                    <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Larouco-Seadur fue el más grande, pero no fue el único. Entre el <strong>8 y el 15 de agosto</strong> se prendió Galicia entera: una semana en la que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha) se solaparon en el tiempo y agotaron los recursos de extinción.<br><br>
+El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios y casi 49.000 hectáreas reportadas</strong>. El 13, otras 25.000. Cinco días, más de 100.000 hectáreas perdidas.<br><br>
+La gráfica deja muy clara la concentración: tras un junio y un julio relativamente discretos, casi todo el daño del verano cabe en una sola semana de agosto.
+                        </p>
+                    </div>
+                </div>
+            `,
+            location: {
+                center: [-7.4, 42.4],
+                zoom: 7.8,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            onChapterEnter: [
+                { callbackName: 'hideDefaultLayers' },
+                { callbackName: 'renderCronoloxia' }
+            ],
+            onChapterExit: []
+        },
+        {
             id: 'pegada-lume',
             alignment: 'full',
             hidden: false,

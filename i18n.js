@@ -64,6 +64,31 @@
             <div id="grafica-comparador" class="grafica-host" style="margin-top: 12px;"></div>
           `
         },
+        'dia-xuntou-todo': {
+          title: '',
+          description: `
+            <h2>O día que se xuntou todo</h2>
+                <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
+                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
+                        <div id="grafica-cronoloxia" class="grafica-host" style="margin-bottom: 30px;"></div>
+                        <div class="mobile-expl">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Larouco-Seadur foi o máis grande, pero non foi o único. Entre o <strong>8 e o 15 de agosto</strong> ardeu Galicia enteira: unha semana na que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) e Quiroga (9.472 ha) coincidiron no tempo e esgotaron os recursos de extinción.<br><br>
+O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes e case 49.000 hectáreas reportadas</strong>. O 13, outras 25.000. Cinco días, máis de 100.000 ha.
+                          </p>
+                        </div>
+                    </div>
+
+                    <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+Larouco-Seadur foi o máis grande, pero non foi o único. Entre o <strong>8 e o 15 de agosto</strong> ardeu Galicia enteira: unha semana na que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) e Quiroga (9.472 ha) coincidiron no tempo e esgotaron os recursos de extinción.<br><br>
+O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes e case 49.000 hectáreas reportadas</strong>. O 13, outras 25.000. Cinco días, máis de 100.000 hectáreas perdidas.<br><br>
+A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativamente discretos, case todo o dano do verán cabe nunha soa semana de agosto.
+                        </p>
+                    </div>
+                </div>
+          `
+        },
         'pegada-lume': {
           title: '',
           description: `

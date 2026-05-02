@@ -1498,6 +1498,23 @@
     .dnbr-subtitulo{ margin: 6px 0 0 0; font-size: 0.92rem; color: rgba(255,255,255,0.78); }
     .dnbr-pie{ margin: 14px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
     .dnbr-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
+
+    /* Cronoloxía PrazaGal — capítulo "O día que se xuntou todo". */
+    .cronoloxia-bloque{
+      width: 100%;
+      max-width: 920px;
+      margin: 0 0 18px 0;
+      padding: 16px 18px 20px 18px;
+      background: rgba(15, 18, 28, 0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .cronoloxia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Georgia','Cambria',serif; font-size: 1.35rem; color: #fff; }
+    .cronoloxia-cabecera p{ margin: 0 0 12px 0; font-size: 0.95rem; line-height: 1.55; color: rgba(255,255,255,0.78); }
+    .cronoloxia-paneles svg{ max-width: 100%; height: auto; }
+    .cronoloxia-pie{ margin: 12px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
+    .cronoloxia-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
   </style>
 
   <!-- Observable Plot para as gráficas nativas (substitúe iframes Flourish) -->
@@ -1509,6 +1526,7 @@
   <script src="assets/charts/comparador_ciudades.js"></script>
   <script src="assets/charts/mapa_tendencia.js"></script>
   <script src="assets/charts/dnbr_larouco.js"></script>
+  <script src="assets/charts/cronoloxia.js"></script>
 </head>
 <script>
 window.addEventListener('load', () => {
@@ -2088,6 +2106,13 @@ window.addEventListener('load', () => {
     window.DnbrLarouco.render(host, langActivo());
   };
 
+  // Renderiza la cronología PrazaGal en el capítulo "O día que se xuntou todo".
+  window.renderCronoloxia = function(){
+    var host = document.getElementById('grafica-cronoloxia');
+    if (!host || !window.Cronoloxia) return;
+    window.Cronoloxia.render(host, langActivo());
+  };
+
   // Cuando cambia el idioma, re-renderiza las gráficas nativas si están en pantalla.
   document.addEventListener('click', function(ev){
     var btn = ev.target.closest('#language-selector .language-button');
@@ -2099,6 +2124,7 @@ window.addEventListener('load', () => {
       if (typeof window.renderComparador === 'function') window.renderComparador();
       if (typeof window.renderMapaTendencia === 'function') window.renderMapaTendencia();
       if (typeof window.renderDnbr === 'function') window.renderDnbr();
+      if (typeof window.renderCronoloxia === 'function') window.renderCronoloxia();
     }, 30);
   });
 
