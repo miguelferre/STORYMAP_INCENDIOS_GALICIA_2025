@@ -92,33 +92,15 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
         'pegada-lume': {
           title: '',
           description: `
-            <h2>A pegada do lume, vista dende o espazo</h2>
-                <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
-                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
-                        <div id="grafica-dnbr" class="grafica-host" style="margin-bottom: 30px;"></div>
-                        <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-Para medir o que deixou atrás o lume recorremos ao <strong>dNBR</strong> (differential Normalized Burn Ratio), unha métrica estándar en teledetección post-lume que combina as bandas do infravermello próximo e do SWIR2 de Sentinel-2. A diferenza entre unha imaxe previa (24 xullo) e outra posterior (10 outubro) descobre, píxel a píxel, onde se queimou a vexetación e con que intensidade.<br><br>
-Reclasificando eses valores cos limiares <strong>Key &amp; Benson 2006</strong>, o bbox do lume reparte as súas 24.451 hectáreas queimadas así: <strong>13.335 ha de severidade baixa</strong>, <strong>5.395 de moderada-baixa</strong>, <strong>5.265 de moderada-alta</strong> e <strong>457 ha de severidade alta</strong> — os focos de vexetación arrasada total, onde a rexeneración natural será máis lenta.<br><br>
-É unha análise reproducible: dúas escenas Sentinel-2 abertas, dúas bandas, unha resta. O que para un equipo de modelización significa puntos quentes para validar simulacións de propagación.<br><br>
-Sobre o dNBR superpoñemos a capa <strong>SILVIS Global WUI 2020</strong> (Schug et al. 2023): <strong>472 ha</strong> da interface urbano-forestal (376 ha forestal-matorral + 96 ha pradeira) caeron dentro do perímetro queimado, un <strong>6%</strong> do total con severidade moderada ou superior. Os bordes amarelo e cian marcan núcleos rurais e mosaicos agrarios en contacto directo co monte combustible.
-                          </p>
-                        </div>
-                    </div>
-
-                    <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
-Para medir o que deixou atrás o lume recorremos ao <strong>dNBR</strong> (differential Normalized Burn Ratio), unha métrica estándar en teledetección post-lume que combina as bandas do infravermello próximo e do SWIR2 de Sentinel-2. A diferenza entre unha imaxe previa (24 xullo) e outra posterior (10 outubro) descobre, píxel a píxel, onde se queimou a vexetación e con que intensidade.<br><br>
-Reclasificando eses valores cos limiares <strong>Key &amp; Benson 2006</strong>, o bbox do lume reparte as súas <strong>24.451 ha queimadas</strong> así:<br>
-&nbsp;&nbsp;13.335 ha — severidade baixa<br>
-&nbsp;&nbsp;5.395 ha — moderada-baixa<br>
-&nbsp;&nbsp;5.265 ha — moderada-alta<br>
-&nbsp;&nbsp;457 ha — severidade alta<br><br>
-A concentración de severidade alta marca os focos onde a rexeneración natural será máis lenta. É unha análise reproducible: dúas escenas Sentinel-2 abertas, dúas bandas, unha resta. Para un equipo de modelización son puntos quentes para validar simulacións de propagación.<br><br>
-Sobre o dNBR superpoñemos a capa <strong>SILVIS Global WUI 2020</strong> (Schug et al. 2023, ráster a 10 m). Das 15.572 ha de Wildland-Urban Interface no bbox, <strong>472 ha</strong> (376 forestal-matorral + 96 pradeira) caeron dentro do perímetro con severidade moderada ou superior — un <strong>6%</strong> da área queimada. Os bordes amarelo e cian sobre o mapa marcan núcleos rurais e mosaicos agrarios en contacto directo co monte combustible.
-                        </p>
-                    </div>
-                </div>
+            <h2>A pegada do lume</h2>
+            <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
+            Mira o mapa: os polígonos vermellos son a severidade <strong>dNBR</strong> derivada de Sentinel-2 (24 xul vs 10 out 2025) reclasificada segundo <strong>Key &amp; Benson 2006</strong>. As liñas amarelas e cian que os rodean son os polígonos da <strong>Wildland-Urban Interface</strong> (SILVIS Global WUI 2020).
+            </p>
+            <div id="grafica-dnbr" class="grafica-host" style="margin: 0 0 14px 0;"></div>
+            <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
+            O bbox reparte <strong>24.451 ha queimadas</strong> en clases de severidade: a concentración alta marca os focos onde a rexeneración será máis lenta. Das 15.572 ha de WUI no bbox, <strong>472 ha</strong> (376 forestal-matorral + 96 pradeira) caeron dentro do perímetro con severidade moderada ou superior — un <strong>6%</strong> da área queimada, núcleos rurais e mosaicos agrarios en contacto directo co monte combustible.
+            </p>
+            <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 4px;"></div>
           `
         },
         'tendencia-aumento': {

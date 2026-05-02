@@ -220,12 +220,10 @@
   function render(host, lang) {
     if (!host) return;
     const t = TEXTOS[lang] || TEXTOS.es;
-    host.classList.add("dnbr-bloque");
+    // O capítulo xa ten o título e a explicación na propia card. Aquí só
+    // renderizamos a leyenda compacta (severidade dNBR + WUI) e a cita.
+    host.classList.add("dnbr-bloque", "dnbr-bloque-compacto");
     host.innerHTML = `
-      <header class="dnbr-cabecera">
-        <h3>${t.titulo}</h3>
-        <p>${t.subtitulo}</p>
-      </header>
       <div class="dnbr-paneles"></div>
       <p class="dnbr-pie">${t.pie}</p>
     `;
