@@ -2078,20 +2078,16 @@ window.addEventListener('load', () => {
   // callbacks del capítulo "A pegada do lume".
   window.showWuiLayer = function(){
     try{
-      ['WUI_LAROUCO_FILL', 'WUI_LAROUCO_LINE'].forEach(function(id){
-        if (map && map.getLayer && map.getLayer(id)) {
-          map.setLayoutProperty(id, 'visibility', 'visible');
-        }
-      });
+      if (map && map.getLayer && map.getLayer('WUI_LAROUCO_LINE')) {
+        map.setLayoutProperty('WUI_LAROUCO_LINE', 'visibility', 'visible');
+      }
     } catch(e){ console.warn('showWuiLayer:', e); }
   };
   window.hideWuiLayer = function(){
     try{
-      ['WUI_LAROUCO_FILL', 'WUI_LAROUCO_LINE'].forEach(function(id){
-        if (map && map.getLayer && map.getLayer(id)) {
-          map.setLayoutProperty(id, 'visibility', 'none');
-        }
-      });
+      if (map && map.getLayer && map.getLayer('WUI_LAROUCO_LINE')) {
+        map.setLayoutProperty('WUI_LAROUCO_LINE', 'visibility', 'none');
+      }
     } catch(e){ console.warn('hideWuiLayer:', e); }
   };
 
@@ -2739,24 +2735,6 @@ window.addEventListener('load', () => {
         for (var w = 0; w < layersWui.length; w++) {
           if (layersWui[w].type === 'symbol') { beforeIdWui = layersWui[w].id; break; }
         }
-        if (!map.getLayer('WUI_LAROUCO_FILL')) {
-          map.addLayer({
-            id: 'WUI_LAROUCO_FILL',
-            type: 'fill',
-            source: 'wui-larouco',
-            layout: { visibility: 'none' },
-            paint: {
-              'fill-color': [
-                'match', ['get', 'categoria'],
-                'wui_forestal', '#ffd23f',
-                'wui_pradeira', '#2ec4b6',
-                'rgba(0,0,0,0)'
-              ],
-              'fill-opacity': 0.18,
-              'fill-outline-color': 'rgba(0,0,0,0)'
-            }
-          }, beforeIdWui);
-        }
         if (!map.getLayer('WUI_LAROUCO_LINE')) {
           map.addLayer({
             id: 'WUI_LAROUCO_LINE',
@@ -2770,8 +2748,8 @@ window.addEventListener('load', () => {
                 'wui_pradeira', '#2ec4b6',
                 'rgba(0,0,0,0)'
               ],
-              'line-width': 1.4,
-              'line-opacity': 0.9
+              'line-width': 1.6,
+              'line-opacity': 0.95
             }
           }, beforeIdWui);
         }
@@ -2851,7 +2829,7 @@ window.addEventListener('load', () => {
         // Oculta todas las capas y overlays con verificación robusta
         hideAll(options = {}) {
             const { preserveInline = false } = options;
-            const layersToHide = ['LITOLOGIA_GALICIA', 'XEOURENSE', 'USOURENSE', 'VEGETACION_GALICIA', 'RELIEVE', 'DNBR_LAROUCO', 'WUI_LAROUCO_FILL', 'WUI_LAROUCO_LINE'];
+            const layersToHide = ['LITOLOGIA_GALICIA', 'XEOURENSE', 'USOURENSE', 'VEGETACION_GALICIA', 'RELIEVE', 'DNBR_LAROUCO', 'WUI_LAROUCO_LINE'];
             
             layersToHide.forEach(layerId => {
                 try {
