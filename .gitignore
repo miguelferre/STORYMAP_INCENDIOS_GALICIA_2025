@@ -27,3 +27,7 @@ package-lock.json
 Thumbs.db
 .vscode/
 .idea/
+
+# Credenciais (AEMET, etc.)
+.env
+.env.local
