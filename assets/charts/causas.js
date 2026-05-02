@@ -155,6 +155,14 @@
       return COR_GRUPO[orig] || "#888";
     });
 
+    // Banda de anos usando bandX: cada barra céntrase exactamente sobre o tick
+    // do seu ano, en vez de extendéndose a [ano, ano+1] como facía Plot.rectY
+    // con interval=1 (que daba a sensación visual de que as barras estaban
+    // desprazadas á dereita das súas etiquetas).
+    const anosOrdenados = Array.from(new Set(datosT.map((d) => d.ano))).sort(
+      (a, b) => a - b
+    );
+
     return Plot.plot({
       marginLeft: 56,
       marginRight: 14,
@@ -171,6 +179,8 @@
       },
       x: {
         label: null,
+        type: "band",
+        domain: anosOrdenados,
         tickFormat: (d) => `${d}`,
         tickSpacing: 60,
       },
@@ -189,13 +199,12 @@
         style: { color: "rgba(255,255,255,0.86)" },
       },
       marks: [
-        Plot.rectY(
+        Plot.barY(
           datosT,
           {
             x: "ano",
             y: "num_incendios",
             fill: "grupo",
-            interval: 1,
             order: ordeColor,
             tip: true,
             title: (d) =>
