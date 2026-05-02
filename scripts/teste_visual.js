@@ -73,7 +73,7 @@ async function correr(viewport, lang, prefijo, log) {
   await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 30000 });
   // Esperamos a que carguen Mapbox e Observable Plot.
   await page.waitForFunction(
-    () => typeof window.mapboxgl !== "undefined" && typeof window.Plot !== "undefined" && typeof window.SerieIncendios !== "undefined" && typeof window.CausasOurense !== "undefined" && typeof window.PropiedadeMonte !== "undefined",
+    () => typeof window.mapboxgl !== "undefined" && typeof window.Plot !== "undefined" && typeof window.SerieIncendios !== "undefined" && typeof window.CausasOurense !== "undefined" && typeof window.PropiedadeMonte !== "undefined" && typeof window.ComparadorCiudades !== "undefined" && typeof window.MapaTendencia !== "undefined",
     null,
     { timeout: 20000 }
   );
@@ -119,6 +119,8 @@ async function correr(viewport, lang, prefijo, log) {
     ["tendencia-aumento", "grafica-tendencia"],
     ["tendencia-comparativas", "grafica-causas"],
     ["propiedade-monte", "grafica-propiedade"],
+    ["incendios-2025", "grafica-comparador"],
+    ["tendencia-aumento", "grafica-mapa-tendencia"],
   ]) {
     try {
       await page.evaluate((id) => {

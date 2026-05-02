@@ -61,11 +61,7 @@
             Para comprender a súa magnitude convén lembrar a diferenza entre un <strong>incendio forestal</strong> e un <strong>gran incendio forestal (GIF)</strong>: o primeiro pode afectar só a unhas poucas hectáreas, mentres que o segundo supera as <strong>500 hectáreas</strong>. O lume de Larouco multiplicou por máis de <strong>60</strong> ese limiar.<br><br>
             Mais os números poden enganarnos e afastarnos do problema: como dimensionar algo tan enorme? Un xeito é comparar o incendio cun entorno que coñezamos, como <strong>as nosas cidades</strong>.<br><br>
             Para entender mellor a súa magnitude, o seguinte gráfico compara a área queimada coa superficie municipal de varias cidades coñecidas.<br><br>
-            <iframe src="https://flo.uri.sh/visualisation/26265364/embed"
-                    frameborder="0"
-                    scrolling="no"
-                    style="width: 100%; height: 560px; margin-top: 12px;">
-            </iframe>
+            <div id="grafica-comparador" class="grafica-host" style="margin-top: 12px;"></div>
           `
         },
         'tendencia-aumento': {
@@ -86,20 +82,7 @@
                         </div>
                         <br class="only-mobile"><br class="only-mobile">
                         
-                        <div class="only-desktop">
-                          <iframe src="https://flo.uri.sh/visualisation/25015393/embed" 
-                                  frameborder="0" 
-                                  scrolling="no" 
-                                  style="width: 100%; height: 600px;">
-                          </iframe>
-                        </div>
-                        <div class="only-mobile">
-                          <iframe src="https://flo.uri.sh/visualisation/26398232/embed"
-                                  frameborder="0"
-                                  scrolling="no"
-                                  style="width: 100%; height: 600px;">
-                          </iframe>
-                        </div>
+                        <div id="grafica-mapa-tendencia" class="grafica-host"></div>
                         <br class="only-mobile"><br class="only-mobile">
                         <div class="mobile-expl">
                           <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">

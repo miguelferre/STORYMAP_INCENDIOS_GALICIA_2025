@@ -62,11 +62,7 @@ var config = {
             Pero los números pueden confundirnos y abstraernos del problema: ¿cómo dimensionamos algo tan enorme? Una forma es comparar el incendio con un entorno que conozcamos, como<strong> nuestras ciudades</strong>.<br><br>
             Para dimensionar su magnitud, el siguiente gráfico compara el área quemada con la superficie municipal de varias ciudades conocidas.<br><br>
 
-            <iframe src="https://flo.uri.sh/visualisation/26265364/embed"
-                    frameborder="0"
-                    scrolling="no"
-                    style="width: 100%; height: 560px; margin-top: 12px;">
-            </iframe>
+            <div id="grafica-comparador" class="grafica-host" style="margin-top: 12px;"></div>
 `,
 
             
@@ -86,7 +82,8 @@ var config = {
     { layer: 'FIRES_PERIMETER',    opacity: 1, duration: 2400 },
 
     // <<< Aparece el texto-marcador a la vez que el fuego (con el mismo “tempo”)
-    { callbackName: 'showLarouco', delay: 3600 } // usa delay: 2400 si quieres esperar al desvanecido
+    { callbackName: 'showLarouco', delay: 3600 }, // usa delay: 2400 si quieres esperar al desvanecido
+    { callbackName: 'renderComparador' }
   ],
   onChapterExit: [
     { layer: 'FIRES_GLOW_POINT_1', opacity: 0, duration: 2400 },
@@ -120,22 +117,7 @@ var config = {
                         </div>
                         <br class="only-mobile"><br class="only-mobile">
                         
-                        <!-- Versión escritorio del mapa (Flourish original) -->
-                        <div class="only-desktop">
-                          <iframe src="https://flo.uri.sh/visualisation/25015393/embed" 
-                                  frameborder="0" 
-                                  scrolling="no" 
-                                  style="width: 100%; height: 600px;">
-                          </iframe>
-                        </div>
-                        <!-- Versión móvil del mapa (Flourish móvil con zoom más alejado) -->
-                        <div class="only-mobile">
-                          <iframe src="https://flo.uri.sh/visualisation/26398232/embed"
-                                  frameborder="0"
-                                  scrolling="no"
-                                  style="width: 100%; height: 600px;">
-                          </iframe>
-                        </div>
+                        <div id="grafica-mapa-tendencia" class="grafica-host"></div>
                         <br class="only-mobile"><br class="only-mobile">
                         <!-- Explicación 2 (visible en móvil) -->
                         <div class="mobile-expl">
@@ -181,7 +163,8 @@ var config = {
             rotateAnimation: false,
             onChapterEnter: [
                 { callbackName: 'hideDefaultLayers' },
-                { callbackName: 'renderTendencia' }
+                { callbackName: 'renderTendencia' },
+                { callbackName: 'renderMapaTendencia' }
             ],
             onChapterExit: []
         },

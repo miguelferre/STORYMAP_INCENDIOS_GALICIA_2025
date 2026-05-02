@@ -1445,6 +1445,40 @@
     .propiedade-nota{ margin: 4px 0 0 0; font-size: 0.85rem; line-height: 1.5; color: rgba(255,255,255,0.65); }
     .propiedade-pie{ margin: 14px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
     .propiedade-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
+
+    /* Comparador de cidades — substitúe iframe Flourish 26265364. */
+    .comparador-bloque{
+      width: 100%;
+      max-width: 920px;
+      margin: 0 0 18px 0;
+      padding: 16px 18px 20px 18px;
+      background: rgba(15, 18, 28, 0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .comparador-cabecera h3{ margin: 0 0 6px 0; font-family: 'Georgia','Cambria',serif; font-size: 1.25rem; color: #fff; }
+    .comparador-cabecera p{ margin: 0 0 12px 0; font-size: 0.92rem; line-height: 1.5; color: rgba(255,255,255,0.78); }
+    .comparador-paneles svg{ max-width: 100%; height: auto; }
+    .comparador-pie{ margin: 12px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
+    .comparador-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
+
+    /* Heatmap distrito × ano — substitúe iframes 25015393/26398232. */
+    .tendencia-bloque{
+      width: 100%;
+      max-width: 920px;
+      margin: 0 0 18px 0;
+      padding: 16px 18px 20px 18px;
+      background: rgba(15, 18, 28, 0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .tendencia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Georgia','Cambria',serif; font-size: 1.25rem; color: #fff; }
+    .tendencia-cabecera p{ margin: 0 0 12px 0; font-size: 0.92rem; line-height: 1.5; color: rgba(255,255,255,0.78); }
+    .tendencia-paneles svg{ max-width: 100%; height: auto; }
+    .tendencia-pie{ margin: 12px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
+    .tendencia-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
   </style>
 
   <!-- Observable Plot para as gráficas nativas (substitúe iframes Flourish) -->
@@ -1453,6 +1487,8 @@
   <script src="assets/charts/serie_incendios.js"></script>
   <script src="assets/charts/causas.js"></script>
   <script src="assets/charts/propiedade.js"></script>
+  <script src="assets/charts/comparador_ciudades.js"></script>
+  <script src="assets/charts/mapa_tendencia.js"></script>
 </head>
 <script>
 window.addEventListener('load', () => {
@@ -2011,6 +2047,20 @@ window.addEventListener('load', () => {
     window.PropiedadeMonte.render(host, langActivo());
   };
 
+  // Renderiza el comparador de ciudades en el capítulo de incendios-2025.
+  window.renderComparador = function(){
+    var host = document.getElementById('grafica-comparador');
+    if (!host || !window.ComparadorCiudades) return;
+    window.ComparadorCiudades.render(host, langActivo());
+  };
+
+  // Renderiza el heatmap distrito × año en el capítulo tendencia-aumento.
+  window.renderMapaTendencia = function(){
+    var host = document.getElementById('grafica-mapa-tendencia');
+    if (!host || !window.MapaTendencia) return;
+    window.MapaTendencia.render(host, langActivo());
+  };
+
   // Cuando cambia el idioma, re-renderiza las gráficas nativas si están en pantalla.
   document.addEventListener('click', function(ev){
     var btn = ev.target.closest('#language-selector .language-button');
@@ -2019,6 +2069,8 @@ window.addEventListener('load', () => {
       if (typeof window.renderTendencia === 'function') window.renderTendencia();
       if (typeof window.renderCausas === 'function') window.renderCausas();
       if (typeof window.renderPropiedade === 'function') window.renderPropiedade();
+      if (typeof window.renderComparador === 'function') window.renderComparador();
+      if (typeof window.renderMapaTendencia === 'function') window.renderMapaTendencia();
     }, 30);
   });
 
