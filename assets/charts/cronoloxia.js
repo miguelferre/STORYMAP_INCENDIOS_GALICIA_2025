@@ -1,48 +1,48 @@
-﻿/**
- * "O dÃ­a que se xuntou todo" â€” cronoloxÃ­a dos lumes PrazaGal en xuÃ±o-outubro 2025.
+/**
+ * "O día que se xuntou todo" — cronoloxía dos lumes PrazaGal en xuño-outubro 2025.
  *
- * Pipeline: scripts/15_cronoloxia.py agrega o ODS de PrazaGal por dÃ­a e exporta
- * un JSON con (a) totais diarios e (b) os 35 incendios â‰¥100 ha do perÃ­odo.
+ * Pipeline: scripts/15_cronoloxia.py agrega o ODS de PrazaGal por día e exporta
+ * un JSON con (a) totais diarios e (b) os 35 incendios ≥100 ha do período.
  *
- * Renderiza un Ãºnico panel cunha cuadrÃ­cula de celas (Plot.rectY) por dÃ­a sobre
- * a serie de hectÃ¡reas totais, e un scatter superposto cos grandes incendios
- * (raio = ha). Marca con anotaciÃ³ns os tres dÃ­as pico do 12-15 agosto.
+ * Renderiza un único panel cunha cuadrícula de celas (Plot.rectY) por día sobre
+ * a serie de hectáreas totais, e un scatter superposto cos grandes incendios
+ * (raio = ha). Marca con anotacións os tres días pico do 12-15 agosto.
  */
 (function (global) {
   const TEXTOS = {
     es: {
-      titulo: "El dÃ­a que se juntÃ³ todo",
+      titulo: "El día que se juntó todo",
       subtitulo:
-        "Cada barra es la suma de hectÃ¡reas reportadas por PrazaGal ese dÃ­a. Los cÃ­rculos son los 35 incendios que superaron las 100 ha. Entre el 8 y el 15 de agosto, Galicia perdiÃ³ en torno a 100.000 hectÃ¡reas en menos de una semana.",
-      pico_12: "12 ago â€” 32 lumes, 48.949 ha",
-      pico_13: "13 ago â€” Larouco-Seadur, 23.527 ha",
-      pico_15: "15 ago â€” 34 lumes, 14.241 ha",
+        "Cada barra es la suma de hectáreas reportadas por PrazaGal ese día. Los círculos son los 35 incendios que superaron las 100 ha. Entre el 8 y el 15 de agosto, Galicia perdió en torno a 100.000 hectáreas en menos de una semana.",
+      pico_12: "12 ago — 32 lumes, 48.949 ha",
+      pico_13: "13 ago — Larouco-Seadur, 23.527 ha",
+      pico_15: "15 ago — 34 lumes, 14.241 ha",
       pie:
-        "Fuente: PrazaGal vÃ­a Lei de Transparencia (CC-BY-NC-SA), agregado por dÃ­a. PerÃ­odo julio-octubre 2025.",
-      overview_y: "ha (escala raÃ­z)",
-      eje_y: "HectÃ¡reas quemadas / dÃ­a",
-      zoom_titulo: "Zoom: 5 al 22 de agosto, la semana en que ardiÃ³ todo",
+        "Fuente: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregado por día. Período julio-octubre 2025.",
+      overview_y: "ha (escala raíz)",
+      eje_y: "Hectáreas quemadas / día",
+      zoom_titulo: "Zoom: 5 al 22 de agosto, la semana en que ardió todo",
       tooltip_dia: (d) =>
-        `${d.data_str}\n${d.n_incendios} lumes â€” ${Math.round(d.ha_total).toLocaleString("es")} ha\nMaior: ${d.top_concello} / ${d.top_parroquia} (${Math.round(d.top_ha).toLocaleString("es")} ha)`,
+        `${d.data_str}\n${d.n_incendios} lumes — ${Math.round(d.ha_total).toLocaleString("es")} ha\nMaior: ${d.top_concello} / ${d.top_parroquia} (${Math.round(d.top_ha).toLocaleString("es")} ha)`,
       tooltip_grande: (d) =>
-        `${d.concello} â€” ${d.parroquia}\n${d.data_str}: ${Math.round(d.hectareas).toLocaleString("es")} ha`,
+        `${d.concello} — ${d.parroquia}\n${d.data_str}: ${Math.round(d.hectareas).toLocaleString("es")} ha`,
     },
     gl: {
-      titulo: "O dÃ­a que se xuntou todo",
+      titulo: "O día que se xuntou todo",
       subtitulo:
-        "Cada barra Ã© a suma de hectÃ¡reas reportadas por PrazaGal ese dÃ­a. Os cÃ­rculos son os 35 lumes que pasaron das 100 ha. Entre o 8 e o 15 de agosto, Galicia perdeu arredor de 100.000 hectÃ¡reas en menos dunha semana.",
-      pico_12: "12 ago â€” 32 lumes, 48.949 ha",
-      pico_13: "13 ago â€” Larouco-Seadur, 23.527 ha",
-      pico_15: "15 ago â€” 34 lumes, 14.241 ha",
+        "Cada barra é a suma de hectáreas reportadas por PrazaGal ese día. Os círculos son os 35 lumes que pasaron das 100 ha. Entre o 8 e o 15 de agosto, Galicia perdeu arredor de 100.000 hectáreas en menos dunha semana.",
+      pico_12: "12 ago — 32 lumes, 48.949 ha",
+      pico_13: "13 ago — Larouco-Seadur, 23.527 ha",
+      pico_15: "15 ago — 34 lumes, 14.241 ha",
       pie:
-        "Fonte: PrazaGal vÃ­a Lei de Transparencia (CC-BY-NC-SA), agregada por dÃ­a. PerÃ­odo xullo-outubro 2025.",
-      overview_y: "ha (escala raÃ­z)",
-      eje_y: "HectÃ¡reas queimadas / dÃ­a",
+        "Fonte: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregada por día. Período xullo-outubro 2025.",
+      overview_y: "ha (escala raíz)",
+      eje_y: "Hectáreas queimadas / día",
       zoom_titulo: "Zoom: do 5 ao 22 de agosto, a semana na que ardeu todo",
       tooltip_dia: (d) =>
-        `${d.data_str}\n${d.n_incendios} lumes â€” ${Math.round(d.ha_total).toLocaleString("gl")} ha\nMaior: ${d.top_concello} / ${d.top_parroquia} (${Math.round(d.top_ha).toLocaleString("gl")} ha)`,
+        `${d.data_str}\n${d.n_incendios} lumes — ${Math.round(d.ha_total).toLocaleString("gl")} ha\nMaior: ${d.top_concello} / ${d.top_parroquia} (${Math.round(d.top_ha).toLocaleString("gl")} ha)`,
       tooltip_grande: (d) =>
-        `${d.concello} â€” ${d.parroquia}\n${d.data_str}: ${Math.round(d.hectareas).toLocaleString("gl")} ha`,
+        `${d.concello} — ${d.parroquia}\n${d.data_str}: ${Math.round(d.hectareas).toLocaleString("gl")} ha`,
     },
   };
 
@@ -64,9 +64,9 @@
     return cargaPromesa;
   }
 
-  // Panel superior: visiÃ³n do verÃ¡n enteiro (Xul-Out), barras a escala
-  // sqrt para que os dÃ­as pequenos non desaparezan baixo o pico do 12 ago.
-  // Sen tooltips nin anotaciÃ³ns; serve de contexto.
+  // Panel superior: visión do verán enteiro (Xul-Out), barras a escala
+  // sqrt para que os días pequenos non desaparezan baixo o pico do 12 ago.
+  // Sen tooltips nin anotacións; serve de contexto.
   function panelOverview(j, ancho, lang) {
     const Plot = global.Plot;
     const t = TEXTOS[lang] || TEXTOS.es;
@@ -125,9 +125,9 @@
     });
   }
 
-  // Panel detalle: zoom Ã¡ semana crÃ­tica (5-22 ago), barras + grandes
-  // incendios + anotaciÃ³ns. SÃ³ Plot.rectY ten tip activo, asÃ­ evÃ­tase
-  // o solapamento de dous tooltips simultÃ¡neos.
+  // Panel detalle: zoom á semana crítica (5-22 ago), barras + grandes
+  // incendios + anotacións. Só Plot.rectY ten tip activo, así evítase
+  // o solapamento de dous tooltips simultáneos.
   function panelDetalle(j, ancho, lang) {
     const Plot = global.Plot;
     const t = TEXTOS[lang] || TEXTOS.es;
@@ -259,7 +259,7 @@
       .catch((err) => {
         const slot = host.querySelector(".cronoloxia-paneles");
         if (slot)
-          slot.innerHTML = `<div class="cronoloxia-erro">No se pudo cargar la cronologÃ­a: ${err.message}</div>`;
+          slot.innerHTML = `<div class="cronoloxia-erro">No se pudo cargar la cronología: ${err.message}</div>`;
       });
   }
 
