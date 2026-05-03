@@ -1,120 +1,120 @@
-/**
- * Gráfica de causas dos incendios forestais en Ourense.
+﻿/**
+ * GrÃ¡fica de causas dos incendios forestais en Ourense.
  *
- * Substitúe os iframes Flourish 25942041 (evolución anual de causas) e
- * 25510523 (motivacións dos intencionados). Os datos veñen do EGIF
+ * SubstitÃºe os iframes Flourish 25942041 (evoluciÃ³n anual de causas) e
+ * 25510523 (motivaciÃ³ns dos intencionados). Os datos veÃ±en do EGIF
  * (servicio.mapa.gob.es/incendios/Search/Publico, descarga XML
  * provincia 32, 1968-2022) procesados polos scripts 05/07/08.
  *
  * Renderiza dous paneis con Observable Plot:
  *   - Panel A: barras apiladas anuais por grupo de causa (Rayo / Negligencias /
- *              Intencionado / Descoñecida / Reproducción).
- *   - Panel B: barras horizontais coas motivacións dos intencionados,
- *              agrupadas e ordenadas por nº de incendios.
+ *              Intencionado / DescoÃ±ecida / ReproducciÃ³n).
+ *   - Panel B: barras horizontais coas motivaciÃ³ns dos intencionados,
+ *              agrupadas e ordenadas por nÂº de incendios.
  */
 (function (global) {
   // Paleta de causas: naranja para Intencionado (la causa-personaje, la
-  // dominante en toda la serie), tonos diferenciables y de menor saturación
+  // dominante en toda la serie), tonos diferenciables y de menor saturaciÃ³n
   // para el resto. Cada grupo no-intencionado tiene un matiz propio para que
-  // las barras apiladas se distingan, sin que ningún color compita con el
+  // las barras apiladas se distingan, sin que ningÃºn color compita con el
   // naranja del fuego.
   const COR_GRUPO = {
     "Intencionado": "#F44E11",
-    "Causa descoñecida": "#6B9DC6",
+    "Causa descoÃ±ecida": "#6B9DC6",
     "Negligencias e accidentes": "#D9A03B",
-    "Reproducción": "#8B7AA8",
+    "ReproducciÃ³n": "#8B7AA8",
     "Rayo": "#65A864",
   };
 
-  // Motivacións dos intencionados: misma lógica. La motivación dominante
-  // (prácticas agrícolas) hereda el naranja del Intencionado para enlazar
-  // visualmente ambos gráficos. El resto reutiliza los matices del primer
-  // gráfico, ordenados por prevalencia.
+  // MotivaciÃ³ns dos intencionados: misma lÃ³gica. La motivaciÃ³n dominante
+  // (prÃ¡cticas agrÃ­colas) hereda el naranja del Intencionado para enlazar
+  // visualmente ambos grÃ¡ficos. El resto reutiliza los matices del primer
+  // grÃ¡fico, ordenados por prevalencia.
   const COR_MOTIV = {
-    "Intencionado sen motivación recoñecida": "rgba(244,78,17,0.32)",
-    "Prácticas agrícolas e gandeiras": "#F44E11",
+    "Intencionado sen motivaciÃ³n recoÃ±ecida": "rgba(244,78,17,0.32)",
+    "PrÃ¡cticas agrÃ­colas e gandeiras": "#F44E11",
     "Caza": "#D9A03B",
     "Vandalismo": "#8B7AA8",
-    "Piromanía": "#B91C1C",
+    "PiromanÃ­a": "#B91C1C",
     "Desacordos e protestas": "#6B9DC6",
     "Vinganzas e disputas": "#C66640",
     "Propiedade": "#65A864",
-    "Beneficio económico": "#A88A3F",
-    "Outras motivacións": "#6F6E7B",
-    "Forzas de orde público": "#475569",
+    "Beneficio econÃ³mico": "#A88A3F",
+    "Outras motivaciÃ³ns": "#6F6E7B",
+    "Forzas de orde pÃºblico": "#475569",
   };
 
   const ORDE_GRUPOS = [
     "Intencionado",
-    "Causa descoñecida",
+    "Causa descoÃ±ecida",
     "Negligencias e accidentes",
-    "Reproducción",
+    "ReproducciÃ³n",
     "Rayo",
   ];
 
   const TEXTOS = {
     es: {
-      titulo: "Más de cinco décadas de incendios en Ourense",
+      titulo: "MÃ¡s de cinco dÃ©cadas de incendios en Ourense",
       subtitulo:
-        "Cada barra reúne todos los partes oficiales (PIF) registrados en la provincia ese año. La intencionalidad domina toda la serie; el resto de causas apenas asoma.",
-      panel_anual: "Número de incendios al año, por grupo de causa",
+        "Cada barra reÃºne todos los partes oficiales (PIF) registrados en la provincia ese aÃ±o. La intencionalidad domina toda la serie; el resto de causas apenas asoma.",
+      panel_anual: "NÃºmero de incendios al aÃ±o, por grupo de causa",
       panel_motiv: "Motivaciones de los incendios intencionados (1968-2022)",
       pie:
-        "Fuente: EGIF — Estadística General de Incendios Forestales (MITECO/MAPA). Descarga XML para provincia de Ourense, todos los años disponibles. Categorías según el manual del Comité de Lucha contra Incendios Forestales (v3.6).",
+        "Fuente: EGIF â€” EstadÃ­stica General de Incendios Forestales (MITECO/MAPA). Descarga XML para provincia de Ourense, todos los aÃ±os disponibles. CategorÃ­as segÃºn el manual del ComitÃ© de Lucha contra Incendios Forestales (v3.6).",
       nota_motiv:
-        "Casi la mitad de los partes intencionados no llegan a tener una motivación reconocida —reflejo de lo difícil que es investigar este tipo de incendios. Entre los identificados, las quemas agrícolas y ganaderas escapadas explican la mayoría.",
-      eje_anos: "año",
+        "Casi la mitad de los partes intencionados no llegan a tener una motivaciÃ³n reconocida â€”reflejo de lo difÃ­cil que es investigar este tipo de incendios. Entre los identificados, las quemas agrÃ­colas y ganaderas escapadas explican la mayorÃ­a.",
+      eje_anos: "aÃ±o",
       grupos: {
         "Intencionado": "Intencionado",
-        "Causa descoñecida": "Causa desconocida",
+        "Causa descoÃ±ecida": "Causa desconocida",
         "Negligencias e accidentes": "Negligencias y accidentes",
-        "Reproducción": "Reproducción",
+        "ReproducciÃ³n": "ReproducciÃ³n",
         "Rayo": "Rayo",
       },
       motivs: {
-        "Intencionado sen motivación recoñecida": "Sin motivación reconocida",
-        "Prácticas agrícolas e gandeiras": "Prácticas agrícolas y ganaderas",
+        "Intencionado sen motivaciÃ³n recoÃ±ecida": "Sin motivaciÃ³n reconocida",
+        "PrÃ¡cticas agrÃ­colas e gandeiras": "PrÃ¡cticas agrÃ­colas y ganaderas",
         "Caza": "Caza",
         "Vandalismo": "Vandalismo",
-        "Piromanía": "Piromanía",
+        "PiromanÃ­a": "PiromanÃ­a",
         "Desacordos e protestas": "Desacuerdos y protestas",
         "Vinganzas e disputas": "Venganzas y disputas",
         "Propiedade": "Propiedad",
-        "Beneficio económico": "Beneficio económico",
-        "Outras motivacións": "Otras motivaciones",
-        "Forzas de orde público": "Fuerzas del orden",
+        "Beneficio econÃ³mico": "Beneficio econÃ³mico",
+        "Outras motivaciÃ³ns": "Otras motivaciones",
+        "Forzas de orde pÃºblico": "Fuerzas del orden",
       },
     },
     gl: {
-      titulo: "Máis de cinco décadas de lumes en Ourense",
+      titulo: "MÃ¡is de cinco dÃ©cadas de lumes en Ourense",
       subtitulo:
-        "Cada barra reúne todos os partes oficiais (PIF) rexistrados na provincia ese ano. A intencionalidade domina toda a serie; o resto de causas apenas asoma.",
-      panel_anual: "Número de incendios ao ano, por grupo de causa",
-      panel_motiv: "Motivacións dos incendios intencionados (1968-2022)",
+        "Cada barra reÃºne todos os partes oficiais (PIF) rexistrados na provincia ese ano. A intencionalidade domina toda a serie; o resto de causas apenas asoma.",
+      panel_anual: "NÃºmero de incendios ao ano, por grupo de causa",
+      panel_motiv: "MotivaciÃ³ns dos incendios intencionados (1968-2022)",
       pie:
-        "Fonte: EGIF — Estadística General de Incendios Forestales (MITECO/MAPA). Descarga XML para a provincia de Ourense, todos os anos dispoñibles. Categorías segundo o manual do Comité de Lucha contra Incendios Forestales (v3.6).",
+        "Fonte: EGIF â€” EstadÃ­stica General de Incendios Forestales (MITECO/MAPA). Descarga XML para a provincia de Ourense, todos os anos dispoÃ±ibles. CategorÃ­as segundo o manual do ComitÃ© de Lucha contra Incendios Forestales (v3.6).",
       nota_motiv:
-        "Case a metade dos partes intencionados non chegan a ter unha motivación recoñecida — reflicte a dificultade de investigar este tipo de lumes. Entre os identificados, as queimas agrícolas e gandeiras escapadas explican a maioría.",
+        "Case a metade dos partes intencionados non chegan a ter unha motivaciÃ³n recoÃ±ecida â€” reflicte a dificultade de investigar este tipo de lumes. Entre os identificados, as queimas agrÃ­colas e gandeiras escapadas explican a maiorÃ­a.",
       eje_anos: "ano",
       grupos: {
         "Intencionado": "Intencionado",
-        "Causa descoñecida": "Causa descoñecida",
+        "Causa descoÃ±ecida": "Causa descoÃ±ecida",
         "Negligencias e accidentes": "Neglixencias e accidentes",
-        "Reproducción": "Reproducción",
+        "ReproducciÃ³n": "ReproducciÃ³n",
         "Rayo": "Raio",
       },
       motivs: {
-        "Intencionado sen motivación recoñecida": "Sen motivación recoñecida",
-        "Prácticas agrícolas e gandeiras": "Prácticas agrícolas e gandeiras",
+        "Intencionado sen motivaciÃ³n recoÃ±ecida": "Sen motivaciÃ³n recoÃ±ecida",
+        "PrÃ¡cticas agrÃ­colas e gandeiras": "PrÃ¡cticas agrÃ­colas e gandeiras",
         "Caza": "Caza",
         "Vandalismo": "Vandalismo",
-        "Piromanía": "Piromanía",
+        "PiromanÃ­a": "PiromanÃ­a",
         "Desacordos e protestas": "Desacordos e protestas",
         "Vinganzas e disputas": "Vinganzas e disputas",
         "Propiedade": "Propiedade",
-        "Beneficio económico": "Beneficio económico",
-        "Outras motivacións": "Outras motivacións",
-        "Forzas de orde público": "Forzas de orde público",
+        "Beneficio econÃ³mico": "Beneficio econÃ³mico",
+        "Outras motivaciÃ³ns": "Outras motivaciÃ³ns",
+        "Forzas de orde pÃºblico": "Forzas de orde pÃºblico",
       },
     },
   };
@@ -155,10 +155,10 @@
       return COR_GRUPO[orig] || "#888";
     });
 
-    // Banda de anos usando bandX: cada barra céntrase exactamente sobre o tick
-    // do seu ano, en vez de extendéndose a [ano, ano+1] como facía Plot.rectY
-    // con interval=1 (que daba a sensación visual de que as barras estaban
-    // desprazadas á dereita das súas etiquetas).
+    // Banda de anos usando bandX: cada barra cÃ©ntrase exactamente sobre o tick
+    // do seu ano, en vez de extendÃ©ndose a [ano, ano+1] como facÃ­a Plot.rectY
+    // con interval=1 (que daba a sensaciÃ³n visual de que as barras estaban
+    // desprazadas Ã¡ dereita das sÃºas etiquetas).
     const anosOrdenados = Array.from(new Set(datosT.map((d) => d.ano))).sort(
       (a, b) => a - b
     );
@@ -167,7 +167,7 @@
       marginLeft: 56,
       marginRight: 14,
       marginTop: 10,
-      marginBottom: 32,
+      marginBottom: 48,
       width: ancho,
       height: 260,
       style: {
@@ -181,8 +181,8 @@
         label: null,
         type: "band",
         domain: anosOrdenados,
-        tickFormat: (d) => `${d}`,
-        tickSpacing: 60,
+        ticks: anosOrdenados.filter(function(d) { return d % 5 === 0; }),
+        tickRotate: -45,
       },
       y: {
         label: t.panel_anual,
@@ -208,7 +208,7 @@
             order: ordeColor,
             tip: true,
             title: (d) =>
-              `${d.ano} — ${d.grupo}\n${d.num_incendios.toLocaleString(lang)} incendios\n${Math.round(d.ha_total).toLocaleString(lang)} ha`,
+              `${d.ano} â€” ${d.grupo}\n${d.num_incendios.toLocaleString(lang)} incendios\n${Math.round(d.ha_total).toLocaleString(lang)} ha`,
           }
         ),
         Plot.ruleY([0], { stroke: "rgba(255,255,255,0.45)" }),
