@@ -1,0 +1,162 @@
+[
+  {
+    "fecha": "2025-08-01",
+    "tmax": 24.0,
+    "tmin": 15.6,
+    "tmedia": 19.3,
+    "precip_mm": 0.08,
+    "viento_ms": 5.2
+  },
+  {
+    "fecha": "2025-08-02",
+    "tmax": 25.1,
+    "tmin": 16.1,
+    "tmedia": 20.1,
+    "precip_mm": 0.04,
+    "viento_ms": 5.2
+  },
+  {
+    "fecha": "2025-08-03",
+    "tmax": 26.8,
+    "tmin": 16.2,
+    "tmedia": 21.4,
+    "precip_mm": 0.03,
+    "viento_ms": 4.7
+  },
+  {
+    "fecha": "2025-08-04",
+    "tmax": 27.8,
+    "tmin": 16.9,
+    "tmedia": 22.2,
+    "precip_mm": 0.0,
+    "viento_ms": 3.0
+  },
+  {
+    "fecha": "2025-08-05",
+    "tmax": 26.6,
+    "tmin": 16.8,
+    "tmedia": 21.2,
+    "precip_mm": 0.11,
+    "viento_ms": 5.4
+  },
+  {
+    "fecha": "2025-08-06",
+    "tmax": 26.5,
+    "tmin": 17.0,
+    "tmedia": 21.4,
+    "precip_mm": 0.06,
+    "viento_ms": 3.1
+  },
+  {
+    "fecha": "2025-08-07",
+    "tmax": 26.2,
+    "tmin": 16.7,
+    "tmedia": 21.1,
+    "precip_mm": 0.01,
+    "viento_ms": 2.4
+  },
+  {
+    "fecha": "2025-08-08",
+    "tmax": 26.3,
+    "tmin": 16.4,
+    "tmedia": 21.0,
+    "precip_mm": 0.05,
+    "viento_ms": 2.7
+  },
+  {
+    "fecha": "2025-08-09",
+    "tmax": 26.6,
+    "tmin": 17.4,
+    "tmedia": 21.8,
+    "precip_mm": 0.04,
+    "viento_ms": 3.6
+  },
+  {
+    "fecha": "2025-08-10",
+    "tmax": 28.4,
+    "tmin": 18.6,
+    "tmedia": 23.0,
+    "precip_mm": 0.15,
+    "viento_ms": 2.5
+  },
+  {
+    "fecha": "2025-08-11",
+    "tmax": 26.5,
+    "tmin": 16.6,
+    "tmedia": 21.6,
+    "precip_mm": 0.07,
+    "viento_ms": 2.1
+  },
+  {
+    "fecha": "2025-08-12",
+    "tmax": 25.7,
+    "tmin": 17.7,
+    "tmedia": 21.3,
+    "precip_mm": 0.58,
+    "viento_ms": 1.7
+  },
+  {
+    "fecha": "2025-08-13",
+    "tmax": 24.6,
+    "tmin": 17.9,
+    "tmedia": 20.7,
+    "precip_mm": 0.33,
+    "viento_ms": 2.5
+  },
+  {
+    "fecha": "2025-08-14",
+    "tmax": 27.2,
+    "tmin": 17.3,
+    "tmedia": 22.0,
+    "precip_mm": 0.05,
+    "viento_ms": 3.1
+  },
+  {
+    "fecha": "2025-08-15",
+    "tmax": 26.9,
+    "tmin": 18.4,
+    "tmedia": 22.3,
+    "precip_mm": 0.03,
+    "viento_ms": 2.6
+  },
+  {
+    "fecha": "2025-08-16",
+    "tmax": 26.0,
+    "tmin": 16.1,
+    "tmedia": 20.6,
+    "precip_mm": 0.06,
+    "viento_ms": 1.1
+  },
+  {
+    "fecha": "2025-08-17",
+    "tmax": 24.7,
+    "tmin": 17.7,
+    "tmedia": 20.4,
+    "precip_mm": 0.08,
+    "viento_ms": 1.8
+  },
+  {
+    "fecha": "2025-08-18",
+    "tmax": 22.8,
+    "tmin": 16.0,
+    "tmedia": 19.0,
+    "precip_mm": 0.17,
+    "viento_ms": 2.6
+  },
+  {
+    "fecha": "2025-08-19",
+    "tmax": 21.3,
+    "tmin": 15.0,
+    "tmedia": 17.9,
+    "precip_mm": 0.65,
+    "viento_ms": 2.7
+  },
+  {
+    "fecha": "2025-08-20",
+    "tmax": 21.3,
+    "tmin": 15.1,
+    "tmedia": 17.9,
+    "precip_mm": 0.74,
+    "viento_ms": 2.9
+  }
+]
