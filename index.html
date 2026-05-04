@@ -2922,11 +2922,11 @@ window.addEventListener('load', () => {
                     CategoryController.showImagesForClima();
                     break;
                 case 'geografia':
-            const chartHost = document.getElementById('clima-agosto-chart-host');
-            if (chartHost && typeof ClimaAgosto !== 'undefined' && !chartHost._rendered) {
-                chartHost._rendered = true;
-                ClimaAgosto.render(chartHost, currentLang || 'es');
-            }
+
+
+
+
+
                     CategoryController.showLayerSafe('RELIEVE');
                     break;
             }
@@ -2941,6 +2941,11 @@ window.addEventListener('load', () => {
         showImagesForClima() {
             const climateOverlay = document.getElementById('climate-images-overlay');
             const climateInline = document.getElementById('climate-inline-container');
+            const chartHost = document.getElementById('clima-agosto-chart-host');
+            if (chartHost && typeof ClimaAgosto !== 'undefined' && !chartHost._rendered) {
+                chartHost._rendered = true;
+                ClimaAgosto.render(chartHost, document.documentElement.lang || 'es');
+            }
             
             if (isMobileViewport()) {
                 if (climateOverlay) {
