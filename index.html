@@ -703,30 +703,6 @@
         max-width: 760px;
     }
 
-
-    /* Chart ERA5 clima agosto */
-    #clima-agosto-chart-host { width: 100%; }
-    .clima-agosto-bloque { width: 100%; }
-    .clima-agosto-cabecera h3 {
-        margin: 0 0 4px 0;
-        font-size: 15px;
-        font-weight: 600;
-        color: rgba(255,255,255,0.92);
-    }
-    .clima-agosto-label {
-        margin: 12px 0 2px;
-        font-size: 11px;
-        color: rgba(255,255,255,0.6);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-    }
-    .clima-agosto-pie {
-        margin: 10px 0 0;
-        font-size: 10px;
-        color: rgba(255,255,255,0.38);
-        font-style: italic;
-        line-height: 1.4;
-    }
     /* Contenedor inline para clima (solo móvil) */
     .climate-inline{
         margin-top: 18px;
@@ -1524,7 +1500,7 @@
   <script src="assets/charts/comparador_ciudades.js"></script>
   <script src="assets/charts/mapa_tendencia.js"></script>
   <script src="assets/charts/dnbr_larouco.js"></script>
-  <script src="assets/charts/cronoloxia.js"></script><script src="assets/charts/clima_agosto.js"></script>
+  <script src="assets/charts/cronoloxia.js"></script>
 </head>
 <script>
 window.addEventListener('load', () => {
@@ -2468,9 +2444,9 @@ window.addEventListener('load', () => {
 
 <!-- Overlay para imágenes de clima -->
 <div id="climate-images-overlay" class="climate-images-overlay hidden">
-
     <div class="climate-images-container">
-        <div id="clima-agosto-chart-host"></div>
+        <img id="larouco-clima-img" src="assets/Larouco_Clima.png" alt="Clima en Larouco" class="climate-img-large" />
+        <img id="fases-clima-img" src="assets/Fases_Clima.png" alt="Fases del clima" class="climate-img-small" />
     </div>
 </div>
 
@@ -2922,11 +2898,6 @@ window.addEventListener('load', () => {
                     CategoryController.showImagesForClima();
                     break;
                 case 'geografia':
-
-
-
-
-
                     CategoryController.showLayerSafe('RELIEVE');
                     break;
             }
@@ -2941,11 +2912,6 @@ window.addEventListener('load', () => {
         showImagesForClima() {
             const climateOverlay = document.getElementById('climate-images-overlay');
             const climateInline = document.getElementById('climate-inline-container');
-            const chartHost = document.getElementById('clima-agosto-chart-host');
-            if (chartHost && typeof ClimaAgosto !== 'undefined' && !chartHost._rendered) {
-                chartHost._rendered = true;
-                ClimaAgosto.render(chartHost, document.documentElement.lang || 'es');
-            }
             
             if (isMobileViewport()) {
                 if (climateOverlay) {
