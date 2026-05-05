@@ -1533,5 +1533,147 @@
       "ha_total": 1007.2,
       "pct": 0.14
     }
+  ],
+  "motivacions_decenio": [
+    {
+      "decenio": "1968-1979",
+      "grupo_motivacion": "Intencionado sen motivación recoñecida",
+      "num_incendios": 1712,
+      "ha_total": 89909.2,
+      "pct": 100.0
+    },
+    {
+      "decenio": "1980-1989",
+      "grupo_motivacion": "Intencionado sen motivación recoñecida",
+      "num_incendios": 2990,
+      "ha_total": 77188.0,
+      "pct": 99.97
+    },
+    {
+      "decenio": "1990-1999",
+      "grupo_motivacion": "Intencionado sen motivación recoñecida",
+      "num_incendios": 14876,
+      "ha_total": 60170.8,
+      "pct": 61.87
+    },
+    {
+      "decenio": "1990-1999",
+      "grupo_motivacion": "Prácticas agrícolas e gandeiras",
+      "num_incendios": 7993,
+      "ha_total": 34479.4,
+      "pct": 33.24
+    },
+    {
+      "decenio": "1990-1999",
+      "grupo_motivacion": "Caza",
+      "num_incendios": 902,
+      "ha_total": 5163.6,
+      "pct": 3.75
+    },
+    {
+      "decenio": "1990-1999",
+      "grupo_motivacion": "Vinganzas e disputas",
+      "num_incendios": 129,
+      "ha_total": 301.8,
+      "pct": 0.54
+    },
+    {
+      "decenio": "2000-2009",
+      "grupo_motivacion": "Prácticas agrícolas e gandeiras",
+      "num_incendios": 13049,
+      "ha_total": 48297.5,
+      "pct": 51.78
+    },
+    {
+      "decenio": "2000-2009",
+      "grupo_motivacion": "Intencionado sen motivación recoñecida",
+      "num_incendios": 10551,
+      "ha_total": 54963.1,
+      "pct": 41.87
+    },
+    {
+      "decenio": "2000-2009",
+      "grupo_motivacion": "Outras motivacións",
+      "num_incendios": 616,
+      "ha_total": 2467.4,
+      "pct": 2.44
+    },
+    {
+      "decenio": "2000-2009",
+      "grupo_motivacion": "Caza",
+      "num_incendios": 455,
+      "ha_total": 5053.6,
+      "pct": 1.81
+    },
+    {
+      "decenio": "2000-2009",
+      "grupo_motivacion": "Vandalismo",
+      "num_incendios": 264,
+      "ha_total": 4945.2,
+      "pct": 1.05
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Prácticas agrícolas e gandeiras",
+      "num_incendios": 6590,
+      "ha_total": 58047.9,
+      "pct": 63.02
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Intencionado sen motivación recoñecida",
+      "num_incendios": 1761,
+      "ha_total": 19028.3,
+      "pct": 16.84
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Piromanía",
+      "num_incendios": 554,
+      "ha_total": 13746.6,
+      "pct": 5.3
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Vandalismo",
+      "num_incendios": 512,
+      "ha_total": 6530.0,
+      "pct": 4.9
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Desacordos e protestas",
+      "num_incendios": 420,
+      "ha_total": 5173.4,
+      "pct": 4.02
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Caza",
+      "num_incendios": 254,
+      "ha_total": 5185.6,
+      "pct": 2.43
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Outras motivacións",
+      "num_incendios": 249,
+      "ha_total": 888.6,
+      "pct": 2.38
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Propiedade",
+      "num_incendios": 59,
+      "ha_total": 969.7,
+      "pct": 0.56
+    },
+    {
+      "decenio": "2010-2022",
+      "grupo_motivacion": "Vinganzas e disputas",
+      "num_incendios": 53,
+      "ha_total": 803.7,
+      "pct": 0.51
+    }
   ]
 }

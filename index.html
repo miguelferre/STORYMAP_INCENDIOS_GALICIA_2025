@@ -1355,6 +1355,115 @@
       border-radius: 6px;
       font-size: 0.9rem;
     }
+    .causas-dec-selector{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 4px 0 8px 0;
+      position: relative;
+      z-index: 10;
+    }
+    .causas-motiv-host{
+      min-height: 320px;
+    }
+    .causas-dec-selector span{
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-right: 4px;
+    }
+    .causas-dec-btn{
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.75);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .causas-dec-btn:hover{
+      background: rgba(255,255,255,0.14);
+    }
+    .causas-dec-btn.activo{
+      background: rgba(244,78,17,0.25);
+      border-color: rgba(244,78,17,0.6);
+      color: #fff;
+    }
+
+    .clima-overlay-grid{
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .clima-overlay-left{
+      flex: 0 0 220px;
+      padding-top: 24px;
+    }
+    .clima-fases-img{
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+    .clima-overlay-right{
+      flex: 1;
+      min-width: 0;
+    }
+    .clima-panel-label{
+      margin: 6px 0 0 52px;
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.2;
+    }
+    .clima-agosto-label{
+      margin: 8px 0 2px 0;
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.55);
+    }
+    .clima-agosto-leyenda{
+      margin: 2px 0 2px 44px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .clima-agosto-pie{
+      margin: 6px 0 0 0;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.4;
+    }
+    .clima-larouco-pie{
+      margin: 6px 0 0 0;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.4;
+    }
+
+    /* Heatmap temperatura mensual */
+    .heatmap-temp-header{ margin-bottom: 4px; }
+    .heatmap-temp-subtitulo{
+      margin: 0 0 8px 0;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.45;
+    }
+    .heatmap-temp-pie{
+      margin: 8px 0 0 0;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+    }
+    .heatmap-temp-erro{
+      padding: 12px;
+      color: rgba(255,180,180,0.9);
+      background: rgba(80,20,20,0.4);
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    #heatmap-temp-host{ width: 100%; }
+    #heatmap-temp-host svg{ display: block; max-width: 100%; }
 
     /* Gráfica de propiedade do monte (capítulo "De quén son os montes que arden?") */
     .propiedade-bloque{
@@ -1501,6 +1610,9 @@
   <script src="assets/charts/mapa_tendencia.js"></script>
   <script src="assets/charts/dnbr_larouco.js"></script>
   <script src="assets/charts/cronoloxia.js"></script>
+  <script src="assets/charts/heatmap_temp.js"></script>
+  <script src="assets/charts/clima_larouco.js"></script>
+  <script src="assets/charts/clima_agosto.js"></script>
 </head>
 <script>
 window.addEventListener('load', () => {
@@ -2045,6 +2157,22 @@ window.addEventListener('load', () => {
     window.SerieIncendios.render(host, langActivo());
   };
 
+  // Renderiza el chart meteorológico ERA5 agosto 2025 en el capítulo del evento.
+  window.renderERA5Agosto = function(){
+    var host = document.getElementById('grafica-era5-agosto');
+    if (!host || !window.ClimaAgosto) return;
+    host._era5Rendered = false;
+    window.ClimaAgosto.render(host, langActivo());
+  };
+
+  // Renderiza el heatmap de temperatura mensual (ERA5 1940-2025) en su capítulo.
+  window.renderHeatmapTemp = function(){
+    var host = document.getElementById('heatmap-temp-host');
+    if (!host || !window.HeatmapTemp) return;
+    host._heatmapRendered = false;
+    window.HeatmapTemp.render(host, langActivo());
+  };
+
   // Renderiza la gráfica de causas (EGIF Ourense 1968-2022) en su capítulo.
   window.renderCausas = function(){
     var host = document.getElementById('grafica-causas');
@@ -2131,6 +2259,7 @@ window.addEventListener('load', () => {
       if (typeof window.renderMapaTendencia === 'function') window.renderMapaTendencia();
       if (typeof window.renderDnbr === 'function') window.renderDnbr();
       if (typeof window.renderCronoloxia === 'function') window.renderCronoloxia();
+      if (typeof window.renderHeatmapTemp === 'function') window.renderHeatmapTemp();
     }, 30);
   });
 
@@ -2444,10 +2573,7 @@ window.addEventListener('load', () => {
 
 <!-- Overlay para imágenes de clima -->
 <div id="climate-images-overlay" class="climate-images-overlay hidden">
-    <div class="climate-images-container">
-        <img id="larouco-clima-img" src="assets/Larouco_Clima.png" alt="Clima en Larouco" class="climate-img-large" />
-        <img id="fases-clima-img" src="assets/Fases_Clima.png" alt="Fases del clima" class="climate-img-small" />
-    </div>
+    <div id="clima-larouco-host" style="width:100%;"></div>
 </div>
 
   <!-- HERO DE APERTURA -->
@@ -2908,24 +3034,27 @@ window.addEventListener('load', () => {
             CategoryController.showCategoryContent(categoryKey, { skipHide: true });
         },
         
-        // Muestra las imágenes de clima
+        // Muestra el chart de clima
         showImagesForClima() {
             const climateOverlay = document.getElementById('climate-images-overlay');
             const climateInline = document.getElementById('climate-inline-container');
-            
+            const lang = langActivo();
+
             if (isMobileViewport()) {
-                if (climateOverlay) {
-                    climateOverlay.classList.add('hidden');
-                }
-                if (climateInline) {
-                    climateInline.style.display = 'flex';
+                if (climateOverlay) climateOverlay.classList.add('hidden');
+                if (climateInline) climateInline.style.display = 'flex';
+                const hostMobile = document.getElementById('clima-larouco-host-mobile');
+                if (hostMobile && window.ClimaLarouco) {
+                    hostMobile._climaRendered = false;
+                    window.ClimaLarouco.render(hostMobile, lang);
                 }
             } else {
-                if (climateInline) {
-                    climateInline.style.display = 'none';
-                }
-                if (climateOverlay) {
-                    climateOverlay.classList.remove('hidden');
+                if (climateInline) climateInline.style.display = 'none';
+                if (climateOverlay) climateOverlay.classList.remove('hidden');
+                const host = document.getElementById('clima-larouco-host');
+                if (host && window.ClimaLarouco) {
+                    host._climaRendered = false;
+                    window.ClimaLarouco.render(host, lang);
                 }
             }
         },
@@ -3016,7 +3145,7 @@ window.addEventListener('load', () => {
 
         clima: {
     title: 'Clima',
-    text: '<h2>Clima</h2>Este gráfico muestra las <strong>precipitaciones</strong>, la <strong>temperatura</strong> y el <strong>NDVI</strong> (un índice que mide la actividad de la vegetación) registrados en la estación de <strong>Larouco</strong>, en la zona del incendio.<br><br>Se observan dos fases bien definidas:<br><br>🌧 <strong>Estación lluviosa</strong>: abundantes lluvias y temperaturas moderadas reducen el riesgo de incendio mientras favorecen una alta productividad vegetal y la acumulación de biomasa.<br><br>☀️ <strong>Estación seca</strong>: con el aumento prolongado de las temperaturas se aprecia una caída del <strong>NDVI</strong> —la vegetación se seca—, la reserva de combustible es elevada y el riesgo de incendio se dispara.<br><br>Este patrón encaja con <strong>climas mediterráneo lluvioso</strong>, <strong>tropical estacional</strong> o ciertos <strong>climas continentales</strong>, donde el fuego es parte de la dinámica natural del ecosistema.'
+    text: '<h2>Clima</h2>Este gráfico muestra las <strong>precipitaciones</strong>, la <strong>temperatura</strong> y el <strong>NDVI</strong> (un índice que mide la actividad de la vegetación) registrados en la estación de <strong>Larouco</strong>, en la zona del incendio.<br><br>Se observan dos fases bien definidas:<br><br>🌧 <strong>Estación lluviosa</strong>: abundantes lluvias y temperaturas moderadas reducen el riesgo de incendio mientras favorecen una alta productividad vegetal y la acumulación de biomasa.<br><br>☀️ <strong>Estación seca</strong>: con el aumento prolongado de las temperaturas se aprecia una caída del <strong>NDVI</strong> —la vegetación se seca—, la reserva de combustible es elevada y el riesgo de incendio se dispara.<br><br>Este patrón encaja con <strong>climas mediterráneo lluvioso</strong>, <strong>tropical estacional</strong> o ciertos <strong>climas continentales</strong>, donde el fuego es parte de la dinámica natural del ecosistema.<br><br><img src="assets/Fases_Clima.png" alt="Fases del clima" style="width:100%;border-radius:8px;margin-top:4px;box-shadow:0 4px 16px rgba(0,0,0,0.4);">'
 },
 
         geografia: {

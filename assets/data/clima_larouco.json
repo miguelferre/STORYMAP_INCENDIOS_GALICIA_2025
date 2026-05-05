@@ -1,0 +1,15 @@
+[
+  {"orden": 1,  "mes": "Ago 24", "precip": 20,  "temp": 23.0, "ndvi": 0.370},
+  {"orden": 2,  "mes": "Sep 24", "precip": 27,  "temp": 22.0, "ndvi": 0.357},
+  {"orden": 3,  "mes": "Oct 24", "precip": 90,  "temp": 17.0, "ndvi": 0.335},
+  {"orden": 4,  "mes": "Nov 24", "precip": 75,  "temp": 12.3, "ndvi": 0.310},
+  {"orden": 5,  "mes": "Dic 24", "precip": 82,  "temp": 8.0,  "ndvi": 0.290},
+  {"orden": 6,  "mes": "Ene 25", "precip": 92,  "temp": 6.0,  "ndvi": 0.280},
+  {"orden": 7,  "mes": "Feb 25", "precip": 64,  "temp": 6.8,  "ndvi": 0.278},
+  {"orden": 8,  "mes": "Mar 25", "precip": 65,  "temp": 9.8,  "ndvi": 0.297},
+  {"orden": 9,  "mes": "Abr 25", "precip": 17,  "temp": 12.2, "ndvi": 0.380},
+  {"orden": 10, "mes": "May 25", "precip": 56,  "temp": 14.9, "ndvi": 0.460},
+  {"orden": 11, "mes": "Jun 25", "precip": 39,  "temp": 18.0, "ndvi": 0.478},
+  {"orden": 12, "mes": "Jul 25", "precip": 19,  "temp": 21.0, "ndvi": 0.400},
+  {"orden": 13, "mes": "Ago 25", "precip": 20,  "temp": 21.2, "ndvi": 0.330}
+]

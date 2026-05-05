@@ -1,178 +1,207 @@
-/**
- * Condiciones meteorológicas del evento agosto 2025 — ERA5 reanalysis.
- * Dos paneles: temperatura máxima diaria y precipitación acumulada.
- * Datos: scripts/19+20, fuente ERA5 ECMWF vía CDS API.
- */
 (function (global) {
   const TEXTOS = {
     es: {
-      titulo: "Las condiciones que lo hicieron posible",
-      subtitulo_temp: "Temperatura máxima diaria (°C) — media sobre Galicia",
-      subtitulo_prec: "Precipitación diaria (mm) — media sobre Galicia",
-      eje_temp: "Tmax (°C)",
-      eje_prec: "Precip. (mm)",
-      pico: "12 ago — pico del evento",
-      fuente: "Fuente: ERA5 reanalysis (ECMWF/Copernicus). Media espacial sobre la bbox de Galicia (41.8°N–43.8°N, 9.4°W–6.7°W). Resolución ~31 km.",
-      tooltip_temp: (d) => `${d.fecha}\nTmax: ${d.tmax}°C\nTmin: ${d.tmin}°C`,
-      tooltip_prec: (d) => `${d.fecha}\nPrecipitación: ${d.precip_mm} mm`,
+      label_temp:    "Temperatura diaria (°C) — interior de Ourense, zona del incendio",
+      label_precip:  "Precipitación diaria (mm) — interior de Ourense",
+      leyenda_max:   "Tmax",
+      leyenda_media: "Tmedia",
+      leyenda_min:   "Tmin",
+      ref_temp:      "30 °C",
+      ref_precip:    "~0.8 mm/día\nmedia agosto",
+      pico_calor:    "Pico de calor\n10 ago — 33.7 °C",
+      pico_evento:   "12 ago\npico del evento",
+      pie: "ERA5 — ECMWF/Copernicus. Media espacial zona interior Ourense (42.0–42.5°N, 7.75–7.0°W). Resolución ~31 km.",
+      tip_temp:  (d) => `${d.fecha}\nTmax: ${d.tmax} °C\nTmedia: ${d.tmedia} °C\nTmin: ${d.tmin} °C`,
+      tip_prec:  (d) => `${d.fecha}\nPrecipitación: ${d.precip_mm} mm`,
     },
     gl: {
-      titulo: "As condicións que o fixeron posible",
-      subtitulo_temp: "Temperatura máxima diaria (°C) — media sobre Galicia",
-      subtitulo_prec: "Precipitación diaria (mm) — media sobre Galicia",
-      eje_temp: "Tmax (°C)",
-      eje_prec: "Precipitación (mm)",
-      pico: "12 ago — pico do evento",
-      fuente: "Fonte: ERA5 reanalysis (ECMWF/Copernicus). Media espacial sobre a bbox de Galicia (41.8°N–43.8°N, 9.4°W–6.7°W). Resolución ~31 km.",
-      tooltip_temp: (d) => `${d.fecha}\nTmax: ${d.tmax}°C\nTmin: ${d.tmin}°C`,
-      tooltip_prec: (d) => `${d.fecha}\nPrecipitación: ${d.precip_mm} mm`,
+      label_temp:    "Temperatura diaria (°C) — interior de Ourense, zona do incendio",
+      label_precip:  "Precipitación diaria (mm) — interior de Ourense",
+      leyenda_max:   "Tmax",
+      leyenda_media: "Tmedia",
+      leyenda_min:   "Tmin",
+      ref_temp:      "30 °C",
+      ref_precip:    "~0.8 mm/día\nmedia agosto",
+      pico_calor:    "Pico de calor\n10 ago — 33.7 °C",
+      pico_evento:   "12 ago\npico do evento",
+      pie: "ERA5 — ECMWF/Copernicus. Media espacial zona interior Ourense (42.0–42.5°N, 7.75–7.0°W). Resolución ~31 km.",
+      tip_temp:  (d) => `${d.fecha}\nTmax: ${d.tmax} °C\nTmedia: ${d.tmedia} °C\nTmin: ${d.tmin} °C`,
+      tip_prec:  (d) => `${d.fecha}\nPrecipitación: ${d.precip_mm} mm`,
     },
   };
 
+  const STYLE = {
+    background: "transparent",
+    color: "rgba(255,255,255,0.82)",
+    fontFamily: "system-ui,-apple-system,Segoe UI,Roboto,sans-serif",
+    fontSize: "11.5px",
+    overflow: "visible",
+  };
+
+  const DIAS_TICKS = ["2025-08-01","2025-08-05","2025-08-10","2025-08-12","2025-08-15","2025-08-20"];
+  const PRECIP_REF = 0.8; // mm/día media histórica agosto Ourense interior
+
   let cache = null;
-  let cargaPromesa = null;
 
   function cargar() {
     if (cache) return Promise.resolve(cache);
-    if (cargaPromesa) return cargaPromesa;
-    cargaPromesa = fetch("assets/data/era5_agosto2025.json")
+    return fetch("assets/data/era5_agosto2025.json")
       .then((r) => r.json())
-      .then((j) => {
-        j.forEach((d) => (d._fecha = new Date(d.fecha + "T12:00:00")));
-        cache = j;
-        return j;
-      });
-    return cargaPromesa;
+      .then((j) => { cache = j; return j; });
   }
 
-  function panelTemp(datos, ancho, lang) {
+  function leyendaTemp(t) {
+    const div = document.createElement("div");
+    div.className = "clima-agosto-leyenda";
+    div.innerHTML =
+      `<span style="color:#F44E11;font-weight:700;">─ ${t.leyenda_max}</span>` +
+      `<span style="color:rgba(244,78,17,0.6);margin-left:14px;">── ${t.leyenda_media}</span>` +
+      `<span style="color:rgba(244,78,17,0.35);margin-left:14px;">▒ ${t.leyenda_min}–Max</span>`;
+    return div;
+  }
+
+  function panelTemp(datos, ancho, t) {
     const Plot = global.Plot;
-    const t = TEXTOS[lang] || TEXTOS.es;
-    const pico = new Date("2025-08-12T12:00:00");
+    const meses = datos.map((d) => d.fecha);
+    const yMax = Math.ceil(Math.max(...datos.map((d) => d.tmax)) / 2) * 2 + 2;
 
     return Plot.plot({
-      width: ancho,
-      height: 200,
-      marginLeft: 48,
-      marginRight: 16,
-      marginTop: 20,
-      marginBottom: 32,
-      style: {
-        background: "transparent",
-        color: "rgba(255,255,255,0.85)",
-        fontFamily: "system-ui,-apple-system,sans-serif",
-        fontSize: "11px",
-        overflow: "hidden",
-      },
-      x: { type: "band", domain: datos.map((d) => d.fecha), tickRotate: -45,
-           ticks: datos.filter((_, i) => i % 4 === 0).map((d) => d.fecha),
-           label: null },
-      y: { label: t.eje_temp, labelAnchor: "top", labelOffset: 32,
-           domain: [15, Math.ceil(Math.max(...datos.map((d) => d.tmax)) / 5) * 5],
-           grid: true },
+      width: ancho, height: 210,
+      marginLeft: 44, marginRight: 16, marginTop: 10, marginBottom: 4,
+      style: STYLE,
+      x: { label: null, type: "band", domain: meses, tickSize: 0, tickFormat: () => "" },
+      y: { label: null, grid: true, domain: [10, yMax] },
       marks: [
-        Plot.barY(datos, {
+        // Banda Tmin–Tmax
+        Plot.rect(datos, {
+          x: "fecha", y1: "tmin", y2: "tmax",
+          fill: "rgba(244,78,17,0.18)", inset: 1,
+        }),
+        // Línea Tmedia (tenue, discontinua)
+        Plot.line(datos, {
+          x: "fecha", y: "tmedia",
+          stroke: "rgba(244,78,17,0.55)", strokeWidth: 1.5,
+          strokeDasharray: "4 3", curve: "monotone-x",
+        }),
+        // Línea Tmax (principal)
+        Plot.line(datos, {
           x: "fecha", y: "tmax",
-          fill: (d) => d.fecha === "2025-08-12" ? "#F44E11" : "rgba(244,78,17,0.5)",
-          tip: true, title: t.tooltip_temp,
+          stroke: "#F44E11", strokeWidth: 2.2, curve: "monotone-x",
         }),
-        Plot.ruleX([{ fecha: "2025-08-12" }], {
-          x: "fecha", stroke: "#F44E11", strokeWidth: 1.5,
-          strokeDasharray: "4 3",
+        Plot.dot(datos, {
+          x: "fecha", y: "tmax", r: 2.8,
+          fill: "#F44E11", stroke: "rgba(0,0,0,0.35)", strokeWidth: 0.5,
+          tip: true, title: t.tip_temp,
         }),
-        Plot.text([{ fecha: "2025-08-12", y: Math.max(...datos.map((d) => d.tmax)) }], {
-          x: "fecha", y: "y", text: () => t.pico,
-          dy: -8, fontSize: 10, fill: "rgba(255,255,255,0.75)",
-          textAnchor: "middle",
+        // Referencia 30°C
+        Plot.ruleY([30], { stroke: "rgba(255,200,80,0.45)", strokeWidth: 1, strokeDasharray: "2 4" }),
+        Plot.text([{ f: "2025-08-20", y: 30 }], {
+          x: "f", y: "y", text: () => t.ref_temp,
+          dx: 2, dy: -6, fill: "rgba(255,200,80,0.7)", fontSize: 9.5, textAnchor: "end",
         }),
-        Plot.ruleY([0], { stroke: "rgba(255,255,255,0.3)" }),
+        // Pico calor
+        Plot.ruleX([{ f: "2025-08-10" }], {
+          x: "f", stroke: "rgba(255,200,80,0.7)", strokeWidth: 1, strokeDasharray: "3 3",
+        }),
+        Plot.text([{ f: "2025-08-10", y: yMax - 0.5 }], {
+          x: "f", y: "y", text: () => t.pico_calor,
+          fill: "rgba(255,200,80,0.9)", fontSize: 9.5, textAnchor: "middle", lineAnchor: "top",
+        }),
+        // Pico evento
+        Plot.ruleX([{ f: "2025-08-12" }], {
+          x: "f", stroke: "#F44E11", strokeWidth: 1.5, strokeDasharray: "4 3",
+        }),
+        Plot.ruleY([0], { stroke: "rgba(255,255,255,0.25)" }),
       ],
     });
   }
 
-  function panelPrec(datos, ancho, lang) {
+  function panelPrecip(datos, ancho, t) {
     const Plot = global.Plot;
-    const t = TEXTOS[lang] || TEXTOS.es;
+    const meses = datos.map((d) => d.fecha);
+    const yMax = Math.max(Math.ceil(Math.max(...datos.map((d) => d.precip_mm)) * 2) / 2 + 0.3, PRECIP_REF * 2.5);
 
     return Plot.plot({
-      width: ancho,
-      height: 160,
-      marginLeft: 48,
-      marginRight: 16,
-      marginTop: 12,
-      marginBottom: 32,
-      style: {
-        background: "transparent",
-        color: "rgba(255,255,255,0.85)",
-        fontFamily: "system-ui,-apple-system,sans-serif",
-        fontSize: "11px",
-        overflow: "hidden",
+      width: ancho, height: 170,
+      marginLeft: 44, marginRight: 16, marginTop: 6, marginBottom: 30,
+      style: STYLE,
+      x: {
+        label: null, type: "band", domain: meses, tickSize: 3,
+        ticks: DIAS_TICKS,
+        tickFormat: (f) => f.slice(8), // día: "01", "05"…
       },
-      x: { type: "band", domain: datos.map((d) => d.fecha), tickRotate: -45,
-           ticks: datos.filter((_, i) => i % 4 === 0).map((d) => d.fecha),
-           label: null },
-      y: { label: t.eje_prec, labelAnchor: "top", labelOffset: 32,
-           grid: true, nice: true },
+      y: { label: null, grid: true, domain: [0, yMax] },
       marks: [
+        // Referencia media histórica
+        Plot.ruleY([PRECIP_REF], {
+          stroke: "rgba(66,165,245,0.5)", strokeWidth: 1, strokeDasharray: "3 4",
+        }),
+        Plot.text([{ f: "2025-08-19", y: PRECIP_REF }], {
+          x: "f", y: "y", text: () => t.ref_precip,
+          dx: 4, dy: -4, fill: "rgba(66,165,245,0.75)", fontSize: 9, textAnchor: "start",
+        }),
+        // Barras diarias
         Plot.barY(datos, {
           x: "fecha", y: "precip_mm",
-          fill: "rgba(100,180,255,0.7)",
-          stroke: "rgba(100,180,255,0.9)", strokeWidth: 0.4,
-          tip: true, title: t.tooltip_prec,
+          fill: (d) => d.precip_mm < 0.1 ? "rgba(66,165,245,0.25)" : "rgba(66,165,245,0.75)",
+          stroke: "rgba(66,165,245,0.7)", strokeWidth: 0.4,
+          tip: true, title: t.tip_prec,
         }),
-        Plot.ruleY([0], { stroke: "rgba(255,255,255,0.3)" }),
+        // Pico evento
+        Plot.ruleX([{ f: "2025-08-12" }], {
+          x: "f", stroke: "#F44E11", strokeWidth: 1.5, strokeDasharray: "4 3",
+        }),
+        Plot.text([{ f: "2025-08-12", y: yMax * 0.55 }], {
+          x: "f", y: "y", text: () => t.pico_evento,
+          fill: "#F44E11", fontSize: 10, fontWeight: 600, textAnchor: "middle",
+        }),
+        Plot.ruleY([0], { stroke: "rgba(255,255,255,0.25)" }),
       ],
     });
+  }
+
+  function mkLabel(txt) {
+    const p = document.createElement("p");
+    p.className = "clima-agosto-label";
+    p.textContent = txt;
+    return p;
   }
 
   function pintar(host, datos, lang) {
-    const slot = host.querySelector(".clima-agosto-paneles");
-    if (!slot) return;
-    const ancho = Math.max(280, Math.min(slot.clientWidth || 680, 860));
     const t = TEXTOS[lang] || TEXTOS.es;
-    slot.innerHTML = "";
+    const ancho = Math.max(280,
+      host.getBoundingClientRect().width ||
+      (host.parentElement && host.parentElement.getBoundingClientRect().width) ||
+      host.clientWidth || 560
+    );
 
-    const lTemp = document.createElement("p");
-    lTemp.className = "clima-agosto-label";
-    lTemp.textContent = t.subtitulo_temp;
-    slot.appendChild(lTemp);
-    slot.appendChild(panelTemp(datos, ancho, lang));
+    host.innerHTML = "";
+    host.appendChild(mkLabel(t.label_temp));
+    host.appendChild(leyendaTemp(t));
+    host.appendChild(panelTemp(datos, ancho, t));
+    host.appendChild(mkLabel(t.label_precip));
+    host.appendChild(panelPrecip(datos, ancho, t));
 
-    const lPrec = document.createElement("p");
-    lPrec.className = "clima-agosto-label";
-    lPrec.textContent = t.subtitulo_prec;
-    slot.appendChild(lPrec);
-    slot.appendChild(panelPrec(datos, ancho, lang));
+    const pie = document.createElement("p");
+    pie.className = "clima-agosto-pie";
+    pie.textContent = t.pie;
+    host.appendChild(pie);
   }
 
   function render(host, lang) {
-    if (!host) return;
-    const t = TEXTOS[lang] || TEXTOS.es;
-    host.classList.add("clima-agosto-bloque");
-    host.innerHTML = `
-      <header class="clima-agosto-cabecera">
-        <h3>${t.titulo}</h3>
-      </header>
-      <div class="clima-agosto-paneles"></div>
-      <p class="clima-agosto-pie">${t.fuente}</p>
-    `;
-    cargar().then((datos) => {
-      const slot = host.querySelector(".clima-agosto-paneles");
-      const dibuxar = () => pintar(host, datos, lang);
-      const intento = () => {
-        if (!slot) return;
-        if ((slot.clientWidth || 0) < 200) { requestAnimationFrame(intento); return; }
-        dibuxar();
-      };
-      intento();
-      if (!host._observado) {
-        host._observado = true;
-        new ResizeObserver(() => { if (host.querySelector(".clima-agosto-paneles")) dibuxar(); }).observe(host);
-      }
-    }).catch((err) => {
-      const slot = host.querySelector(".clima-agosto-paneles");
-      if (slot) slot.innerHTML = `<p style="color:rgba(255,100,100,0.8)">Error cargando datos ERA5: ${err.message}</p>`;
-    });
+    if (!host || host._era5Rendered) return;
+    host._era5Rendered = true;
+    cargar()
+      .then((j) => { pintar(host, j, lang); })
+      .catch((err) => {
+        host.innerHTML = `<div style="color:rgba(255,150,150,0.9);padding:8px">Error: ${err.message}</div>`;
+      });
+    if (!host._observado) {
+      host._observado = true;
+      new ResizeObserver(() => {
+        if (cache) { host._era5Rendered = false; pintar(host, cache, lang); host._era5Rendered = true; }
+      }).observe(host);
+    }
   }
 
   global.ClimaAgosto = { render };

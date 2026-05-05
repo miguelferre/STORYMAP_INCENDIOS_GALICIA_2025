@@ -34,8 +34,12 @@ def main() -> None:
     print("Variables:", list(ds.data_vars))
     print("Dims:", dict(ds.sizes))
 
-    # Media espacial sobre la bbox (Galicia completa)
-    # Detectar nombre de dimensiones espaciales
+    # Filtrar a zona sureste de Galicia (Ourense/zona del incendio)
+    # Lat 42.0–42.5°N × Lon -7.75 a -7.0°W ≈ área de Ourense interior
+    ds = ds.sel(
+        latitude=ds.latitude[(ds.latitude >= 42.0) & (ds.latitude <= 42.5)],
+        longitude=ds.longitude[(ds.longitude >= -7.75) & (ds.longitude <= -7.0)],
+    )
     spa = [d for d in ds.dims if d not in ("valid_time", "time", "step", "number")]
     t2m = ds["t2m"].mean(dim=spa)
     tp  = ds["tp"].mean(dim=spa)

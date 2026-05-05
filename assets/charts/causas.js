@@ -52,13 +52,22 @@
     "Rayo",
   ];
 
+  const DECENIOS_SELECTOR = [
+    { key: "total" },
+    { key: "1990-1999" },
+    { key: "2000-2009" },
+    { key: "2010-2022" },
+  ];
+
   const TEXTOS = {
     es: {
       titulo: "Más de cinco décadas de incendios en Ourense",
       subtitulo:
         "Cada barra reúne todos los partes oficiales (PIF) registrados en la provincia ese año. La intencionalidad domina toda la serie; el resto de causas apenas asoma.",
       panel_anual: "Número de incendios al año, por grupo de causa",
-      panel_motiv: "Motivaciones de los incendios intencionados (1968-2022)",
+      panel_motiv: "Motivaciones de los incendios intencionados",
+      selector_periodo: "Período:",
+      selector_total: "Total 1968-2022",
       pie:
         "Fuente: EGIF — Estadística General de Incendios Forestales (MITECO/MAPA). Descarga XML para provincia de Ourense, todos los años disponibles. Categorías según el manual del Comité de Lucha contra Incendios Forestales (v3.6).",
       nota_motiv:
@@ -68,7 +77,7 @@
         "Intencionado": "Intencionado",
         "Causa descoñecida": "Causa desconocida",
         "Negligencias e accidentes": "Negligencias y accidentes",
-        "Reproducción": "Reproducción",
+        "Reproducción": "Reactivación",
         "Rayo": "Rayo",
       },
       motivs: {
@@ -90,7 +99,9 @@
       subtitulo:
         "Cada barra reúne todos os partes oficiais (PIF) rexistrados na provincia ese ano. A intencionalidade domina toda a serie; o resto de causas apenas asoma.",
       panel_anual: "Número de incendios ao ano, por grupo de causa",
-      panel_motiv: "Motivacións dos incendios intencionados (1968-2022)",
+      panel_motiv: "Motivacións dos incendios intencionados",
+      selector_periodo: "Período:",
+      selector_total: "Total 1968-2022",
       pie:
         "Fonte: EGIF — Estadística General de Incendios Forestales (MITECO/MAPA). Descarga XML para a provincia de Ourense, todos os anos dispoñibles. Categorías segundo o manual do Comité de Lucha contra Incendios Forestales (v3.6).",
       nota_motiv:
@@ -100,7 +111,7 @@
         "Intencionado": "Intencionado",
         "Causa descoñecida": "Causa descoñecida",
         "Negligencias e accidentes": "Neglixencias e accidentes",
-        "Reproducción": "Reproducción",
+        "Reproducción": "Reactivación",
         "Rayo": "Raio",
       },
       motivs: {
@@ -140,28 +151,47 @@
   function panelAnual(serie, ancho, lang) {
     const Plot = global.Plot;
     const t = TEXTOS[lang] || TEXTOS.es;
-    // Etiquetas traducidas para Plot e tooltip.
+
+    const ordeColor = ORDE_GRUPOS.map((g) => t.grupos[g] || g);
+    const colorMap = new Map(
+      ORDE_GRUPOS.map((g) => [t.grupos[g] || g, COR_GRUPO[g] || "#888"])
+    );
+
     const datosT = serie.map((d) => ({
       ano: d.ano,
-      grupo_orig: d.grupo,
       grupo: t.grupos[d.grupo] || d.grupo,
       num_incendios: d.num_incendios,
       ha_total: d.ha_total,
     }));
 
-    const ordeColor = ORDE_GRUPOS.map((g) => t.grupos[g] || g);
-    const cores = ordeColor.map((etq) => {
-      const orig = ORDE_GRUPOS.find((g) => (t.grupos[g] || g) === etq);
-      return COR_GRUPO[orig] || "#888";
-    });
-
-    // Banda de anos usando bandX: cada barra céntrase exactamente sobre o tick
-    // do seu ano, en vez de extendéndose a [ano, ano+1] como facía Plot.rectY
-    // con interval=1 (que daba a sensación visual de que as barras estaban
-    // desprazadas á dereita das súas etiquetas).
     const anosOrdenados = Array.from(new Set(datosT.map((d) => d.ano))).sort(
       (a, b) => a - b
     );
+
+    // Apilado manual: todos los segmentos del mismo año comparten x1/x2 exactos.
+    const byAno = new Map(anosOrdenados.map((ano) => [ano, new Map()]));
+    datosT.forEach((d) => byAno.get(d.ano).set(d.grupo, d));
+
+    const MITAD = 0.44;
+    const stacked = [];
+    anosOrdenados.forEach((ano) => {
+      let y0 = 0;
+      ordeColor.forEach((grupo) => {
+        const d = byAno.get(ano).get(grupo);
+        if (!d || d.num_incendios === 0) return;
+        stacked.push({
+          ano,
+          grupo,
+          x1: ano - MITAD,
+          x2: ano + MITAD,
+          y1: y0,
+          y2: y0 + d.num_incendios,
+          num_incendios: d.num_incendios,
+          ha_total: d.ha_total,
+        });
+        y0 += d.num_incendios;
+      });
+    });
 
     return Plot.plot({
       marginLeft: 56,
@@ -179,9 +209,10 @@
       },
       x: {
         label: null,
-        type: "band",
-        domain: anosOrdenados,
-        ticks: anosOrdenados.filter(function(d) { return d % 5 === 0; }),
+        type: "linear",
+        domain: [anosOrdenados[0] - 0.5, anosOrdenados[anosOrdenados.length - 1] + 0.5],
+        ticks: anosOrdenados.filter((d) => d % 5 === 0),
+        tickFormat: (d) => String(d),
         tickRotate: -45,
       },
       y: {
@@ -193,27 +224,45 @@
       },
       color: {
         domain: ordeColor,
-        range: cores,
+        range: ordeColor.map((g) => colorMap.get(g) || "#888"),
         legend: true,
         label: null,
         style: { color: "rgba(255,255,255,0.86)" },
       },
       marks: [
-        Plot.barY(
-          datosT,
-          {
-            x: "ano",
-            y: "num_incendios",
-            fill: "grupo",
-            order: ordeColor,
-            tip: true,
-            title: (d) =>
-              `${d.ano} — ${d.grupo}\n${d.num_incendios.toLocaleString(lang)} incendios\n${Math.round(d.ha_total).toLocaleString(lang)} ha`,
-          }
-        ),
+        Plot.rect(stacked, {
+          x1: "x1",
+          x2: "x2",
+          y1: "y1",
+          y2: "y2",
+          fill: "grupo",
+          stroke: "rgba(10,14,26,0.9)",
+          strokeWidth: 0.6,
+          tip: true,
+          title: (d) =>
+            `${d.ano} — ${d.grupo}\n${d.num_incendios.toLocaleString(lang)} incendios\n${Math.round(d.ha_total).toLocaleString(lang)} ha`,
+        }),
         Plot.ruleY([0], { stroke: "rgba(255,255,255,0.45)" }),
       ],
     });
+    // Solapamiento de 0.5px hacia arriba en cada segmento para eliminar
+    // el hilo de anti-aliasing en el borde entre colores adyacentes.
+    svg.querySelectorAll("g[aria-label='rect'] rect").forEach((r) => {
+      const y = parseFloat(r.getAttribute("y"));
+      const h = parseFloat(r.getAttribute("height"));
+      if (!isNaN(y) && !isNaN(h) && h > 1) {
+        r.setAttribute("y", String(y - 0.5));
+        r.setAttribute("height", String(h + 0.5));
+      }
+    });
+    return svg;
+  }
+
+  function getDatosPorDecenio(json, decenio) {
+    if (decenio === "total") return json.motivacions;
+    return (json.motivacions_decenio || [])
+      .filter((d) => d.decenio === decenio)
+      .sort((a, b) => b.num_incendios - a.num_incendios);
   }
 
   function panelMotivacions(motivs, ancho, lang) {
@@ -258,7 +307,7 @@
           fill: (d) => COR_MOTIV[d.etq_orig] || "#888",
           tip: true,
           title: (d) =>
-            `${d.etq}\n${d.num_incendios.toLocaleString(lang)} incendios (${d.pct.toFixed(1)}% dos intencionados)\n${Math.round(d.ha_total).toLocaleString(lang)} ha`,
+            `${d.etq}\n${d.num_incendios.toLocaleString(lang)} incendios (${d.pct.toFixed(1)}%)\n${Math.round(d.ha_total).toLocaleString(lang)} ha`,
         }),
         Plot.text(datosT, {
           x: "num_incendios",
@@ -271,6 +320,48 @@
         Plot.ruleX([0], { stroke: "rgba(255,255,255,0.45)" }),
       ],
     });
+  }
+
+  function renderMotivSelector(slot, json, ancho, lang, decenioActivo) {
+    const t = TEXTOS[lang] || TEXTOS.es;
+
+    // Referencia directa al contenedor del chart, sin querySelector en el click
+    const motivHost = document.createElement("div");
+    motivHost.className = "causas-motiv-host";
+
+    const wrap = document.createElement("div");
+    wrap.className = "causas-dec-selector";
+    const lbl = document.createElement("span");
+    lbl.textContent = t.selector_periodo;
+    wrap.appendChild(lbl);
+
+    DECENIOS_SELECTOR.forEach((d) => {
+      const btn = document.createElement("button");
+      btn.className = "causas-dec-btn" + (d.key === decenioActivo ? " activo" : "");
+      btn.textContent = d.key === "total" ? t.selector_total : d.key;
+      btn.addEventListener("click", () => {
+        try {
+          const datos = getDatosPorDecenio(json, d.key);
+          while (motivHost.firstChild) motivHost.removeChild(motivHost.firstChild);
+          if (!datos || datos.length === 0) {
+            motivHost.textContent = "Sin datos para este período";
+          } else {
+            const svg = panelMotivacions(datos, ancho, lang);
+            if (svg) motivHost.appendChild(svg);
+          }
+        } catch (err) {
+          motivHost.textContent = "Error: " + err.message;
+        }
+        wrap.querySelectorAll(".causas-dec-btn").forEach((b) => b.classList.remove("activo"));
+        btn.classList.add("activo");
+      });
+      wrap.appendChild(btn);
+    });
+
+    motivHost.appendChild(panelMotivacions(getDatosPorDecenio(json, decenioActivo), ancho, lang));
+
+    slot.appendChild(wrap);
+    slot.appendChild(motivHost);
   }
 
   function pintar(host, json, lang) {
@@ -294,7 +385,7 @@
     tituloB.className = "causas-subtitulo";
     tituloB.textContent = t.panel_motiv;
     slot.appendChild(tituloB);
-    slot.appendChild(panelMotivacions(json.motivacions, ancho, lang));
+    renderMotivSelector(slot, json, ancho, lang, "total");
   }
 
   function render(host, lang) {

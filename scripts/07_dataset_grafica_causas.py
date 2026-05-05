@@ -21,13 +21,65 @@ que serie_incendios.js).
 
 from __future__ import annotations
 
+import importlib.util
 import json
+from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data" / "processed"
+
+# Importar le_pifs e MOTIVACIONS do script 06 (nome con número non é importable directo)
+_spec = importlib.util.spec_from_file_location(
+    "extrae_causas", Path(__file__).parent / "06_extrae_causas_egif.py"
+)
+_mod = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_mod)
+le_pifs = _mod.le_pifs
+MOTIVACIONS = _mod.MOTIVACIONS
+
+DECENIOS_ORDEN = ["1968-1979", "1980-1989", "1990-1999", "2000-2009", "2010-2022"]
+
+# Nombres canónicos de los grupos de motivación (Unicode limpio, independiente del CSV)
+GRUPOS_MOTIV = {
+    "Intencionado sen motivación recoñecida": "Intencionado sen motivación recoñecida",
+    "Prácticas agrícolas e gandeiras": "Prácticas agrícolas e gandeiras",
+    "Caza": "Caza",
+    "Vandalismo": "Vandalismo",
+    "Piromanía": "Piromanía",
+    "Desacordos e protestas": "Desacordos e protestas",
+    "Vinganzas e disputas": "Vinganzas e disputas",
+    "Propiedade": "Propiedade",
+    "Beneficio económico": "Beneficio económico",
+    "Outras motivacións": "Outras motivacións",
+    "Forzas de orde público": "Forzas de orde público",
+    "Pesca": "Outras motivacións",
+    "Control de animais": "Outras motivacións",
+}
+
+
+def _decenio(ano: int) -> str:
+    if ano < 1980:
+        return "1968-1979"
+    if ano < 1990:
+        return "1980-1989"
+    if ano < 2000:
+        return "1990-1999"
+    if ano < 2010:
+        return "2000-2009"
+    return "2010-2022"
+
+
+def _grupo_motiv(idm: int, idcausa: int) -> str:
+    clave = idm if (idm and idm in _mod.MOTIVACIONS) else idcausa
+    raw = _mod.MOTIVACIONS.get(clave, ("Intencionado sen motivación recoñecida", ""))[0]
+    # Normalizar a nombre canónico por si el XML trajo encoding roto
+    for canon in GRUPOS_MOTIV:
+        if raw.lower().replace("\xad", "") == canon.lower():
+            return GRUPOS_MOTIV[canon]
+    return GRUPOS_MOTIV.get(raw, "Outras motivacións")
 
 
 def main() -> None:
@@ -68,6 +120,35 @@ def main() -> None:
         for _, r in motiv_agg.iterrows()
     ]
 
+    # Motivacións por decenio — lemos directamente os XML para ter o ano por PIF
+    xml_dir = ROOT / "data" / "raw" / "egif_ourense"
+    xml_paths = sorted(xml_dir.glob("Xml_*.xml"))
+    dec_acc = defaultdict(lambda: defaultdict(lambda: {"n": 0, "ha": 0.0}))
+    for anio, idcausa, idm, ha_arb, ha_no_arb in le_pifs(xml_paths):
+        if not (400 <= idcausa < 500):
+            continue
+        dec = _decenio(anio)
+        grupo_mot = _grupo_motiv(idm, idcausa)
+        dec_acc[dec][grupo_mot]["n"] += 1
+        dec_acc[dec][grupo_mot]["ha"] += ha_arb + ha_no_arb
+
+    motivacions_decenio = []
+    for dec in DECENIOS_ORDEN:
+        grupos = dec_acc.get(dec, {})
+        total_dec = sum(v["n"] for v in grupos.values()) or 1
+        filas = sorted(grupos.items(), key=lambda x: -x[1]["n"])
+        for grupo_mot, vals in filas:
+            pct = round(vals["n"] / total_dec * 100, 2)
+            if pct < 0.5:
+                continue
+            motivacions_decenio.append({
+                "decenio": dec,
+                "grupo_motivacion": grupo_mot,
+                "num_incendios": vals["n"],
+                "ha_total": round(vals["ha"], 1),
+                "pct": pct,
+            })
+
     payload = {
         "metadatos": {
             "titulo": "Causas dos incendios forestais en Ourense (1968-2022)",
@@ -96,6 +177,7 @@ def main() -> None:
         },
         "serie_anual": serie_anual,
         "motivacions": motivacions,
+        "motivacions_decenio": motivacions_decenio,
     }
 
     PROC.mkdir(parents=True, exist_ok=True)

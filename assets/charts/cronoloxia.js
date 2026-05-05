@@ -21,7 +21,7 @@
         "Fuente: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregado por día. Período julio-octubre 2025.",
       overview_y: "ha (escala raíz)",
       eje_y: "Hectáreas quemadas / día",
-      zoom_titulo: "Zoom: 5 al 22 de agosto, la semana en que ardió todo",
+      zoom_titulo: "Zoom: 5-23 de agosto, las semanas críticas",
       tooltip_dia: (d) =>
         `${d.data_str}\n${d.n_incendios} lumes — ${Math.round(d.ha_total).toLocaleString("es")} ha\nMaior: ${d.top_concello} / ${d.top_parroquia} (${Math.round(d.top_ha).toLocaleString("es")} ha)`,
       tooltip_grande: (d) =>
@@ -38,7 +38,7 @@
         "Fonte: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregada por día. Período xullo-outubro 2025.",
       overview_y: "ha (escala raíz)",
       eje_y: "Hectáreas queimadas / día",
-      zoom_titulo: "Zoom: do 5 ao 22 de agosto, a semana na que ardeu todo",
+      zoom_titulo: "Zoom: 5-23 de agosto, as semanas críticas",
       tooltip_dia: (d) =>
         `${d.data_str}\n${d.n_incendios} lumes — ${Math.round(d.ha_total).toLocaleString("gl")} ha\nMaior: ${d.top_concello} / ${d.top_parroquia} (${Math.round(d.top_ha).toLocaleString("gl")} ha)`,
       tooltip_grande: (d) =>
@@ -72,24 +72,23 @@
     const t = TEXTOS[lang] || TEXTOS.es;
     return Plot.plot({
       width: ancho,
-      height: 110,
+      height: 160,
       marginLeft: 56,
       marginRight: 18,
       marginTop: 8,
-      marginBottom: 22,
+      marginBottom: 32,
       style: {
         background: "transparent",
         color: "rgba(255,255,255,0.7)",
         fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
         fontSize: "10.5px",
-        overflow: "hidden",
+        overflow: "visible",
       },
       x: {
         label: null,
         type: "time",
         grid: false,
-        domain: [new Date("2025-07-01T00:00:00"), new Date("2025-10-01T00:00:00")],
-        clip: true,
+        domain: [new Date("2025-01-01T00:00:00"), new Date("2026-01-01T00:00:00")],
       },
       y: {
         label: t.overview_y,
@@ -97,6 +96,7 @@
         labelOffset: 36,
         type: "sqrt",
         grid: false,
+        tickCount: 4,
       },
       marks: [
         Plot.rectY(j.diario, {
@@ -106,8 +106,8 @@
           fill: "rgba(244, 78, 17, 0.7)",
           stroke: "rgba(244, 78, 17, 0.9)",
           strokeWidth: 0.3,
+          clip: true,
         }),
-        // Sombreado do tramo do panel detalle.
         Plot.rect([{
           x1: new Date("2025-08-05T00:00:00"),
           x2: new Date("2025-08-22T00:00:00"),
@@ -119,6 +119,7 @@
           stroke: "rgba(255, 220, 130, 0.55)",
           strokeWidth: 0.8,
           strokeDasharray: "3 3",
+          clip: true,
         }),
         Plot.ruleY([0], { stroke: "rgba(255,255,255,0.35)" }),
       ],
@@ -131,8 +132,8 @@
   function panelDetalle(j, ancho, lang) {
     const Plot = global.Plot;
     const t = TEXTOS[lang] || TEXTOS.es;
-    const inicio = new Date("2025-08-05T00:00:00");
-    const fin = new Date("2025-08-22T00:00:00");
+    const inicio = new Date("2025-08-04T00:00:00");
+    const fin = new Date("2025-08-23T00:00:00");
     const enRango = (d) => d.fecha >= inicio && d.fecha <= fin;
     const diarioZoom = j.diario.filter(enRango);
     const grandesZoom = j.grandes.filter(enRango);
@@ -179,8 +180,7 @@
           fill: "rgba(244, 78, 17, 0.55)",
           stroke: "rgba(244, 78, 17, 0.85)",
           strokeWidth: 0.4,
-          tip: true,
-          title: t.tooltip_dia,
+          clip: true,
         }),
         Plot.dot(grandesZoom, {
           x: "fecha",
@@ -191,6 +191,7 @@
           strokeWidth: 0.7,
           tip: true,
           title: t.tooltip_grande,
+          clip: true,
         }),
         Plot.text(anotacions, {
           x: "fecha",
@@ -228,10 +229,6 @@
     const t = TEXTOS[lang] || TEXTOS.es;
     host.classList.add("cronoloxia-bloque");
     host.innerHTML = `
-      <header class="cronoloxia-cabecera">
-        <h3>${t.titulo}</h3>
-        <p>${t.subtitulo}</p>
-      </header>
       <div class="cronoloxia-paneles"></div>
       <p class="cronoloxia-pie">${t.pie}</p>
     `;

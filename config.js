@@ -107,6 +107,7 @@ var config = {
                 <div class="chapter2-flex" style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div id="grafica-cronoloxia" class="grafica-host" style="margin-bottom: 30px;"></div>
+                        <div id="grafica-era5-agosto" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
                           <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.7; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
 Larouco-Seadur fue el incendio más grande, pero no estuvo solo. La gráfica resume todo el periodo crítico, del <strong>1 de julio al 1 de octubre de 2025</strong>: cada barra naranja es la suma de hectáreas reportadas ese día por PrazaGal, y cada círculo amarillo es uno de los <strong>35 incendios mayores de 100 ha</strong> que ocurrieron en esos tres meses.<br><br>
@@ -121,7 +122,8 @@ El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 ince
 Larouco-Seadur fue el incendio más grande, pero no estuvo solo. La gráfica resume todo el periodo crítico, del <strong>1 de julio al 1 de octubre de 2025</strong>: cada barra naranja es la suma de hectáreas reportadas ese día por PrazaGal, y cada círculo amarillo es uno de los <strong>35 incendios mayores de 100 ha</strong> que ocurrieron en esos tres meses, con su tamaño proporcional a las hectáreas que arrasaron.<br><br>
 La lectura es brutal: durante junio y julio Galicia mantiene niveles bajos, pero entre el <strong>8 y el 15 de agosto</strong> se concentra prácticamente toda la siniestralidad del verano. En esa única semana se solapan <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha), agotando los recursos de extinción de toda la comunidad.<br><br>
 El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios activos y casi 49.000 hectáreas reportadas</strong>. El 13 se sumaron otras 25.000. En cinco días ardieron <strong>más de 100.000 hectáreas</strong>, la mayor parte de todo el daño anual.<br><br>
-Tras el pico, septiembre se desinfla. Una sola semana decidió un verano entero.
+Tras el pico, septiembre se desinfla. Una sola semana decidió un verano entero.<br><br>
+Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son del reanálisis ERA5 del ECMWF, filtrados a la zona interior de Ourense — no de toda Galicia, donde la lluvia en A Coruña distorsionaría el cuadro. <strong>Del 1 al 11 de agosto</strong>, el termómetro no bajó de 28°C de máxima y acumuló once días seguidos por encima de 30°C. El pico fue el <strong>10 de agosto: 33.7°C</strong>. En esa misma franja, la precipitación fue <strong>prácticamente cero</strong> — las barras casi no llegan a la línea de referencia de la media histórica de agosto en Ourense (~0.8 mm/día). La poca lluvia que cayó el 12 de agosto llegó cuando los grandes incendios ya llevaban horas activos.
                         </p>
                     </div>
                 </div>
@@ -136,7 +138,8 @@ Tras el pico, septiembre se desinfla. Una sola semana decidió un verano entero.
             rotateAnimation: false,
             onChapterEnter: [
                 { callbackName: 'hideDefaultLayers' },
-                { callbackName: 'renderCronoloxia' }
+                { callbackName: 'renderCronoloxia' },
+                { callbackName: 'renderERA5Agosto' }
             ],
             onChapterExit: []
         },
@@ -259,8 +262,7 @@ Tras el pico, septiembre se desinfla. Una sola semana decidió un verano entero.
                 <p id="layer-description" style="margin: 0; line-height: 1.6;">Haz tu selección en el menú superior.</p>
             </div>
             <div id="climate-inline-container" class="climate-inline" style="display:none;">
-                <img src="assets/Larouco_Clima.png" alt="Clima en Larouco" class="climate-inline-large" />
-                <img src="assets/Fases_Clima.png" alt="Fases del clima" class="climate-inline-small" />
+                <div id="clima-larouco-host-mobile" style="width:100%;"></div>
             </div>
             `,
             location: {
@@ -441,21 +443,7 @@ La explicación tiene poco que ver con el régimen jurídico en sí: las comunid
                             Este desplazamiento cromático representa un calentamiento real que amplía la duración de las condiciones estivales y, con ellas, el periodo de mayor riesgo de incendio. Las temperaturas más altas, sumadas a una vegetación cada vez más seca, generan un escenario en el que cualquier chispa tiene más posibilidades de convertirse en un fuego.
                         </p>
                         
-                        <div class="only-desktop">
-                            <iframe src="https://flo.uri.sh/visualisation/26020279/embed" 
-                                    frameborder="0" 
-                                    scrolling="no" 
-                                    style="width: 100%; height: 720px;">
-                            </iframe>
-                        </div>
-
-                        <div class="only-mobile">
-                            <iframe src="https://flo.uri.sh/visualisation/26412913/embed"
-                                    frameborder="0"
-                                    scrolling="no"
-                                    style="width: 100%; height: 720px;">
-                            </iframe>
-                        </div>
+                        <div id="heatmap-temp-host" class="grafica-host"></div>
                         
                         <p style="margin: 20px 0 0 0; font-size: 16px; line-height: 1.6;">
                             Los estudios sobre olas de calor muestran que estos fenómenos extremos no solo aumentan en frecuencia, sino también en intensidad y duración.<br><br>
@@ -474,7 +462,8 @@ La explicación tiene poco que ver con el régimen jurídico en sí: las comunid
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             onChapterEnter: [
-                { callbackName: 'hideDefaultLayers' }
+                { callbackName: 'hideDefaultLayers' },
+                { callbackName: 'renderHeatmapTemp' }
             ],
             onChapterExit: []
         }
