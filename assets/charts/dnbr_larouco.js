@@ -188,8 +188,8 @@
       </div>
       <div class="dnbr-leyenda-grupo">
         <span class="dnbr-leyenda-titulo">${t.wui_titulo}</span>
-        <span><i class="dnbr-leyenda-linea" style="border-color:#ffd23f"></i>${t.wui_forestal}</span>
-        <span><i class="dnbr-leyenda-linea" style="border-color:#2ec4b6"></i>${t.wui_pradeira}</span>
+        <span><i class="dnbr-leyenda-linea" style="border-color:#c084fc"></i>${t.wui_forestal}</span>
+        <span><i class="dnbr-leyenda-linea" style="border-color:#38bdf8"></i>${t.wui_pradeira}</span>
       </div>
     `;
     slot.appendChild(lex);

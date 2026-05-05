@@ -145,23 +145,23 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
         },
         {
             id: 'pegada-lume',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: '',
             description: `
             <h2>La huella del fuego</h2>
             <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
-            Mira el mapa: los polígonos rojos son la severidad <strong>dNBR</strong> derivada de Sentinel-2 (24 jul vs 10 oct 2025) reclasificada según <strong>Key &amp; Benson 2006</strong>. Las líneas amarillas y cian que los rodean son los polígonos de la <strong>Wildland-Urban Interface</strong> (SILVIS Global WUI 2020).
+            El satélite lo recuerda todo. Comparando imágenes Sentinel-2 antes y después del fuego (24 jul vs 10 oct 2025), el índice <strong>dNBR</strong> mide cuánta vegetación se perdió. Los rojos más intensos señalan los focos donde la cubierta vegetal desapareció por completo y el suelo quedó expuesto: allí la recuperación natural tardará <strong>décadas</strong>. Los tonos más suaves indican daños menores, donde la vegetación puede regenerarse en pocos años.
             </p>
             <div id="grafica-dnbr" class="grafica-host" style="margin: 0 0 14px 0;"></div>
             <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
-            El bbox del incendio reparte <strong>24.451 ha quemadas</strong> en clases de severidad: la concentración alta marca los focos donde la regeneración natural será más lenta. De las 15.572 ha de WUI presentes en el bbox, <strong>472 ha</strong> (376 forestal-matorral + 96 pradera) cayeron dentro del perímetro con severidad moderada o superior — un <strong>6%</strong> del área quemada, núcleos rurales y mosaicos agrarios en contacto directo con el monte combustible.
+            Las líneas violetas y azules marcan la <strong>Wildland-Urban Interface</strong> (WUI): el borde donde el bosque y el matorral combustible llegan hasta casas, granjas y pastos. No son zonas despobladas. De las más de 24.000 ha quemadas, <strong>472 ha de WUI</strong> ardieron con severidad moderada o alta. El fuego no solo arrasó el monte: cruzó la frontera hacia donde vive la gente.
             </p>
             <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 4px;"></div>
             `,
             location: {
-                center: [-7.075, 42.46],
-                zoom: 9.0,
+                center: [-7.31, 42.45],
+                zoom: 10.2,
                 pitch: 0,
                 bearing: 0
             },

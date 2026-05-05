@@ -17,7 +17,7 @@ Estratexia:
   4. Polygoniza con rasterio.features.shapes, filtra slivers <0,5 ha,
      simplifica e reproxecta a EPSG:4326.
 
-Bbox Larouco-Seadur: [-7.30, 42.30, -6.85, 42.62]  (mesmo que dNBR Larouco)
+Bbox Larouco-Seadur: [-7.40, 41.95, -6.80, 42.65]  (ampliado sur para cubrir toda a pegada)
 """
 
 from __future__ import annotations
@@ -40,7 +40,7 @@ RAW_DIR = ROOT / "data" / "raw" / "silvis_wui" / "EU"
 ASSETS = ROOT / "assets" / "data"
 PROC = ROOT / "data" / "processed"
 
-BBOX = (-7.30, 42.30, -6.85, 42.62)  # lonmin, latmin, lonmax, latmax (EPSG:4326)
+BBOX = (-7.40, 41.95, -6.80, 42.65)  # lonmin, latmin, lonmax, latmax (EPSG:4326)
 
 CLASES = {
     1: "wui_forestal",
