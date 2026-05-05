@@ -95,11 +95,11 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
           description: `
             <h2>A pegada do lume</h2>
             <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
-            Mira o mapa: os polígonos vermellos son a severidade <strong>dNBR</strong> derivada de Sentinel-2 (24 xul vs 10 out 2025) reclasificada segundo <strong>Key &amp; Benson 2006</strong>. As liñas amarelas e cian que os rodean son os polígonos da <strong>Wildland-Urban Interface</strong> (SILVIS Global WUI 2020).
+            O satélite lémbralo todo. Comparando imaxes Sentinel-2 antes e despois do lume (24 xul vs 10 out 2025), o índice <strong>dNBR</strong> mide canta vexetación se perdeu. Os vermellos máis intensos sinalan os focos onde a cuberta vexetal desapareceu por completo e o chan quedou exposto: alí a recuperación natural tardará <strong>décadas</strong>. Os tons máis suaves indican danos menores, onde a vexetación pode rexenerarse en poucos anos.
             </p>
             <div id="grafica-dnbr" class="grafica-host" style="margin: 0 0 14px 0;"></div>
             <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
-            O bbox reparte <strong>24.451 ha queimadas</strong> en clases de severidade: a concentración alta marca os focos onde a rexeneración será máis lenta. Das 15.572 ha de WUI no bbox, <strong>472 ha</strong> (376 forestal-matorral + 96 pradeira) caeron dentro do perímetro con severidade moderada ou superior — un <strong>6%</strong> da área queimada, núcleos rurais e mosaicos agrarios en contacto directo co monte combustible.
+            As liñas violetas e azuis marcan a <strong>Wildland-Urban Interface</strong> (WUI): o bordo onde o bosque e o mato combustible chegan ata casas, granxas e pastos. Non son zonas despobradas. Das máis de 24.000 ha queimadas, <strong>472 ha de WUI</strong> arderon con severidade moderada ou alta. O lume non só arrasou o monte: cruzou a fronteira cara a onde vive a xente.
             </p>
             <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 4px;"></div>
           `

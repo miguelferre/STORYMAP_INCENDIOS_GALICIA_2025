@@ -124,7 +124,7 @@
 
   function panelBarras(resumo, ancho, lang) {
     const Plot = global.Plot;
-    const datos = resumo.clases.filter((c) => c.indice >= 1).map((c) => ({
+    const datos = resumo.clases.filter((c) => c.indice >= 3).map((c) => ({
       ...c,
       etq: tr(lang, c.etiqueta),
     }));

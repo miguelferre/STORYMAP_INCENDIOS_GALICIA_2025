@@ -160,8 +160,8 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
             <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 4px;"></div>
             `,
             location: {
-                center: [-7.31, 42.45],
-                zoom: 10.2,
+                center: [-7.22, 42.39],
+                zoom: 10.8,
                 pitch: 0,
                 bearing: 0
             },
