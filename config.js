@@ -141,8 +141,8 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
             <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 8px;"></div>
             `,
             location: {
-                center: window.innerWidth < 480 ? [-6.93, 42.40] : [-7.22, 42.39],
-                zoom: window.innerWidth < 480 ? 9.8 : 10.8,
+                center: window.innerWidth < 480 ? [-7.059167, 42.415556] : [-7.22, 42.39],
+                zoom: window.innerWidth < 480 ? 9.3 : 10.8,
                 pitch: 0,
                 bearing: 0
             },
