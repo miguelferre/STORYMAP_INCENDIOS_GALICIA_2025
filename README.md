@@ -15,11 +15,11 @@ Pieza divulgativa que reconstruye el verano de incendios de Galicia 2025 a parti
 2. **O día que se xuntou todo** — cronología PrazaGal: 100.000 hectáreas en una semana del 8 al 15 de agosto.
 3. **A pegada do lume** — análisis post-incendio con dNBR Sentinel-2 (Microsoft Planetary Computer), reclasificación Key & Benson 2006.
 4. **Tendencia: máis lume e máis grande** — serie oficial Xunta + EFFIS desde 1968 con heatmap distrito × año.
-5. **Por que Galicia e o Noroeste** — capas Mapbox de geología, vegetación (IET-Xunta 2011, 8 clases divulgativas), clima y geografía.
+5. **Por que Galicia e o Noroeste** — capas Mapbox de geología, vegetación (IET-Xunta 2011, 7 clases divulgativas), clima y geografía.
 6. **As causas detrás do lume** — 81.643 partes oficiales EGIF Ourense 1968-2022 con motivaciones detalladas de los intencionados.
 7. **De quén son os montes que arden** — cruce PrazaGal × parroquias × CMVMC. El 22 % del territorio gallego es monte vecinal en mano común; concentra el 39 % de las hectáreas estimadas quemadas.
 8. **Afastámonos do monte** — comparador 1957/2021 sobre Cimadevila.
-9. **O verán alárgase…** — heatmap de temperaturas histórico (Flourish, pendiente de sustituir).
+9. **O verán alárgase…** — heatmap de anomalías de temperatura 1940-2025 (ERA5/ECMWF, chart nativo).
 
 ## Stack
 
@@ -38,9 +38,13 @@ Pieza divulgativa que reconstruye el verano de incendios de Galicia 2025 a parti
 | 05-07 | `05_*` `06_*` `07_dataset_grafica_causas.py` | Parsea XML EGIF Ourense 1968-2022 → JSON causas |
 | 08-09 | `08_*` `09_extrae_causas_miteco.py` | Extrae cuadros 7.x del informe MITECO 2006-2015 |
 | 10-11 | `10_descarga_propiedade.py` + `11_overlay_propiedade.py` | Parroquias IGE + CMVMC, overlay por parroquia |
-| 12-13 | `12_descarga_vegetacion.py` + `13_procesa_vegetacion.py` | Mapa Usos do Solo IET 2011 → 8 clases |
+| 12-13 | `12_descarga_vegetacion.py` + `13_procesa_vegetacion.py` | Mapa Usos do Solo IET 1:500k → 7 clases, closing morfológico |
 | 14 | `14_dnbr_larouco.py` | dNBR Sentinel-2 sobre Larouco-Seadur (MPC) |
 | 15 | `15_cronoloxia.py` | Cronología diaria PrazaGal verano 2025 |
+| 16 | `16_reclasifica_litologia.py` | IGME 1:1M → 3 grupos litológicos divulgativos |
+| 17-18 | `17_descarga_silvis_wui.py` + `18_recorta_silvis_wui.py` | SILVIS Global WUI 2020 → recorte Larouco |
+| 19-20 | `19_descarga_era5_agosto.py` + `20_procesa_era5.py` | ERA5 agosto 2025 zona interior Ourense → JSON gráfica |
+| 21 | `21_procesa_grib_temp.py` | ERA5 T2m mensual 1940-2025 → JSON heatmap anomalías |
 
 Todos los scripts son idempotentes: pueden re-ejecutarse sin re-descargar lo que ya está en `data/raw/`.
 
@@ -70,7 +74,7 @@ node scripts/teste_visual.js   # capturas en data/teste_visual/
 Lista completa en [`DATA_SOURCES.md`](DATA_SOURCES.md). Resumen:
 
 - Datos abiertos de la Consellería do Medio Rural (Xunta de Galicia) y del IET.
-- ODS de PrazaGal (CC BY-NC-SA 4.0) obtenido vía Lei de Transparencia — la pieza diferencial del análisis.
+- Datos de incendios 2025 publicados vía Lei de Transparencia (CC BY-NC-SA 4.0) — la pieza diferencial del análisis.
 - EGIF / MITECO (estadística estatal de incendios forestales).
 - Sentinel-2 L2A vía Microsoft Planetary Computer (Copernicus Programme).
 - Cartografía base © Xunta de Galicia (uso no comercial).
@@ -107,7 +111,6 @@ Las iteraciones técnicas posteriores —pipelines geoespaciales, sustitución d
 
 ## Notas
 
-- El token de Mapbox (`config.js`) es un token público restringido por dominio. Detalles en [`SECURITY.md`](SECURITY.md).
-- Hay un iframe Flourish residual (heatmap temperaturas 1940-2024) cuyo reemplazo nativo requiere descarga AEMET con API key. Pendiente para próxima iteración.
+- El token de Mapbox vive como secret de GitHub Actions (`MAPBOX_TOKEN`). `config.js` contiene solo el placeholder `__MAPBOX_TOKEN__`, que el workflow de deploy sustituye antes de publicar. Detalles en [`SECURITY.md`](SECURITY.md).
+- Para preview local hay que sustituir el placeholder manualmente con el token del fichero `.env` (no versionado).
 - Capturas de las gráficas y mapas nativos en `data/teste_visual/` (no versionado).
-- Análisis estético en curso: ver [`notebooks/analisis_estetico.md`](notebooks/analisis_estetico.md).

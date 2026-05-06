@@ -48,9 +48,9 @@ Inventario detallado de los datasets utilizados, sus URL de origen y la licencia
 - **Licencia**: © Xunta de Galicia, uso no comercial. Cita obligatoria.
 - **Limitación declarada por el productor**: cartografía orientativa, no presume derechos de propiedad.
 
-### Mapa de Usos do Solo (IET) — escala 1:250.000, 2011
+### Mapa de Usos do Solo (IET) — escala 1:500.000, 2011
 
-- **Qué**: 30.047 teselas con leyenda LENDA25 de 20 categorías, reclasificadas a 8 clases divulgativas.
+- **Qué**: 19.227 teselas con 18 categorías (CLASE_500 / ACRONIMO25), reclasificadas a 7 grupos divulgativos con closing morfológico ±750 m. Se usa la versión 1:500k (USO_A_500.shp) por producir geometrías más limpias al dissolve que la 1:250k.
 - **URL**: `https://visorgis.cmati.xunta.es/cdix/descargas/visor_basico/usos_solo.zip`
 - **Productor**: Instituto de Estudos do Territorio (IET, Xunta de Galicia).
 - **Año de referencia**: 2011-06-20 (declarado en metadatos del shapefile).

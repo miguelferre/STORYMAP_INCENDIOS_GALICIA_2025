@@ -2,14 +2,14 @@
 
 ## Token de Mapbox
 
-`config.js` carga un token público de Mapbox (`pk.eyJ1IjoibWlndWVsLWZlcnIi...`). Es un token *cliente* pensado para correr en navegador, así que aparecer en el HTML no es un fallo en sí. Lo que sí conviene es restringirlo para que no pueda usarse desde otro dominio:
+El token de Mapbox **no está en el repositorio**. `config.js` contiene solo el placeholder `__MAPBOX_TOKEN__`. El workflow de GitHub Actions (`.github/workflows/deploy.yml`) lo sustituye en tiempo de deploy usando el secret `MAPBOX_TOKEN` configurado en el repositorio.
 
-1. Entrar en https://account.mapbox.com/access-tokens/
-2. Editar el token y añadir en **URL restrictions**:
-   - `https://miguelferre.github.io/*`
-   - `http://localhost:*`
-   - `http://127.0.0.1:*`
-3. Tras el cambio, rotar el token (revoke y crear uno nuevo) y actualizar `config.js`.
+Para preview local, copiar el token en `.env` (fichero excluido por `.gitignore`) y sustituir el placeholder en `config.js` antes de arrancar el servidor. Nunca hacer commit de `config.js` con el token real.
+
+Restricciones recomendadas para el token en https://account.mapbox.com/access-tokens/:
+- `https://miguelferre.github.io/*`
+- `http://localhost:*`
+- `http://127.0.0.1:*`
 
 ## Datos personales
 
