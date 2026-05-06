@@ -24,7 +24,7 @@
       ref_precip:    "~0.8 mm/día\nmedia agosto",
       pico_calor:    "Pico de calor\n10 ago — 33.7 °C",
       pico_evento:   "12 ago\npico do evento",
-      pie: "Fuente: ERA5, ECMWF/Copernicus. Media espacial zona interior de Ourense (42,0–42,5°N, 7,75–7,0°W). Resolución ~31 km.",
+      pie: "Fonte: ERA5, ECMWF/Copernicus. Media espacial zona interior de Ourense (42,0–42,5°N, 7,75–7,0°W). Resolución ~31 km.",
       tip_temp:  (d) => `${d.fecha}\nTmax: ${d.tmax} °C\nTmedia: ${d.tmedia} °C\nTmin: ${d.tmin} °C`,
       tip_prec:  (d) => `${d.fecha}\nPrecipitación: ${d.precip_mm} mm`,
     },

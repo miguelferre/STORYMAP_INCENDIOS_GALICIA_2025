@@ -5,27 +5,6 @@ var config = {
     // Capas que se ocultan automáticamente por defecto
     hiddenLayers: ['USOURENSE', 'XEOURENSE', 'LITOLOGIA_GALICIA', 'RELIEVE'],
     
-    // Explicaciones de las categorías
-    layerExplanations: {
-        'geologia': {
-            title: 'Geología',
-            description: 'Galicia es un mosaico dominado por <strong>rocas ácidas</strong> (granitos y esquistos paleozoicos, ~84% del territorio), con afloramientos puntuales de <strong>básicas y carbonatadas</strong> en Cabo Ortegal (~11%) y <strong>depósitos sedimentarios recientes</strong> en las cuencas terciarias de As Pontes y Monforte (~5%).<br>Los sustratos siliciclásticos dan suelos ácidos que favorecen vegetaciones más inflamables.'
-        },
-        'vegetacion': {
-            title: 'Vegetación',
-            description: 'Los tipos de vegetación determinan la cantidad, continuidad y peligrosidad del combustible. Las 18 clases del IET (Xunta, 2011, 1:500.000) se reagrupan en siete categorías: <strong>bosque autóctono</strong>, <strong>eucalipto</strong>, <strong>pino/coníferas</strong>, <strong>matorral</strong>, <strong>agrario e rural</strong>, <strong>urbano e industrial</strong> y <strong>augas e rochedo</strong>.'
-        },
-        'clima': {
-            title: 'Clima',
-            description: 'Las condiciones meteorológicas extremas como sequías prolongadas, vientos fuertes y altas temperaturas crean el escenario perfecto.<br>Los períodos secos y las olas de calor multiplican exponencialmente el riesgo de incendio.'
-        },
-        'geografia': {
-            title: 'Geografía',
-            description: 'El relieve y la topografía del terreno afectan tanto la velocidad como la dirección de propagación del fuego.<br>Las pendientes pronunciadas y los valles estrechos actúan como corredores que aceleran las llamas.'
-        }
-    },
-
-    // Explicaciones de las categorías
     layerExplanations: {
         'geologia': {
             title: 'Geología',
