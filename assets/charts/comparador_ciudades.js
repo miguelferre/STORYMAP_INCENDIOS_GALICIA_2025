@@ -18,7 +18,7 @@
       subtitulo:
         "El incendio de Larouco–Seadur arrasó 317 km², equivalentes a la suma de Vigo, A Coruña y Ourense. Cada barra es el área municipal de una ciudad conocida.",
       eje: "Superficie (km²)",
-      label_lume: "Incendio Larouco–Seadur 2025",
+      label_lume: "Larouco–Seadur 2025",
       grupos: { Lume: "Incendio 2025", Ciudad: "Ciudad" },
       pie:
         "Fuentes: superficie del incendio, Consellería do Medio Rural; áreas municipales, INE / Eurostat.",
@@ -28,7 +28,7 @@
       subtitulo:
         "O lume de Larouco–Seadur arrasou 317 km², equivalentes á suma de Vigo, A Coruña e Ourense. Cada barra é a área municipal dunha cidade coñecida.",
       eje: "Superficie (km²)",
-      label_lume: "Incendio Larouco–Seadur 2025",
+      label_lume: "Larouco–Seadur 2025",
       grupos: { Lume: "Lume 2025", Ciudad: "Cidade" },
       pie:
         "Fontes: superficie do lume, Consellería do Medio Rural; áreas municipais, INE / Eurostat.",
@@ -77,8 +77,8 @@
     const filasT = filas.map((d) => ({ ...d, grupoT: t.grupos[d.grupo] || d.grupo }));
     return Plot.plot({
       width: ancho,
-      height: Math.max(360, filasT.length * 22 + 60),
-      marginLeft: 200,
+      height: Math.max(420, filasT.length * 26 + 70),
+      marginLeft: 185,
       marginRight: 70,
       marginTop: 14,
       marginBottom: 36,
@@ -86,7 +86,7 @@
         background: "transparent",
         color: "rgba(255,255,255,0.86)",
         fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-        fontSize: "12px",
+        fontSize: "14px",
         overflow: "visible",
       },
       x: {
@@ -123,7 +123,7 @@
     const t = TEXTOS[lang] || TEXTOS.es;
     const slot = host.querySelector(".comparador-paneles");
     if (!slot) return;
-    const ancho = Math.max(320, Math.min(slot.clientWidth || host.clientWidth || 720, 920));
+    const ancho = Math.max(320, Math.min(slot.clientWidth || host.clientWidth || 720, 1100));
     slot.innerHTML = "";
     slot.appendChild(panel(items, ancho, lang));
   }
