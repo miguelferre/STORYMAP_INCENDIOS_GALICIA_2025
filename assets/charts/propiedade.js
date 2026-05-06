@@ -89,7 +89,8 @@
   function panelMapa(galicia, puntos, ancho, lang) {
     const Plot = global.Plot;
     const t = TEXTOS[lang] || TEXTOS.es;
-    const alto = Math.round(ancho * 0.65);
+    const isMobile = ancho < 480;
+    const alto = Math.round(ancho * (isMobile ? 0.9 : 0.65));
     return Plot.plot({
       width: ancho,
       height: alto,
@@ -150,10 +151,11 @@
       { categoria: t.barras.queimadas, regime: t.barras.mvmc, pct: I.pct_quemadas_mvmc_estimado, ha: I.ha_estimadas_mvmc, total: I.ha_quemadas_total },
       { categoria: t.barras.queimadas, regime: t.barras.outras, pct: 100 - I.pct_quemadas_mvmc_estimado, ha: I.ha_estimadas_non_mvmc, total: I.ha_quemadas_total },
     ];
+    const isMobileC = ancho < 480;
     return Plot.plot({
       width: ancho,
-      height: 180,
-      marginLeft: 200,
+      height: isMobileC ? 220 : 180,
+      marginLeft: isMobileC ? 130 : 200,
       marginRight: 28,
       marginTop: 14,
       marginBottom: 36,

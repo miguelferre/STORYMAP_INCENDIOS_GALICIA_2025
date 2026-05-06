@@ -106,10 +106,11 @@
     }));
     const dominioY = distritosOrde.map(bonito);
 
+    const isMobile = ancho < 480;
     return Plot.plot({
       width: ancho,
-      height: Math.max(380, dominioY.length * 22 + 80),
-      marginLeft: 170,
+      height: Math.max(isMobile ? 300 : 380, dominioY.length * (isMobile ? 16 : 22) + 80),
+      marginLeft: isMobile ? 90 : 170,
       marginRight: 14,
       marginTop: 14,
       marginBottom: 40,
@@ -117,7 +118,7 @@
         background: "transparent",
         color: "rgba(255,255,255,0.86)",
         fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-        fontSize: "11.5px",
+        fontSize: isMobile ? "9px" : "11.5px",
         overflow: "visible",
       },
       x: { label: t.eje_x, type: "band", tickFormat: (d) => `${d}` },

@@ -75,18 +75,19 @@
       return COR_GRUPO[orig] || "#888";
     });
     const filasT = filas.map((d) => ({ ...d, grupoT: t.grupos[d.grupo] || d.grupo }));
+    const isMobile = ancho < 480;
     return Plot.plot({
       width: ancho,
-      height: Math.max(420, filasT.length * 26 + 70),
-      marginLeft: 185,
-      marginRight: 70,
+      height: Math.max(isMobile ? 380 : 420, filasT.length * (isMobile ? 20 : 26) + (isMobile ? 60 : 70)),
+      marginLeft: isMobile ? 115 : 185,
+      marginRight: isMobile ? 52 : 70,
       marginTop: 14,
       marginBottom: 36,
       style: {
         background: "transparent",
         color: "rgba(255,255,255,0.86)",
         fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-        fontSize: "14px",
+        fontSize: isMobile ? "10px" : "14px",
         overflow: "visible",
       },
       x: {

@@ -124,7 +124,8 @@
       width: ancho, height: 150,
       marginLeft: 44, marginRight: 16, marginTop: 6, marginBottom: 30,
       style: STYLE_BASE,
-      x: { label: null, type: "band", domain: meses, tickSize: 3 },
+      x: { label: null, type: "band", domain: meses, tickSize: 3,
+           tickFormat: ancho < 480 ? (s) => s.split(" ")[0] : null },
       y: { label: null, grid: true, domain: [0.24, 0.50], tickFormat: (v) => v.toFixed(2) },
       marks: [
         ...faseBands(datos, 0.24, 0.50),

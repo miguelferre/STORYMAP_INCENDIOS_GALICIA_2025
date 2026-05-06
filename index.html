@@ -391,7 +391,7 @@
     /* Indicador de scroll */
     .scroll-hint{
       position:absolute; left:50%; transform:translateX(-50%);
-      bottom:28px; font-size:16px;
+      bottom:28px; font-size:16px; white-space:nowrap;
       background:rgba(0,0,0,.5); padding:8px 16px; border-radius:20px;
       border:1px solid rgba(255,255,255,.12);
       /* Fade-in y vaivén suave del bloque completo */
@@ -631,6 +631,23 @@
       height: 600px;
       display: block;
     }
+    /* Ajustes mobile para gráficas — solo teléfono */
+    @media (max-width: 480px) {
+      /* Clima Larouco: fondo semitransparente para mejor contraste sobre el mapa */
+      #grafica-clima-larouco svg {
+        background: rgba(10, 12, 22, 0.45) !important;
+        border-radius: 8px;
+      }
+      /* Heatmap temperatura: ocupa todo el ancho disponible */
+      #heatmap-temp-host {
+        width: 100% !important;
+      }
+      #heatmap-temp-host svg {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+
     @media (max-width: 768px){
       .chapter2-flex{display:block !important;}
       .desktop-expl{display:none !important;}

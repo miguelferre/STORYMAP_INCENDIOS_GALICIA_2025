@@ -193,18 +193,19 @@
       });
     });
 
+    const isMobile = ancho < 480;
     return Plot.plot({
       marginLeft: 56,
       marginRight: 14,
       marginTop: 10,
       marginBottom: 48,
       width: ancho,
-      height: 260,
+      height: isMobile ? 320 : 260,
       style: {
         background: "transparent",
         color: "rgba(255,255,255,0.86)",
         fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-        fontSize: "11.5px",
+        fontSize: isMobile ? "10px" : "11.5px",
         overflow: "visible",
       },
       x: {
@@ -276,9 +277,10 @@
       pct: d.pct,
     }));
 
+    const isMobileM = ancho < 480;
     return Plot.plot({
-      marginLeft: 200,
-      marginRight: 60,
+      marginLeft: isMobileM ? 130 : 200,
+      marginRight: isMobileM ? 50 : 60,
       marginTop: 10,
       marginBottom: 32,
       width: ancho,
@@ -287,7 +289,7 @@
         background: "transparent",
         color: "rgba(255,255,255,0.86)",
         fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-        fontSize: "11.5px",
+        fontSize: isMobileM ? "10px" : "11.5px",
         overflow: "visible",
       },
       x: {

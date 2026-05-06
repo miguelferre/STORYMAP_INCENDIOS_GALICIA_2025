@@ -104,8 +104,8 @@
           y: "ha_total",
           interval: "day",
           fill: "rgba(244, 78, 17, 0.7)",
-          stroke: "rgba(244, 78, 17, 0.9)",
-          strokeWidth: 0.3,
+          stroke: "rgba(244, 78, 17, 0.95)",
+          strokeWidth: ancho < 480 ? 2.5 : 0.3,
           clip: true,
         }),
         Plot.rect([{

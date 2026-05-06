@@ -124,22 +124,23 @@
 
   function panelBarras(resumo, ancho, lang) {
     const Plot = global.Plot;
+    const isMobile = ancho < 480;
     const datos = resumo.clases.filter((c) => c.indice >= 3).map((c) => ({
       ...c,
       etq: tr(lang, c.etiqueta),
     }));
     return Plot.plot({
       width: ancho,
-      height: 240,
-      marginLeft: 200,
-      marginRight: 60,
+      height: isMobile ? 200 : 240,
+      marginLeft: isMobile ? 120 : 200,
+      marginRight: isMobile ? 50 : 60,
       marginTop: 14,
       marginBottom: 36,
       style: {
         background: "transparent",
         color: "rgba(255,255,255,0.86)",
         fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-        fontSize: "11.5px",
+        fontSize: isMobile ? "10px" : "11.5px",
         overflow: "visible",
       },
       x: { label: "ha", labelAnchor: "right", grid: true,
