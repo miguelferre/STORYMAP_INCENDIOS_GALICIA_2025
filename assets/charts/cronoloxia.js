@@ -70,9 +70,27 @@
   function panelOverview(j, ancho, lang) {
     const Plot = global.Plot;
     const t = TEXTOS[lang] || TEXTOS.es;
+    const isMobile = ancho < 480;
+    const barMark = isMobile
+      ? Plot.areaY(j.diario, {
+          x: "fecha", y: "ha_total",
+          fill: "rgba(244, 78, 17, 0.65)",
+          stroke: "rgba(244, 78, 17, 0.9)",
+          strokeWidth: 1.2,
+          curve: "step-after",
+          clip: true,
+        })
+      : Plot.rectY(j.diario, {
+          x: "fecha", y: "ha_total",
+          interval: "day",
+          fill: "rgba(244, 78, 17, 0.7)",
+          stroke: "rgba(244, 78, 17, 0.95)",
+          strokeWidth: 0.3,
+          clip: true,
+        });
     return Plot.plot({
       width: ancho,
-      height: 160,
+      height: isMobile ? 180 : 160,
       marginLeft: 56,
       marginRight: 18,
       marginTop: 8,
@@ -99,15 +117,7 @@
         tickCount: 4,
       },
       marks: [
-        Plot.rectY(j.diario, {
-          x: "fecha",
-          y: "ha_total",
-          interval: "day",
-          fill: "rgba(244, 78, 17, 0.7)",
-          stroke: "rgba(244, 78, 17, 0.95)",
-          strokeWidth: ancho < 480 ? 2.5 : 0.3,
-          clip: true,
-        }),
+        barMark,
         Plot.rect([{
           x1: new Date("2025-08-05T00:00:00"),
           x2: new Date("2025-08-22T00:00:00"),
