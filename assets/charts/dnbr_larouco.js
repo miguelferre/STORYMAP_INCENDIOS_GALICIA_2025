@@ -48,7 +48,7 @@
       wui_forestal: "WUI forestal-matorral",
       wui_pradeira: "WUI pradera",
       pie:
-        "Datos: Sentinel-2 L2A (Copernicus / Microsoft Planetary Computer); Wildland-Urban Interface: Schug et al. 2023 (DOI 10.5281/zenodo.7941460).",
+        "Fuente: Sentinel-2 L2A, Copernicus/Microsoft Planetary Computer. WUI: Schug et al. 2023 (DOI 10.5281/zenodo.7941460).",
     },
     gl: {
       titulo: "A pegada do lume",
@@ -61,7 +61,7 @@
       wui_forestal: "WUI forestal-matorral",
       wui_pradeira: "WUI pradeira",
       pie:
-        "Datos: Sentinel-2 L2A (Copernicus / Microsoft Planetary Computer); Wildland-Urban Interface: Schug et al. 2023 (DOI 10.5281/zenodo.7941460).",
+        "Fuente: Sentinel-2 L2A, Copernicus/Microsoft Planetary Computer. WUI: Schug et al. 2023 (DOI 10.5281/zenodo.7941460).",
     },
   };
 
@@ -207,6 +207,10 @@
       barsHost.appendChild(tB);
       const anchoB = Math.max(280, Math.min(barsHost.clientWidth || 420, 600));
       barsHost.appendChild(panelBarras(j.resumo, anchoB, lang));
+      const pieEl = document.createElement("p");
+      pieEl.className = "dnbr-pie";
+      pieEl.textContent = t.pie;
+      barsHost.appendChild(pieEl);
     } else {
       const tB = document.createElement("p");
       tB.className = "dnbr-subtitulo";
@@ -214,6 +218,10 @@
       slot.appendChild(tB);
       const anchoBars = Math.max(320, Math.min(slot.clientWidth || host.clientWidth || 720, 920));
       slot.appendChild(panelBarras(j.resumo, anchoBars, lang));
+      const pieEl = document.createElement("p");
+      pieEl.className = "dnbr-pie";
+      pieEl.textContent = t.pie;
+      slot.appendChild(pieEl);
     }
   }
 
@@ -223,10 +231,7 @@
     // O capítulo xa ten o título e a explicación na propia card. Aquí só
     // renderizamos a leyenda compacta (severidade dNBR + WUI) e a cita.
     host.classList.add("dnbr-bloque", "dnbr-bloque-compacto");
-    host.innerHTML = `
-      <div class="dnbr-paneles"></div>
-      <p class="dnbr-pie">${t.pie}</p>
-    `;
+    host.innerHTML = `<div class="dnbr-paneles"></div>`;
     cargar()
       .then((j) => {
         const dibuxar = () => pintar(host, j, lang);

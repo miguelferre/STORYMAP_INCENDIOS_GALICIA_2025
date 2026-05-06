@@ -345,17 +345,19 @@
 }
 
 .hero-kicker{
-  width:min(900px, 95vw); /* Más ancho para ser alargado */
-  max-width: 60ch; /* Más estrecho - estilo Saving the Nile */
-  margin:40px auto 0 auto;  
-  background: rgba(4, 17, 56, 0.95); /* Más oscuro para compensar transparencia */
-  color:#fff; 
-  border-radius: 0; /* Sin bordes redondeados */
+  width:min(900px, 95vw);
+  max-width: 60ch;
+  margin:40px auto 0 auto;
+  background: rgba(4, 17, 56, 0.92);
+  color:#fff;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(4px);
   font-size: clamp(1rem, 2.5vw, 1.4rem);
-  padding: 0.8rem 0.9rem; /* Padding lateral mínimo para que el texto ocupe máximo espacio */
-  line-height: 1.4; /* Letra más pegada - menos interlineado */
+  padding: 1rem 1.4rem;
+  line-height: 1.4;
   box-shadow: 0 8px 26px rgba(0,0,0,.35);
-  text-align:center; /* Centrado */
+  text-align:center;
   /* Fade-in cinematográfico al cargar - con delay para secuencia */
   animation: fadeInUp 0.8s ease-out 0.2s;
   opacity: 0;
@@ -389,9 +391,9 @@
     /* Indicador de scroll */
     .scroll-hint{
       position:absolute; left:50%; transform:translateX(-50%);
-      bottom:28px; font-size:13px;
-      background:rgba(0,0,0,.5); padding:6px 10px; border-radius:16px;
-      border:1px solid rgba(255,255,255,.08);
+      bottom:28px; font-size:16px;
+      background:rgba(0,0,0,.5); padding:8px 16px; border-radius:20px;
+      border:1px solid rgba(255,255,255,.12);
       /* Fade-in y vaivén suave del bloque completo */
       animation: fadeInUpHint 0.8s ease-out 0.4s forwards, bounceHint 1.5s ease-in-out 1.2s infinite;
       opacity: 0;
@@ -469,6 +471,72 @@
     }
     .layer-explanation{
       display:block;
+    }
+
+    /* Elementos dentro de contenedores de gráficas: sin glass propio.
+       .desktop-expl p y .mobile-expl p SÍ conservan el glass (son el texto narrativo). */
+    .grafica-host h3, .grafica-host p,
+    .comparador-bloque h3, .comparador-bloque p, .comparador-bloque header,
+    .cronoloxia-bloque h3, .cronoloxia-bloque p,
+    .tendencia-bloque h3, .tendencia-bloque p,
+    .dnbr-bloque h3, .dnbr-bloque p,
+    .dnbr-bloque-bars h3, .dnbr-bloque-bars p,
+    .dnbr-subtitulo, .dnbr-pie,
+    .comparador-pie, .comparador-cabecera p,
+    .cronoloxia-pie, .tendencia-pie,
+    .causas-pie, .propiedade-pie,
+    .heatmap-temp-pie, .clima-agosto-pie, .clima-larouco-pie,
+    /* Sin glass dentro del propio glass de layer-explanation (doble contenedor) */
+    .layer-explanation h2, .layer-explanation h3, .layer-explanation p,
+    #layer-description h2, #layer-description h3, #layer-description p,
+    /* Texto de mapa-calor fluye sin glass con los charts */
+    .calor-texto-libre p,
+    /* Texto dentro del wrapper unificado de pegada-lume */
+    .pegada-text-group p {
+      background: none !important;
+      border: none !important;
+      backdrop-filter: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin: inherit;
+    }
+
+    /* Wrapper unificado texto+leyenda en pegada-lume */
+    .pegada-text-group {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-brd);
+      backdrop-filter: blur(4px);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 8px 0 14px 0;
+    }
+    .pegada-text-group p { margin: 0 0 10px 0 !important; }
+
+    /* Zoom label cronoloxia: selector más específico para ganar al override */
+    .cronoloxia-bloque .cronoloxia-subtitulo {
+      background: var(--glass-bg) !important;
+      border: 1px solid var(--glass-brd) !important;
+      backdrop-filter: blur(4px) !important;
+      border-radius: 8px !important;
+      padding: 8px 14px !important;
+      display: inline-block !important;
+      margin: 14px 0 4px 0 !important;
+    }
+
+    /* Títulos de panel dentro de gráficas: prominentes sin glass container */
+    .causas-subtitulo,
+    .propiedade-subtitulo,
+    .dnbr-subtitulo,
+    .heatmap-temp-subtitulo {
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      color: rgba(255,255,255,0.92) !important;
+      margin: 22px 0 6px 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      backdrop-filter: none !important;
+      background: none !important;
+      border-radius: 0 !important;
     }
     h3{margin:0 0 8px 0; font-size:18px}
     .step h2{
@@ -1240,11 +1308,7 @@
       width: 100%;
       max-width: 920px;
       margin: 0 0 30px 0;
-      padding: 18px 20px 22px 20px;
-      background: rgba(15, 18, 28, 0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      backdrop-filter: blur(8px);
+      padding: 4px 0;
     }
     .tendencia-cabecera h3{
       margin: 0 0 6px 0;
@@ -1416,9 +1480,10 @@
       line-height: 1.2;
     }
     .clima-agosto-label{
-      margin: 8px 0 2px 0;
-      font-size: 10.5px;
-      color: rgba(255,255,255,0.55);
+      margin: 20px 0 4px 0;
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.88);
     }
     .clima-agosto-leyenda{
       margin: 2px 0 2px 44px;
@@ -1494,6 +1559,15 @@
     .propiedade-subtitulo{ margin: 6px 0 0 0; font-size: 0.92rem; color: rgba(255,255,255,0.78); }
     .propiedade-nota{ margin: 4px 0 0 0; font-size: 0.85rem; line-height: 1.5; color: rgba(255,255,255,0.65); }
     .propiedade-pie{ margin: 14px 0 0 0; font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.5); }
+
+    /* Fuente unificada bajo gráficos — tamaño y opacidad consistentes en toda la página */
+    .tendencia-pie, .causas-pie, .clima-agosto-pie, .clima-larouco-pie,
+    .heatmap-temp-pie, .propiedade-pie, .comparador-pie, .dnbr-pie {
+      font-size: 0.74rem;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.44);
+      margin-top: 10px;
+    }
     .propiedade-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
 
     /* Comparador de cidades — substitúe iframe Flourish 26265364. */
@@ -1501,11 +1575,7 @@
       width: 100%;
       max-width: 920px;
       margin: 0 0 18px 0;
-      padding: 16px 18px 20px 18px;
-      background: rgba(15, 18, 28, 0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      backdrop-filter: blur(8px);
+      padding: 4px 0;
     }
     .comparador-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .comparador-cabecera p{ margin: 0 0 12px 0; font-size: 0.92rem; line-height: 1.5; color: rgba(255,255,255,0.78); }
@@ -1518,11 +1588,7 @@
       width: 100%;
       max-width: 920px;
       margin: 0 0 18px 0;
-      padding: 16px 18px 20px 18px;
-      background: rgba(15, 18, 28, 0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      backdrop-filter: blur(8px);
+      padding: 4px 0;
     }
     .tendencia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .tendencia-cabecera p{ margin: 0 0 12px 0; font-size: 0.92rem; line-height: 1.5; color: rgba(255,255,255,0.78); }
@@ -1535,11 +1601,7 @@
       width: 100%;
       max-width: 920px;
       margin: 0 0 18px 0;
-      padding: 16px 18px 20px 18px;
-      background: rgba(15, 18, 28, 0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      backdrop-filter: blur(8px);
+      padding: 4px 0;
     }
     .dnbr-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .dnbr-cabecera p{ margin: 0 0 14px 0; font-size: 0.95rem; line-height: 1.55; color: rgba(255,255,255,0.78); }
@@ -1550,18 +1612,15 @@
     .dnbr-erro{ padding: 12px; color: rgba(255,180,180,0.9); background: rgba(80,20,20,0.4); border-radius: 6px; font-size: 0.9rem; }
     .dnbr-bloque-compacto{ background: transparent !important; border: none !important; padding: 0 !important; backdrop-filter: none !important; }
     .dnbr-bloque-compacto .dnbr-pie{ margin-top: 6px; font-size: 0.72rem; color: rgba(255,255,255,0.5); }
-    .dnbr-leyenda{ display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; color: rgba(255,255,255,0.85); margin: 4px 0 4px 0; }
-    .dnbr-leyenda-grupo{ display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+    .dnbr-leyenda{ display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px 40px; font-size: 0.85rem; color: rgba(255,255,255,0.85); margin: 4px 0 4px 0; align-items: flex-start; }
+    .dnbr-leyenda-grupo{ display: flex; flex-direction: column; gap: 5px; }
+    .dnbr-leyenda-titulo{ font-weight: 600; color: rgba(255,255,255,0.95); font-size: 0.8rem; letter-spacing: 0.02em; text-transform: uppercase; }
     .dnbr-leyenda-titulo{ font-weight: 600; color: rgba(255,255,255,0.95); margin-right: 4px; font-size: 0.8rem; letter-spacing: 0.02em; text-transform: uppercase; }
     .dnbr-leyenda i{ display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
     .dnbr-leyenda i.dnbr-leyenda-linea{ background: transparent; border: 0; border-top: 2px solid; height: 0; width: 18px; border-radius: 0; vertical-align: middle; }
     /* Card de barras de severidad cuando se renderiza en el lateral derecho. */
     .dnbr-bloque-bars{
-      background: rgba(15, 18, 28, 0.6);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 14px 16px 18px 16px;
-      backdrop-filter: blur(8px);
+      padding: 4px 0;
       margin-top: 8px;
     }
 
@@ -1570,11 +1629,7 @@
       width: 100%;
       max-width: 920px;
       margin: 0 0 18px 0;
-      padding: 16px 18px 20px 18px;
-      background: rgba(15, 18, 28, 0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      backdrop-filter: blur(8px);
+      padding: 4px 0;
     }
     .cronoloxia-cabecera h3{ margin: 0 0 6px 0; font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-size: 1.35rem; color: #fff; }
     .cronoloxia-cabecera p{ margin: 0 0 12px 0; font-size: 0.95rem; line-height: 1.55; color: rgba(255,255,255,0.78); }
@@ -3137,12 +3192,12 @@ window.addEventListener('load', () => {
     var categoryContent = {
         geologia: {
     title: 'Geología',
-    text: '<h2>Geología</h2>En Ourense, el sustrato es casi todo <strong>roca ácida</strong>: granitos y gneises que cubren el interior de la provincia y dan suelos ligeros, ácidos y con poca capacidad de retener agua. Hay afloramientos menores de <strong>rocas básicas y carbonatadas</strong> en los bordes, y los fondos de valle del Miño, el Sil y el Limia acumulan <strong>depósitos sedimentarios recientes</strong>.<br><br>El tipo de roca importa para el fuego porque condiciona el suelo, y el suelo condiciona la vegetación. Los sustratos siliciclásticos dan acidez: brezales, tojos y matorrales que arden con facilidad y rebrotan deprisa.<br><br><strong>Leyenda:</strong><br><span style="color: #e89779;">■</span> Rocas ácidas (granitos, esquistos)<br><span style="color: #7a9d6f;">■</span> Rocas básicas y carbonatadas<br><span style="color: #e0b46d;">■</span> Depósitos sedimentarios recientes<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fuente: Mapa Geológico de España 1:1.000.000, IGME (1994), reclasificado en 3 grupos divulgativos</div>'
+    text: '<h2>Geología</h2>En Ourense, el sustrato es casi todo <strong>roca ácida</strong>: granitos y gneises que cubren el interior de la provincia y dan suelos ligeros, ácidos y con poca capacidad de retener agua. Hay afloramientos menores de <strong>rocas básicas y carbonatadas</strong> en los bordes, y los fondos de valle del Miño, el Sil y el Limia acumulan <strong>depósitos sedimentarios recientes</strong>.<br><br>El tipo de roca importa para el fuego porque condiciona el suelo, y el suelo condiciona la vegetación. Los sustratos siliciclásticos dan acidez: brezales, tojos y matorrales que arden con facilidad y rebrotan deprisa.<br><br><strong>Leyenda:</strong><br><span style="color: #e89779;">■</span> Rocas ácidas (granitos, esquistos)<br><span style="color: #7a9d6f;">■</span> Rocas básicas y carbonatadas<br><span style="color: #e0b46d;">■</span> Depósitos sedimentarios recientes<br><br><div style="margin-top: 10px; font-style: italic; color: rgba(255,255,255,0.42); font-size: 11px;">Fuente: Mapa Geológico de España 1:1.000.000, IGME (1994), reclasificado en 3 grupos divulgativos</div>'
 },
 
         vegetacion: {
     title: 'Vegetación',
-    text: '<h2>Vegetación</h2>En 2011, el <strong>matorral</strong> cubría el <strong>43,6%</strong> de la provincia de Ourense, resultado de décadas de abandono agrícola. El uso agrario y rural ocupaba el <strong>31%</strong>. El bosque autóctono, formado por robles, abedules y otras frondosas caducifolias, representaba el <strong>12,7%</strong>. El pino y las coníferas alcanzaban el <strong>10,4%</strong>. El eucalipto apenas llegaba al <strong>0,5%</strong>. Esta era la cobertura vegetal de la provincia cuando comenzó la serie de grandes incendios de 2015 a 2025.<br><br><strong>Leyenda:</strong><br><span style="color: #3d9970;">■</span> Bosque autóctono<br><span style="color: #96c35f;">■</span> Eucalipto<br><span style="color: #5fa58c;">■</span> Pino / Coníferas<br><span style="color: #d4a017;">■</span> Matorral<br><span style="color: #c8956c;">■</span> Agrario e rural<br><span style="color: #888888;">■</span> Urbano e industrial<br><span style="color: #4ab7e3;">■</span> Augas e rochedo<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fonte: Mapa de Usos do Solo, IET, Xunta de Galicia, 1:500.000 (2011). Porcentaxes calculadas sobre a provincia de Ourense.</div>'
+    text: '<h2>Vegetación</h2>En 2011, el <strong>matorral</strong> cubría el <strong>43,6%</strong> de la provincia de Ourense, resultado de décadas de abandono agrícola. El uso agrario y rural ocupaba el <strong>31%</strong>. El bosque autóctono, formado por robles, abedules y otras frondosas caducifolias, representaba el <strong>12,7%</strong>. El pino y las coníferas alcanzaban el <strong>10,4%</strong>. El eucalipto apenas llegaba al <strong>0,5%</strong>. Esta era la cobertura vegetal de la provincia cuando comenzó la serie de grandes incendios de 2015 a 2025.<br><br><strong>Leyenda:</strong><br><span style="color: #3d9970;">■</span> Bosque autóctono<br><span style="color: #96c35f;">■</span> Eucalipto<br><span style="color: #5fa58c;">■</span> Pino / Coníferas<br><span style="color: #d4a017;">■</span> Matorral<br><span style="color: #c8956c;">■</span> Agrario e rural<br><span style="color: #888888;">■</span> Urbano e industrial<br><span style="color: #4ab7e3;">■</span> Augas e rochedo<br><br><div style="margin-top: 10px; font-style: italic; color: rgba(255,255,255,0.42); font-size: 11px;">Fonte: Mapa de Usos do Solo, IET, Xunta de Galicia, 1:500.000 (2011). Porcentaxes calculadas sobre a provincia de Ourense.</div>'
 },
 
         clima: {
@@ -3152,7 +3207,7 @@ window.addEventListener('load', () => {
 
         geografia: {
     title: 'Geografía',
-    text: '<h2>Geografía</h2>El interior de Ourense es un paisaje de valles profundos y sierras que superan los 1.500 metros. El Sil, el Miño y el Limia se encajan entre laderas escarpadas que convierten cualquier incendio en un problema de logística: los equipos de extinción tardan en llegar y las llamas, en cambio, suben rápido.<br><br>En pendiente, el fuego puede multiplicar su velocidad de avance varias veces respecto al terreno llano. A eso se suma el efecto chimenea en los barrancos y la irregularidad de los vientos de montaña, que cambian de dirección sin previo aviso.<br><br>La geografía no causa los incendios, pero decide cómo se comportan una vez que arrancan.'
+    text: '<h2>Geografía</h2>El interior de Ourense es un paisaje de valles profundos y sierras que superan los 1.500 metros. El Sil, el Miño y el Limia se encajan entre laderas escarpadas que convierten cualquier incendio en un problema de logística: los equipos de extinción tardan en llegar y las llamas, en cambio, suben rápido.<br><br>En pendiente, el fuego puede multiplicar su velocidad de avance varias veces respecto al terreno llano. A eso se suma el efecto chimenea en los barrancos y la irregularidad de los vientos de montaña, que cambian de dirección sin previo aviso.<br><br>La geografía no causa los incendios, pero decide cómo se comportan una vez que arrancan.<br><br><div style="margin-top: 10px; font-style: italic; color: rgba(255,255,255,0.42); font-size: 11px;">Fuente: MDT 5 m, Centro Nacional de Información Geográfica, IGN (2020)</div>'
 }
 
     };

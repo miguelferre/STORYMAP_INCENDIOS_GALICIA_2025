@@ -109,7 +109,7 @@ var config = {
                         <div id="grafica-cronoloxia" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div id="grafica-era5-agosto" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.7; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.7; background: none;">
 Larouco-Seadur fue el incendio más grande, pero no estuvo solo. La gráfica resume todo el periodo crítico, del <strong>1 de julio al 1 de octubre de 2025</strong>: cada barra naranja es la suma de hectáreas reportadas ese día por PrazaGal, y cada círculo amarillo es uno de los <strong>35 incendios mayores de 100 ha</strong> que ocurrieron en esos tres meses.<br><br>
 La lectura es brutal: durante junio y julio Galicia mantiene niveles bajos, pero entre el <strong>8 y el 15 de agosto</strong> se concentra prácticamente toda la siniestralidad. En esa única semana se solapan <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha), agotando los recursos de extinción de toda la comunidad.<br><br>
 El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios activos y casi 49.000 hectáreas reportadas</strong>. El 13 se sumaron 25.000 más. En cinco días ardieron <strong>más de 100.000 hectáreas</strong>, la mayor parte de todo el daño anual.
@@ -118,7 +118,7 @@ El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 ince
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.7; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 18px 0; font-size: 16px; line-height: 1.7; background: none;">
 Larouco-Seadur fue el incendio más grande, pero no estuvo solo. La gráfica resume todo el periodo crítico, del <strong>1 de julio al 1 de octubre de 2025</strong>: cada barra naranja es la suma de hectáreas reportadas ese día por PrazaGal, y cada círculo amarillo es uno de los <strong>35 incendios mayores de 100 ha</strong> que ocurrieron en esos tres meses, con su tamaño proporcional a las hectáreas que arrasaron.<br><br>
 La lectura es brutal: durante junio y julio Galicia mantiene niveles bajos, pero entre el <strong>8 y el 15 de agosto</strong> se concentra prácticamente toda la siniestralidad del verano. En esa única semana se solapan <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) y Quiroga (9.472 ha), agotando los recursos de extinción de toda la comunidad.<br><br>
 El día más demoledor fue el <strong>12 de agosto</strong>, con <strong>32 incendios activos y casi 49.000 hectáreas reportadas</strong>. El 13 se sumaron otras 25.000. En cinco días ardieron <strong>más de 100.000 hectáreas</strong>, la mayor parte de todo el daño anual.<br><br>
@@ -150,14 +150,16 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
             title: '',
             description: `
             <h2>La huella del fuego</h2>
-            <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
-            El satélite lo recuerda todo. Comparando imágenes Sentinel-2 antes y después del fuego (24 jul vs 10 oct 2025), el índice <strong>dNBR</strong> mide cuánta vegetación se perdió. Los rojos más intensos señalan los focos donde la cubierta vegetal desapareció por completo y el suelo quedó expuesto: allí la recuperación natural tardará <strong>décadas</strong>. Los tonos más suaves indican daños menores, donde la vegetación puede regenerarse en pocos años.
-            </p>
-            <div id="grafica-dnbr" class="grafica-host" style="margin: 0 0 14px 0;"></div>
-            <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
-            Las líneas violetas y azules marcan la <strong>Wildland-Urban Interface</strong> (WUI): el borde donde el bosque y el matorral combustible llegan hasta casas, granjas y pastos. No son zonas despobladas. De las más de 24.000 ha quemadas, <strong>472 ha de WUI</strong> ardieron con severidad moderada o alta. El fuego no solo arrasó el monte: cruzó la frontera hacia donde vive la gente.
-            </p>
-            <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 4px;"></div>
+            <div class="pegada-text-group">
+              <p style="font-size: 15px; line-height: 1.65;">
+              El satélite lo recuerda todo. Comparando imágenes Sentinel-2 antes y después del fuego (24 jul vs 10 oct 2025), el índice <strong>dNBR</strong> mide cuánta vegetación se perdió. Los rojos más intensos señalan los focos donde la cubierta vegetal desapareció por completo y el suelo quedó expuesto: allí la recuperación natural tardará <strong>décadas</strong>. Los tonos más suaves indican daños menores, donde la vegetación puede regenerarse en pocos años.
+              </p>
+              <p style="font-size: 15px; line-height: 1.65; margin-top: 10px;">
+              Las líneas violetas y azules marcan la <strong>Wildland-Urban Interface</strong> (WUI): el borde donde el bosque y el matorral combustible llegan hasta casas, granjas y pastos. No son zonas despobladas. De las más de 24.000 ha quemadas, <strong>472 ha de WUI</strong> ardieron con severidad moderada o alta. El fuego no solo arrasó el monte: cruzó la frontera hacia donde vive la gente.
+              </p>
+              <div id="grafica-dnbr" class="grafica-host" style="margin: 12px 0 0 0;"></div>
+            </div>
+            <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 8px;"></div>
             `,
             location: {
                 center: [-7.22, 42.39],
@@ -190,7 +192,7 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
                         <div id="grafica-tendencia" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <!-- Explicación 1 (visible en móvil) -->
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
   Hablar de incendios en Galicia depende mucho de quién los cuente.<br><br>
   Si miramos los datos del satélite (<strong>EFFIS</strong>), los grandes fuegos saltan a la vista, pero la mayoría de los pequeños se nos escapan: solo recoge los que dejan una huella suficientemente visible desde el espacio.<br><br>
   El registro <strong>oficial de la Xunta</strong> los recoge todos. Y ahí los números cambian de orden: en años recientes hay más de <strong>1.000 incendios al año</strong>, no las pocas decenas que ve el satélite.<br><br>
@@ -204,7 +206,7 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
                         <br class="only-mobile"><br class="only-mobile">
                         <!-- Explicación 2 (visible en móvil) -->
                         <div class="mobile-expl">
-                          <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none;">
   El segundo gráfico desglosa el mismo problema en el espacio. Cada celda es la superficie quemada en uno de los <strong>19 distritos forestales de Galicia</strong> en un año concreto, entre 2018 y 2025. Cuanto más cálido el color, más hectáreas perdidas.<br><br>
   El patrón es nítido: las cinco filas superiores (<strong>Valdeorras-Trives, Verín-Viana, Terra de Lemos, A Limia y Miño-Arnoia</strong>) concentran prácticamente toda la actividad año tras año. Los cinco pertenecen al <strong>sureste de Ourense</strong>, el epicentro estructural de los incendios en la comunidad.<br><br>
   La columna de <strong>2025</strong> destaca especialmente: Valdeorras-Trives roza los 40.000 ha en un solo año, una intensidad que no aparece en ningún otro punto de la serie.<br><br>
@@ -214,7 +216,7 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
                     </div>
                     
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.72; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.72; background: none;">
   Hablar de incendios en Galicia depende mucho de quién los cuente.<br><br>
   Si miramos los datos del satélite (<strong>EFFIS</strong>), los grandes fuegos saltan a la vista, pero la mayoría de los pequeños se nos escapan: solo recoge los que dejan una huella suficientemente visible desde el espacio.<br><br>
   El registro <strong>oficial de la Xunta</strong> los recoge todos. Y ahí los números cambian de orden: en años recientes hay más de <strong>1.000 incendios al año</strong>, no las pocas decenas que ve el satélite.<br><br>
@@ -223,7 +225,7 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
                         </p>
 
                         
-                        <p style="margin: 0; font-size: 16px; line-height: 1.63; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0; font-size: 16px; line-height: 1.63; background: none;">
   El segundo gráfico desglosa el mismo problema en el espacio. Cada celda es la superficie quemada en uno de los <strong>19 distritos forestales de Galicia</strong> en un año concreto, entre 2018 y 2025. Cuanto más cálido el color, más hectáreas perdidas.<br><br>
   El patrón es nítido: las cinco filas superiores (<strong>Valdeorras-Trives, Verín-Viana, Terra de Lemos, A Limia y Miño-Arnoia</strong>) concentran prácticamente toda la actividad año tras año. Los cinco pertenecen al <strong>sureste de Ourense</strong>, el epicentro estructural de los incendios en la comunidad.<br><br>
   La columna de <strong>2025</strong> destaca especialmente: Valdeorras-Trives roza los 40.000 ha en un solo año, una intensidad que no aparece en ningún otro punto de la serie. Los incendios no se reparten al azar: se repiten en los mismos distritos, con una intensidad creciente.
@@ -292,7 +294,7 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div id="grafica-causas" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 Durante más de cinco décadas, los incendios en Ourense han tenido un denominador común: la mayoría fueron provocados.<br><br>
 Sobre el conjunto de los <strong>81.643 partes oficiales</strong> registrados entre <strong>1968 y 2022</strong>, casi <strong>8 de cada 10</strong> son intencionados; el resto se reparte entre causa desconocida (14%), negligencias (4%), reproducciones de incendios anteriores y rayo (apenas un 1,5% cada uno).<br><br>
 Cuando se mira <strong>dentro del grupo de los intencionados</strong>, el patrón se vuelve más nítido: en torno al <strong>43%</strong> son <strong>quemas agrícolas o ganaderas</strong> escapadas, muy ligadas al uso tradicional del fuego para limpiar o regenerar pastos. El resto de motivaciones tienen perfiles distintos: <strong>caza</strong> (renovar pasto cinegético o forzar movimiento de fauna), <strong>venganzas y disputas</strong> (rivalidades vecinales, conflictos por linderos), <strong>vandalismo</strong> (destrucción sin móvil instrumental), <strong>piromanía</strong> (trastorno psiquiátrico, impulso compulsivo), <strong>desacuerdos y protestas</strong> (contra políticas forestales o expropiaciones), <strong>propiedad</strong> (forzar cambio de uso del suelo) y <strong>beneficio económico</strong> (intereses indirectos).<br><br>
@@ -302,7 +304,7 @@ Y aun así, casi la mitad de los partes intencionados no llegan a tener una moti
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 Durante más de cinco décadas, los incendios en Ourense han tenido un denominador común: la mayoría fueron provocados.<br><br>
 Sobre el conjunto de los <strong>81.643 partes oficiales</strong> registrados entre <strong>1968 y 2022</strong>, casi <strong>8 de cada 10</strong> son intencionados; el resto se reparte entre causa desconocida (14%), negligencias (4%), reproducciones y rayo (apenas un 1,5% cada uno).<br><br>
 Dentro del grupo intencionado, en torno al <strong>43%</strong> son <strong>quemas agrícolas o ganaderas</strong> escapadas, ligadas al uso tradicional del fuego para limpiar o regenerar pastos. Las demás motivaciones recogidas en el catálogo EGIF tienen perfiles propios: <strong>caza</strong> (renovar pasto cinegético o forzar movimiento de fauna), <strong>venganzas y disputas</strong> (rivalidades vecinales, conflictos por linderos), <strong>vandalismo</strong> (destrucción sin móvil instrumental), <strong>piromanía</strong> (trastorno psiquiátrico con impulso compulsivo), <strong>desacuerdos y protestas</strong> (contra políticas forestales o expropiaciones), <strong>propiedad</strong> (forzar cambio de uso del suelo) y <strong>beneficio económico</strong> (intereses indirectos en contratos o aprovechamiento posterior).<br><br>
@@ -336,7 +338,7 @@ Y aun así, casi la mitad de los partes intencionados no llegan a tener una moti
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div id="grafica-propiedade" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 La propiedad del monte gallego es una rareza en el contexto estatal. Cerca de un tercio del territorio forestal está organizado como <strong>monte vecinal en mano común</strong> (MVMC): tierras gestionadas colectivamente por los vecinos de una parroquia desde antes de las desamortizaciones, devueltas a sus comunidades por la Lei 13/1989.<br><br>
 Los <strong>3.290 montes vecinales</strong> clasificados suman <strong>660.000 hectáreas</strong>, un <strong>22,3%</strong> del territorio gallego, casi todas concentradas en Ourense y Lugo.<br><br>
 Cuando se cruza el registro MVMC con los <strong>1.475 incendios</strong> que documentó PrazaGal en 2025, el contraste es claro: <strong>el 39% de las hectáreas estimadas quemadas</strong> cae sobre MVMC, casi el doble del peso que les correspondería por superficie. Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) o Castro de Escuadro (74%) están entre las parroquias más castigadas. Son justamente las de mayor concentración vecinal.<br><br>
@@ -347,7 +349,7 @@ La explicación tiene poco que ver con el régimen jurídico en sí: las comunid
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 La propiedad del monte gallego es una rareza en el contexto estatal. Cerca de un tercio del territorio forestal está organizado como <strong>monte vecinal en mano común</strong> (MVMC): tierras gestionadas colectivamente por los vecinos de una parroquia desde antes de las desamortizaciones, devueltas a sus comunidades por la Lei 13/1989.<br><br>
 Los <strong>3.290 montes vecinales</strong> clasificados suman <strong>660.000 hectáreas</strong>, un <strong>22,3%</strong> del territorio gallego, casi todas concentradas en Ourense y Lugo.<br><br>
 Cuando se cruza el registro MVMC con los <strong>1.475 incendios</strong> que documentó PrazaGal en 2025, el contraste es claro: <strong>el 39% de las hectáreas estimadas quemadas</strong> cae sobre MVMC, casi el doble del peso que les correspondería por superficie.<br><br>
@@ -435,22 +437,16 @@ La explicación tiene poco que ver con el régimen jurídico en sí: las comunid
             title: '',
             description: `
             <h2>El verano se alarga… y el fuego también</h2>
-                <div style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
-                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                <div class="calor-texto-libre">
+                        <p style="margin: 0 0 14px 0; font-size: 16px; line-height: 1.8;">
                             Todo esto ocurre en un contexto de cambio climático que aumenta el riesgo y extiende la temporada de incendios. En este gráfico podemos ver cómo han cambiado las temperaturas en Galicia desde los años 40.<br><br>
-                            A medida que avanza la serie temporal, los meses fríos van perdiendo el tono azul que representa las temperaturas bajas. Ese color, tan presente en las primeras décadas, se atenúa poco a poco hasta casi pasar a blanco en los últimos años. Paralelamente, los veranos se vuelven más cálidos y prolongados, ocupando el rojo cada vez más espacio en el mapa de color.<br><br>
-                            Este desplazamiento cromático representa un calentamiento real que amplía la duración de las condiciones estivales y, con ellas, el periodo de mayor riesgo de incendio. Las temperaturas más altas, sumadas a una vegetación cada vez más seca, generan un escenario en el que cualquier chispa tiene más posibilidades de convertirse en un fuego.
+                            A medida que avanza la serie temporal, los meses fríos van perdiendo el tono azul que representa las temperaturas bajas. Ese color, tan presente en las primeras décadas, se atenúa poco a poco hasta casi pasar a blanco en los últimos años. Paralelamente, los veranos se vuelven más cálidos y prolongados, ocupando el rojo cada vez más espacio en el mapa de color.
                         </p>
-                        
+                        <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6;">
+                            Los estudios sobre olas de calor muestran que estos fenómenos extremos no solo aumentan en frecuencia, sino también en intensidad y duración. Prácticas que antes eran relativamente seguras, como las <strong>quemas agrícolas y ganaderas</strong>, se convierten en riesgo elevado cuando coinciden con períodos de alta temperatura, baja humedad y vientos intensos.
+                        </p>
+
                         <div id="heatmap-temp-host" class="grafica-host"></div>
-                        
-                        <p style="margin: 20px 0 0 0; font-size: 16px; line-height: 1.6;">
-                            Los estudios sobre olas de calor muestran que estos fenómenos extremos no solo aumentan en frecuencia, sino también en intensidad y duración.<br><br>
-                            En este contexto, prácticas que antes eran relativamente seguras, como las <strong>quemas agrícolas y ganaderas</strong>, se convierten en un riesgo elevado cuando coinciden con períodos de alta temperatura, baja humedad y vientos intensos.<br><br>
-                            La combinación de combustible vegetal acumulado, condiciones meteorológicas adversas y prácticas tradicionales que no se adaptan al nuevo escenario climático explica por qué los incendios son cada vez más devastadores.
-                        </p>
-                    </div>
                 </div>
             `,
             location: {

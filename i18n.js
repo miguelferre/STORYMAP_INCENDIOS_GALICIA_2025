@@ -35,11 +35,11 @@
       categoryContent: {
         geologia: {
           title: 'Xeoloxía',
-          text: '<h2>Xeoloxía</h2>En Ourense, o substrato é case todo <strong>rocha ácida</strong>: granitos e gneis que cobren o interior da provincia e dan solos lixeiros, ácidos e con pouca capacidade de reter auga. Hai afloramentos menores de <strong>rochas básicas e carbonatadas</strong> nos bordos, e os fondos de val do Miño, o Sil e o Limia acumulan <strong>depósitos sedimentarios recentes</strong>.<br><br>O tipo de rocha importa para o lume porque condiciona o solo, e o solo condiciona a vexetación. Os substratos siliciclásticos dan acidez: queirogais, xestas e matorrais que arden con facilidade e rebrotan axiña.<br><br><strong>Lenda:</strong><br><span style="color: #e89779;">■</span> Rochas ácidas (granitos, esquistos)<br><span style="color: #7a9d6f;">■</span> Rochas básicas e carbonatadas<br><span style="color: #e0b46d;">■</span> Depósitos sedimentarios recentes<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fonte: Mapa Xeolóxico de España 1:1.000.000, IGME (1994), reclasificado en 3 grupos divulgativos</div>'
+          text: '<h2>Xeoloxía</h2>En Ourense, o substrato é case todo <strong>rocha ácida</strong>: granitos e gneis que cobren o interior da provincia e dan solos lixeiros, ácidos e con pouca capacidade de reter auga. Hai afloramentos menores de <strong>rochas básicas e carbonatadas</strong> nos bordos, e os fondos de val do Miño, o Sil e o Limia acumulan <strong>depósitos sedimentarios recentes</strong>.<br><br>O tipo de rocha importa para o lume porque condiciona o solo, e o solo condiciona a vexetación. Os substratos siliciclásticos dan acidez: queirogais, xestas e matorrais que arden con facilidade e rebrotan axiña.<br><br><strong>Lenda:</strong><br><span style="color: #e89779;">■</span> Rochas ácidas (granitos, esquistos)<br><span style="color: #7a9d6f;">■</span> Rochas básicas e carbonatadas<br><span style="color: #e0b46d;">■</span> Depósitos sedimentarios recentes<br><br><div style="margin-top: 10px; font-style: italic; color: rgba(255,255,255,0.42); font-size: 11px;">Fonte: Mapa Xeolóxico de España 1:1.000.000, IGME (1994), reclasificado en 3 grupos divulgativos</div>'
         },
         vegetacion: {
           title: 'Vexetación',
-          text: '<h2>Vexetación</h2>En 2011, o <strong>matorral</strong> cubría o <strong>43,6%</strong> da provincia de Ourense, resultado de décadas de abandono agrícola. O uso agrario e rural ocupaba o <strong>31%</strong>. A <strong>fraga</strong>, formada por carballos, bidueiros e outras frondosas caducifolias, representaba o <strong>12,7%</strong>. O piñeiro e as coníferas acadaban o <strong>10,4%</strong>. O eucalipto apenas chegaba ao <strong>0,5%</strong>. Esta era a cobertura vexetal da provincia cando comezou a serie de grandes incendios de 2015 a 2025.<br><br><strong>Lenda:</strong><br><span style="color: #3d9970;">■</span> Fraga autóctona<br><span style="color: #96c35f;">■</span> Eucalipto<br><span style="color: #5fa58c;">■</span> Piñeiro / Coníferas<br><span style="color: #d4a017;">■</span> Matorral<br><span style="color: #c8956c;">■</span> Agrario e rural<br><span style="color: #888888;">■</span> Urbano e industrial<br><span style="color: #4ab7e3;">■</span> Augas e rochedo<br><br><div style="text-align: right; font-style: italic; color: #666; font-size: 12px;">Fonte: Mapa de Usos do Solo, IET, Xunta de Galicia, 1:500.000 (2011). Porcentaxes calculadas sobre a provincia de Ourense.</div>'
+          text: '<h2>Vexetación</h2>En 2011, o <strong>matorral</strong> cubría o <strong>43,6%</strong> da provincia de Ourense, resultado de décadas de abandono agrícola. O uso agrario e rural ocupaba o <strong>31%</strong>. A <strong>fraga</strong>, formada por carballos, bidueiros e outras frondosas caducifolias, representaba o <strong>12,7%</strong>. O piñeiro e as coníferas acadaban o <strong>10,4%</strong>. O eucalipto apenas chegaba ao <strong>0,5%</strong>. Esta era a cobertura vexetal da provincia cando comezou a serie de grandes incendios de 2015 a 2025.<br><br><strong>Lenda:</strong><br><span style="color: #3d9970;">■</span> Fraga autóctona<br><span style="color: #96c35f;">■</span> Eucalipto<br><span style="color: #5fa58c;">■</span> Piñeiro / Coníferas<br><span style="color: #d4a017;">■</span> Matorral<br><span style="color: #c8956c;">■</span> Agrario e rural<br><span style="color: #888888;">■</span> Urbano e industrial<br><span style="color: #4ab7e3;">■</span> Augas e rochedo<br><br><div style="margin-top: 10px; font-style: italic; color: rgba(255,255,255,0.42); font-size: 11px;">Fonte: Mapa de Usos do Solo, IET, Xunta de Galicia, 1:500.000 (2011). Porcentaxes calculadas sobre a provincia de Ourense.</div>'
         },
         clima: {
           title: 'Clima',
@@ -47,7 +47,7 @@
         },
         geografia: {
           title: 'Xeografía',
-          text: '<h2>Xeografía</h2>O interior de Ourense é unha paisaxe de vales profundos e serras que superan os 1.500 metros. O Sil, o Miño e o Limia encáixanse entre ladeiras escarpadas que converten calquera incendio nun problema de loxística: os equipos de extinción tardan en chegar e as lapas, en cambio, soben rápido.<br><br>En pendente, o lume pode multiplicar a súa velocidade de avance varias veces respecto ao terreo chan. A iso súmase o efecto cheminea nos barrancos e a irregularidade dos ventos de montaña, que cambian de dirección sen previo aviso.<br><br>A xeografía non causa os lumes, pero decide como se comportan unha vez que arrincan.'
+          text: '<h2>Xeografía</h2>O interior de Ourense é unha paisaxe de vales profundos e serras que superan os 1.500 metros. O Sil, o Miño e o Limia encáixanse entre ladeiras escarpadas que converten calquera incendio nun problema de loxística: os equipos de extinción tardan en chegar e as lapas, en cambio, soben rápido.<br><br>En pendente, o lume pode multiplicar a súa velocidade de avance varias veces respecto ao terreo chan. A iso súmase o efecto cheminea nos barrancos e a irregularidade dos ventos de montaña, que cambian de dirección sen previo aviso.<br><br>A xeografía non causa os lumes, pero decide como se comportan unha vez que arrincan.<br><br><div style="margin-top: 10px; font-style: italic; color: rgba(255,255,255,0.42); font-size: 11px;">Fonte: MDT 5 m, Centro Nacional de Información Xeográfica, IGN (2020)</div>'
         }
       },
       chapters: {
@@ -73,7 +73,7 @@
                         <div id="grafica-cronoloxia" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div id="grafica-era5-agosto" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 Larouco-Seadur foi o máis grande, pero non foi o único. Entre o <strong>8 e o 15 de agosto</strong> ardeu Galicia enteira: unha semana na que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) e Quiroga (9.472 ha) coincidiron no tempo e esgotaron os recursos de extinción.<br><br>
 O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes e case 49.000 hectáreas reportadas</strong>. O 13, outras 25.000. Cinco días, máis de 100.000 ha.
                           </p>
@@ -81,7 +81,7 @@ O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 Larouco-Seadur foi o máis grande, pero non foi o único. Entre o <strong>8 e o 15 de agosto</strong> ardeu Galicia enteira: unha semana na que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) e Quiroga (9.472 ha) coincidiron no tempo e esgotaron os recursos de extinción.<br><br>
 O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes e case 49.000 hectáreas reportadas</strong>. O 13, outras 25.000. Cinco días, máis de 100.000 hectáreas perdidas.<br><br>
 A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativamente discretos, case todo o dano do verán cabe nunha soa semana de agosto.
@@ -94,14 +94,16 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
           title: '',
           description: `
             <h2>A pegada do lume</h2>
-            <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
-            O satélite lémbralo todo. Comparando imaxes Sentinel-2 antes e despois do lume (24 xul vs 10 out 2025), o índice <strong>dNBR</strong> mide canta vexetación se perdeu. Os vermellos máis intensos sinalan os focos onde a cuberta vexetal desapareceu por completo e o chan quedou exposto: alí a recuperación natural tardará <strong>décadas</strong>. Os tons máis suaves indican danos menores, onde a vexetación pode rexenerarse en poucos anos.
-            </p>
-            <div id="grafica-dnbr" class="grafica-host" style="margin: 0 0 14px 0;"></div>
-            <p style="margin: 0 0 14px 0; font-size: 15px; line-height: 1.65;">
-            As liñas violetas e azuis marcan a <strong>Wildland-Urban Interface</strong> (WUI): o bordo onde o bosque e o mato combustible chegan ata casas, granxas e pastos. Non son zonas despobradas. Das máis de 24.000 ha queimadas, <strong>472 ha de WUI</strong> arderon con severidade moderada ou alta. O lume non só arrasou o monte: cruzou a fronteira cara a onde vive a xente.
-            </p>
-            <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 4px;"></div>
+            <div class="pegada-text-group">
+              <p style="font-size: 15px; line-height: 1.65;">
+              O satélite lémbralo todo. Comparando imaxes Sentinel-2 antes e despois do lume (24 xul vs 10 out 2025), o índice <strong>dNBR</strong> mide canta vexetación se perdeu. Os vermellos máis intensos sinalan os focos onde a cuberta vexetal desapareceu por completo e o chan quedou exposto: alí a recuperación natural tardará <strong>décadas</strong>. Os tons máis suaves indican danos menores, onde a vexetación pode rexenerarse en poucos anos.
+              </p>
+              <p style="font-size: 15px; line-height: 1.65; margin-top: 10px;">
+              As liñas violetas e azuis marcan a <strong>Wildland-Urban Interface</strong> (WUI): o bordo onde o bosque e o mato combustible chegan ata casas, granxas e pastos. Non son zonas despobradas. Das máis de 24.000 ha queimadas, <strong>472 ha de WUI</strong> arderon con severidade moderada ou alta. O lume non só arrasou o monte: cruzou a fronteira cara a onde vive a xente.
+              </p>
+              <div id="grafica-dnbr" class="grafica-host" style="margin: 12px 0 0 0;"></div>
+            </div>
+            <div id="grafica-dnbr-bars" class="grafica-host" style="margin-top: 8px;"></div>
           `
         },
         'tendencia-aumento': {
@@ -112,7 +114,7 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div id="grafica-tendencia" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
   Falar de incendios en Galicia depende moito de quen os conte.<br><br>
   Se miramos os datos do satélite (<strong>EFFIS</strong>), os grandes lumes saltan á vista, pero a maioría dos pequenos escápansenos: só recolle os que deixan unha pegada suficientemente visible dende o espazo.<br><br>
   O rexistro <strong>oficial da Xunta</strong> recólleos todos. E aí os números cambian de orde: en anos recentes hai máis de <strong>1.000 incendios ao ano</strong>, non as poucas decenas que ve o satélite.<br><br>
@@ -125,7 +127,7 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
                         <div id="grafica-mapa-tendencia" class="grafica-host"></div>
                         <br class="only-mobile"><br class="only-mobile">
                         <div class="mobile-expl">
-                          <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none;">
   O mapa permite visualizar de forma interactiva a distribución dos <strong>incendios forestais</strong> en Galicia entre 2016 e 2025.<br><br>
   Os círculos representan a magnitude dos incendios e a súa localización, mentres que a liña inferior mostra a evolución anual.<br><br>
   A maior concentración mantense no sur da comunidade, especialmente na provincia de <strong>Ourense</strong>, que actúa como epicentro recorrente.<br><br>
@@ -137,7 +139,7 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
                     </div>
                     
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.72; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.72; background: none;">
   Falar de incendios en Galicia depende moito de quen os conte.<br><br>
   Se miramos os datos do satélite (<strong>EFFIS</strong>), os grandes lumes saltan á vista, pero a maioría dos pequenos escápansenos: só recolle os que deixan unha pegada suficientemente visible dende o espazo.<br><br>
   O rexistro <strong>oficial da Xunta</strong> recólleos todos. E aí os números cambian de orde: en anos recentes hai máis de <strong>1.000 incendios ao ano</strong>, non as poucas decenas que ve o satélite.<br><br>
@@ -182,7 +184,7 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div id="grafica-causas" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 Durante máis de cinco décadas, os incendios en Ourense tiveron un denominador común: a maioría foron provocados.<br><br>
 Sobre o conxunto dos <strong>81.643 partes oficiais</strong> rexistrados entre <strong>1968 e 2022</strong>, case <strong>8 de cada 10</strong> son intencionados; o resto repártese entre causa descoñecida (14%), neglixencias (4%), reproducións e raio (apenas un 1,5% cada un).<br><br>
 Cando se mira <strong>dentro do grupo dos intencionados</strong>, arredor do <strong>43%</strong> son <strong>queimas agrícolas ou gandeiras</strong> escapadas, ligadas ao uso tradicional do lume para limpar ou rexenerar pastos. As demais motivacións do catálogo EGIF teñen perfís propios: <strong>caza</strong> (renovar pasto cinexético ou forzar movemento da fauna), <strong>vinganzas e disputas</strong> (rivalidades veciñais, conflitos por estremas), <strong>vandalismo</strong> (destrución sen móbil instrumental), <strong>piromanía</strong> (trastorno psiquiátrico con impulso compulsivo), <strong>desacordos e protestas</strong> (contra políticas forestais ou expropiacións), <strong>propiedade</strong> (forzar cambio de uso do solo) e <strong>beneficio económico</strong> (intereses indirectos en contratos ou aproveitamentos posteriores).<br><br>
@@ -192,7 +194,7 @@ E aínda así, case a metade dos partes intencionados non chegan a ter unha moti
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 Durante máis de cinco décadas, os incendios en Ourense tiveron un denominador común: a maioría foron provocados.<br><br>
 Sobre o conxunto dos <strong>81.643 partes oficiais</strong> rexistrados entre <strong>1968 e 2022</strong>, case <strong>8 de cada 10</strong> son intencionados; o resto repártese entre causa descoñecida (14%), neglixencias (4%), reproducións e raio (apenas un 1,5% cada un).<br><br>
 Cando se mira <strong>dentro do grupo dos intencionados</strong>, arredor do <strong>43%</strong> son <strong>queimas agrícolas ou gandeiras</strong> escapadas, ligadas ao uso tradicional do lume para limpar ou rexenerar pastos. As demais motivacións do catálogo EGIF teñen perfís propios: <strong>caza</strong> (renovar pasto cinexético ou forzar movemento da fauna), <strong>vinganzas e disputas</strong> (rivalidades veciñais, conflitos por estremas), <strong>vandalismo</strong> (destrución sen móbil instrumental), <strong>piromanía</strong> (trastorno psiquiátrico con impulso compulsivo), <strong>desacordos e protestas</strong> (contra políticas forestais ou expropiacións), <strong>propiedade</strong> (forzar cambio de uso do solo) e <strong>beneficio económico</strong> (intereses indirectos en contratos ou aproveitamentos posteriores).<br><br>
@@ -210,7 +212,7 @@ E aínda así, case a metade dos partes intencionados non chegan a ter unha moti
                     <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
                         <div id="grafica-propiedade" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
-                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                          <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 A propiedade do monte galego é unha rareza no contexto estatal. Preto dun terzo do territorio forestal está organizado como <strong>monte veciñal en man común</strong> (MVMC): terras xestionadas colectivamente polos veciños dunha parroquia desde antes das desamortizacións, devoltas ás súas comunidades pola Lei 13/1989.<br><br>
 Os <strong>3.290 montes veciñais</strong> clasificados suman <strong>660.000 hectáreas</strong>, un <strong>22,3%</strong> do territorio galego, case todas concentradas en Ourense e Lugo.<br><br>
 Cando se cruza o rexistro MVMC cos <strong>1.475 incendios</strong> que documentou PrazaGal en 2025, o contraste é claro: <strong>o 39% das hectáreas estimadas queimadas</strong> cae sobre MVMC, case o dobre do peso que lles correspondería por superficie. Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) ou Castro de Escuadro (74%) están entre as parroquias máis castigadas. Son xustamente as de maior concentración veciñal.<br><br>
@@ -221,7 +223,7 @@ A explicación ten pouco que ver co réxime xurídico en si: as comunidades de m
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                        <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
 A propiedade do monte galego é unha rareza no contexto estatal. Preto dun terzo do territorio forestal está organizado como <strong>monte veciñal en man común</strong> (MVMC): terras xestionadas colectivamente polos veciños dunha parroquia desde antes das desamortizacións, devoltas ás súas comunidades pola Lei 13/1989.<br><br>
 Os <strong>3.290 montes veciñais</strong> clasificados suman <strong>660.000 hectáreas</strong>, un <strong>22,3%</strong> do territorio galego, case todas concentradas en Ourense e Lugo.<br><br>
 Cando se cruza o rexistro MVMC cos <strong>1.475 incendios</strong> que documentou PrazaGal en 2025, o contraste é claro: <strong>o 39% das hectáreas estimadas queimadas</strong> cae sobre MVMC, case o dobre do peso que lles correspondería por superficie.<br><br>
@@ -277,22 +279,16 @@ A explicación ten pouco que ver co réxime xurídico en si: as comunidades de m
           title: '',
           description: `
             <h2>O verán alóngase… e o lume tamén</h2>
-                <div style="display: flex; gap: 30px; align-items: flex-start; background: none; border: none;">
-                    <div style="flex: 2; background: none; border: none; backdrop-filter: none;">
-                        <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.8; background: none; backdrop-filter: blur(20px); border-radius: 8px; padding: 12px 16px;">
+                <div class="calor-texto-libre">
+                        <p style="margin: 0 0 14px 0; font-size: 16px; line-height: 1.8;">
                             Todo isto ocorre nun contexto de cambio climático que aumenta o risco e amplía a tempada de incendios. Neste gráfico podemos ver como mudaron as temperaturas en Galicia desde os anos 40.<br><br>
-                            A medida que avanza a serie temporal, os meses fríos van perdendo o ton azul que representa as temperaturas baixas. Esa cor, tan presente nas primeiras décadas, atenúase pouco a pouco ata case desaparecer nas últimas. En paralelo, os veráns vólvense máis cálidos e prolongados, e o vermello ocupa cada vez máis espazo no mapa de cor.<br><br>
-                            Este desprazamento cromático representa un quecemento real que amplía a duración das condicións estivais e, con elas, o período de maior risco de incendio. As temperaturas máis altas, sumadas a unha vexetación cada vez máis seca, xeran un escenario no que calquera chispa ten máis posibilidades de converterse nun lume.
+                            A medida que avanza a serie temporal, os meses fríos van perdendo o ton azul que representa as temperaturas baixas. Esa cor, tan presente nas primeiras décadas, atenúase pouco a pouco ata case desaparecer nas últimas. En paralelo, os veráns vólvense máis cálidos e prolongados, e o vermello ocupa cada vez máis espazo no mapa de cor.
                         </p>
-                        
+                        <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6;">
+                            Os estudos sobre ondas de calor mostran que estes fenómenos extremos non só aumentan en frecuencia, senón tamén en intensidade e duración. Prácticas que antes eran relativamente seguras, como as <strong>queimas agrícolas e gandeiras</strong>, convértense nun risco elevado cando coinciden con períodos de alta temperatura, baixa humidade e ventos intensos.
+                        </p>
+
                         <div id="heatmap-temp-host" class="grafica-host"></div>
-                        
-                        <p style="margin: 20px 0 0 0; font-size: 16px; line-height: 1.6;">
-                            Os estudos sobre ondas de calor mostran que estes fenómenos extremos non só aumentan en frecuencia, senón tamén en intensidade e duración.<br><br>
-                            Neste contexto, prácticas que antes eran relativamente seguras, como as <strong>queimas agrícolas e gandeiras</strong>, convértense nun risco elevado cando coinciden con períodos de alta temperatura, baixa humidade e ventos intensos.<br><br>
-                            A combinación de combustible vexetal acumulado, condicións meteorolóxicas adversas e prácticas tradicionais que non se adaptan ao novo escenario climático explica por que os incendios son cada vez máis devastadores.
-                        </p>
-                    </div>
                 </div>
           `
         }

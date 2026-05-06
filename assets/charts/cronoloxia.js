@@ -18,7 +18,7 @@
       pico_13: "13 ago — Larouco-Seadur, 23.527 ha",
       pico_15: "15 ago — 34 lumes, 14.241 ha",
       pie:
-        "Fuente: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregado por día. Período julio-octubre 2025.",
+        "Fuente: Rexistro de incendios forestais, Xunta de Galicia, publicado vía Lei de Transparencia (CC-BY-NC-SA). Período julio-octubre 2025.",
       overview_y: "ha (escala raíz)",
       eje_y: "Hectáreas quemadas / día",
       zoom_titulo: "Zoom: 5-23 de agosto, las semanas críticas",
@@ -35,7 +35,7 @@
       pico_13: "13 ago — Larouco-Seadur, 23.527 ha",
       pico_15: "15 ago — 34 lumes, 14.241 ha",
       pie:
-        "Fonte: PrazaGal vía Lei de Transparencia (CC-BY-NC-SA), agregada por día. Período xullo-outubro 2025.",
+        "Fonte: Rexistro de incendios forestais, Xunta de Galicia, publicado vía Lei de Transparencia (CC-BY-NC-SA). Período xullo-outubro 2025.",
       overview_y: "ha (escala raíz)",
       eje_y: "Hectáreas queimadas / día",
       zoom_titulo: "Zoom: 5-23 de agosto, as semanas críticas",

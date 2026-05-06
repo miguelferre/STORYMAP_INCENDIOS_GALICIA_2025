@@ -10,7 +10,7 @@
       ref_precip:    "~0.8 mm/día\nmedia agosto",
       pico_calor:    "Pico de calor\n10 ago — 33.7 °C",
       pico_evento:   "12 ago\npico del evento",
-      pie: "ERA5 — ECMWF/Copernicus. Media espacial zona interior Ourense (42.0–42.5°N, 7.75–7.0°W). Resolución ~31 km.",
+      pie: "Fuente: ERA5, ECMWF/Copernicus. Media espacial zona interior de Ourense (42,0–42,5°N, 7,75–7,0°W). Resolución ~31 km.",
       tip_temp:  (d) => `${d.fecha}\nTmax: ${d.tmax} °C\nTmedia: ${d.tmedia} °C\nTmin: ${d.tmin} °C`,
       tip_prec:  (d) => `${d.fecha}\nPrecipitación: ${d.precip_mm} mm`,
     },
@@ -24,7 +24,7 @@
       ref_precip:    "~0.8 mm/día\nmedia agosto",
       pico_calor:    "Pico de calor\n10 ago — 33.7 °C",
       pico_evento:   "12 ago\npico do evento",
-      pie: "ERA5 — ECMWF/Copernicus. Media espacial zona interior Ourense (42.0–42.5°N, 7.75–7.0°W). Resolución ~31 km.",
+      pie: "Fuente: ERA5, ECMWF/Copernicus. Media espacial zona interior de Ourense (42,0–42,5°N, 7,75–7,0°W). Resolución ~31 km.",
       tip_temp:  (d) => `${d.fecha}\nTmax: ${d.tmax} °C\nTmedia: ${d.tmedia} °C\nTmin: ${d.tmin} °C`,
       tip_prec:  (d) => `${d.fecha}\nPrecipitación: ${d.precip_mm} mm`,
     },
@@ -179,7 +179,9 @@
     host.appendChild(mkLabel(t.label_temp));
     host.appendChild(leyendaTemp(t));
     host.appendChild(panelTemp(datos, ancho, t));
-    host.appendChild(mkLabel(t.label_precip));
+    const lblPrecip = mkLabel(t.label_precip);
+    lblPrecip.style.marginTop = "52px";
+    host.appendChild(lblPrecip);
     host.appendChild(panelPrecip(datos, ancho, t));
 
     const pie = document.createElement("p");
