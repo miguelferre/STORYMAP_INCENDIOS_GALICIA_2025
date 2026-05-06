@@ -13,7 +13,7 @@ var config = {
         },
         'vegetacion': {
             title: 'Vegetación',
-            description: 'Los tipos de bosque y matorral determinan la cantidad y continuidad del combustible disponible. Las 20 clases del Mapa de Usos do Solo del IET (Xunta, 2011, 1:250.000) se reagrupan en cuatro categorías divulgativas: <strong>bosque autóctono</strong>, <strong>plantaciones</strong> (eucalipto y coníferas), <strong>matorral</strong> y <strong>agrario/urbano/otros</strong>.'
+            description: 'Los tipos de vegetación determinan la cantidad, continuidad y peligrosidad del combustible. Las 18 clases del IET (Xunta, 2011, 1:500.000) se reagrupan en siete categorías: <strong>bosque autóctono</strong>, <strong>eucalipto</strong>, <strong>pino/coníferas</strong>, <strong>matorral</strong>, <strong>agrario e rural</strong>, <strong>urbano e industrial</strong> y <strong>augas e rochedo</strong>.'
         },
         'clima': {
             title: 'Clima',
@@ -33,7 +33,7 @@ var config = {
         },
         'vegetacion': {
             title: 'Vegetación',
-            description: 'Los tipos de bosque y matorral determinan la cantidad y continuidad del combustible disponible. Las 20 clases del Mapa de Usos do Solo del IET (Xunta, 2011, 1:250.000) se reagrupan en cuatro categorías divulgativas: <strong>bosque autóctono</strong>, <strong>plantaciones</strong> (eucalipto y coníferas), <strong>matorral</strong> y <strong>agrario/urbano/otros</strong>.'
+            description: 'Los tipos de vegetación determinan la cantidad, continuidad y peligrosidad del combustible. Las 18 clases del IET (Xunta, 2011, 1:500.000) se reagrupan en siete categorías: <strong>bosque autóctono</strong>, <strong>eucalipto</strong>, <strong>pino/coníferas</strong>, <strong>matorral</strong>, <strong>agrario e rural</strong>, <strong>urbano e industrial</strong> y <strong>augas e rochedo</strong>.'
         },
         'clima': {
             title: 'Clima',
