@@ -74,17 +74,20 @@
                         <div id="grafica-era5-agosto" class="grafica-host" style="margin-bottom: 30px;"></div>
                         <div class="mobile-expl">
                           <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
-Larouco-Seadur foi o máis grande, pero non foi o único. Entre o <strong>8 e o 15 de agosto</strong> ardeu Galicia enteira: unha semana na que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) e Quiroga (9.472 ha) coincidiron no tempo e esgotaron os recursos de extinción.<br><br>
-O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes e case 49.000 hectáreas reportadas</strong>. O 13, outras 25.000. Cinco días, máis de 100.000 ha.
+Larouco-Seadur foi o máis grande, pero non foi o único. A gráfica resume todo o período crítico, do <strong>1 de xullo ao 1 de outubro de 2025</strong>: cada barra laranxa é a suma de hectáreas reportadas ese día, e cada círculo amarelo é un dos <strong>35 incendios maiores de 100 ha</strong> que ocorreron neses tres meses.<br><br>
+A lectura é brutal: durante xuño e xullo Galicia mantén niveis baixos, pero entre o <strong>8 e o 15 de agosto</strong> concéntrase practicamente toda a sinistralidade. Nesa única semana coincidiron <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) e Quiroga (9.472 ha), esgotando os recursos de extinción.<br><br>
+O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes activos e case 49.000 hectáreas reportadas</strong>. O 13 sumáronse outras 25.000. En cinco días arderon <strong>máis de 100.000 hectáreas</strong>, a maior parte de todo o dano anual.
                           </p>
                         </div>
                     </div>
 
                     <div class="desktop-expl" style="flex: 1; background: none; border: none; backdrop-filter: none;">
                         <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; background: none;">
-Larouco-Seadur foi o máis grande, pero non foi o único. Entre o <strong>8 e o 15 de agosto</strong> ardeu Galicia enteira: unha semana na que <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) e Quiroga (9.472 ha) coincidiron no tempo e esgotaron os recursos de extinción.<br><br>
-O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes e case 49.000 hectáreas reportadas</strong>. O 13, outras 25.000. Cinco días, máis de 100.000 hectáreas perdidas.<br><br>
-A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativamente discretos, case todo o dano do verán cabe nunha soa semana de agosto.
+Larouco-Seadur foi o máis grande, pero non foi o único. A gráfica resume todo o período crítico, do <strong>1 de xullo ao 1 de outubro de 2025</strong>: cada barra laranxa é a suma de hectáreas reportadas ese día, e cada círculo amarelo é un dos <strong>35 incendios maiores de 100 ha</strong> que ocorreron neses tres meses, co seu tamaño proporcional ás hectáreas que arrasaron.<br><br>
+A lectura é brutal: durante xuño e xullo Galicia mantén niveis baixos, pero entre o <strong>8 e o 15 de agosto</strong> concéntrase practicamente toda a sinistralidade do verán. Nesa única semana coincidiron <strong>Oímbra (22.317 ha)</strong>, Larouco (23.527 ha), <strong>Chandrexa de Queixa (12.784 ha)</strong>, A Mezquita (10.743 ha) e Quiroga (9.472 ha), esgotando os recursos de extinción de toda a comunidade.<br><br>
+O día máis demoledor foi o <strong>12 de agosto</strong>, con <strong>32 lumes activos e case 49.000 hectáreas reportadas</strong>. O 13 sumáronse outras 25.000. En cinco días arderon <strong>máis de 100.000 hectáreas</strong>, a maior parte de todo o dano anual.<br><br>
+Tras o pico, setembro desínflase. Unha soa semana decidiu un verán enteiro.<br><br>
+As gráficas de abaixo mostran por que esa semana foi posible. Os datos son do reanálise ERA5 do ECMWF, filtrados á zona interior de Ourense, non de toda Galicia, onde a chuvia en A Coruña distorsionaría o cadro. <strong>Do 1 ao 11 de agosto</strong>, o termómetro non baixou dos 28°C de máxima e acumulou once días seguidos por riba dos 30°C. O pico foi o <strong>10 de agosto: 33,7°C</strong>. Nesa mesma franxa, a precipitación foi <strong>practicamente cero</strong>: as barras case non chegan á liña de referencia da media histórica de agosto en Ourense (~0,8 mm/día). A pouca chuvia que caeu o 12 de agosto chegou cando os grandes lumes xa levaban horas activos.
                         </p>
                     </div>
                 </div>
@@ -118,8 +121,9 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
   Falar de incendios en Galicia depende moito de quen os conte.<br><br>
   Se miramos os datos do satélite (<strong>EFFIS</strong>), os grandes lumes saltan á vista, pero a maioría dos pequenos escápansenos: só recolle os que deixan unha pegada suficientemente visible dende o espazo.<br><br>
   O rexistro <strong>oficial da Xunta</strong> recólleos todos. E aí os números cambian de orde: en anos recentes hai máis de <strong>1.000 incendios ao ano</strong>, non as poucas decenas que ve o satélite.<br><br>
-  Os picos seguen estando en <strong>2017</strong>, <strong>2020</strong> e <strong>2022</strong>, pero <strong>2025</strong> rompe todas as escalas: preto de <strong>120.000 hectáreas</strong> arrasadas nunha soa tempada.<br><br>
-  Non é só que ardan máis hectáreas: é que os grandes incendios pesan cada vez máis dentro do total.
+  Os picos máis marcados na gráfica son <strong>2020</strong> e <strong>2022</strong>, pero <strong>2025</strong> rompe todas as escalas: preto de <strong>120.000 hectáreas</strong> arrasadas nunha soa tempada.<br><br>
+  Non é só que ardan máis hectáreas: é que os grandes incendios pesan cada vez máis dentro do total.<br><br>
+  <em>A gráfica arranca en 2018, cando comeza a serie oficial de distritos da Xunta. O ano 2017 foi tamén moi grave —51.400 ha segundo EFFIS—, pero sen dato oficial equivalente non pode incluírse na comparativa.</em>
                           </p>
                         </div>
                         <br class="only-mobile"><br class="only-mobile">
@@ -128,12 +132,10 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
                         <br class="only-mobile"><br class="only-mobile">
                         <div class="mobile-expl">
                           <p style="margin: 16px 0 0 0; font-size: 16px; line-height: 1.6; background: none;">
-  O mapa permite visualizar de forma interactiva a distribución dos <strong>incendios forestais</strong> en Galicia entre 2016 e 2025.<br><br>
-  Os círculos representan a magnitude dos incendios e a súa localización, mentres que a liña inferior mostra a evolución anual.<br><br>
-  A maior concentración mantense no sur da comunidade, especialmente na provincia de <strong>Ourense</strong>, que actúa como epicentro recorrente.<br><br>
-  Nos anos <strong>2017</strong>, <strong>2020</strong> e <strong>2022</strong> os focos multiplícanse, e en <strong>2025</strong> a superficie queimada acada valores excepcionais.<br><br>
-  Os datos evidencian un patrón de recorrencia: os incendios tenden a repetirse nas mesmas zonas, cunha intensidade cada vez maior.<br><br>
-  Máis que episodios illados, reflicten un proceso sostido que amplifica o seu impacto co paso do tempo.
+  O segundo gráfico desglosa o mesmo problema no espazo. Cada cela é a superficie queimada nun dos <strong>19 distritos forestais de Galicia</strong> nun ano concreto, entre 2018 e 2025. Canto máis cálida a cor, máis hectáreas perdidas.<br><br>
+  O patrón é nítido: as cinco filas superiores (<strong>Valdeorras-Trives, Verín-Viana, Terra de Lemos, A Limia e Miño-Arnoia</strong>) concentran practicamente toda a actividade ano tras ano. Os cinco pertencen ao <strong>sueste de Ourense</strong>, o epicentro estrutural dos incendios na comunidade.<br><br>
+  A columna de <strong>2025</strong> destaca especialmente: Valdeorras-Trives roza as 40.000 ha nun só ano, unha intensidade que non aparece en ningún outro punto da serie.<br><br>
+  Os incendios non se reparten ao azar: repítense nos mesmos distritos, cunha intensidade crecente.
                           </p>
                         </div>
                     </div>
@@ -143,18 +145,16 @@ A gráfica deixa moi clara a concentración: tras un xuño e un xullo relativame
   Falar de incendios en Galicia depende moito de quen os conte.<br><br>
   Se miramos os datos do satélite (<strong>EFFIS</strong>), os grandes lumes saltan á vista, pero a maioría dos pequenos escápansenos: só recolle os que deixan unha pegada suficientemente visible dende o espazo.<br><br>
   O rexistro <strong>oficial da Xunta</strong> recólleos todos. E aí os números cambian de orde: en anos recentes hai máis de <strong>1.000 incendios ao ano</strong>, non as poucas decenas que ve o satélite.<br><br>
-  Os picos seguen estando en <strong>2017</strong>, <strong>2020</strong> e <strong>2022</strong>, pero <strong>2025</strong> rompe todas as escalas: preto de <strong>120.000 hectáreas</strong> arrasadas nunha soa tempada.<br><br>
-  Non é só que ardan máis hectáreas: é que os grandes incendios pesan cada vez máis dentro do total.
+  Os picos máis marcados na gráfica son <strong>2020</strong> e <strong>2022</strong>, pero <strong>2025</strong> rompe todas as escalas: preto de <strong>120.000 hectáreas</strong> arrasadas nunha soa tempada.<br><br>
+  Non é só que ardan máis hectáreas: é que os grandes incendios pesan cada vez máis dentro do total.<br><br>
+  <em>A gráfica arranca en 2018, cando comeza a serie oficial de distritos da Xunta. O ano 2017 foi tamén moi grave —51.400 ha segundo EFFIS—, pero sen dato oficial equivalente non pode incluírse na comparativa.</em>
                         </p>
                         
                         
                         <p style="margin: 0; font-size: 16px; line-height: 1.63;">
-  O mapa permite visualizar de forma interactiva a distribución dos <strong>incendios forestais</strong> en Galicia entre 2016 e 2025.<br><br>
-  Os círculos representan a magnitude dos incendios e a súa localización, mentres que a liña inferior mostra a evolución anual.<br><br>
-  A maior concentración mantense no sur da comunidade, especialmente na provincia de <strong>Ourense</strong>, que actúa como epicentro recorrente.<br><br>
-  Nos anos <strong>2017</strong>, <strong>2020</strong> e <strong>2022</strong> os focos multiplícanse, e en <strong>2025</strong> a superficie queimada acada valores excepcionais.<br><br>
-  Os datos evidencian un patrón de recorrencia: os incendios tenden a repetirse nas mesmas zonas, cunha intensidade cada vez maior.<br><br>
-  Máis que episodios illados, reflicten un proceso sostido que amplifica o seu impacto co paso do tempo.
+  O segundo gráfico desglosa o mesmo problema no espazo. Cada cela é a superficie queimada nun dos <strong>19 distritos forestais de Galicia</strong> nun ano concreto, entre 2018 e 2025. Canto máis cálida a cor, máis hectáreas perdidas.<br><br>
+  O patrón é nítido: as cinco filas superiores (<strong>Valdeorras-Trives, Verín-Viana, Terra de Lemos, A Limia e Miño-Arnoia</strong>) concentran practicamente toda a actividade ano tras ano. Os cinco pertencen ao <strong>sueste de Ourense</strong>, o epicentro estrutural dos incendios na comunidade.<br><br>
+  A columna de <strong>2025</strong> destaca especialmente: Valdeorras-Trives roza as 40.000 ha nun só ano, unha intensidade que non aparece en ningún outro punto da serie. Os incendios non se reparten ao azar: repítense nos mesmos distritos, cunha intensidade crecente.
                         </p>
                     </div>
                 </div>
@@ -217,7 +217,7 @@ A propiedade do monte galego é unha rareza no contexto estatal. Preto dun terzo
 Os <strong>3.290 montes veciñais</strong> clasificados suman <strong>660.000 hectáreas</strong>, un <strong>22,3%</strong> do territorio galego, case todas concentradas en Ourense e Lugo.<br><br>
 Cando se cruza o rexistro MVMC cos <strong>1.475 incendios</strong> que documentou PrazaGal en 2025, o contraste é claro: <strong>o 39% das hectáreas estimadas queimadas</strong> cae sobre MVMC, case o dobre do peso que lles correspondería por superficie. Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) ou Castro de Escuadro (74%) están entre as parroquias máis castigadas. Son xustamente as de maior concentración veciñal.<br><br>
 A nivel parroquia o patrón suavízase: sobre as <strong>825 parroquias con polo menos un lume</strong>, a <strong>correlación de Spearman</strong> entre %MVMC e hectáreas queimadas é de <strong>ρ ≈ 0,09</strong> (0,15 coa superficie en escala logarítmica). Spearman mide se dúas variables se moven xuntas en orde. O 0 indica sen relación, +1 unha relación crecente perfecta e −1 decrecente perfecta. <strong>0,09 é moi débil</strong>: a propiedade colectiva por si soa non explica o lume, importa onde está esa propiedade. A cola de lumes grandes si cambia: <strong>media de 272 ha</strong> en parroquias con ≥20% de MVMC fronte ás <strong>62 ha</strong> do resto.<br><br>
-A explicación ten pouco que ver co réxime xurídico en si: as comunidades de montes foron historicamente un dos poucos axentes que aínda fan xestión activa do monte. A correlación fala, sobre todo, de <strong>onde queda o monte</strong>: nas parroquias rurais do interior ourensán, baleiradas polo éxodo, onde a propiedade colectiva sobrevive porque o minifundio privado se abandonou.
+A explicación ten pouco que ver co réxime xurídico en si: as comunidades de montes foron historicamente un dos poucos axentes que aínda fan xestión activa do monte. A correlación fala, sobre todo, de <strong>onde queda o monte</strong>: nas parroquias rurais do interior ourensán, baleiradas polo éxodo, onde a propiedade colectiva sobrevive porque o minifundio privado se abandonou. A estimación de hectáreas sobre MVMC é proporcional ao peso do MVMC en cada parroquia, unha aproximación honesta a falta dos perímetros oficiais.
                           </p>
                         </div>
                     </div>
@@ -229,7 +229,7 @@ Os <strong>3.290 montes veciñais</strong> clasificados suman <strong>660.000 he
 Cando se cruza o rexistro MVMC cos <strong>1.475 incendios</strong> que documentou PrazaGal en 2025, o contraste é claro: <strong>o 39% das hectáreas estimadas queimadas</strong> cae sobre MVMC, case o dobre do peso que lles correspondería por superficie.<br><br>
 Casaio (88% MVMC), Parafita (80%), Vilanuíde (56%) ou Castro de Escuadro (74%) están entre as parroquias máis castigadas. Son xustamente as de maior concentración veciñal.<br><br>
 A nivel parroquia o patrón suavízase: sobre as <strong>825 parroquias con polo menos un lume</strong>, a <strong>correlación de Spearman</strong> entre %MVMC e hectáreas queimadas é de <strong>ρ ≈ 0,09</strong> (0,15 coa superficie en escala logarítmica). Spearman mide se dúas variables se moven xuntas en orde. O 0 indica sen relación, +1 unha relación crecente perfecta e −1 decrecente perfecta. <strong>0,09 é moi débil</strong>: a propiedade colectiva por si soa non explica o lume, importa onde está esa propiedade. A cola de lumes grandes si cambia: <strong>media de 272 ha</strong> en parroquias con ≥20% de MVMC fronte ás <strong>62 ha</strong> do resto.<br><br>
-A explicación ten pouco que ver co réxime xurídico en si: as comunidades de montes foron historicamente un dos poucos axentes que aínda fan xestión activa do monte. A correlación fala, sobre todo, de <strong>onde queda o monte</strong>: nas parroquias rurais do interior ourensán, baleiradas polo éxodo, onde a propiedade colectiva sobrevive porque o minifundio privado se abandonou.
+A explicación ten pouco que ver co réxime xurídico en si: as comunidades de montes foron historicamente un dos poucos axentes que aínda fan xestión activa do monte. A correlación fala, sobre todo, de <strong>onde queda o monte</strong>: nas parroquias rurais do interior ourensán, baleiradas polo éxodo, onde a propiedade colectiva sobrevive porque o minifundio privado se abandonou. A estimación de hectáreas sobre MVMC é proporcional ao peso do MVMC en cada parroquia, unha aproximación honesta a falta dos perímetros oficiais.
                         </p>
                     </div>
                 </div>

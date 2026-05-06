@@ -175,8 +175,9 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
   Hablar de incendios en Galicia depende mucho de quién los cuente.<br><br>
   Si miramos los datos del satélite (<strong>EFFIS</strong>), los grandes fuegos saltan a la vista, pero la mayoría de los pequeños se nos escapan: solo recoge los que dejan una huella suficientemente visible desde el espacio.<br><br>
   El registro <strong>oficial de la Xunta</strong> los recoge todos. Y ahí los números cambian de orden: en años recientes hay más de <strong>1.000 incendios al año</strong>, no las pocas decenas que ve el satélite.<br><br>
-  Los picos siguen estando en <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong>, pero <strong>2025</strong> rompe todas las escalas: cerca de <strong>120.000 hectáreas</strong> arrasadas en una sola temporada.<br><br>
-  No es solo que ardan más hectáreas: es que los grandes incendios pesan cada vez más dentro del total.
+  Los picos más marcados en la gráfica son <strong>2020</strong> y <strong>2022</strong>, pero <strong>2025</strong> rompe todas las escalas: cerca de <strong>120.000 hectáreas</strong> arrasadas en una sola temporada.<br><br>
+  No es solo que ardan más hectáreas: es que los grandes incendios pesan cada vez más dentro del total.<br><br>
+  <em>La gráfica arranca en 2018, cuando empieza la serie oficial de distritos de la Xunta. El año 2017 fue también muy grave —51.400 ha según EFFIS—, pero sin dato oficial equivalente no puede incluirse en la comparativa.</em>
                           </p>
                         </div>
                         <br class="only-mobile"><br class="only-mobile">
@@ -199,8 +200,9 @@ Los gráficos de abajo muestran por qué esa semana fue posible. Los datos son d
   Hablar de incendios en Galicia depende mucho de quién los cuente.<br><br>
   Si miramos los datos del satélite (<strong>EFFIS</strong>), los grandes fuegos saltan a la vista, pero la mayoría de los pequeños se nos escapan: solo recoge los que dejan una huella suficientemente visible desde el espacio.<br><br>
   El registro <strong>oficial de la Xunta</strong> los recoge todos. Y ahí los números cambian de orden: en años recientes hay más de <strong>1.000 incendios al año</strong>, no las pocas decenas que ve el satélite.<br><br>
-  Los picos siguen estando en <strong>2017</strong>, <strong>2020</strong> y <strong>2022</strong>, pero <strong>2025</strong> rompe todas las escalas: cerca de <strong>120.000 hectáreas</strong> arrasadas en una sola temporada.<br><br>
-  No es solo que ardan más hectáreas: es que los grandes incendios pesan cada vez más dentro del total.
+  Los picos más marcados en la gráfica son <strong>2020</strong> y <strong>2022</strong>, pero <strong>2025</strong> rompe todas las escalas: cerca de <strong>120.000 hectáreas</strong> arrasadas en una sola temporada.<br><br>
+  No es solo que ardan más hectáreas: es que los grandes incendios pesan cada vez más dentro del total.<br><br>
+  <em>La gráfica arranca en 2018, cuando empieza la serie oficial de distritos de la Xunta. El año 2017 fue también muy grave —51.400 ha según EFFIS—, pero sin dato oficial equivalente no puede incluirse en la comparativa.</em>
                         </p>
 
                         

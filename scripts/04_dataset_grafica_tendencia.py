@@ -38,6 +38,8 @@ def main() -> None:
             }
         )
     for _, row in effis.iterrows():
+        if int(row["ano"]) < 2018:
+            continue  # a serie oficial da Xunta arranca en 2018; excluímos anos sen comparativa
         serie.append(
             {
                 "ano": int(row["ano"]),
@@ -63,12 +65,13 @@ def main() -> None:
                     "nome": "Copernicus EFFIS",
                     "detalle": "Burned Area satelital (Sentinel-2)",
                     "url": "https://forest-fire.emergency.copernicus.eu/",
-                    "cobertura": "2016-2025",
+                    "cobertura": "2018-2025",
                 },
             ],
             "nota": (
                 "EFFIS só detecta incendios visibles por satélite (en xeral, >30 ha). "
-                "O dato oficial inclúe os pequenos e curtos, que son a maioría."
+                "O dato oficial inclúe os pequenos e curtos, que son a maioría. "
+                "A serie arranca en 2018, primeiro ano con estatística oficial de distritos da Xunta."
             ),
         },
         "serie": sorted(serie, key=lambda r: (r["ano"], r["fonte"])),

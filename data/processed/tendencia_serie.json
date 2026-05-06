@@ -14,24 +14,12 @@
         "nome": "Copernicus EFFIS",
         "detalle": "Burned Area satelital (Sentinel-2)",
         "url": "https://forest-fire.emergency.copernicus.eu/",
-        "cobertura": "2016-2025"
+        "cobertura": "2018-2025"
       }
     ],
-    "nota": "EFFIS só detecta incendios visibles por satélite (en xeral, >30 ha). O dato oficial inclúe os pequenos e curtos, que son a maioría."
+    "nota": "EFFIS só detecta incendios visibles por satélite (en xeral, >30 ha). O dato oficial inclúe os pequenos e curtos, que son a maioría. A serie arranca en 2018, primeiro ano con estatística oficial de distritos da Xunta."
   },
   "serie": [
-    {
-      "ano": 2016,
-      "fonte": "satelital",
-      "num_incendios": 49,
-      "ha_total": 19391.0
-    },
-    {
-      "ano": 2017,
-      "fonte": "satelital",
-      "num_incendios": 106,
-      "ha_total": 51412.0
-    },
     {
       "ano": 2018,
       "fonte": "oficial",

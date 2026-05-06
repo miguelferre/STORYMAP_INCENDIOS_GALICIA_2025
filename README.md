@@ -14,12 +14,12 @@ Pieza divulgativa que reconstruye el verano de incendios de Galicia 2025 a parti
 1. **Un verán para reaccionar** — Larouco–Seadur en contexto, comparado con superficies municipales europeas.
 2. **O día que se xuntou todo** — cronología PrazaGal: 100.000 hectáreas en una semana del 8 al 15 de agosto.
 3. **A pegada do lume** — análisis post-incendio con dNBR Sentinel-2 (Microsoft Planetary Computer), reclasificación Key & Benson 2006.
-4. **Tendencia: máis lume e máis grande** — serie oficial Xunta + EFFIS desde 1968 con heatmap distrito × año.
+4. **Unha tendencia en aumento** — serie oficial Xunta + EFFIS satelital (2018–2025) con heatmap de distrito × ano.
 5. **Por que Galicia e o Noroeste** — capas Mapbox de geología, vegetación (IET-Xunta 2011, 7 clases divulgativas), clima y geografía.
 6. **As causas detrás do lume** — 81.643 partes oficiales EGIF Ourense 1968-2022 con motivaciones detalladas de los intencionados.
-7. **De quén son os montes que arden** — cruce PrazaGal × parroquias × CMVMC. El 22 % del territorio gallego es monte vecinal en mano común; concentra el 39 % de las hectáreas estimadas quemadas.
+7. **De quén son os montes que arden** — cruce rexistro CMVMC (Xunta) × datos oficiais de incendios (Lei de Transparencia) × parroquias. El 22 % del territorio gallego es monte vecinal en mano común; concentra el 39 % de las hectáreas estimadas quemadas.
 8. **Afastámonos do monte** — comparador 1957/2021 sobre Cimadevila.
-9. **O verán alárgase…** — heatmap de anomalías de temperatura 1940-2025 (ERA5/ECMWF, chart nativo).
+9. **O verán alóngase… e o lume tamén** — heatmap de anomalías de temperatura 1940-2025 (ERA5/ECMWF, chart nativo).
 
 ## Stack
 
