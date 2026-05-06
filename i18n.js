@@ -47,7 +47,7 @@
         },
         geografia: {
           title: 'Xeografía',
-          text: '<h2>Xeografía</h2>No mapa apréciase un <strong>relevo montañoso e moi recortado</strong>, con vales profundos e ladeiras escarpadas que caracterizan boa parte do interior de Galicia.<br><br>A <strong>xeografía</strong> inflúe de maneira decisiva no comportamento do lume:<br><br><strong>Relevo abrupto</strong>: as pendentes dificultan o acceso dos equipos de extinción e facilitan que as lapas ascendan con rapidez.<br><br><strong>Ventos irregulares e fortes</strong>: en zonas montañosas as correntes de aire cambian de dirección con facilidade, o que pode desviar bruscamente o avance do incendio.'
+          text: '<h2>Xeografía</h2>O interior de Ourense é unha paisaxe de vales profundos e serras que superan os 1.500 metros. O Sil, o Miño e o Limia encáixanse entre ladeiras escarpadas que converten calquera incendio nun problema de loxística: os equipos de extinción tardan en chegar e as lapas, en cambio, soben rápido.<br><br>En pendente, o lume pode multiplicar a súa velocidade de avance varias veces respecto ao terreo chan. A iso súmase o efecto cheminea nos barrancos e a irregularidade dos ventos de montaña, que cambian de dirección sen previo aviso.<br><br>A xeografía non causa os lumes, pero decide como se comportan unha vez que arrincan.'
         }
       },
       chapters: {
